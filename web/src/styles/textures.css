@@ -1,0 +1,97 @@
+/* =========================================================================
+   LicenseLogger — subtle textures (pure CSS, no image files)
+   Usage: <html data-texture="none | grain | dots | wash | grain wash">
+          add class="tex-hero" to AT MOST ONE featured card.
+   Data cards, tables, forms and the map stay solid.
+   Load after tokens.css.
+   ========================================================================= */
+
+:root {
+  /* 1) Fine grain: SVG feTurbulence → black noise with alpha, tiled 180px */
+  --tex-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.4 0 0 0 -.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --tex-grain-opacity: .09;      /* visible-but-subtle. NOTE: light-dark() only accepts colours, so dark is overridden below */
+
+  /* 2) Dot grid / graph paper: "just darker than background" */
+  --tex-line: color-mix(in oklab, var(--text) 9%, transparent);
+  --tex-dots: radial-gradient(circle at 1px 1px, var(--tex-line) 1px, transparent 1.4px);
+  --tex-dots-size: 20px 20px;
+  --tex-graph: linear-gradient(var(--tex-line) 1px, transparent 1px),
+               linear-gradient(90deg, var(--tex-line) 1px, transparent 1px);
+  --tex-graph-size: 24px 24px;
+
+  /* 3) Soft wash: faint primary → amber corner glow (oklab avoids muddy/pink hues) */
+  --tex-wash:
+    radial-gradient(60rem 34rem at 100% 0%, color-mix(in oklab, var(--primary) 8%, transparent), transparent 70%),
+    radial-gradient(44rem 30rem at 72% 0%,  color-mix(in oklab, var(--accent) 9%, transparent), transparent 70%);
+  --tex-wash-card:
+    radial-gradient(120% 80% at 100% 0%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 60%),
+    radial-gradient(90% 70% at 0% 100%,  color-mix(in oklab, var(--accent) 16%, transparent), transparent 65%);
+}
+
+/* ---- Page background ------------------------------------------------- */
+html { background: var(--bg); }
+body { background: transparent; isolation: isolate; }   /* pseudo layers sit between bg and content */
+body::before, body::after {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  opacity: 0; transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+/* dots (body background, bottom layer) — fades out toward the bottom so it never fights data */
+html[data-texture~="dots"] body {
+  background-image: var(--tex-dots); background-size: var(--tex-dots-size); background-attachment: fixed;
+}
+html[data-texture~="graph"] body {
+  background-image: var(--tex-graph); background-size: var(--tex-graph-size); background-attachment: fixed;
+}
+
+/* wash (middle layer) */
+body::before { background: var(--tex-wash); }
+html[data-texture~="wash"] body::before { opacity: 1; }
+
+/* grain (top background layer, still behind all content) */
+body::after { background-image: var(--tex-grain); background-size: 180px; mix-blend-mode: multiply; }
+html[data-texture~="grain"] body::after { opacity: var(--tex-grain-opacity); }
+:root[data-theme="dark"] { --tex-grain-opacity: .07; }
+:root[data-theme="dark"] body::after { filter: invert(1); mix-blend-mode: screen; }
+
+/* ---- One hero / featured card ----------------------------------------- */
+.tex-hero { isolation: isolate; }
+.tex-hero::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1; pointer-events: none;
+  opacity: 0; transition: opacity var(--dur-slow) var(--ease-out);
+}
+html[data-texture~="wash"] .tex-hero { background-image: var(--tex-wash-card); }
+html[data-texture~="grain"] .tex-hero::after {
+  background-image: var(--tex-grain); background-size: 180px; mix-blend-mode: multiply;
+  opacity: calc(var(--tex-grain-opacity) * .8);
+}
+:root[data-theme="dark"] .tex-hero::after { filter: invert(1); mix-blend-mode: screen; }
+/* dots on the hero: only a faded top-right corner, so the ring/number stays on a clean surface */
+html[data-texture~="dots"] .tex-hero::after {
+  background-image: var(--tex-dots); background-size: var(--tex-dots-size); opacity: 1;
+  -webkit-mask-image: radial-gradient(70% 55% at 100% 0%, #000, transparent);
+          mask-image: radial-gradient(70% 55% at 100% 0%, #000, transparent);
+}
+
+/* ---- Accessibility: drop textures when users ask for clarity ----------- */
+@media (prefers-contrast: more), (forced-colors: active) {
+  body { background-image: none !important; }
+  body::before, body::after, .tex-hero::after { display: none; }
+  .tex-hero { background-image: none !important; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  /* translucent overlays off; the solid dot grid may stay */
+  body::before, body::after, .tex-hero::after { display: none; }
+  .tex-hero { background-image: none !important; }
+}
+@media print { body::before, body::after, .tex-hero::after { display: none; } body { background: none; } }
+
+/* ---- Segmented control (texture switcher) ------------------------------ */
+.segmented { display: inline-flex; padding: 3px; gap: 2px; border-radius: var(--radius-sm);
+             background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--border); }
+.segmented label { position: relative; padding: 5px 10px; border-radius: 6px; font-size: var(--fs-xs); font-weight: 550;
+                   color: var(--text-muted); cursor: pointer; transition: background var(--dur-fast), color var(--dur-fast); }
+.segmented input { position: absolute; opacity: 0; pointer-events: none; }
+.segmented label:hover { color: var(--text); }
+.segmented label:has(input:checked) { background: var(--surface); color: var(--text); box-shadow: var(--shadow-sm), inset 0 0 0 1px var(--border); }
+.segmented label:has(input:focus-visible) { box-shadow: var(--focus-ring); }

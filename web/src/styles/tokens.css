@@ -1,0 +1,153 @@
+/* =========================================================================
+   LicenseLogger design tokens — "Road Navy" palette
+   LIGHT MODE IS THE DEFAULT. Dark is an optional secondary set (opt-in).
+   Generated Oct 2026. Colours authored in OKLCH; hex in comments = sRGB.
+   All text/bg pairs checked against WCAG 2.2 AA (see design report).
+   Optional subtle textures live in textures.css (load after this file).
+   Requires: light-dark() (Baseline 2024), oklch()/color-mix() (Baseline widely available).
+   ========================================================================= */
+
+/* ---- Fonts (self-hosted variable woff2; OFL-1.1) ---------------------- */
+@font-face {
+  font-family: "Geist";
+  src: url("../assets/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("../assets/fonts/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+
+/* Animatable custom properties (used by progress rings / glows) */
+@property --progress { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --angle    { syntax: "<angle>";      inherits: false; initial-value: 0deg; }
+
+:root {
+  color-scheme: light;                 /* light is primary/default.
+                                          To follow the OS instead, change to: color-scheme: light dark; */
+
+  /* ---- Core palette ---------------------------------------------------- */
+  --bg: light-dark(oklch(98.0% 0.005 250), oklch(18.0% 0.030 260)); /* #f6f9fc | #0a121f */
+  --surface: light-dark(oklch(100.0% 0.000 0), oklch(23.0% 0.035 260)); /* #ffffff | #131d2d */
+  --border: light-dark(oklch(91.0% 0.012 250), oklch(32.0% 0.035 260)); /* #dbe2e9 | #283345 */
+  --text: light-dark(oklch(22.0% 0.040 260), oklch(96.0% 0.010 250)); /* #0f1b2d | #edf2f8 */
+  --text-muted: light-dark(oklch(48.0% 0.030 255), oklch(74.0% 0.030 255)); /* #525f6f | #9eacbe */
+  --primary: light-dark(oklch(48.0% 0.180 260), oklch(72.0% 0.140 255)); /* #1156c1 | #65a7fa */
+  --on-primary: light-dark(oklch(100.0% 0.000 0), oklch(18.0% 0.040 260)); /* #ffffff | #071123 */
+  --accent: light-dark(oklch(80.0% 0.160 75), oklch(83.0% 0.150 80)); /* #f9ad26 | #fabb41 */
+  --success: light-dark(oklch(52.0% 0.128 155), oklch(77.0% 0.150 155)); /* #027e47 | #56d089 */
+  --warning: light-dark(oklch(55.0% 0.150 45), oklch(76.0% 0.150 50)); /* #b64e10 | #fc9252 */
+  --danger: light-dark(oklch(54.0% 0.200 27), oklch(70.0% 0.180 25)); /* #c92324 | #fa6863 */
+
+  /* ---- Derived (color-mix keeps everything in one source of truth) ----- */
+  --surface-2:      color-mix(in oklab, var(--surface), var(--text) 4%);
+  --surface-hover:  color-mix(in oklab, var(--surface), var(--primary) 6%);
+  --primary-hover:  color-mix(in oklab, var(--primary), var(--text) 14%);
+  --primary-soft:   color-mix(in oklab, var(--primary) 14%, transparent);
+  --accent-soft:    color-mix(in oklab, var(--accent) 22%, transparent);
+  --success-soft:   color-mix(in oklab, var(--success) 14%, transparent);
+  --warning-soft:   color-mix(in oklab, var(--warning) 14%, transparent);
+  --danger-soft:    color-mix(in oklab, var(--danger) 14%, transparent);
+  --border-strong:  color-mix(in oklab, var(--border), var(--text) 18%);
+  --focus-ring:     0 0 0 3px color-mix(in oklab, var(--primary) 45%, transparent);
+  --on-accent:      light-dark(var(--text), var(--bg)); /* accent is a FILL, never text on white */
+
+  /* ---- Elevation ------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px light-dark(oklch(0% 0 0 / .06), oklch(0% 0 0 / .4));
+  --shadow-md: 0 1px 2px light-dark(oklch(0% 0 0 / .05), oklch(0% 0 0 / .4)),
+               0 8px 24px -8px light-dark(oklch(25% .04 260 / .14), oklch(0% 0 0 / .55));
+  /* OPTIONAL / sparing: use at most once per screen (e.g. focused primary CTA). */
+  --glow-primary: 0 0 0 1px color-mix(in oklab, var(--primary) 35%, transparent),
+                  0 8px 32px -8px color-mix(in oklab, var(--primary) 45%, transparent);
+  --hairline: inset 0 1px 0 light-dark(oklch(100% 0 0 / .7), oklch(100% 0 0 / .06));
+
+  /* ---- Typography ------------------------------------------------------ */
+  --font-sans: "Geist", "Geist Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Variable", "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --fs-xs: .75rem; --fs-sm: .875rem; --fs-md: 1rem; --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem; --fs-2xl: 1.75rem; --fs-3xl: clamp(2rem, 1.4rem + 2vw, 2.75rem);
+  --lh-tight: 1.15; --lh-body: 1.5;
+  --tracking-tight: -0.02em; --tracking-caps: 0.06em;
+
+  /* ---- Shape & space --------------------------------------------------- */
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 18px; --radius-pill: 999px;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px;
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --dur-fast: 120ms; --dur-med: 220ms; --dur-slow: 480ms;
+}
+
+/* ---- LEGACY ALIASES (migration map) ----------------------------------------
+   Keeps the old lemon-lime variable names working while you migrate.
+   !! Verify the real names/usages in the existing codebase first (grep for "--cream", "--green",
+      "--yellow", "--lime", "--ink" and any others) and adjust the mapping per usage.
+   Remove the old definitions, load tokens.css, then replace var(--old) with semantic tokens
+   file-by-file. Delete this block when `grep -r "var(--(cream|green|yellow|lime|ink)" src` is empty. */
+:root {
+  --cream: var(--bg);
+  --ink:   var(--text);
+  --lime:  var(--primary);
+  --green: var(--success);
+  --yellow: var(--accent);
+  --muted: var(--text-muted);
+  --white: var(--surface);
+  --red: var(--danger);
+  --green-deep: var(--success);
+  --radius: var(--radius-lg);
+  --shadow: var(--shadow-md);
+  --font: var(--font-sans);
+}
+
+/* Optional dark mode: <html data-theme="dark"> flips every light-dark() token */
+:root[data-theme="dark"]  { color-scheme: dark; }
+:root[data-theme="auto"]  { color-scheme: light dark; }
+
+/* Fallback for browsers without light-dark() (pre-2024) */
+@supports not (color: light-dark(#000, #fff)) {
+  :root {
+    --bg: #f6f9fc;
+    --surface: #ffffff;
+    --border: #dbe2e9;
+    --text: #0f1b2d;
+    --text-muted: #525f6f;
+    --primary: #1156c1;
+    --on-primary: #ffffff;
+    --accent: #f9ad26;
+    --success: #027e47;
+    --warning: #b64e10;
+    --danger: #c92324;
+  }
+  /* dark only when explicitly opted in */
+  :root[data-theme="dark"] {
+    --bg: #0a121f;
+    --surface: #131d2d;
+    --border: #283345;
+    --text: #edf2f8;
+    --text-muted: #9eacbe;
+    --primary: #65a7fa;
+    --on-primary: #071123;
+    --accent: #fabb41;
+    --success: #56d089;
+    --warning: #fc9252;
+    --danger: #fa6863;
+  }
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-med: 0ms; --dur-slow: 0ms; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important; scroll-behavior: auto !important;
+  }
+}
+
+/* Base */
+html { font-family: var(--font-sans); background: var(--bg); color: var(--text);
+       -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.num, [data-num] { font-variant-numeric: tabular-nums slashed-zero; font-feature-settings: "tnum" 1; }
+:focus-visible { outline: none; box-shadow: var(--focus-ring); }
