@@ -1,0 +1,9 @@
+{
+  "name": "LicenseLogger",
+  "short_name": "LicenseLogger",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6F9FC",
+  "theme_color": "#1156C1",
+  "lang": "en"
+}
