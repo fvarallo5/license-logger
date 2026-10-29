@@ -114,6 +114,8 @@ describe("role-aware permissions", () => {
     expect(perms(m("front_desk", { pay: true })).viewBilling).toBe(true);
   });
   it("owners can do everything", () => {
-    expect(Object.values(perms(m("owner"))).filter((v) => v === false)).toHaveLength(0);
+    const p = perms(m("owner"));
+    expect(p.manageSchool && p.manageStudents && p.reviewDrives && p.viewBilling && p.seeBoard && p.manageBoard).toBe(true);
+    expect(p.instructorOnly).toBe(false);
   });
 });

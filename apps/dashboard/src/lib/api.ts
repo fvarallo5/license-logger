@@ -5,6 +5,7 @@ import type {
   DriveListRow,
   Enrollment,
   Invite,
+  Car,
   Lesson,
   LinkRequest,
   Member,
@@ -313,4 +314,35 @@ export async function markLesson(sb: SupabaseClient, lessonId: string, status: "
 export async function qboStatus(sb: SupabaseClient, schoolId: string): Promise<QboStatus | null> {
   const rows = check(await sb.rpc("qbo_sync_status", { p_school_id: schoolId })) as QboStatus[] | null;
   return rows?.[0] ?? null;
+}
+
+// ---------- board (cars + offline-aware lesson marks) ----------
+export async function listCars(sb: SupabaseClient, schoolId: string): Promise<Car[]> {
+  return check(
+    await sb
+      .from("cars")
+      .select("id, school_id, name, plate, color, model, dual_control, assigned_user_id, active")
+      .eq("school_id", schoolId)
+      .eq("active", true)
+      .order("name"),
+  ) as Car[];
+}
+
+/**
+ * Reassign instructor (and optional car) on a booked lesson.
+ * Requires migration supabase/migrations/_NOT_APPLIED_reassign_lesson.sql (NOT applied on live yet).
+ */
+export async function reassignLesson(
+  sb: SupabaseClient,
+  lessonId: string,
+  instructorId: string,
+  carId: string | null = null,
+): Promise<void> {
+  check(
+    await sb.rpc("reassign_lesson", {
+      p_lesson_id: lessonId,
+      p_instructor_id: instructorId,
+      p_car_id: carId,
+    }),
+  );
 }

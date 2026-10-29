@@ -7,10 +7,10 @@ export const fullName = (p: { first_name?: string; last_name?: string } | null |
   p ? `${p.first_name ?? ""} ${p.last_name ?? ""}`.trim() || "Unnamed" : "Unknown";
 /** Badge color for any row status used across drives, requests and lessons. */
 export function statusTone(status: string): "ok" | "warn" | "bad" | "info" | "" {
-  if (["signed", "accepted", "completed", "active"].includes(status)) return "ok";
+  if (["signed", "accepted", "completed", "taught", "active"].includes(status)) return "ok";
   if (status === "pending") return "warn";
   if (["rejected", "voided", "declined", "cancelled", "no_show", "expired"].includes(status)) return "bad";
-  if (status === "booked") return "info";
+  if (status === "booked" || status === "in_lesson") return "info";
   return "";
 }
 export const roleLabel: Record<string, string> = { owner: "Owner", admin: "Admin", front_desk: "Front desk", instructor: "Instructor" };

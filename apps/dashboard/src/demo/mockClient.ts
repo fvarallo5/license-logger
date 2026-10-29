@@ -106,6 +106,19 @@ export function createMockClient(): SupabaseClient {
           weather_minutes: 0,
         })),
     school_schedule: (a) => demo.lessons.filter((l) => l.start_at >= String(a.p_from) && l.start_at < String(a.p_to)),
+    mark_lesson: (a) => {
+      const row = demo.lessons.find((l) => l.id === a.p_lesson_id);
+      if (row) row.status = String(a.p_status);
+      return null;
+    },
+    reassign_lesson: (a) => {
+      const row = demo.lessons.find((l) => l.id === a.p_lesson_id);
+      if (row) {
+        row.instructor_id = String(a.p_instructor_id);
+        row.car_id = (a.p_car_id as string | null | undefined) ?? null;
+      }
+      return null;
+    },
     qbo_sync_status: () => [],
     create_school: () => demo.school,
   };

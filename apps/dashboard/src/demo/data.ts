@@ -162,6 +162,30 @@ export const demo = {
         responded_at: day(-5),
       },
     ],
+    cars: [
+      {
+        id: "car-1",
+        school_id: SCHOOL,
+        name: "Blue Civic",
+        plate: "TX-LL1",
+        color: "#1156C1",
+        model: "Honda Civic",
+        dual_control: true,
+        assigned_user_id: "u-2",
+        active: true,
+      },
+      {
+        id: "car-2",
+        school_id: SCHOOL,
+        name: "White Corolla",
+        plate: "TX-LL2",
+        color: "#64748b",
+        model: "Toyota Corolla",
+        dual_control: true,
+        assigned_user_id: "u-3",
+        active: true,
+      },
+    ],
     school_invites: [
       {
         id: 7,
@@ -174,19 +198,92 @@ export const demo = {
       },
     ],
   } as Record<string, Record<string, unknown>[]>,
-  lessons: Array.from({ length: 8 }, (_, i) => ({
-    id: `l-${i}`,
-    school_id: SCHOOL,
-    student_id: `s-${i}`,
-    instructor_id: i % 2 ? "u-2" : "u-3",
-    start_at: day(i % 5, 14 + (i % 3) * 2),
-    end_at: day(i % 5, 15 + (i % 3) * 2),
-    kind: "lesson",
-    status: i === 0 ? "completed" : "booked",
-    name: "",
-    meet: "Main lot",
-    topic: ["Parking", "Highway merge", "Night driving", "Roundabouts"][i % 4],
-  })),
+  lessons: (() => {
+    const at = (dayOffset: number, hour: number, minute = 0) => {
+      const d = new Date();
+      d.setHours(0, 0, 0, 0);
+      d.setDate(d.getDate() + dayOffset);
+      d.setHours(hour, minute, 0, 0);
+      return d.toISOString();
+    };
+    const end = (dayOffset: number, hour: number, minute = 0) => {
+      const d = new Date(at(dayOffset, hour, minute));
+      d.setHours(d.getHours() + 1);
+      return d.toISOString();
+    };
+    return [
+      {
+        id: "l-0",
+        school_id: SCHOOL,
+        student_id: "s-0",
+        instructor_id: "u-2",
+        car_id: "car-1",
+        start_at: at(0, 9),
+        end_at: end(0, 9),
+        kind: "btw",
+        status: "taught",
+        name: "",
+        meet: "lot",
+        topic: "Parking",
+      },
+      {
+        id: "l-1",
+        school_id: SCHOOL,
+        student_id: "s-1",
+        instructor_id: "u-2",
+        car_id: "car-1",
+        start_at: at(0, 11),
+        end_at: end(0, 11),
+        kind: "btw",
+        status: "booked",
+        name: "",
+        meet: "lot",
+        topic: "Highway merge",
+      },
+      {
+        id: "l-2",
+        school_id: SCHOOL,
+        student_id: "s-2",
+        instructor_id: "u-3",
+        car_id: "car-2",
+        start_at: at(0, 14),
+        end_at: end(0, 14),
+        kind: "btw",
+        status: "booked",
+        name: "",
+        meet: "pickup",
+        topic: "Night driving",
+      },
+      {
+        id: "l-3",
+        school_id: SCHOOL,
+        student_id: "s-3",
+        instructor_id: "u-3",
+        car_id: "car-2",
+        start_at: at(1, 10),
+        end_at: end(1, 10),
+        kind: "btw",
+        status: "booked",
+        name: "",
+        meet: "lot",
+        topic: "Roundabouts",
+      },
+      {
+        id: "l-4",
+        school_id: SCHOOL,
+        student_id: null,
+        instructor_id: "u-2",
+        car_id: null,
+        start_at: at(0, 16),
+        end_at: end(0, 16),
+        kind: "blocked",
+        status: "booked",
+        name: "Blocked",
+        meet: "lot",
+        topic: "",
+      },
+    ];
+  })(),
   progress: {
     student_id: "s-1",
     rule: {

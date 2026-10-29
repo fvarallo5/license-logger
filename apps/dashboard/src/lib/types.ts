@@ -139,6 +139,7 @@ export interface Lesson {
   school_id: string;
   student_id: string | null;
   instructor_id: string;
+  car_id?: string | null;
   start_at: string;
   end_at: string;
   kind: string;
@@ -146,6 +147,17 @@ export interface Lesson {
   name: string;
   meet: string;
   topic: string;
+}
+export interface Car {
+  id: string;
+  school_id: string;
+  name: string;
+  plate: string;
+  color: string;
+  model: string;
+  dual_control: boolean;
+  assigned_user_id: string | null;
+  active: boolean;
 }
 export interface Member {
   school_id: string;

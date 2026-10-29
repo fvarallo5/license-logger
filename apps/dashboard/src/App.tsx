@@ -6,6 +6,7 @@ import { roleLabel } from "./lib/format";
 import { ErrorBox, Loading } from "./components/ui";
 import AuthPage, { NewPasswordPage } from "./pages/Auth";
 import Onboarding from "./pages/Onboarding";
+import Board from "./pages/Board";
 import Students from "./pages/Students";
 import StudentDetail from "./pages/StudentDetail";
 import Drives from "./pages/Drives";
@@ -62,6 +63,9 @@ export default function App() {
         </button>
       </header>
       <nav className="tabs" aria-label="Main">
+        <NavLink to="/board" end>
+          Board
+        </NavLink>
         <NavLink to="/students">Students</NavLink>
         {p.reviewDrives && <NavLink to="/drives">Sign-offs</NavLink>}
         <NavLink to="/schedule">Schedule</NavLink>
@@ -71,14 +75,15 @@ export default function App() {
       </nav>
       <main>
         <Routes>
+          <Route path="/board" element={<Board />} />
           <Route path="/students" element={<Students />} />
           <Route path="/students/:id" element={<StudentDetail />} />
-          <Route path="/drives" element={p.reviewDrives ? <Drives /> : <Navigate to="/students" />} />
+          <Route path="/drives" element={p.reviewDrives ? <Drives /> : <Navigate to="/board" />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/people" element={<People />} />
-          <Route path="/settings" element={p.manageSchool ? <Settings /> : <Navigate to="/students" />} />
-          <Route path="/quickbooks" element={p.viewBilling ? <QuickBooks /> : <Navigate to="/students" />} />
-          <Route path="*" element={<Navigate to="/students" />} />
+          <Route path="/settings" element={p.manageSchool ? <Settings /> : <Navigate to="/board" />} />
+          <Route path="/quickbooks" element={p.viewBilling ? <QuickBooks /> : <Navigate to="/board" />} />
+          <Route path="*" element={<Navigate to="/board" />} />
         </Routes>
       </main>
     </>
