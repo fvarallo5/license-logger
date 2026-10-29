@@ -8,6 +8,8 @@ import type {
   Car,
   Lesson,
   LinkRequest,
+  Reservation,
+  SlotTemplate,
   Member,
   Membership,
   QboStatus,
@@ -328,7 +330,10 @@ export async function listCars(sb: SupabaseClient, schoolId: string): Promise<Ca
   ) as Car[];
 }
 
-/** Reassign instructor (and optional car) on a booked lesson. Live RPC `reassign_lesson`. */
+/**
+ * Reassign instructor (and optional car) on a booked lesson.
+ * Requires migration supabase/migrations/_NOT_APPLIED_reassign_lesson.sql (NOT applied on live yet).
+ */
 export async function reassignLesson(
   sb: SupabaseClient,
   lessonId: string,
@@ -342,4 +347,136 @@ export async function reassignLesson(
       p_car_id: carId,
     }),
   );
+}
+
+// ---------- plan / templates / booking ----------
+export async function listSlotTemplates(sb: SupabaseClient, schoolId: string): Promise<SlotTemplate[]> {
+  return check(
+    await sb
+      .from("slot_templates")
+      .select(
+        "id, school_id, instructor_id, car_id, lot_id, name, kind, duration_minutes, travel_before_minutes, travel_after_minutes, days, window_start, window_end, meet, min_notice_hours, max_advance_days, note, active, created_at",
+      )
+      .eq("school_id", schoolId)
+      .eq("active", true)
+      .order("name"),
+  ) as SlotTemplate[];
+}
+
+export async function listReservations(sb: SupabaseClient, schoolId: string, from: Date, to: Date): Promise<Reservation[]> {
+  return check(
+    await sb
+      .from("reservations")
+      .select(
+        "id, school_id, student_id, instructor_id, car_id, template_id, lesson_id, start_at, end_at, travel_before_minutes, travel_after_minutes, meet, kind, status, note, decline_reason, created_at",
+      )
+      .eq("school_id", schoolId)
+      .gte("start_at", from.toISOString())
+      .lt("start_at", to.toISOString())
+      .order("start_at"),
+  ) as Reservation[];
+}
+
+export async function addSlotTemplate(
+  sb: SupabaseClient,
+  args: {
+    schoolId: string;
+    instructorId: string;
+    name: string;
+    kind?: string;
+    durationMinutes?: number;
+    travelBefore?: number;
+    travelAfter?: number;
+    days?: number[];
+    windowStart?: string;
+    windowEnd?: string;
+    meet?: string;
+    carId?: string | null;
+    minNoticeHours?: number;
+    maxAdvanceDays?: number;
+    note?: string;
+  },
+): Promise<string> {
+  return check(
+    await sb.rpc("add_slot_template", {
+      p_school_id: args.schoolId,
+      p_instructor_id: args.instructorId,
+      p_name: args.name,
+      p_kind: args.kind ?? "btw",
+      p_duration_minutes: args.durationMinutes ?? 60,
+      p_travel_before_minutes: args.travelBefore ?? 0,
+      p_travel_after_minutes: args.travelAfter ?? 15,
+      p_days: args.days ?? [1, 2, 3, 4, 5],
+      p_window_start: args.windowStart ?? "09:00",
+      p_window_end: args.windowEnd ?? "17:00",
+      p_meet: args.meet ?? "lot",
+      p_car_id: args.carId ?? null,
+      p_min_notice_hours: args.minNoticeHours ?? 24,
+      p_max_advance_days: args.maxAdvanceDays ?? 14,
+      p_note: args.note ?? "",
+    }),
+  ) as string;
+}
+
+export async function bookLesson(
+  sb: SupabaseClient,
+  args: {
+    schoolId: string;
+    studentId: string;
+    instructorId: string;
+    start: string;
+    end: string;
+    meet?: string;
+    kind?: string;
+    carId?: string | null;
+    travelBefore?: number;
+    travelAfter?: number;
+    notes?: string;
+    templateId?: string | null;
+  },
+): Promise<string> {
+  return check(
+    await sb.rpc("book_lesson", {
+      p_school_id: args.schoolId,
+      p_student_id: args.studentId,
+      p_instructor_id: args.instructorId,
+      p_start: args.start,
+      p_end: args.end,
+      p_meet: args.meet ?? "lot",
+      p_kind: args.kind ?? "btw",
+      p_car_id: args.carId ?? null,
+      p_travel_before_minutes: args.travelBefore ?? 0,
+      p_travel_after_minutes: args.travelAfter ?? 15,
+      p_notes: args.notes ?? "",
+      p_template_id: args.templateId ?? null,
+    }),
+  ) as string;
+}
+
+export async function addBlock(
+  sb: SupabaseClient,
+  schoolId: string,
+  instructorId: string,
+  start: string,
+  end: string,
+  name = "Blocked",
+): Promise<string> {
+  return check(
+    await sb.rpc("add_block", {
+      p_school_id: schoolId,
+      p_instructor_id: instructorId,
+      p_start: start,
+      p_end: end,
+      p_name: name,
+    }),
+  ) as string;
+}
+
+export async function acceptReservation(sb: SupabaseClient, reservationId: string): Promise<string> {
+  return check(await sb.rpc("accept_reservation", { p_reservation_id: reservationId })) as string;
+}
+
+export async function declineReservation(sb: SupabaseClient, reservationId: string, reason: string): Promise<void> {
+  if (reason.trim().length < 1) throw new Error("Decline reason is required.");
+  check(await sb.rpc("decline_reservation", { p_reservation_id: reservationId, p_reason: reason.trim() }));
 }

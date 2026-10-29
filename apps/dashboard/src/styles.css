@@ -571,3 +571,43 @@ label.stack select {
     display: none;
   }
 }
+
+/* Plan */
+.plan-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.plan-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.plan-templates {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+fieldset.stack {
+  border: 0;
+  padding: 0;
+  margin: 8px 0;
+}
+fieldset.stack legend {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+label.stack input {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font: inherit;
+}

@@ -185,3 +185,44 @@ export interface QboStatus {
   dead: number;
   refresh_expires_at: string | null;
 }
+
+export interface SlotTemplate {
+  id: string;
+  school_id: string;
+  instructor_id: string;
+  car_id: string | null;
+  lot_id?: string | null;
+  name: string;
+  kind: string;
+  duration_minutes: number;
+  travel_before_minutes: number;
+  travel_after_minutes: number;
+  days: number[];
+  window_start: string;
+  window_end: string;
+  meet: string;
+  min_notice_hours: number;
+  max_advance_days: number;
+  note: string;
+  active: boolean;
+  created_at?: string;
+}
+export interface Reservation {
+  id: string;
+  school_id: string;
+  student_id: string;
+  instructor_id: string;
+  car_id: string | null;
+  template_id: string | null;
+  lesson_id: string | null;
+  start_at: string;
+  end_at: string;
+  travel_before_minutes: number;
+  travel_after_minutes: number;
+  meet: string;
+  kind: string;
+  status: string;
+  note: string;
+  decline_reason: string | null;
+  created_at: string;
+}

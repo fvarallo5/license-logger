@@ -40,8 +40,20 @@ class Query implements PromiseLike<Res> {
     this.filters.push((r) => (r[c] ?? null) !== v);
     return this;
   }
+  gte(c: string, v: string) {
+    this.filters.push((r) => String(r[c]) >= v);
+    return this;
+  }
   lt(c: string, v: string) {
     this.filters.push((r) => String(r[c]) < v);
+    return this;
+  }
+  lte(c: string, v: string) {
+    this.filters.push((r) => String(r[c]) <= v);
+    return this;
+  }
+  gt(c: string, v: string) {
+    this.filters.push((r) => String(r[c]) > v);
     return this;
   }
   limit(n: number) {
@@ -121,6 +133,44 @@ export function createMockClient(): SupabaseClient {
     },
     qbo_sync_status: () => [],
     create_school: () => demo.school,
+    add_slot_template: (a) => {
+      const id = `tpl-${Date.now()}`;
+      (t.slot_templates as Row[]).push({
+        id,
+        school_id: a.p_school_id,
+        instructor_id: a.p_instructor_id,
+        car_id: a.p_car_id,
+        name: a.p_name,
+        kind: a.p_kind,
+        duration_minutes: a.p_duration_minutes,
+        travel_before_minutes: a.p_travel_before_minutes,
+        travel_after_minutes: a.p_travel_after_minutes,
+        days: a.p_days,
+        window_start: a.p_window_start,
+        window_end: a.p_window_end,
+        meet: a.p_meet,
+        min_notice_hours: a.p_min_notice_hours,
+        max_advance_days: a.p_max_advance_days,
+        note: a.p_note,
+        active: true,
+      });
+      return id;
+    },
+    book_lesson: () => `l-${Date.now()}`,
+    add_block: () => `l-block-${Date.now()}`,
+    accept_reservation: (a) => {
+      const r = (t.reservations as Row[]).find((x) => x.id === a.p_reservation_id);
+      if (r) r.status = "accepted";
+      return `l-${Date.now()}`;
+    },
+    decline_reservation: (a) => {
+      const r = (t.reservations as Row[]).find((x) => x.id === a.p_reservation_id);
+      if (r) {
+        r.status = "declined";
+        r.decline_reason = a.p_reason;
+      }
+      return null;
+    },
   };
   const ok = (data: unknown) => Promise.resolve({ data, error: null });
   const session = { access_token: "demo", user: { id: demo.me, email: "owner@example.com" } };

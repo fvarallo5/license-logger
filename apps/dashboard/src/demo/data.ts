@@ -162,6 +162,62 @@ export const demo = {
         responded_at: day(-5),
       },
     ],
+    slot_templates: [
+      {
+        id: "tpl-1",
+        school_id: SCHOOL,
+        instructor_id: "u-2",
+        car_id: "car-1",
+        lot_id: null,
+        name: "Marcus weekdays",
+        kind: "btw",
+        duration_minutes: 60,
+        travel_before_minutes: 0,
+        travel_after_minutes: 15,
+        days: [1, 2, 3, 4, 5],
+        window_start: "09:00:00",
+        window_end: "17:00:00",
+        meet: "lot",
+        min_notice_hours: 24,
+        max_advance_days: 14,
+        note: "",
+        active: true,
+        created_at: day(-10),
+      },
+    ],
+    reservations: [
+      {
+        id: "res-1",
+        school_id: SCHOOL,
+        student_id: "s-1",
+        instructor_id: "u-2",
+        car_id: "car-1",
+        template_id: "tpl-1",
+        lesson_id: null,
+        start_at: (() => {
+          const d = new Date();
+          d.setHours(0, 0, 0, 0);
+          d.setDate(d.getDate() + 1);
+          d.setHours(15, 0, 0, 0);
+          return d.toISOString();
+        })(),
+        end_at: (() => {
+          const d = new Date();
+          d.setHours(0, 0, 0, 0);
+          d.setDate(d.getDate() + 1);
+          d.setHours(16, 0, 0, 0);
+          return d.toISOString();
+        })(),
+        travel_before_minutes: 0,
+        travel_after_minutes: 15,
+        meet: "lot",
+        kind: "btw",
+        status: "requested",
+        note: "Portal request",
+        decline_reason: null,
+        created_at: day(-1),
+      },
+    ],
     cars: [
       {
         id: "car-1",

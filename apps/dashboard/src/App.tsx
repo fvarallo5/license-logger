@@ -7,6 +7,7 @@ import { ErrorBox, Loading } from "./components/ui";
 import AuthPage, { NewPasswordPage } from "./pages/Auth";
 import Onboarding from "./pages/Onboarding";
 import Board from "./pages/Board";
+import Plan from "./pages/Plan";
 import Students from "./pages/Students";
 import StudentDetail from "./pages/StudentDetail";
 import Drives from "./pages/Drives";
@@ -66,6 +67,7 @@ export default function App() {
         <NavLink to="/board" end>
           Board
         </NavLink>
+        <NavLink to="/plan">Plan</NavLink>
         <NavLink to="/students">Students</NavLink>
         {p.reviewDrives && <NavLink to="/drives">Sign-offs</NavLink>}
         <NavLink to="/schedule">Schedule</NavLink>
@@ -76,6 +78,7 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/board" element={<Board />} />
+          <Route path="/plan" element={<Plan />} />
           <Route path="/students" element={<Students />} />
           <Route path="/students/:id" element={<StudentDetail />} />
           <Route path="/drives" element={p.reviewDrives ? <Drives /> : <Navigate to="/board" />} />
