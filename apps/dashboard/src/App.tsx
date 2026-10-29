@@ -19,6 +19,7 @@ import Packages from "./pages/Packages";
 import Pay from "./pages/Pay";
 import Fleet from "./pages/Fleet";
 import Payouts from "./pages/Payouts";
+import PortalApp from "./pages/portal/PortalApp";
 import { usePendingSignoffs } from "./lib/usePendingSignoffs";
 import { PwaChrome } from "./components/PwaChrome";
 import type { Membership } from "./lib/types";
@@ -60,6 +61,9 @@ function DeskShell({
         <div className="spacer" />
         <span className="pill">{roleLabel[current.role]}</span>
         <span className="who">{email}</span>
+        <NavLink className="btn sm" to="/portal">
+          Family
+        </NavLink>
         <button className="btn sm" onClick={() => void supabase.auth.signOut()}>
           Sign out
         </button>
@@ -104,6 +108,7 @@ function DeskShell({
           <Route path="/payouts" element={p.viewBilling ? <Payouts /> : <Navigate to="/board" />} />
           <Route path="/packages" element={p.viewBilling ? <Packages /> : <Navigate to="/board" />} />
           <Route path="/quickbooks" element={p.viewBilling ? <QuickBooks /> : <Navigate to="/board" />} />
+          <Route path="/portal" element={<PortalApp />} />
           <Route path="*" element={<Navigate to="/board" />} />
         </Routes>
       </main>

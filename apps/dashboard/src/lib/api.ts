@@ -774,3 +774,41 @@ export async function computeInstructorPay(
     return out;
   }
 }
+
+// ---------- portal / family ----------
+export async function listMyFamilyLinks(
+  sb: SupabaseClient,
+): Promise<{ student_id: string; school_id: string; relationship: string | null }[]> {
+  return check(await sb.from("family_links").select("student_id, school_id, relationship").eq("status", "active")) as {
+    student_id: string;
+    school_id: string;
+    relationship: string | null;
+  }[];
+}
+
+export async function requestSlot(
+  sb: SupabaseClient,
+  args: {
+    schoolId: string;
+    studentId: string;
+    instructorId: string;
+    startAt: string;
+    endAt: string;
+    meet?: string;
+    note?: string;
+  },
+): Promise<string> {
+  return String(
+    check(
+      await sb.rpc("request_slot", {
+        p_school_id: args.schoolId,
+        p_student_id: args.studentId,
+        p_instructor_id: args.instructorId,
+        p_start_at: args.startAt,
+        p_end_at: args.endAt,
+        p_meet: args.meet ?? "lot",
+        p_note: args.note ?? "",
+      }),
+    ),
+  );
+}

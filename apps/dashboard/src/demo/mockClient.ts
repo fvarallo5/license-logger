@@ -175,6 +175,7 @@ export function createMockClient(): SupabaseClient {
       }));
     },
     member_hourly_rate: () => 35,
+    request_slot: () => `res-${Date.now()}`,
     create_school: () => demo.school,
     add_car: (a) => {
       const id = `car-${Date.now()}`;
