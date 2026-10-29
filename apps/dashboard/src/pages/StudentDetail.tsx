@@ -229,6 +229,9 @@ function ExportCard({ studentId }: { studentId: string }) {
           {msg.text}
         </div>
       )}
+      <p className="muted" style={{ marginBottom: "0.5rem" }}>
+        One-tap state-matched log for the DMV, plus a school hours report and CSV. Links expire in 10 minutes.
+      </p>
       <div className="row">
         <button className="btn primary" disabled={!!busy} onClick={() => void go("pdf", "state")}>
           {busy === "pdfstate" ? "Building…" : "State log (PDF)"}

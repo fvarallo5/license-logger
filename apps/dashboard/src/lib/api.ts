@@ -328,6 +328,26 @@ export async function qboStatus(sb: SupabaseClient, schoolId: string): Promise<Q
   return rows?.[0] ?? null;
 }
 
+/** Starts Intuit OAuth via qbo-connect edge function. Returns authorize URL. */
+export async function qboConnect(sb: SupabaseClient, schoolId: string): Promise<{ url: string } | { notDeployed: true; message: string }> {
+  const { data, error } = await sb.functions.invoke("qbo-connect", { body: { school_id: schoolId } });
+  if (!error) {
+    const url = (data as { url?: string } | null)?.url;
+    if (url) return { url };
+    return { notDeployed: true, message: "qbo-connect returned no URL." };
+  }
+  const e = error as { name?: string; context?: { status?: number } };
+  if (e.context?.status === 404 || e.name === "FunctionsFetchError" || e.name === "FunctionsRelayError") {
+    return { notDeployed: true, message: "QuickBooks connect isn't deployed yet." };
+  }
+  throw error;
+}
+
+export async function qboSyncNow(sb: SupabaseClient, schoolId: string): Promise<void> {
+  const { error } = await sb.functions.invoke("qbo-sync", { body: { school_id: schoolId } });
+  if (error) throw error;
+}
+
 // ---------- board (cars + offline-aware lesson marks) ----------
 export async function listCars(sb: SupabaseClient, schoolId: string): Promise<Car[]> {
   return check(
