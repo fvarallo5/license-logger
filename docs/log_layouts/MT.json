@@ -1,0 +1,129 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "MT",
+  "state_name": "Montana",
+  "kind": "full_log",
+  "form": {
+    "name": "Practice Driving Log",
+    "number": "",
+    "revision": "",
+    "source_pdf": "MT_teen-driving-log.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://mvdmt.gov/wp-content/uploads/2023/10/MV-TD-Teen-Driving-Log.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "PRACTICE DRIVING LOG",
+  "header_fields": [
+    {
+      "label": "This Driving Log belongs to:",
+      "value": "student_name"
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.8
+            },
+            {
+              "label": "Conditions & Skills EX: intersections, full stops, yields, scanning for hazards",
+              "key": "conditions_skills",
+              "w": 2
+            },
+            {
+              "label": "Amount of Time",
+              "key": "amount",
+              "w": 0.8
+            },
+            {
+              "label": "Initials",
+              "key": "supervisor_initials",
+              "w": 0.6
+            }
+          ]
+        },
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.8
+            },
+            {
+              "label": "Conditions & Skills EX: intersections, full stops, yields, scanning for hazards",
+              "key": "conditions_skills",
+              "w": 2
+            },
+            {
+              "label": "Amount of Time",
+              "key": "amount",
+              "w": 0.8
+            },
+            {
+              "label": "Initials",
+              "key": "supervisor_initials",
+              "w": 0.6
+            }
+          ]
+        }
+      ],
+      "rows": 24,
+      "rows_first": 24,
+      "page_total": {
+        "label": "TOTAL TIME",
+        "sum": [
+          "amount"
+        ]
+      }
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Parent/Guardian",
+        "value": ""
+      },
+      {
+        "label": "Teen Driver",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "The file is catalogued as MV-TD (state_logs.csv); no number is printed on the page.",
+    "Two side-by-side column sets of about 24 rows; one TOTAL TIME box under the right-hand set.",
+    "The form prints no certification sentence, only the two signature lines."
+  ],
+  "acceptance": {
+    "mode": "accepted",
+    "basis": "Use this log to track your teen’s 50 hours of practice driving (including 10 hours at night) OR consider using a mobile application log",
+    "source": "MT_teen-driving-log.pdf p.1"
+  }
+}

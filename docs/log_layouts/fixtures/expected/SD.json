@@ -1,0 +1,270 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "SD",
+ "state_name": "South Dakota",
+ "kind": "full_log",
+ "title": "Supervised Driving Log",
+ "subtitle": "",
+ "form_label": "(Rev. 04-22-21)",
+ "source_pdf": "SD_supervised-driving-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official South Dakota Supervised Driving Log + Affidavit of Completion of Required Supervised Driving; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Two side-by-side column sets of about 25 rows; the affidavit is a separate one-page form (Rev. 04-22-2021), reproduced after the log.",
+  "Inclement Weather Minutes are LicenseLogger's weather minutes (minutes of drives tagged with bad weather)."
+ ],
+ "unfillable": [],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Student Name:",
+       "value": "Maya Lopez"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 25,
+      "total": {
+       "label": "TOTALS",
+       "cells": [
+        [
+         "",
+         "105",
+         "115",
+         "235",
+         ""
+        ],
+        [
+         "",
+         "0",
+         "0",
+         "0",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Inclement Weather Minutes",
+          "group": "",
+          "w": 0.8,
+          "key": "weather_amount"
+         },
+         {
+          "label": "Night Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "night_amount"
+         },
+         {
+          "label": "Day Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "day_amount"
+         },
+         {
+          "label": "Skills Practiced",
+          "group": "",
+          "w": 1.8,
+          "key": "skills"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "",
+          "",
+          "90",
+          "Parking lot, Backing"
+         ],
+         [
+          "9/30/26",
+          "",
+          "",
+          "45",
+          ""
+         ],
+         [
+          "10/12/26",
+          "",
+          "20",
+          "30",
+          "Stops, Left turns, Parking"
+         ],
+         [
+          "10/12/26",
+          "105",
+          "35",
+          "70",
+          "Highway merge, Lane changes, Following distance"
+         ],
+         [
+          "10/18/26",
+          "",
+          "60",
+          "",
+          "Night driving, Headlights"
+         ]
+        ]
+       },
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Inclement Weather Minutes",
+          "group": "",
+          "w": 0.8,
+          "key": "weather_amount"
+         },
+         {
+          "label": "Night Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "night_amount"
+         },
+         {
+          "label": "Day Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "day_amount"
+         },
+         {
+          "label": "Skills Practiced",
+          "group": "",
+          "w": 1.8,
+          "key": "skills"
+         }
+        ],
+        "rows": []
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Inc. Weather:",
+       "value": "105"
+      },
+      {
+       "label": "Night:",
+       "value": "115"
+      },
+      {
+       "label": "Day:",
+       "value": "235"
+      },
+      {
+       "label": "Total Minutes:",
+       "value": "350"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "AFFIDAVIT OF COMPLETION OF REQUIRED SUPERVISED DRIVING"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I certify that (minor) Maya Lopez, has completed 50 hours of *adult supervised driving since the issuance of the Learner’s Permit. Of the 50 hours, 10 have been in inclement weather and 10 have been after dark."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parent/Guardian Name (Please Print)",
+       "value": ""
+      },
+      {
+       "label": "Parent/Guardian Signature",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      },
+      {
+       "label": "Driver Examiner Signature/Number",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "notary",
+     "title": "OR",
+     "text": "This form must be signed in front of a notary of the public or South Dakota driver license examiner.",
+     "lines": [
+      "Notary",
+      "(SEAL)",
+      "Commission Expires:"
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "350"
+      },
+      {
+       "label": "Day",
+       "value": "235"
+      },
+      {
+       "label": "Night",
+       "value": "115"
+      },
+      {
+       "label": "Bad weather",
+       "value": "105"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

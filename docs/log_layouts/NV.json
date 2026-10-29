@@ -1,0 +1,188 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "NV",
+  "state_name": "Nevada",
+  "kind": "full_log",
+  "form": {
+    "name": "Beginning Driver Experience Log",
+    "number": "DLD130",
+    "revision": "1/2023",
+    "source_pdf": "NV_DLD-130.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://dmv.nv.gov/pdfforms/dld130.pdf",
+    "extra_sources": [
+      {
+        "pdf": "NV_DLD-130A-additional-sheet.pdf",
+        "pages": [
+          1
+        ],
+        "role": "additional sheet",
+        "url": "https://dmv.nv.gov/pdfforms/dld130a.pdf"
+      }
+    ]
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Beginning Driver Experience Log",
+  "header_fields": [
+    {
+      "label": "Applicant’s Name",
+      "value": "student_name"
+    },
+    {
+      "label": "Instruction Permit or Restricted License No.",
+      "value": "permit_number"
+    }
+  ],
+  "amount_format": "minutes",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "day",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Begin",
+              "key": "start_time",
+              "w": 0.8,
+              "group": "Time of Day Please indicate AM or PM Do not use military time"
+            },
+            {
+              "label": "End",
+              "key": "end_time",
+              "w": 0.8,
+              "group": "Time of Day Please indicate AM or PM Do not use military time"
+            },
+            {
+              "label": "Minutes",
+              "key": "amount",
+              "w": 0.7
+            }
+          ],
+          "title": "Column A- Daytime Driving"
+        },
+        {
+          "filter": "night",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Begin",
+              "key": "start_time",
+              "w": 0.8,
+              "group": "Time of Day Please indicate AM or PM Do not use military time"
+            },
+            {
+              "label": "End",
+              "key": "end_time",
+              "w": 0.8,
+              "group": "Time of Day Please indicate AM or PM Do not use military time"
+            },
+            {
+              "label": "Minutes",
+              "key": "amount",
+              "w": 0.7
+            }
+          ],
+          "title": "Column B – Nighttime Driving"
+        }
+      ],
+      "rows": 17,
+      "rows_first": 17,
+      "title": "Beginning Driver Experience Log",
+      "page_total": {
+        "label": "Subtotal",
+        "sum": [
+          "amount"
+        ]
+      },
+      "example_row": "01/17/23 EXAMPLE | 6:00 am | 8:00 am | 120"
+    }
+  ],
+  "summary": [
+    {
+      "label": "Subtotal Column A",
+      "value": "day_minutes"
+    },
+    {
+      "label": "Subtotal Column B",
+      "value": "night_minutes"
+    },
+    {
+      "label": "Minutes Subtotal from Additional Sheets",
+      "value": ""
+    },
+    {
+      "label": "Total Minutes",
+      "value": "total_minutes"
+    },
+    {
+      "label": "Total Hours (Divide Total Minutes by 60)",
+      "value": "total_hours"
+    }
+  ],
+  "certification": {
+    "title": "Parent/Legal Guardian Certification of Behind-The-Wheel Driver Experience",
+    "text": "I, the undersigned, do hereby certify that I am the ______ of the person named above, and that he/she has completed the required number of hours of behind-the-wheel driving experience with a restricted license, instruction permit, or restricted permit issued pursuant to NRS 483.267. 483.270 or 483.280.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of Parent/Legal Guardian",
+        "value": ""
+      },
+      {
+        "label": "License/ID Number",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      },
+      {
+        "label": "Signature of Notary Public or Field Services Representative",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "before_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Relationship (blank in the certification sentence)",
+    "FOR DEPARTMENT USE ONLY section",
+    "Minutes Subtotal from Additional Sheets (this copy lists every drive)"
+  ],
+  "notes": [
+    "Page 1 is the certification (parent signs; notary or DMV Field Services representative signs); page 2 is the log with Column A (daytime) and Column B (nighttime), about 17 rows each, then the DLD-130A additional sheet.",
+    "Each drive goes on its own line. A drive with both day and night minutes is split: the day part in Column A and the night part in Column B, with begin/end times split at the day/night boundary (evening drives: day first; drives starting before noon: night first).",
+    "Times use AM/PM; the form rejects military time."
+  ],
+  "acceptance": {
+    "mode": "transfer",
+    "basis": "Only the DLD-130 or the RoadReady app log is accepted; signatures must be originals and photocopies are not acceptable.",
+    "source": "state_logs.csv (NV other_rules) and NV_DLD-130.pdf p.1"
+  }
+}

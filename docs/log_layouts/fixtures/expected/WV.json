@@ -1,0 +1,213 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "WV",
+ "state_name": "West Virginia",
+ "kind": "full_log",
+ "title": "50-Hour Certification Log for Driver’s License Applicants Under Age 18",
+ "subtitle": "",
+ "form_label": "DMV-10-GDL (REV 09/14)",
+ "source_pdf": "WV_DMV-GDL-10.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official West Virginia DMV-10-GDL 50-Hour Certification Log for Driver's License Applicants Under Age 18; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The title is part of the header graphic (not in the PDF text layer); read from the rendered page.",
+  "About 12 rows per page after the printed example rows. The certification sentence continues 'Under penalty of perjury, I ...' and is cut off in the PDF text layer; check the printed form."
+ ],
+ "unfillable": [
+  "DRIVER’S LICENSE NUMBER OF PARENT/GUARDIAN"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "NAME",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "PERMIT NUMBER",
+       "value": "A1234567"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 12,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.8,
+          "key": "date"
+         },
+         {
+          "label": "Location of Practice",
+          "group": "",
+          "w": 1.4,
+          "key": "location"
+         },
+         {
+          "label": "Time Period",
+          "group": "",
+          "w": 1.2,
+          "key": "time_range"
+         },
+         {
+          "label": "Weather Conditions",
+          "group": "",
+          "w": 1,
+          "key": "weather"
+         },
+         {
+          "label": "Daytime",
+          "group": "Time Spent",
+          "w": 0.8,
+          "key": "day_amount"
+         },
+         {
+          "label": "Nighttime",
+          "group": "Time Spent",
+          "w": 0.8,
+          "key": "night_amount"
+         },
+         {
+          "label": "Initials of Supervising Adult Driver",
+          "group": "",
+          "w": 0.9,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "Mueller to Pflugerville",
+          "10:00 AM - 11:30 AM",
+          "Sunny",
+          "1.5",
+          "",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "",
+          "4:05 PM - 4:50 PM",
+          "",
+          "0.75",
+          "",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "Home - Mueller",
+          "6:15 AM - 7:05 AM",
+          "",
+          "0.5",
+          "0.33",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "Mueller to Round Rock",
+          "5:40 PM - 7:25 PM",
+          "Light rain",
+          "1.17",
+          "0.58",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "Home - Mueller",
+          "7:10 PM - 8:10 PM",
+          "",
+          "",
+          "1",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Enter total practice hours here.",
+       "value": "5.83"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I hereby certify that Maya Lopez who bears instruction permit number A1234567 has completed a minimum of 50 hours of behind-the-wheel practice and is under the supervision of an adult 21 years of age or older with a current valid driver’s license."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "SIGNATURE OF PARENT OR GUARDIAN",
+       "value": ""
+      },
+      {
+       "label": "DRIVER’S LICENSE NUMBER OF PARENT/GUARDIAN",
+       "value": ""
+      },
+      {
+       "label": "DATE",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5.83"
+      },
+      {
+       "label": "Day",
+       "value": "3.92"
+      },
+      {
+       "label": "Night",
+       "value": "1.92"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1.75"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (0.67)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

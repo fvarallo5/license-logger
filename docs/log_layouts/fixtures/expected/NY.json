@@ -1,0 +1,291 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "NY",
+ "state_name": "New York",
+ "kind": "certification",
+ "title": "CERTIFICATION OF SUPERVISED DRIVING",
+ "subtitle": "",
+ "form_label": "MV-262 (3/25)",
+ "source_pdf": "NY_MV-262.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official New York MV-262 Certification of Supervised Driving; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The certification continues with the driving-school and regional-restriction clauses and a falsification warning; only its first two sentences are quoted here.",
+  "The driving-school table is for hours certified by a school; LicenseLogger leaves it blank."
+ ],
+ "unfillable": [
+  "Address",
+  "Driving school table (completed and signed by the school)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Applicant Name",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "Learner Permit ID Number",
+       "value": "A1234567"
+      },
+      {
+       "label": "Address",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "CERTIFICATION"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I certify that I am the parent/guardian or representative of a government agency or facility. I also certify that the applicant has completed at least 50 hours of supervised driving, including 15 hours after sunset."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Printed Name of Parent/Guardian or Representative of a Government Agency/Facility",
+       "value": ""
+      },
+      {
+       "label": "Signature of Parent/Guardian or Representative of a Government Agency/Facility",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      },
+      {
+       "label": "Name of Government Facility (if applicable)",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 9,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Name of School",
+          "group": "",
+          "w": 1.4,
+          "key": "blank"
+         },
+         {
+          "label": "Driving School License Number",
+          "group": "",
+          "w": 1,
+          "key": "blank"
+         },
+         {
+          "label": "Instructor’s Name",
+          "group": "",
+          "w": 1.2,
+          "key": "blank"
+         },
+         {
+          "label": "Instructor Certificate Number",
+          "group": "",
+          "w": 1,
+          "key": "blank"
+         },
+         {
+          "label": "Number of Hours Certified",
+          "group": "",
+          "w": 0.8,
+          "key": "blank"
+         },
+         {
+          "label": "Administrator or Owner or Instructor’s Signature",
+          "group": "",
+          "w": 1.4,
+          "key": "blank"
+         }
+        ],
+        "rows": []
+       }
+      ]
+     }
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Supporting drive record (LicenseLogger; not part of the official form)"
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 5,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Start",
+          "group": "",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "End",
+          "group": "",
+          "w": 0.8,
+          "key": "end_time"
+         },
+         {
+          "label": "Time",
+          "group": "",
+          "w": 0.9,
+          "key": "amount"
+         },
+         {
+          "label": "Night",
+          "group": "",
+          "w": 0.9,
+          "key": "night_amount"
+         },
+         {
+          "label": "Weather",
+          "group": "",
+          "w": 0.9,
+          "key": "weather"
+         },
+         {
+          "label": "Supervisor",
+          "group": "",
+          "w": 1.6,
+          "key": "supervisor_name"
+         },
+         {
+          "label": "Initials",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "11:30 AM",
+          "1 hr 30 min",
+          "",
+          "Sunny",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "4:50 PM",
+          "45 min",
+          "",
+          "",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "6:15 AM",
+          "7:05 AM",
+          "50 min",
+          "20 min",
+          "",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "7:25 PM",
+          "1 hr 45 min",
+          "35 min",
+          "Light rain",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "8:10 PM",
+          "1 hr",
+          "1 hr",
+          "",
+          "Ana Lopez",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "license-logger",
+  "private": true,
+  "version": "0.1.0",
+  "description": "LicenseLogger monorepo — school desk PWA, Flutter phone app, Supabase backend",
+  "workspaces": [
+    "apps/dashboard"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/dashboard",
+    "demo": "npm run demo -w apps/dashboard",
+    "build": "npm run build -w apps/dashboard",
+    "test": "npm run test -w apps/dashboard",
+    "lint": "npm run lint -w apps/dashboard",
+    "typecheck": "npm run typecheck -w apps/dashboard",
+    "format": "npm run format -w apps/dashboard",
+    "format:check": "npm run format:check -w apps/dashboard",
+    "ci": "npm run ci -w apps/dashboard"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

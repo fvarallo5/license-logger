@@ -1,0 +1,198 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "MA",
+ "state_name": "Massachusetts",
+ "kind": "full_log",
+ "title": "Supervised Driving Log",
+ "subtitle": "",
+ "form_label": "",
+ "source_pdf": "MA_supervised-driving-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Massachusetts Supervised Driving Log + Class D or M Road Test Application (section B); check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The log is optional tracking; the parent certifies the hours in section B of the Road Test Application. Only the hours lines of section B are reproduced; sign the official application."
+ ],
+ "unfillable": [
+  "Driving Environment (LicenseLogger does not record road type)",
+  "The rest of the Road Test Application (sections A and C)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 13,
+      "total": {
+       "label": "Total Hours this sheet",
+       "cells": [
+        [
+         "",
+         "5 hr 50 min",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date & Time",
+          "group": "",
+          "w": 1.2,
+          "key": "date_time"
+         },
+         {
+          "label": "Driving Time (Hours/Minutes)",
+          "group": "",
+          "w": 1,
+          "key": "amount"
+         },
+         {
+          "label": "Day or Night",
+          "group": "",
+          "w": 0.8,
+          "key": "day_or_night"
+         },
+         {
+          "label": "Driving Environment (ex. rural, highway, city)",
+          "group": "",
+          "w": 1.5,
+          "key": "blank"
+         },
+         {
+          "label": "Weather Conditions",
+          "group": "",
+          "w": 1,
+          "key": "weather"
+         },
+         {
+          "label": "Skills Practiced",
+          "group": "",
+          "w": 2,
+          "key": "skills"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26 10:00 AM",
+          "1 hr 30 min",
+          "Day",
+          "",
+          "Sunny",
+          "Parking lot, Backing"
+         ],
+         [
+          "9/30/26 4:05 PM",
+          "45 min",
+          "Day",
+          "",
+          "",
+          ""
+         ],
+         [
+          "10/12/26 6:15 AM",
+          "50 min",
+          "Day + Night",
+          "",
+          "",
+          "Stops, Left turns, Parking"
+         ],
+         [
+          "10/12/26 5:40 PM",
+          "1 hr 45 min",
+          "Day + Night",
+          "",
+          "Light rain",
+          "Highway merge, Lane changes, Following distance"
+         ],
+         [
+          "10/18/26 7:10 PM",
+          "1 hr",
+          "Night",
+          "",
+          "",
+          "Night driving, Headlights"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "B. Parent/Guardian Consent for Applicants under the age of 18:"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "1. The applicant has completed the additional 40 hours of required supervised driving."
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "2. Completion of Skills Program: The applicant has completed the additional 30 hours of required supervised driving and successfully completed an RMV approved driver skills development program.  2. Parent/Guardian Signature: ______"
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "1. Parent/Guardian Signature:",
+       "value": ""
+      },
+      {
+       "label": "Printed Name:",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

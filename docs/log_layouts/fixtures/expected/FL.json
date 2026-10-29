@@ -1,0 +1,219 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "FL",
+ "state_name": "Florida",
+ "kind": "certification",
+ "title": "CERTIFICATION OF DRIVING EXPERIENCE OF A MINOR",
+ "subtitle": "STATE OF FLORIDA DEPARTMENT OF HIGHWAY SAFETY AND MOTOR VEHICLES",
+ "form_label": "HSMV 71143 (Rev 01/11)",
+ "source_pdf": "FL_HSMV71143.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Florida HSMV 71143 Certification of Driving Experience of a Minor; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The name blank is printed as 'First Middle Last'; LicenseLogger writes the name on file."
+ ],
+ "unfillable": [],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I do hereby certify that Maya Lopez, a minor, date of birth 3/9/10, has driven a minimum of 50 hours during the past 12 months, of which 10 hours of driving were at night per Section 322.05(3), Florida Statutes."
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "INSTRUCTIONS: 1. One parent, legal guardian, or other responsible adult 21 years old or older must sign this form. 2. All signatures must be notarized or witnessed by an examiner."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Signature of Parent, Legal Guardian or Responsible Adult",
+       "value": ""
+      },
+      {
+       "label": "Print Name",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "notary",
+     "title": "STATE OF FLORIDA",
+     "text": "COUNTY OF ______ Sworn to (or affirmed) and subscribed before me this ____day of ______, 20____, by ______ who is personally known to me or produced identification. ______ as proof of identification. (Identification type and number)",
+     "lines": [
+      "Notary Public or DL Examiner-Signature",
+      "Print, Type, or Stamp Commissioned Name of Notary Public"
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Supporting drive record (LicenseLogger; not part of the official form)"
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 5,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Start",
+          "group": "",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "End",
+          "group": "",
+          "w": 0.8,
+          "key": "end_time"
+         },
+         {
+          "label": "Time",
+          "group": "",
+          "w": 0.9,
+          "key": "amount"
+         },
+         {
+          "label": "Night",
+          "group": "",
+          "w": 0.9,
+          "key": "night_amount"
+         },
+         {
+          "label": "Weather",
+          "group": "",
+          "w": 0.9,
+          "key": "weather"
+         },
+         {
+          "label": "Supervisor",
+          "group": "",
+          "w": 1.6,
+          "key": "supervisor_name"
+         },
+         {
+          "label": "Initials",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "11:30 AM",
+          "1 hr 30 min",
+          "",
+          "Sunny",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "4:50 PM",
+          "45 min",
+          "",
+          "",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "6:15 AM",
+          "7:05 AM",
+          "50 min",
+          "20 min",
+          "",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "7:25 PM",
+          "1 hr 45 min",
+          "35 min",
+          "Light rain",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "8:10 PM",
+          "1 hr",
+          "1 hr",
+          "",
+          "Ana Lopez",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

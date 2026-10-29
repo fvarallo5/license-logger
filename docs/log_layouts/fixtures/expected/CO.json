@@ -1,0 +1,226 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "CO",
+ "state_name": "Colorado",
+ "kind": "full_log",
+ "title": "Drive Time Log Sheet",
+ "subtitle": "",
+ "form_label": "DR 2324 (08/25/26)",
+ "source_pdf": "CO_DR2324-drive-time-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Colorado DR 2324 Drive Time Log Sheet; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Each of the 14 entries on the official page 2 has its own 'Comments' line; LicenseLogger writes the skills practiced there (the form calls comments optional).",
+  "The official page 1 prints 'Must be at least 10 hours' beside TOTAL DAY DRIVING TIME and 'Must be at least 50 hours' beside GRAND TOTAL; the instructions say the 10 hours are NIGHT hours. We copy the boxes, not the misplaced hints.",
+  "'Page __ of __' on the log page is filled with the page count of this copy."
+ ],
+ "unfillable": [],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Student’s name",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "Permit number",
+       "value": "A1234567"
+      }
+     ]
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "TOTAL DAY DRIVING TIME",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "TOTAL NIGHT DRIVING TIME",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "GRAND TOTAL DRIVING TIME (NIGHT + DAY)",
+       "value": "5 hr 50 min"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "Please check all totals prior to signing. By signing below, I certify that the above total hours of driving experience is true and accurate."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Name",
+       "value": ""
+      },
+      {
+       "label": "Signature",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "DRIVE LOGS",
+      "row_count": 14,
+      "total": {
+       "label": "Totals for this page",
+       "cells": [
+        [
+         "",
+         "",
+         "3 hr 55 min",
+         "1 hr 55 min",
+         "5 hr 50 min",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Verifier’s Initials",
+          "group": "",
+          "w": 0.9,
+          "key": "supervisor_initials"
+         },
+         {
+          "label": "Day Driving Time",
+          "group": "",
+          "w": 1,
+          "key": "day_amount"
+         },
+         {
+          "label": "Night Driving Time",
+          "group": "",
+          "w": 1,
+          "key": "night_amount"
+         },
+         {
+          "label": "Grand Total Driving Time",
+          "group": "",
+          "w": 1,
+          "key": "amount"
+         },
+         {
+          "label": "Comments",
+          "group": "",
+          "w": 2.2,
+          "key": "skills"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "AL",
+          "1 hr 30 min",
+          "",
+          "1 hr 30 min",
+          "Parking lot, Backing"
+         ],
+         [
+          "9/30/26",
+          "CL",
+          "45 min",
+          "",
+          "45 min",
+          ""
+         ],
+         [
+          "10/12/26",
+          "AL",
+          "30 min",
+          "20 min",
+          "50 min",
+          "Stops, Left turns, Parking"
+         ],
+         [
+          "10/12/26",
+          "CL",
+          "1 hr 10 min",
+          "35 min",
+          "1 hr 45 min",
+          "Highway merge, Lane changes, Following distance"
+         ],
+         [
+          "10/18/26",
+          "AL",
+          "",
+          "1 hr",
+          "1 hr",
+          "Night driving, Headlights"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

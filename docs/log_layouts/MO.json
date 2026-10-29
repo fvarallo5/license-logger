@@ -1,0 +1,86 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "MO",
+  "state_name": "Missouri",
+  "kind": "full_log",
+  "form": {
+    "name": "Driver Experience Log",
+    "number": "Form 4901",
+    "revision": "Revised 02-2014",
+    "source_pdf": "MO_4901-driver-experience-log.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://dor.mo.gov/forms/4901.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Driver Experience Log",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 1
+            },
+            {
+              "label": "Start Time",
+              "key": "start_time",
+              "w": 1
+            },
+            {
+              "label": "End Time",
+              "key": "end_time",
+              "w": 1
+            },
+            {
+              "label": "Total Time",
+              "key": "amount",
+              "w": 1
+            },
+            {
+              "label": "Trainer’s Name",
+              "key": "supervisor_name",
+              "w": 1.6
+            }
+          ]
+        }
+      ],
+      "rows": 20,
+      "rows_first": 20,
+      "page_total": {
+        "label": "Grand Total",
+        "sum": [
+          "amount"
+        ]
+      }
+    }
+  ],
+  "summary": [],
+  "certification": null,
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "One page, about 20 rows, a Grand Total box and no signature lines (the parent accompanies the teen to the license office)."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

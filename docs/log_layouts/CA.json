@@ -1,0 +1,125 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "CA",
+  "state_name": "California",
+  "kind": "full_log",
+  "form": {
+    "name": "Supervised Driving Log",
+    "number": "",
+    "revision": "",
+    "source_pdf": "CA_supervised-driving-log.pdf",
+    "source_pages": [
+      1,
+      2,
+      3
+    ],
+    "url": "https://www.dmv.ca.gov/portal/file/supervised-driving-log-pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      378,
+      603
+    ],
+    "orientation": "portrait"
+  },
+  "title": "SUPERVISED DRIVING LOG",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Driving Skills Practiced",
+              "key": "skills_abbrev",
+              "w": 2.6
+            },
+            {
+              "label": "DAY",
+              "key": "day_amount",
+              "w": 0.9,
+              "group": "Driving Time Hours/Minutes 30 min, 1hr, etc."
+            },
+            {
+              "label": "NIGHT",
+              "key": "night_amount",
+              "w": 0.9,
+              "group": "Driving Time Hours/Minutes 30 min, 1hr, etc."
+            },
+            {
+              "label": "Skills needing more practice (use abbrev.)",
+              "key": "blank",
+              "w": 1.3
+            },
+            {
+              "label": "Adult’s Initials",
+              "key": "supervisor_initials",
+              "w": 0.9
+            }
+          ]
+        }
+      ],
+      "rows": 21,
+      "rows_first": 10,
+      "page_total": {
+        "label": "TOTAL PRACTICE TIME",
+        "sum": [
+          "day_amount",
+          "night_amount"
+        ]
+      },
+      "example_row": "1/16 Sample - SSC, LC, BUC, RT, LT | 1 hr. | 30 min. | BUC, LC | Mom"
+    }
+  ],
+  "summary": [
+    {
+      "label": "TOTAL PRACTICE TIME",
+      "value": "total"
+    }
+  ],
+  "certification": null,
+  "cert_position": "after_log",
+  "legend": "All skills in each level should be mastered before attempting the next level. Level I: Backing Up the Car (BUC), Driving a “Stick” (DS), Lane Choice and Control (LCC), Left Turn/Right Turn (LT/RT), Looking Ahead in Traffic (LAT), Starting and Stopping the Car (SSC). Level II: Intersections (I), Keeping Space Around the Car (KSAC), Lane Changes (LC), Practicing in Traffic (PT). Level III: Parking on Hills (PH), Parallel Parking (PP), U-Turn (UT). Level IV: Freeway Driving (FD), Night Driving (ND), Special Problems and Emergencies (SPE).",
+  "abbrev": {
+    "Backing": "BUC",
+    "Backing up": "BUC",
+    "Left turns": "LT",
+    "Unprotected lefts": "LT",
+    "Right turns": "RT",
+    "Lane changes": "LC",
+    "Intersections": "I",
+    "Following distance": "KSAC",
+    "Highway": "FD",
+    "Freeway": "FD",
+    "Highway merge": "FD",
+    "Night driving": "ND",
+    "Parallel parking": "PP",
+    "Hill parking": "PH",
+    "U-turn": "UT",
+    "U-turns": "UT",
+    "Stops": "SSC",
+    "Heavy traffic": "PT"
+  },
+  "unfillable": [
+    "Skills needing more practice (use abbrev.)"
+  ],
+  "notes": [
+    "The DMV log has no name, permit or signature fields; the parent certifies the hours on the teen's permit, not on this log.",
+    "Page 1 has 10 entry rows after the printed sample row; pages 2-3 have 21 rows (counted from the PDF rules).",
+    "Skills are written with the form's own abbreviations where a LicenseLogger skill matches one; anything else is written out."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

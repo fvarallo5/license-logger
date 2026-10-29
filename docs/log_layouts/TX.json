@@ -1,0 +1,126 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "TX",
+  "state_name": "Texas",
+  "kind": "full_log",
+  "form": {
+    "name": "Driver Education 30 Hour Behind the Wheel Log",
+    "number": "DES150N",
+    "revision": "December 2024",
+    "source_pdf": "TX_DES150N.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://www.tdlr.texas.gov/driver/files/DES150N-Texas-30-Hour-Behind-the-Wheel-Log.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "DRIVER EDUCATION 30 HOUR BEHIND THE WHEEL LOG",
+  "header_fields": [
+    {
+      "label": "Student’s Name:",
+      "value": "student_name"
+    },
+    {
+      "label": "DL #:",
+      "value": "permit_number"
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Lesson Time",
+              "key": "blank",
+              "w": 0.7
+            },
+            {
+              "label": "Practice Session",
+              "key": "blank",
+              "w": 1.5
+            },
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.8
+            },
+            {
+              "label": "Time (am/pm)",
+              "key": "start_time",
+              "w": 0.8
+            },
+            {
+              "label": "Daytime Hours",
+              "key": "day_amount",
+              "w": 0.8
+            },
+            {
+              "label": "Nighttime Hours",
+              "key": "night_amount",
+              "w": 0.8
+            },
+            {
+              "label": "Adult’s Signature and DL #",
+              "key": "blank",
+              "w": 1.9
+            }
+          ]
+        }
+      ],
+      "rows": 32,
+      "rows_first": 32,
+      "page_total": {
+        "label": "TOTAL",
+        "sum": [
+          "day_amount",
+          "night_amount"
+        ]
+      }
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "I certify and endorse that the above record is true and correct and my student has completed 30 hours of guided practice which includes at least 10 hours at nighttime.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Parent/Guardian’s Signature (if over 18 years of age student’s signature)",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Lesson Time and Practice Session (the form pre-prints 10 sessions with 32 slots and set day/night amounts; copy each drive into the matching session row)",
+    "Adult’s Signature and DL # on every row"
+  ],
+  "notes": [
+    "Only two (2) hours of behind-the-wheel instruction per day count toward the 30 hours (printed on the form); totals use LicenseLogger's capped credit.",
+    "LicenseLogger lists drives in date order; it does not assign drives to the form's pre-printed lesson sessions."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

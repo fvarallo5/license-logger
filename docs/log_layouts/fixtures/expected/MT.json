@@ -1,0 +1,203 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "MT",
+ "state_name": "Montana",
+ "kind": "full_log",
+ "title": "PRACTICE DRIVING LOG",
+ "subtitle": "",
+ "form_label": "",
+ "source_pdf": "MT_teen-driving-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Montana Practice Driving Log. Montana accepts other log formats: \"Use this log to track your teen’s 50 hours of practice driving (including 10 hours at night) OR consider using a mobile application log\" (MT_teen-driving-log.pdf p.1).",
+ "disclaimer_mode": "accepted",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The file is catalogued as MV-TD (state_logs.csv); no number is printed on the page.",
+  "Two side-by-side column sets of about 24 rows; one TOTAL TIME box under the right-hand set.",
+  "The form prints no certification sentence, only the two signature lines."
+ ],
+ "unfillable": [],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "This Driving Log belongs to:",
+       "value": "Maya Lopez"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 24,
+      "total": {
+       "label": "TOTAL TIME",
+       "cells": [
+        [
+         "",
+         "",
+         "5 hr 50 min",
+         ""
+        ],
+        [
+         "",
+         "",
+         "0 min",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.8,
+          "key": "date"
+         },
+         {
+          "label": "Conditions & Skills EX: intersections, full stops, yields, scanning for hazards",
+          "group": "",
+          "w": 2,
+          "key": "conditions_skills"
+         },
+         {
+          "label": "Amount of Time",
+          "group": "",
+          "w": 0.8,
+          "key": "amount"
+         },
+         {
+          "label": "Initials",
+          "group": "",
+          "w": 0.6,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "Sunny, Dry, Parking lot, Backing",
+          "1 hr 30 min",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "Heavy traffic",
+          "45 min",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "Stops, Left turns, Parking",
+          "50 min",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "Wet, Light rain, Highway merge, Lane changes, Following distance",
+          "1 hr 45 min",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "Dry, Night, Night driving, Headlights",
+          "1 hr",
+          "AL"
+         ]
+        ]
+       },
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.8,
+          "key": "date"
+         },
+         {
+          "label": "Conditions & Skills EX: intersections, full stops, yields, scanning for hazards",
+          "group": "",
+          "w": 2,
+          "key": "conditions_skills"
+         },
+         {
+          "label": "Amount of Time",
+          "group": "",
+          "w": 0.8,
+          "key": "amount"
+         },
+         {
+          "label": "Initials",
+          "group": "",
+          "w": 0.6,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": []
+       }
+      ]
+     }
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parent/Guardian",
+       "value": ""
+      },
+      {
+       "label": "Teen Driver",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

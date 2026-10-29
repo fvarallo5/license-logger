@@ -1,0 +1,227 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "WY",
+ "state_name": "Wyoming",
+ "kind": "full_log",
+ "title": "BEHIND-THE-WHEEL DRIVING LOG",
+ "subtitle": "",
+ "form_label": "FSGDL-01 (20190620)",
+ "source_pdf": "WY_btw-driving-log-optional.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Wyoming FSGDL-01 Behind-the-Wheel Driving Log (optional) + Behind-the-Wheel Driving Certification; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The log (09/06/13) is optional; the FSGDL-01 certification is the required form and is reproduced after the log.",
+  "'TOTAL FOR DATE' is per drive here; two drives on one date appear on two lines."
+ ],
+ "unfillable": [],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "NAME",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "DATE OF BIRTH",
+       "value": "3/9/10"
+      },
+      {
+       "label": "DRIVER LICENSE NUMBER",
+       "value": "A1234567"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 23,
+      "total": {
+       "label": "TOTAL DAY DRIVING HOURS: TOTAL NIGHT DRIVING HOURS:",
+       "cells": [
+        [
+         "",
+         "3.92",
+         "1.92",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "DATE",
+          "group": "",
+          "w": 1,
+          "key": "date"
+         },
+         {
+          "label": "TIME DAY DRIVING",
+          "group": "",
+          "w": 1,
+          "key": "day_amount"
+         },
+         {
+          "label": "TIME NIGHT DRIVING",
+          "group": "",
+          "w": 1,
+          "key": "night_amount"
+         },
+         {
+          "label": "TOTAL FOR DATE",
+          "group": "",
+          "w": 1,
+          "key": "amount"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "1.5",
+          "",
+          "1.5"
+         ],
+         [
+          "9/30/26",
+          "0.75",
+          "",
+          "0.75"
+         ],
+         [
+          "10/12/26",
+          "0.5",
+          "0.33",
+          "0.83"
+         ],
+         [
+          "10/12/26",
+          "1.17",
+          "0.58",
+          "1.75"
+         ],
+         [
+          "10/18/26",
+          "",
+          "1",
+          "1"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "TOTAL DRIVING HOURS:",
+       "value": "5.83"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "BEHIND-THE-WHEEL DRIVING CERTIFICATION"
+    },
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Driver’s Name:",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "Date of Birth:",
+       "value": "3/9/10"
+      },
+      {
+       "label": "Driver License No.:",
+       "value": "A1234567"
+      }
+     ]
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Total Daytime Driving Hours:",
+       "value": "3.92"
+      },
+      {
+       "label": "Total Nighttime Driving Hours:",
+       "value": "1.92"
+      },
+      {
+       "label": "Total Driving Hours:",
+       "value": "5.83"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I, ______, legal parent/guardian of the above-named minor, do hereby certify that said minor has completed 50 hours of actual driving time, including at least 10 hours of nighttime driving as stated in W.S. 31-7-110(g)."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parent/Guardian Signature",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5.83"
+      },
+      {
+       "label": "Day",
+       "value": "3.92"
+      },
+      {
+       "label": "Night",
+       "value": "1.92"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1.75"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (0.67)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,147 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "PA",
+  "state_name": "Pennsylvania",
+  "kind": "full_log",
+  "form": {
+    "name": "Supervised Driving Log (PUB 385A) + Parent or Guardian Certification Form",
+    "number": "DL-180C",
+    "revision": "6-25",
+    "source_pdf": "PA_PUB385A-parents-supervised-driving-program.pdf",
+    "source_pages": [
+      27,
+      28
+    ],
+    "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bdl/bdl-publications/pub%20385a.pdf",
+    "extra_sources": [
+      {
+        "pdf": "PA_DL-180C.pdf",
+        "pages": [
+          1
+        ],
+        "role": "certification",
+        "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bdl/bdl-form/dl-180c.pdf"
+      }
+    ]
+  },
+  "page": {
+    "size": [
+      576,
+      756
+    ],
+    "orientation": "portrait"
+  },
+  "title": "SUPERVISED DRIVING LOG",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.8
+            },
+            {
+              "label": "Location of Practice (ex. rural, highway)",
+              "key": "location",
+              "w": 1.5
+            },
+            {
+              "label": "Day/Night",
+              "key": "day_or_night",
+              "w": 0.9
+            },
+            {
+              "label": "Weather",
+              "key": "weather",
+              "w": 0.8
+            },
+            {
+              "label": "Skills Practiced",
+              "key": "skills",
+              "w": 1.8
+            },
+            {
+              "label": "Driving Time",
+              "key": "amount",
+              "w": 0.8
+            },
+            {
+              "label": "Adult’s Initials",
+              "key": "supervisor_initials",
+              "w": 0.7
+            }
+          ]
+        }
+      ],
+      "rows": 28,
+      "rows_first": 28,
+      "page_total": {
+        "label": "TOTAL",
+        "sum": [
+          "amount"
+        ]
+      }
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "PARENT OR GUARDIAN CERTIFICATION FORM",
+    "text": "I hereby certify that this minor applicant has completed at least 65 hours of supervised practical driving experience, including (except for a motorcycle permit applicant *) 10 hours of nighttime driving and 5 hours of inclement weather driving. This behind-the-wheel experience was given by a licensed driver(s) 21 years of age or older.",
+    "fields": [
+      {
+        "label": "(PRINT NAME OF MINOR)",
+        "value": "student_name"
+      },
+      {
+        "label": "(LEARNER'S PERMIT NUMBER)",
+        "value": "permit_number"
+      }
+    ],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "(signature of parent, guardian, person in loco parentis or spouse at least 18 years of age)",
+        "value": ""
+      },
+      {
+        "label": "(print name as it appears in signature)",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "SIGN IN PRESENCE OF NOTARY, DRIVER LICENSE EXAMINER, END-OF-COURSE SKILL TEST TEACHER, CERTIFIED THIRD PARTY EXAMINER, OR MOTORCYCLE SAFETY INSTRUCTOR",
+      "text": "SUBSCRIBED AND SWORN TO BEFORE ME: MO. DAY YEAR",
+      "lines": [
+        "Signature of Person Administering Oath",
+        "EXAM CENTER",
+        "EXAMINER #",
+        "INSTRUCTOR #"
+      ]
+    },
+    "extra_text": "I hereby certify this minor has printed or viewed educational materials provided on PennDOT's website on the dangers of distracted driving."
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Weather column on the log is the weather tag; the 5 inclement-weather hours are totalled from LicenseLogger's weather minutes"
+  ],
+  "notes": [
+    "RoadReady template: 28 rows per page with a TOTAL row; the last page adds GRAND TOTAL.",
+    "'Day/Night' is a pair of check boxes on the form; LicenseLogger writes Day, Night or Day + Night.",
+    "'Location of Practice' gets the drive's start/end place names; the form's examples are road types (rural, highway).",
+    "The log is PUB 385A pages 27-28 (RoadReady template, optional); the certification is the separate DL-180C, reproduced after the log.",
+    "DL-180C has no totals boxes; LicenseLogger's computed totals (total, night, weather) appear only in the separate 'Computed by LicenseLogger' box."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "MD",
+  "state_name": "Maryland",
+  "kind": "full_log",
+  "form": {
+    "name": "Practice Log (Rookie Driver Skills Log)",
+    "number": "",
+    "revision": "",
+    "source_pdf": "MD_RD-006-rookie-driver-skills-log.pdf",
+    "source_pages": [
+      25,
+      26,
+      27,
+      28
+    ],
+    "url": "https://mva.maryland.gov/media/152/download",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      396,
+      612
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Practice Log",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Start Time",
+              "key": "start_time",
+              "w": 0.9
+            },
+            {
+              "label": "Skill/Activity",
+              "key": "skills",
+              "w": 2
+            },
+            {
+              "label": "End Time",
+              "key": "end_time",
+              "w": 0.9
+            },
+            {
+              "label": "Total Number of Hours Completed",
+              "key": "amount",
+              "w": 1.1
+            }
+          ]
+        }
+      ],
+      "rows": 30,
+      "rows_first": 15
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "Certification for Rookie Drivers",
+    "text": "I hereby certify that {student_name}, who is under 25 years of age, has had a minimum of 60 hours behind the wheel driving practice, has demonstrated that they can safely operate a motor vehicle, and has been under the supervision of a valid license holder 21 years of age or older, who has been licensed for at least three years.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of parent, guardian, mentor, or coach",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      },
+      {
+        "label": "Driver’s License Number",
+        "value": ""
+      }
+    ],
+    "notary": null,
+    "extra_text": "OR I hereby certify that ________, who is 25 years of age or older, has had a minimum of 14 hours behind the wheel driving practice,"
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Driver’s License Number of the signer",
+    "The '25 years of age or older' certification option"
+  ],
+  "notes": [
+    "MVA catalogues the booklet as RD-006 (state_logs.csv); the number is not printed on the log pages. The second (25 or older) certification option is left blank.",
+    "Booklet pages 25-27 (15 rows, then 30 rows per page); the certification is on page 28.",
+    "The form's certification continues with the 6 hours of instruction and a penalty-of-perjury paragraph; only the first sentence is quoted here, the printed copy carries the full text."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

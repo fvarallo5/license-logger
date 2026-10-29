@@ -1,0 +1,58 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "AL",
+  "state_name": "Alabama",
+  "kind": "certification",
+  "form": {
+    "name": "Graduated Driver License Form (Behind the Wheel Verification)",
+    "number": "DL-31",
+    "revision": "Rev 09/21",
+    "source_pdf": "AL_DL-31.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://www.alea.gov/sites/default/files/inline-files/DL-31.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Graduated Driver License Form",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "BEHIND THE WHEEL VERIFICATION FORM",
+    "text": "______ certify that the applicant Has completed a minimum of 50 hours of behind-the-wheel driving practice as required by section 32-6-7.2 of the Code of Alabama 1975.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of Parent or Legal Guardian",
+        "value": ""
+      }
+    ],
+    "notary": null,
+    "extra_text": "PERMISSION TO DRIVE WITHOUT SUPERVISION: ______ consent to the licensure of {student_name} and granting permission for the applicant to drive without supervision as required by section 32-6-7.2 of the Code of Alabama 1975."
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "CERTIFICATE OF COMPLETION (driver education box)"
+  ],
+  "notes": [
+    "The same page also carries 'PERMISSION TO DRIVE WITHOUT SUPERVISION' (signature + Name of Applicant) and a driver-education CERTIFICATE OF COMPLETION box."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

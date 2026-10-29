@@ -1,0 +1,139 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "DE",
+  "state_name": "Delaware",
+  "kind": "full_log",
+  "form": {
+    "name": "Supervised Driving Log (Parent's Supervised Driving Program guide)",
+    "number": "",
+    "revision": "",
+    "source_pdf": "DE_parents-supervised-driving-program.pdf",
+    "source_pages": [
+      25,
+      26,
+      27
+    ],
+    "url": "https://dmv.de.gov/forms/driver_serv_forms/pdfs/ParentsSupervisedDrivingProgram.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      576,
+      756
+    ],
+    "orientation": "portrait"
+  },
+  "title": "SUPERVISED DRIVING LOG",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.8
+            },
+            {
+              "label": "Location of Practice (ex. rural, highway)",
+              "key": "location",
+              "w": 1.5
+            },
+            {
+              "label": "Day/Night",
+              "key": "day_or_night",
+              "w": 0.9
+            },
+            {
+              "label": "Weather",
+              "key": "weather",
+              "w": 0.8
+            },
+            {
+              "label": "Skills Practiced",
+              "key": "skills",
+              "w": 1.8
+            },
+            {
+              "label": "Driving Time",
+              "key": "amount",
+              "w": 0.8
+            },
+            {
+              "label": "Adult’s Initials",
+              "key": "supervisor_initials",
+              "w": 0.7
+            }
+          ]
+        }
+      ],
+      "rows": 28,
+      "rows_first": 28,
+      "page_total": {
+        "label": "TOTAL",
+        "sum": [
+          "amount"
+        ]
+      }
+    }
+  ],
+  "summary": [
+    {
+      "label": "GRAND TOTAL",
+      "value": "total"
+    }
+  ],
+  "certification": {
+    "title": "",
+    "text": "I certify that my son/daughter has completed 50-hours of supervised driving during the first six months in the Graduated Driver License program.",
+    "fields": [
+      {
+        "label": "Student Name",
+        "value": "student_name"
+      },
+      {
+        "label": "High School",
+        "value": ""
+      },
+      {
+        "label": "Teacher’s Name",
+        "value": ""
+      }
+    ],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Parent/Guardian Signature",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": null,
+    "extra_text": "Please complete and sign this form and return it to your teen’s driver education teacher prior to any unsupervised driving."
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "High School",
+    "Teacher’s Name"
+  ],
+  "notes": [
+    "RoadReady template: 28 rows per page with a TOTAL row; the last page adds GRAND TOTAL.",
+    "'Day/Night' is a pair of check boxes on the form; LicenseLogger writes Day, Night or Day + Night.",
+    "'Location of Practice' gets the drive's start/end place names; the form's examples are road types (rural, highway).",
+    "Log pages are PDF pages 25-27 of the DE guide; page 27 has 13 rows, TOTAL, GRAND TOTAL and the parent certification."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

@@ -1,0 +1,198 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "RI",
+ "state_name": "Rhode Island",
+ "kind": "full_log",
+ "title": "Supervised Driving Log",
+ "subtitle": "",
+ "form_label": "",
+ "source_pdf": "RI_supervised-driving-guide.pdf",
+ "page": {
+  "width": 396,
+  "height": 612
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Rhode Island Supervised Driving Log (Supervised Driving Guide); check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The guide prints the log as a two-page spread (each half 396 x 612 pt): 9 tall rows on the left half, 3 rows plus the notarized certification on the right half."
+ ],
+ "unfillable": [
+  "Driving Environment (LicenseLogger does not record road type)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 9,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.8,
+          "key": "date"
+         },
+         {
+          "label": "Driving Time",
+          "group": "",
+          "w": 0.8,
+          "key": "amount"
+         },
+         {
+          "label": "Day/ Night",
+          "group": "",
+          "w": 0.6,
+          "key": "day_or_night"
+         },
+         {
+          "label": "Driving Environment (ex. rural, highway)",
+          "group": "",
+          "w": 1.4,
+          "key": "blank"
+         },
+         {
+          "label": "Weather",
+          "group": "",
+          "w": 0.8,
+          "key": "weather"
+         },
+         {
+          "label": "Skills Practiced",
+          "group": "",
+          "w": 1.6,
+          "key": "skills"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "1 hr 30 min",
+          "Day",
+          "",
+          "Sunny",
+          "Parking lot, Backing"
+         ],
+         [
+          "9/30/26",
+          "45 min",
+          "Day",
+          "",
+          "",
+          ""
+         ],
+         [
+          "10/12/26",
+          "50 min",
+          "Day + Night",
+          "",
+          "",
+          "Stops, Left turns, Parking"
+         ],
+         [
+          "10/12/26",
+          "1 hr 45 min",
+          "Day + Night",
+          "",
+          "Light rain",
+          "Highway merge, Lane changes, Following distance"
+         ],
+         [
+          "10/18/26",
+          "1 hr",
+          "Night",
+          "",
+          "",
+          "Night driving, Headlights"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Driver’s Name",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "Permit Number",
+       "value": "A1234567"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "The notarized signature of a parent, below, states that the minor seeking to obtain a provisional license has completed the above requirements."
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "According to Rhode Island General Law § 31-10-6, (b)(2)(iii), a person under the age of eighteen (18) must complete a minimum of fifty (50) hours of driving experience, with ten (10) of those hours being completed at night."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parent/Guardian",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "notary",
+     "title": "",
+     "text": "",
+     "lines": [
+      "Notary Public",
+      "Commission Date"
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

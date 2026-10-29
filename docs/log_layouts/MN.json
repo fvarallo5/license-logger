@@ -1,0 +1,158 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "MN",
+  "state_name": "Minnesota",
+  "kind": "full_log",
+  "form": {
+    "name": "Supervised Driving Log",
+    "number": "",
+    "revision": "Rev. 06/2021",
+    "source_pdf": "MN_supervised-driving-log.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://assets.dps.mn.gov/files/dvs/dvs-supervised-driving-log.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Supervised Driving Log",
+  "header_fields": [
+    {
+      "label": "Student’s Name",
+      "value": "student_name"
+    }
+  ],
+  "amount_format": "minutes",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Day Minutes",
+              "key": "day_amount",
+              "w": 0.7
+            },
+            {
+              "label": "Night Minutes",
+              "key": "night_amount",
+              "w": 0.7
+            },
+            {
+              "label": "Total Minutes",
+              "key": "amount",
+              "w": 0.7
+            },
+            {
+              "label": "Skills Practiced",
+              "key": "skills",
+              "w": 1.9
+            }
+          ]
+        },
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Day Minutes",
+              "key": "day_amount",
+              "w": 0.7
+            },
+            {
+              "label": "Night Minutes",
+              "key": "night_amount",
+              "w": 0.7
+            },
+            {
+              "label": "Total Minutes",
+              "key": "amount",
+              "w": 0.7
+            },
+            {
+              "label": "Skills Practiced",
+              "key": "skills",
+              "w": 1.9
+            }
+          ]
+        }
+      ],
+      "rows": 25,
+      "rows_first": 25,
+      "page_total": {
+        "label": "TOTALS",
+        "sum": [
+          "day_amount",
+          "night_amount",
+          "amount"
+        ]
+      },
+      "example_row": "8/15/14 | 90 | 30 | 120 | parking; turns"
+    }
+  ],
+  "summary": [
+    {
+      "label": "DAY:",
+      "value": "day_minutes"
+    },
+    {
+      "label": "NIGHT:",
+      "value": "night_minutes"
+    },
+    {
+      "label": "TOTAL MINUTES:",
+      "value": "total_minutes"
+    },
+    {
+      "label": "TOTAL DRIVING HOURS",
+      "value": "total_hours"
+    }
+  ],
+  "certification": {
+    "title": "",
+    "text": "I hereby affirm that I am the parent/guardian who has supervised my teen driver for the majority of the required driving hours, and that my teen has driven the hours listed above.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of Primary Driving Supervisor",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "Two side-by-side column sets of about 25 rows each (left fills first), after a printed sample row.",
+    "Amounts are minutes, as on the form."
+  ],
+  "acceptance": {
+    "mode": "transfer",
+    "basis": "Attach additional sheets of this Supervised Driving Log template, as needed (logs completed on any other document will not be accepted).",
+    "source": "MN_supervised-driving-log.pdf p.1"
+  }
+}

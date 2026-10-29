@@ -1,0 +1,16 @@
+{
+  "fmt": {
+    "lineWidth": 120,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": false,
+    "exclude": ["**/log_layouts.json"]
+  },
+  "lint": { "rules": { "tags": ["recommended"] } },
+  "tasks": {
+    "check": "deno check */index.ts",
+    "lint": "deno lint",
+    "fmt": "deno fmt",
+    "test": "deno test -A"
+  }
+}

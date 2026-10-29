@@ -1,0 +1,126 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "NY",
+  "state_name": "New York",
+  "kind": "certification",
+  "form": {
+    "name": "Certification of Supervised Driving",
+    "number": "MV-262",
+    "revision": "3/25",
+    "source_pdf": "NY_MV-262.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://dmv.ny.gov/forms/mv262.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "CERTIFICATION OF SUPERVISED DRIVING",
+  "header_fields": [
+    {
+      "label": "Applicant Name",
+      "value": "student_name"
+    },
+    {
+      "label": "Learner Permit ID Number",
+      "value": "permit_number"
+    },
+    {
+      "label": "Address",
+      "value": ""
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "none",
+          "columns": [
+            {
+              "label": "Name of School",
+              "key": "blank",
+              "w": 1.4
+            },
+            {
+              "label": "Driving School License Number",
+              "key": "blank",
+              "w": 1
+            },
+            {
+              "label": "Instructor’s Name",
+              "key": "blank",
+              "w": 1.2
+            },
+            {
+              "label": "Instructor Certificate Number",
+              "key": "blank",
+              "w": 1
+            },
+            {
+              "label": "Number of Hours Certified",
+              "key": "blank",
+              "w": 0.8
+            },
+            {
+              "label": "Administrator or Owner or Instructor’s Signature",
+              "key": "blank",
+              "w": 1.4
+            }
+          ]
+        }
+      ],
+      "rows": 9,
+      "rows_first": 9
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "CERTIFICATION",
+    "text": "I certify that I am the parent/guardian or representative of a government agency or facility. I also certify that the applicant has completed at least 50 hours of supervised driving, including 15 hours after sunset.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Printed Name of Parent/Guardian or Representative of a Government Agency/Facility",
+        "value": ""
+      },
+      {
+        "label": "Signature of Parent/Guardian or Representative of a Government Agency/Facility",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      },
+      {
+        "label": "Name of Government Facility (if applicable)",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Address",
+    "Driving school table (completed and signed by the school)"
+  ],
+  "notes": [
+    "The certification continues with the driving-school and regional-restriction clauses and a falsification warning; only its first two sentences are quoted here.",
+    "The driving-school table is for hours certified by a school; LicenseLogger leaves it blank."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

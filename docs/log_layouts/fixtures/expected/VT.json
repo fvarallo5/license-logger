@@ -1,0 +1,322 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "VT",
+ "state_name": "Vermont",
+ "kind": "full_log",
+ "title": "DRIVING PRACTICE LOG SHEET",
+ "subtitle": "",
+ "form_label": "VN-210 (2M 07/2019)",
+ "source_pdf": "VT_VN-210.pdf",
+ "page": {
+  "width": 792,
+  "height": 612
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Vermont VN-210 Driving Practice Log Sheet; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Landscape folded sheet: page 1 holds the applicant/parent section, pages 2-3 the log (Columns 1-3), page 4 the grand totals. This copy keeps the order: certification page first, then log pages with two columns each.",
+  "VT does not print a day/night column; night time is not shown per row on this form."
+ ],
+ "unfillable": [
+  "Middle name, Mailing Address, City",
+  "Driving Environment",
+  "Yes/No answers, including the 40-hour certification question (the parent answers by hand)",
+  "Per-column subtotals across sheets (the grand total is filled)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Name: Last",
+       "value": "Lopez"
+      },
+      {
+       "label": "First",
+       "value": "Maya"
+      },
+      {
+       "label": "Middle",
+       "value": ""
+      },
+      {
+       "label": "Mailing Address (Street, Road or PO Box):",
+       "value": ""
+      },
+      {
+       "label": "City:",
+       "value": ""
+      },
+      {
+       "label": "Date of Birth:",
+       "value": "3/9/10"
+      },
+      {
+       "label": "Learner’s Permit Number:",
+       "value": "A1234567"
+      },
+      {
+       "label": "Date Permit Issued:",
+       "value": "4/14/26"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "TO BE COMPLETED BY THE PARENT OR GUARDIAN"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "Do you certify that your child has received a minimum of 40 additional hours of practice behind the wheel, with at least 10 hours being nighttime driving?"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "To the best of your knowledge, has your child ever been convicted of any motor vehicle/driving offenses? [ ] Yes [ ] No"
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Printed Name of Parent/Guardian",
+       "value": ""
+      },
+      {
+       "label": "Parent/Guardian License #",
+       "value": ""
+      },
+      {
+       "label": "Signature of Parent/Guardian",
+       "value": ""
+      },
+      {
+       "label": "Date Signed",
+       "value": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 22,
+      "total": {
+       "label": "Total Practice Time of Column",
+       "cells": [
+        [
+         "",
+         "",
+         "",
+         "",
+         "5 hr 50 min",
+         ""
+        ],
+        [
+         "",
+         "",
+         "",
+         "",
+         "0 min",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "Column 1",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.8,
+          "key": "date"
+         },
+         {
+          "label": "Time of Day",
+          "group": "",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "Skills Practiced",
+          "group": "",
+          "w": 2,
+          "key": "skills"
+         },
+         {
+          "label": "Driving Environment",
+          "group": "",
+          "w": 1.2,
+          "key": "blank"
+         },
+         {
+          "label": "Practice Duration",
+          "group": "",
+          "w": 0.8,
+          "key": "amount"
+         },
+         {
+          "label": "Initials of Provider",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "Parking lot, Backing",
+          "",
+          "1 hr 30 min",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "",
+          "",
+          "45 min",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "6:15 AM",
+          "Stops, Left turns, Parking",
+          "",
+          "50 min",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "Highway merge, Lane changes, Following distance",
+          "",
+          "1 hr 45 min",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "Night driving, Headlights",
+          "",
+          "1 hr",
+          "AL"
+         ]
+        ]
+       },
+       {
+        "title": "Column 2",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.8,
+          "key": "date"
+         },
+         {
+          "label": "Time of Day",
+          "group": "",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "Skills Practiced",
+          "group": "",
+          "w": 2,
+          "key": "skills"
+         },
+         {
+          "label": "Driving Environment",
+          "group": "",
+          "w": 1.2,
+          "key": "blank"
+         },
+         {
+          "label": "Practice Duration",
+          "group": "",
+          "w": 0.8,
+          "key": "amount"
+         },
+         {
+          "label": "Initials of Provider",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": []
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Combined Practice Time of Columns 1 & 2:",
+       "value": ""
+      },
+      {
+       "label": "Total Practice Time of Column 3:",
+       "value": ""
+      },
+      {
+       "label": "Total Practice Time of Any Additional Sheets:",
+       "value": ""
+      },
+      {
+       "label": "GRAND TOTAL OF PRACTICE TIME (Columns 1, 2 and 3)",
+       "value": "5 hr 50 min"
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

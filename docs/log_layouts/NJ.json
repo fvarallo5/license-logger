@@ -1,0 +1,65 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "NJ",
+  "state_name": "New Jersey",
+  "kind": "certification",
+  "form": {
+    "name": "Certification of Supervised Driving",
+    "number": "BA-CSD",
+    "revision": "rev 1/25",
+    "source_pdf": "NJ_BA-CSD.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://www.nj.gov/mvc/pdf/license/BA-CSD.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "CERTIFICATION OF SUPERVISED DRIVING",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "CERTIFICATION",
+    "text": "I certify that I am the parent/guardian of the applicant, or that I am at least 21 years of age and hold a valid New Jersey driver’s license, and that I accompanied and supervised the applicant during practice driving hours. I certify that the applicant has completed a minimum of 50 hours of supervised driving, including 10 hours during darkness.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Print Name of Parent, Guardian, or Supervising Driver",
+        "value": ""
+      },
+      {
+        "label": "Signature of Parent, Guardian, or Supervising Driver",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": null,
+    "extra_text": "Please print and sign by hand prior to visiting an Agency"
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "The form has no applicant-name or totals fields; the student's name appears only in this copy's footer.",
+    "MVC says its 'Share the Keys' practice log is for tracking only and cannot replace BA-CSD (state_logs.csv)."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

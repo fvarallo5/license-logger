@@ -1,0 +1,265 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "MI",
+ "state_name": "Michigan",
+ "kind": "full_log",
+ "title": "SUPERVISED DRIVING LOG",
+ "subtitle": "",
+ "form_label": "(Rev. 08/2019)",
+ "source_pdf": "MI_supervised-driving-guide.pdf",
+ "page": {
+  "width": 576,
+  "height": 756
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Michigan Supervised Driving Log (Supervised Driving Guide). Michigan accepts other log formats: \"The log that follows and the free mobile app, RoadReady®, are the preferred formats. Other driving log formats will be accepted.\" (MI_supervised-driving-guide.pdf p.25).",
+ "disclaimer_mode": "accepted",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Log pages are PDF pages 26-28 of the SOS Supervised Driving Guide (RoadReady template, Rev. 08/2019): 27, 34 and 13 rows.",
+  "Each page ends with a Subtotal box (Subtotal 1/2/3 Day/Night Hours); page 2 carries 'Subtotal 1 & 2'.",
+  "Hours are written as decimal hours (1.5 = 1 h 30 min) because the columns are headed 'Day Hours' / 'Night Hours'."
+ ],
+ "unfillable": [
+  "Lesson No. (the guide's lesson numbers 1-13; LicenseLogger does not tag drives with them)",
+  "Segment 2 Driver Education hours (hours at the time Segment 2 started) and its signature"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Name of New Driver:",
+       "value": "Maya Lopez"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 27,
+      "total": {
+       "label": "Subtotal Day/Night Hours",
+       "cells": [
+        [
+         "",
+         "",
+         "3.92",
+         "1.92",
+         "",
+         "",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Lesson No.",
+          "group": "",
+          "w": 0.7,
+          "key": "blank"
+         },
+         {
+          "label": "Day Hours",
+          "group": "",
+          "w": 0.7,
+          "key": "day_amount"
+         },
+         {
+          "label": "Night Hours",
+          "group": "",
+          "w": 0.7,
+          "key": "night_amount"
+         },
+         {
+          "label": "Weather Conditions",
+          "group": "",
+          "w": 1.2,
+          "key": "weather"
+         },
+         {
+          "label": "Supervisor’s Initials",
+          "group": "",
+          "w": 0.9,
+          "key": "supervisor_initials"
+         },
+         {
+          "label": "Notes",
+          "group": "",
+          "w": 2.2,
+          "key": "notes"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "",
+          "1.5",
+          "",
+          "Sunny",
+          "AL",
+          ""
+         ],
+         [
+          "9/30/26",
+          "",
+          "0.75",
+          "",
+          "",
+          "CL",
+          ""
+         ],
+         [
+          "10/12/26",
+          "",
+          "0.5",
+          "0.33",
+          "",
+          "AL",
+          "Before school"
+         ],
+         [
+          "10/12/26",
+          "",
+          "1.17",
+          "0.58",
+          "Light rain",
+          "CL",
+          ""
+         ],
+         [
+          "10/18/26",
+          "",
+          "",
+          "1",
+          "",
+          "AL",
+          "Short loop"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "style": "legend",
+     "text": "Lessons/Recommended Practice Hours: 1. Before you start the engine (1) 2. Moving, steering and stopping (1) 3. How close are you? (1) 4. Backing up (1) 5. Driving on a quiet street (5) 6. Looking ahead (5) 7. Turning around (1) 8. Parking (3) 9. Multi-lane roads (10) 10. City driving (10) 11. Freeway driving (10) 12. Roundabouts (2) 13. Winter Driving (as much as possible). Nighttime Hours: Driving time that is 30 minutes after sunset to 30 minutes before sunrise."
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Subtotal 1 & 2 Daytime Hours:",
+       "value": "3.92"
+      },
+      {
+       "label": "Subtotal 1 & 2 Nighttime Hours:",
+       "value": "1.92"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Driving Skills Test"
+    },
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Teen Driver’s Name",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "Level 1 Learner’s License Number",
+       "value": "A1234567"
+      }
+     ]
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Grand Total Daytime Hours (40 Minimum):",
+       "value": "3.92"
+      },
+      {
+       "label": "Grand Total Night Hours (10 minimum):",
+       "value": "1.92"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "a person may be issued a Level 2 graduated licensing status if the person presents a certification by the parent or guardian that the person, accompanied by his or her licensed parent or legal guardian or, with the permission of the parent or legal guardian, any licensed driver 21 years of age or older, has accumulated a total of not less than 50 hours of behind-the-wheel experience including not less than 10 nighttime hours."
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "Segment 2 Driver Education: The signature of the parent or legal guardian below signifies that the driver named above has completed the above requirements. Daytime Hours Completed (30 Minimum): ______ Nighttime Hours Completed (2 minimum): ______  Parent or Legal Guardian’s Signature ________ Date ____"
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parent or Legal Guardian’s Signature",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5.83"
+      },
+      {
+       "label": "Day",
+       "value": "3.92"
+      },
+      {
+       "label": "Night",
+       "value": "1.92"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1.75"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (0.67)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

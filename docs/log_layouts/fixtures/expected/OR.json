@@ -1,0 +1,156 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "OR",
+ "state_name": "Oregon",
+ "kind": "full_log",
+ "title": "Practice Driving Log",
+ "subtitle": "",
+ "form_label": "",
+ "source_pdf": "OR_practice-driving-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Oregon Practice Driving Log; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "One page, about 21 rows, no totals box (the 'Cumulative Hours' column carries the running total) and no signature: Oregon certifies hours on the DMV license application.",
+  "Teen's initials are taken from the student's name."
+ ],
+ "unfillable": [],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 21,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Session Topic/Focus",
+          "group": "",
+          "w": 2.2,
+          "key": "skills"
+         },
+         {
+          "label": "Time (Hours/Min)",
+          "group": "",
+          "w": 0.9,
+          "key": "amount"
+         },
+         {
+          "label": "Cumulative Hours",
+          "group": "",
+          "w": 0.9,
+          "key": "cumulative"
+         },
+         {
+          "label": "Teen’s Initials",
+          "group": "",
+          "w": 0.7,
+          "key": "student_initials"
+         },
+         {
+          "label": "Adult’s Initials",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "Parking lot, Backing",
+          "1 hr 30 min",
+          "1 hr 30 min",
+          "ML",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "",
+          "45 min",
+          "2 hr 15 min",
+          "ML",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "Stops, Left turns, Parking",
+          "50 min",
+          "3 hr 5 min",
+          "ML",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "Highway merge, Lane changes, Following distance",
+          "1 hr 45 min",
+          "4 hr 50 min",
+          "ML",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "Night driving, Headlights",
+          "1 hr",
+          "5 hr 50 min",
+          "ML",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

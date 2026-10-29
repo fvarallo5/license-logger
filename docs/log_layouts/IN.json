@@ -1,0 +1,141 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "IN",
+  "state_name": "Indiana",
+  "kind": "full_log",
+  "form": {
+    "name": "Log of Supervised Driving Practice",
+    "number": "State Form 54706",
+    "revision": "R5 / 8-24",
+    "source_pdf": "IN_SF54706-supervised-driving-log.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://forms.in.gov/download.aspx?id=9758",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "LOG OF SUPERVISED DRIVING PRACTICE",
+  "header_fields": [
+    {
+      "label": "Driver Name (last, first, middle initial)",
+      "value": "student_name_lfm"
+    },
+    {
+      "label": "Driver’s License Number (DLN)",
+      "value": "permit_number"
+    },
+    {
+      "label": "Bioptic Drivers Only - Please Check Here:",
+      "value": ""
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "mm/dd/yyyy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "DATE (mm/dd/yyyy)",
+              "key": "date",
+              "w": 1.1
+            },
+            {
+              "label": "DAY",
+              "key": "day_amount",
+              "w": 0.8,
+              "group": "Drive Time Hours / Minutes"
+            },
+            {
+              "label": "NIGHT",
+              "key": "night_amount",
+              "w": 0.8,
+              "group": "Drive Time Hours / Minutes"
+            }
+          ]
+        },
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "DATE (mm/dd/yyyy)",
+              "key": "date",
+              "w": 1.1
+            },
+            {
+              "label": "DAY",
+              "key": "day_amount",
+              "w": 0.8,
+              "group": "Drive Time Hours / Minutes"
+            },
+            {
+              "label": "NIGHT",
+              "key": "night_amount",
+              "w": 0.8,
+              "group": "Drive Time Hours / Minutes"
+            }
+          ]
+        }
+      ],
+      "rows": 22,
+      "rows_first": 30,
+      "title": "SECTION 1. DRIVING LOG"
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "SECTION 2. AFFIRMATION AND SIGNATURE",
+    "text": "I certify that the driver named above has completed fifty (50) hours of supervised driving practice, ten (10) of which included nighttime driving practice, with:",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of Parent or Legal Guardian (if Applicant is under eighteen (18) years of age)",
+        "value": ""
+      },
+      {
+        "label": "Printed Name",
+        "value": ""
+      },
+      {
+        "label": "Date (mm/dd/yyyy)",
+        "value": ""
+      },
+      {
+        "label": "Signature of Applicant",
+        "value": ""
+      },
+      {
+        "label": "Date (mm/dd/yyyy)",
+        "value": ""
+      }
+    ],
+    "notary": null,
+    "extra_text": "I swear or affirm that the information entered on this form is true and correct. I understand that making a false statement may constitute the crime of perjury."
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Bioptic check box"
+  ],
+  "notes": [
+    "Two side-by-side DATE / DAY / NIGHT column sets: about 30 rows each on page 1 and 22 on page 2, above Section 2.",
+    "The form has no totals boxes; the affirmation lists the five kinds of eligible supervisors (bullets not reproduced)."
+  ],
+  "acceptance": {
+    "mode": "transfer",
+    "basis": "Completed hours/minutes must be entered on the approved log(s). Multiple logs may be completed and attached, if necessary.",
+    "source": "IN_SF54706-supervised-driving-log.pdf p.1"
+  }
+}

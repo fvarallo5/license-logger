@@ -1,0 +1,139 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "CO",
+  "state_name": "Colorado",
+  "kind": "full_log",
+  "form": {
+    "name": "Drive Time Log Sheet",
+    "number": "DR 2324",
+    "revision": "08/25/26",
+    "source_pdf": "CO_DR2324-drive-time-log.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://dmv.colorado.gov/sites/dmv/files/documents/DR_2324_e_wo.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Drive Time Log Sheet",
+  "header_fields": [
+    {
+      "label": "Student’s name",
+      "value": "student_name"
+    },
+    {
+      "label": "Permit number",
+      "value": "permit_number"
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Verifier’s Initials",
+              "key": "supervisor_initials",
+              "w": 0.9
+            },
+            {
+              "label": "Day Driving Time",
+              "key": "day_amount",
+              "w": 1
+            },
+            {
+              "label": "Night Driving Time",
+              "key": "night_amount",
+              "w": 1
+            },
+            {
+              "label": "Grand Total Driving Time",
+              "key": "amount",
+              "w": 1
+            },
+            {
+              "label": "Comments",
+              "key": "skills",
+              "w": 2.2
+            }
+          ]
+        }
+      ],
+      "rows": 14,
+      "rows_first": 14,
+      "title": "DRIVE LOGS",
+      "page_total": {
+        "label": "Totals for this page",
+        "sum": [
+          "day_amount",
+          "night_amount",
+          "amount"
+        ]
+      }
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "Please check all totals prior to signing. By signing below, I certify that the above total hours of driving experience is true and accurate.",
+    "fields": [],
+    "totals": [
+      {
+        "label": "TOTAL DAY DRIVING TIME",
+        "value": "day"
+      },
+      {
+        "label": "TOTAL NIGHT DRIVING TIME",
+        "value": "night"
+      },
+      {
+        "label": "GRAND TOTAL DRIVING TIME (NIGHT + DAY)",
+        "value": "total"
+      }
+    ],
+    "signatures": [
+      {
+        "label": "Name",
+        "value": ""
+      },
+      {
+        "label": "Signature",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "before_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "Each of the 14 entries on the official page 2 has its own 'Comments' line; LicenseLogger writes the skills practiced there (the form calls comments optional).",
+    "The official page 1 prints 'Must be at least 10 hours' beside TOTAL DAY DRIVING TIME and 'Must be at least 50 hours' beside GRAND TOTAL; the instructions say the 10 hours are NIGHT hours. We copy the boxes, not the misplaced hints.",
+    "'Page __ of __' on the log page is filled with the page count of this copy."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

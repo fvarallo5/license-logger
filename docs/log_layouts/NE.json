@@ -1,0 +1,59 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "NE",
+  "state_name": "Nebraska",
+  "kind": "certification",
+  "form": {
+    "name": "School Permit/Provisional Operator's Permit 50 Hour Certification",
+    "number": "DMV 06-91/TSIE3",
+    "revision": "1/08",
+    "source_pdf": "NE_POP-50hr-certification.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://dmv.nebraska.gov/sites/dmv.nebraska.gov/files/doc/dls/forms/pop50hrcert.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "50 HOUR CERTIFICATION",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "I certify that {student_name}, (Applicant’s Name) with permit number {permit_number}, has had a minimum of 50 hours of lawful behind-the-wheel motor vehicle operation, including at least 10 hours between sunset and sunrise under conditions that reflect department-approved driver safety course curriculum and is sufficiently prepared and able to operate a motor vehicle safely.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of Parent, Guardian or Licensed Driver 21 Years of Age or Older",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": null,
+    "extra_text": "I also certify that all 50 hours were spent with a parent, guardian, or adult at least twenty-one years of age, who has a current Nebraska operator’s license or who is licensed in another state. I certify that all information submitted by me regarding this is true and correct."
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  },
+  "subtitle": "SCHOOL PERMIT/PROVISIONAL OPERATOR’S PERMIT"
+}

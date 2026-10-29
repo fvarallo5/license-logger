@@ -1,0 +1,153 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "WY",
+  "state_name": "Wyoming",
+  "kind": "full_log",
+  "form": {
+    "name": "Behind-the-Wheel Driving Log (optional) + Behind-the-Wheel Driving Certification",
+    "number": "FSGDL-01",
+    "revision": "20190620",
+    "source_pdf": "WY_btw-driving-log-optional.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://www.dot.state.wy.us/files/live/sites/wydot/files/shared/Driver_Services/Forms/Behind-the-Wheel%20Driving%20Log%20(OPTIONAL)%20090613.pdf",
+    "extra_sources": [
+      {
+        "pdf": "WY_FSGDL-01.pdf",
+        "pages": [
+          1
+        ],
+        "role": "certification",
+        "url": "https://www.dot.state.wy.us/files/live/sites/wydot/files/shared/Driver_Services/Forms/BEHIND-THE-WHEEL%20DRIVING%20CERTIFICATION%20(FSGDL-01)%2020190620.pdf"
+      }
+    ]
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "BEHIND-THE-WHEEL DRIVING LOG",
+  "header_fields": [
+    {
+      "label": "NAME",
+      "value": "student_name"
+    },
+    {
+      "label": "DATE OF BIRTH",
+      "value": "birthday"
+    },
+    {
+      "label": "DRIVER LICENSE NUMBER",
+      "value": "permit_number"
+    }
+  ],
+  "amount_format": "hours",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "DATE",
+              "key": "date",
+              "w": 1
+            },
+            {
+              "label": "TIME DAY DRIVING",
+              "key": "day_amount",
+              "w": 1
+            },
+            {
+              "label": "TIME NIGHT DRIVING",
+              "key": "night_amount",
+              "w": 1
+            },
+            {
+              "label": "TOTAL FOR DATE",
+              "key": "amount",
+              "w": 1
+            }
+          ]
+        }
+      ],
+      "rows": 30,
+      "rows_first": 23,
+      "page_total": {
+        "label": "TOTAL DAY DRIVING HOURS: TOTAL NIGHT DRIVING HOURS:",
+        "sum": [
+          "day_amount",
+          "night_amount"
+        ]
+      }
+    }
+  ],
+  "summary": [
+    {
+      "label": "TOTAL DRIVING HOURS:",
+      "value": "total_hours"
+    }
+  ],
+  "certification": {
+    "title": "BEHIND-THE-WHEEL DRIVING CERTIFICATION",
+    "text": "I, ______, legal parent/guardian of the above-named minor, do hereby certify that said minor has completed 50 hours of actual driving time, including at least 10 hours of nighttime driving as stated in W.S. 31-7-110(g).",
+    "fields": [
+      {
+        "label": "Driver’s Name:",
+        "value": "student_name"
+      },
+      {
+        "label": "Date of Birth:",
+        "value": "birthday"
+      },
+      {
+        "label": "Driver License No.:",
+        "value": "permit_number"
+      }
+    ],
+    "totals": [
+      {
+        "label": "Total Daytime Driving Hours:",
+        "value": "day_hours"
+      },
+      {
+        "label": "Total Nighttime Driving Hours:",
+        "value": "night_hours"
+      },
+      {
+        "label": "Total Driving Hours:",
+        "value": "total_hours"
+      }
+    ],
+    "signatures": [
+      {
+        "label": "Parent/Guardian Signature",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "The log (09/06/13) is optional; the FSGDL-01 certification is the required form and is reproduced after the log.",
+    "'TOTAL FOR DATE' is per drive here; two drives on one date appear on two lines."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

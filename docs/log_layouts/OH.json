@@ -1,0 +1,179 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "OH",
+  "state_name": "Ohio",
+  "kind": "full_log",
+  "form": {
+    "name": "Fifty Hour Affidavit",
+    "number": "BMV 5791",
+    "revision": "9/25",
+    "source_pdf": "OH_BMV5791-fifty-hour-affidavit.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://dam.assets.ohio.gov/image/upload/publicsafety.ohio.gov/bmv5791.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "FIFTY HOUR AFFIDAVIT",
+  "header_fields": [
+    {
+      "label": "NAME OF TEMPORARY PERMIT HOLDER",
+      "value": "student_name"
+    },
+    {
+      "label": "TEMPORARY INSTRUCTION PERMIT I.D. #",
+      "value": "permit_number"
+    },
+    {
+      "label": "ADDRESS",
+      "value": ""
+    },
+    {
+      "label": "CITY",
+      "value": ""
+    },
+    {
+      "label": "STATE",
+      "value": ""
+    },
+    {
+      "label": "ZIP CODE",
+      "value": ""
+    },
+    {
+      "label": "NAME OF ELIGIBLE ADULT*",
+      "value": ""
+    },
+    {
+      "label": "DRIVER LICENSE / I.D. CARD #",
+      "value": ""
+    },
+    {
+      "label": "RELATIONSHIP TO TEMPORARY PERMIT HOLDER",
+      "value": ""
+    },
+    {
+      "label": "E-MAIL ADDRESS OR TELEPHONE #",
+      "value": ""
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "DATE",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Supervising Licensed Driver Name",
+              "key": "supervisor_name",
+              "w": 1.8
+            },
+            {
+              "label": "Supervising Adult Ohio Driver License #",
+              "key": "blank",
+              "w": 1.5
+            },
+            {
+              "label": "Start",
+              "key": "start_time",
+              "w": 0.85,
+              "group": "Start & End Time Include AM or PM"
+            },
+            {
+              "label": "End",
+              "key": "end_time",
+              "w": 0.85,
+              "group": "Start & End Time Include AM or PM"
+            },
+            {
+              "label": "Hours",
+              "key": "day_hours_part",
+              "w": 0.6,
+              "group": "Total Day Time"
+            },
+            {
+              "label": "Minutes",
+              "key": "day_minutes_part",
+              "w": 0.6,
+              "group": "Total Day Time"
+            },
+            {
+              "label": "Hours",
+              "key": "night_hours_part",
+              "w": 0.6,
+              "group": "Total Night Time"
+            },
+            {
+              "label": "Minutes",
+              "key": "night_minutes_part",
+              "w": 0.6,
+              "group": "Total Night Time"
+            }
+          ]
+        }
+      ],
+      "rows": 26,
+      "rows_first": 26,
+      "title": "SUPERVISED DRIVING LOG"
+    }
+  ],
+  "summary": [
+    {
+      "label": "Minimum of 50 hours of required supervised driving. 40 hours of day time driving and 10 hours of night time.",
+      "value": ""
+    }
+  ],
+  "certification": {
+    "title": "",
+    "text": "The eligible adult identified above personally appeared before me and attested that the temporary permit holder has truthfully recorded in the Supervised Driving Log section the completion of at least fifty (50) hours of actual driving experience.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "SIGNATURE OF ELIGIBLE ADULT",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "(Notary Seal)",
+      "text": "Sworn to and subscribed in my presence this ___ day of ___, 20___ in ___ County, State of ___.",
+      "lines": [
+        "Signature of Notary Public",
+        "My commission expires"
+      ]
+    }
+  },
+  "cert_position": "before_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "ADDRESS / CITY / STATE / ZIP CODE",
+    "NAME OF ELIGIBLE ADULT*, DRIVER LICENSE / I.D. CARD #, RELATIONSHIP, E-MAIL ADDRESS OR TELEPHONE #",
+    "Supervising Adult Ohio Driver License # (LicenseLogger does not store supervisors' license numbers)",
+    "Notary section"
+  ],
+  "notes": [
+    "Page 1 is the affidavit (signed before a notary); page 2 is the Supervised Driving Log with 26 rows.",
+    "The form's log has no totals boxes; the footer line states the minimums. LicenseLogger adds nothing beyond the printed text."
+  ],
+  "acceptance": {
+    "mode": "transfer",
+    "basis": "Supervised driving hours may be documented manually by filling in the log included or by using the RoadReady Ohio App.",
+    "source": "OH_BMV5791-fifty-hour-affidavit.pdf p.1"
+  }
+}

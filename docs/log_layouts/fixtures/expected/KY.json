@@ -1,0 +1,199 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "KY",
+ "state_name": "Kentucky",
+ "kind": "full_log",
+ "title": "PRACTICE DRIVING LOG",
+ "subtitle": "",
+ "form_label": "",
+ "source_pdf": "KY_practice-driving-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Kentucky Practice Driving Log; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Day drives go in the DAY DRIVING RECORD (page 1, 31 rows) and night drives in the NIGHT DRIVING RECORD (page 2, 33 rows). A drive with both day and night minutes is split into one row in each record.",
+  "The form has no name field and no totals boxes.",
+  "No revision is printed; the DMV file name dates it 03-25 (state_logs.csv)."
+ ],
+ "unfillable": [
+  "KSP License Examiner and Date (completed by the examiner)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "DAY DRIVING RECORD (50 hours mandatory)",
+      "row_count": 31,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date of Driving",
+          "group": "",
+          "w": 1,
+          "key": "date"
+         },
+         {
+          "label": "Amount of Driving time",
+          "group": "",
+          "w": 1,
+          "key": "amount"
+         },
+         {
+          "label": "Parent/Guardian Initials",
+          "group": "",
+          "w": 1,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "1 hr 30 min",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "45 min",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "30 min",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "1 hr 10 min",
+          "CL"
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "NIGHT DRIVING RECORD (10 hours mandatory)",
+      "row_count": 33,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 1,
+          "key": "date"
+         },
+         {
+          "label": "Amount of Driving Time",
+          "group": "",
+          "w": 1,
+          "key": "amount"
+         },
+         {
+          "label": "Parent/Guardian Initials",
+          "group": "",
+          "w": 1,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "10/12/26",
+          "20 min",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "35 min",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "1 hr",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "By signing below, I certify that this practice-driving log is correct."
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "The above record has been reviewed by a Kentucky State Police License Examiner and shows that the applicant and parent/guardian have documented 60 hours of driving.  KSP License Examiner ______ Date ______"
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Applicant's Signature",
+       "value": ""
+      },
+      {
+       "label": "Parent/Guardian Signature",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

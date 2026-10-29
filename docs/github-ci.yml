@@ -1,0 +1,25 @@
+# Copy to .github/workflows/ci.yml after `gh auth refresh -s workflow`.
+# GitHub rejects creating workflow files with a token that lacks the workflow scope.
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  dashboard:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/dashboard
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm, cache-dependency-path: apps/dashboard/package-lock.json }
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+        env:
+          VITE_SUPABASE_URL: https://example.supabase.co
+          VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder

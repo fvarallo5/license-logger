@@ -1,0 +1,206 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "DC",
+ "state_name": "District of Columbia",
+ "kind": "full_log",
+ "title": "Certification of Eligibility for Provisional License",
+ "subtitle": "",
+ "form_label": "DMV-GRAD-HR40 (Rev.08/24/09)",
+ "source_pdf": "DC_40-hour-certification.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official District of Columbia DMV-GRAD-HR40 Certification of Eligibility for Provisional License; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "One page: 11 rows after the printed Example row. The 'Amount of Time' column holds the clock times (the example shows '8:15 am – 10:15 am') and 'Hours/Minutes' the length.",
+  "Two tutor signature blocks are printed; each tutor certifies only the hours they supervised."
+ ],
+ "unfillable": [
+  "Tutor driver license number, state of issuance and expiration date (a photocopy of each tutor's license must be attached)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Applicant Full Name (Last, First, Middle, Suffix)",
+       "value": "Lopez, Maya"
+      },
+      {
+       "label": "Learner Permit No.",
+       "value": "A1234567"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 11,
+      "total": {
+       "label": "Total Hours",
+       "cells": [
+        [
+         "",
+         "",
+         "",
+         "5 hr 50 min"
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 1,
+          "key": "date"
+         },
+         {
+          "label": "Tutor’s Name (Please Print)",
+          "group": "",
+          "w": 2.2,
+          "key": "supervisor_name"
+         },
+         {
+          "label": "Amount of Time",
+          "group": "",
+          "w": 1.6,
+          "key": "time_range"
+         },
+         {
+          "label": "Hours/Minutes",
+          "group": "",
+          "w": 1,
+          "key": "amount"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "Ana Lopez",
+          "10:00 AM - 11:30 AM",
+          "1 hr 30 min"
+         ],
+         [
+          "9/30/26",
+          "Carlos Lopez",
+          "4:05 PM - 4:50 PM",
+          "45 min"
+         ],
+         [
+          "10/12/26",
+          "Ana Lopez",
+          "6:15 AM - 7:05 AM",
+          "50 min"
+         ],
+         [
+          "10/12/26",
+          "Carlos Lopez",
+          "5:40 PM - 7:25 PM",
+          "1 hr 45 min"
+         ],
+         [
+          "10/18/26",
+          "Ana Lopez",
+          "7:10 PM - 8:10 PM",
+          "1 hr"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "By signing the above certification, I, the tutor, certify that the learner has received 40 hours of driving experience specified by me on the dates and times indicated."
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I hereby certify that I am at least 16 years and 6 months old and have been a holder of a valid learner permit for at least six months, during which time I have not admitted to, been liable for or convicted of an offense for which points may be assessed. I also certify that I have received at least 40 hours of driving experience.  Applicant’s Signature ______  Date ______"
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Tutor’s Signature",
+       "value": ""
+      },
+      {
+       "label": "Driver License No:",
+       "value": ""
+      },
+      {
+       "label": "State of Issuance:",
+       "value": ""
+      },
+      {
+       "label": "Expiration Date:",
+       "value": ""
+      },
+      {
+       "label": "Tutor’s Signature",
+       "value": ""
+      },
+      {
+       "label": "Driver License No:",
+       "value": ""
+      },
+      {
+       "label": "State of Issuance:",
+       "value": ""
+      },
+      {
+       "label": "Expiration Date:",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

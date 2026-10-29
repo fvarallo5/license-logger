@@ -1,0 +1,5067 @@
+{
+ "doc": "docs/log_layouts/README.md",
+ "generic": {
+  "abbrev": {},
+  "acceptance": {
+   "basis": "",
+   "mode": "check",
+   "source": ""
+  },
+  "amount_format": "hr_min",
+  "cert_position": "after_log",
+  "certification": {
+   "fields": [],
+   "notary": null,
+   "signatures": [
+    {
+     "label": "Parent / guardian signature",
+     "value": ""
+    },
+    {
+     "label": "Printed name",
+     "value": ""
+    },
+    {
+     "label": "Date",
+     "value": ""
+    }
+   ],
+   "text": "",
+   "title": "Parent / guardian",
+   "totals": []
+  },
+  "date_format": "m/d/yy",
+  "form": {
+   "extra_sources": [],
+   "name": "Supervised driving log",
+   "number": "",
+   "revision": "",
+   "source_pages": [],
+   "source_pdf": "",
+   "url": ""
+  },
+  "header_fields": [
+   {
+    "label": "Student",
+    "value": "student_name"
+   },
+   {
+    "label": "Permit #",
+    "value": "permit_number"
+   },
+   {
+    "label": "Permit issued",
+    "value": "permit_issued"
+   }
+  ],
+  "kind": "generic",
+  "legend": null,
+  "notes": [
+   "LicenseLogger's own layout (no official form layout on file)."
+  ],
+  "page": {
+   "orientation": "portrait",
+   "size": [
+    612,
+    792
+   ]
+  },
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "",
+  "state_name": "",
+  "summary": [
+   {
+    "label": "Total",
+    "value": "total"
+   },
+   {
+    "label": "Night",
+    "value": "night"
+   }
+  ],
+  "tables": [
+   {
+    "page_total": {
+     "label": "Page total",
+     "sum": [
+      "amount",
+      "night_amount"
+     ]
+    },
+    "panels": [
+     {
+      "columns": [
+       {
+        "key": "date",
+        "label": "Date",
+        "w": 0.9
+       },
+       {
+        "key": "start_time",
+        "label": "Start",
+        "w": 0.8
+       },
+       {
+        "key": "end_time",
+        "label": "End",
+        "w": 0.8
+       },
+       {
+        "key": "amount",
+        "label": "Time",
+        "w": 0.9
+       },
+       {
+        "key": "night_amount",
+        "label": "Night",
+        "w": 0.9
+       },
+       {
+        "key": "weather",
+        "label": "Weather",
+        "w": 0.9
+       },
+       {
+        "key": "supervisor_name",
+        "label": "Supervisor",
+        "w": 1.6
+       },
+       {
+        "key": "supervisor_initials",
+        "label": "Initials",
+        "w": 0.7
+       }
+      ],
+      "filter": "all"
+     }
+    ],
+    "rows": 30,
+    "rows_first": 24
+   }
+  ],
+  "title": "Supervised driving log",
+  "unfillable": []
+ },
+ "generic_states": {
+  "AR": {
+   "detail": "No official log or certification form.",
+   "form": "",
+   "reason": "no_form",
+   "state_name": "Arkansas"
+  },
+  "AZ": {
+   "detail": "azdot.gov returned HTTP 403 to the download (retried once with a browser user agent on 2026-10-22).",
+   "form": "Driving Practice Certificate 96-0223 (R07/25)",
+   "reason": "blocked",
+   "state_name": "Arizona"
+  },
+  "GA": {
+   "detail": "Completed at DDS; no downloadable PDF.",
+   "form": "Driving Experience Affidavit DDS-7",
+   "reason": "no_form",
+   "state_name": "Georgia"
+  },
+  "HI": {
+   "detail": "Only found on school/driving-school sites; the official requirement is unconfirmed.",
+   "form": "Acknowledgment/Affidavit of Practice Driving (HDOT 6/07, unconfirmed)",
+   "reason": "unconfirmed",
+   "state_name": "Hawaii"
+  },
+  "ID": {
+   "detail": "Statement signed at DMV; no downloadable PDF found.",
+   "form": "GDL Requirements Verification",
+   "reason": "no_form",
+   "state_name": "Idaho"
+  },
+  "IL": {
+   "detail": "ilsos.gov failed the download (HTTP/2 INTERNAL_ERROR; an HTTP/1.1 retry timed out) on 2026-10-22.",
+   "form": "50-Hour Practice Driving Log DSD X 152 (Mar 2026) / Affidavit DSD X 174",
+   "reason": "blocked",
+   "state_name": "Illinois"
+  },
+  "LA": {
+   "detail": "Signed parent/guardian statement; no specific OMV form found.",
+   "form": "",
+   "reason": "no_form",
+   "state_name": "Louisiana"
+  },
+  "MS": {
+   "detail": "No official log or certification form.",
+   "form": "",
+   "reason": "no_form",
+   "state_name": "Mississippi"
+  },
+  "ND": {
+   "detail": "Parent signs at the road test; no separate form.",
+   "form": "",
+   "reason": "no_form",
+   "state_name": "North Dakota"
+  },
+  "NH": {
+   "detail": "dmv.nh.gov returned HTTP 403 to the download (retried once with a browser user agent on 2026-10-22).",
+   "form": "Certification of Additional Supervised Driving DSMV 509 (Rev. 6/23)",
+   "reason": "blocked",
+   "state_name": "New Hampshire"
+  },
+  "NM": {
+   "acceptance": {
+    "basis": "GDL driving log (Graduated Driver's License log - any document that records the necessary information handwritten or typed)",
+    "mode": "accepted",
+    "source": "NM MVD page, quoted in state_logs.csv"
+   },
+   "detail": "MVD accepts any handwritten or typed log with the required information.",
+   "form": "GDL driving log (any document)",
+   "reason": "no_form",
+   "state_name": "New Mexico"
+  },
+  "VA": {
+   "detail": "Parent certifies on the school-submitted driver education completion certificate.",
+   "form": "",
+   "reason": "no_form",
+   "state_name": "Virginia"
+  }
+ },
+ "schema": "licenselogger.log_layouts/v1",
+ "sha256": "93a7ae12ad00ed03bb43bb6070befceb0dd7350a42690812c8d7f092e7d33b3d",
+ "states": {
+  "AK": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [
+     {
+      "label": "Parent’s / Guardian’s Name",
+      "value": ""
+     },
+     {
+      "label": "Applicant’s Name",
+      "value": "student_name"
+     },
+     {
+      "label": "whose date of birth is",
+      "value": "birthday"
+     }
+    ],
+    "notary": {
+     "lines": [
+      "Notary Public or DMV Representative (LOGIN ID & Office Number)",
+      "My Commission Expires:"
+     ],
+     "text": "Sworn and subscribed before me this ____ day of ______, 20",
+     "title": ""
+    },
+    "signatures": [
+     {
+      "label": "Parents Driver’s License #:",
+      "value": ""
+     },
+     {
+      "label": "Issuing State:",
+      "value": ""
+     },
+     {
+      "label": "Your Relationship to Applicant:",
+      "value": ""
+     },
+     {
+      "label": "Your Mailing Address:",
+      "value": ""
+     },
+     {
+      "label": "Email",
+      "value": ""
+     },
+     {
+      "label": "Phone",
+      "value": ""
+     },
+     {
+      "label": "Signature:",
+      "value": ""
+     }
+    ],
+    "text": "To obtain a Provisional License, I certify that the applicant has had at least 10 hours of driving experience in inclement weather (snow, ice, rain, darkness, etc.) for a total of 40 hours driving experience.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Parent/Guardian Consent for a Minor",
+    "number": "Form 433",
+    "revision": "Rev. 08/28/2018",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "AK_Form433-parental-consent.pdf",
+    "url": "https://dmv.alaska.gov/media/cuebehop/433.pdf"
+   },
+   "header_fields": [],
+   "kind": "certification",
+   "legend": null,
+   "notes": [
+    "The 40-hour certification is one sentence inside the parental consent form; 'If parent not present at DMV form must have the parents signature notarized.'"
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "AK",
+   "state_name": "Alaska",
+   "summary": [],
+   "tables": [],
+   "title": "PARENT/GUARDIAN CONSENT FOR A MINOR",
+   "unfillable": [
+    "Parent's name, license, address and contact details",
+    "SELECT ONLY ONE license-type check boxes"
+   ]
+  },
+  "AL": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "PERMISSION TO DRIVE WITHOUT SUPERVISION: ______ consent to the licensure of {student_name} and granting permission for the applicant to drive without supervision as required by section 32-6-7.2 of the Code of Alabama 1975.",
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Signature of Parent or Legal Guardian",
+      "value": ""
+     }
+    ],
+    "text": "______ certify that the applicant Has completed a minimum of 50 hours of behind-the-wheel driving practice as required by section 32-6-7.2 of the Code of Alabama 1975.",
+    "title": "BEHIND THE WHEEL VERIFICATION FORM",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Graduated Driver License Form (Behind the Wheel Verification)",
+    "number": "DL-31",
+    "revision": "Rev 09/21",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "AL_DL-31.pdf",
+    "url": "https://www.alea.gov/sites/default/files/inline-files/DL-31.pdf"
+   },
+   "header_fields": [],
+   "kind": "certification",
+   "legend": null,
+   "notes": [
+    "The same page also carries 'PERMISSION TO DRIVE WITHOUT SUPERVISION' (signature + Name of Applicant) and a driver-education CERTIFICATE OF COMPLETION box."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "AL",
+   "state_name": "Alabama",
+   "summary": [],
+   "tables": [],
+   "title": "Graduated Driver License Form",
+   "unfillable": [
+    "CERTIFICATE OF COMPLETION (driver education box)"
+   ]
+  },
+  "CA": {
+   "abbrev": {
+    "Backing": "BUC",
+    "Backing up": "BUC",
+    "Following distance": "KSAC",
+    "Freeway": "FD",
+    "Heavy traffic": "PT",
+    "Highway": "FD",
+    "Highway merge": "FD",
+    "Hill parking": "PH",
+    "Intersections": "I",
+    "Lane changes": "LC",
+    "Left turns": "LT",
+    "Night driving": "ND",
+    "Parallel parking": "PP",
+    "Right turns": "RT",
+    "Stops": "SSC",
+    "U-turn": "UT",
+    "U-turns": "UT",
+    "Unprotected lefts": "LT"
+   },
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": null,
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Supervised Driving Log",
+    "number": "",
+    "revision": "",
+    "source_pages": [
+     1,
+     2,
+     3
+    ],
+    "source_pdf": "CA_supervised-driving-log.pdf",
+    "url": "https://www.dmv.ca.gov/portal/file/supervised-driving-log-pdf"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": "All skills in each level should be mastered before attempting the next level. Level I: Backing Up the Car (BUC), Driving a “Stick” (DS), Lane Choice and Control (LCC), Left Turn/Right Turn (LT/RT), Looking Ahead in Traffic (LAT), Starting and Stopping the Car (SSC). Level II: Intersections (I), Keeping Space Around the Car (KSAC), Lane Changes (LC), Practicing in Traffic (PT). Level III: Parking on Hills (PH), Parallel Parking (PP), U-Turn (UT). Level IV: Freeway Driving (FD), Night Driving (ND), Special Problems and Emergencies (SPE).",
+   "notes": [
+    "The DMV log has no name, permit or signature fields; the parent certifies the hours on the teen's permit, not on this log.",
+    "Page 1 has 10 entry rows after the printed sample row; pages 2-3 have 21 rows (counted from the PDF rules).",
+    "Skills are written with the form's own abbreviations where a LicenseLogger skill matches one; anything else is written out."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     378,
+     603
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "CA",
+   "state_name": "California",
+   "summary": [
+    {
+     "label": "TOTAL PRACTICE TIME",
+     "value": "total"
+    }
+   ],
+   "tables": [
+    {
+     "example_row": "1/16 Sample - SSC, LC, BUC, RT, LT | 1 hr. | 30 min. | BUC, LC | Mom",
+     "page_total": {
+      "label": "TOTAL PRACTICE TIME",
+      "sum": [
+       "day_amount",
+       "night_amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "skills_abbrev",
+         "label": "Driving Skills Practiced",
+         "w": 2.6
+        },
+        {
+         "group": "Driving Time Hours/Minutes 30 min, 1hr, etc.",
+         "key": "day_amount",
+         "label": "DAY",
+         "w": 0.9
+        },
+        {
+         "group": "Driving Time Hours/Minutes 30 min, 1hr, etc.",
+         "key": "night_amount",
+         "label": "NIGHT",
+         "w": 0.9
+        },
+        {
+         "key": "blank",
+         "label": "Skills needing more practice (use abbrev.)",
+         "w": 1.3
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Adult’s Initials",
+         "w": 0.9
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 21,
+     "rows_first": 10
+    }
+   ],
+   "title": "SUPERVISED DRIVING LOG",
+   "unfillable": [
+    "Skills needing more practice (use abbrev.)"
+   ]
+  },
+  "CO": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "before_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Name",
+      "value": ""
+     },
+     {
+      "label": "Signature",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "Please check all totals prior to signing. By signing below, I certify that the above total hours of driving experience is true and accurate.",
+    "title": "",
+    "totals": [
+     {
+      "label": "TOTAL DAY DRIVING TIME",
+      "value": "day"
+     },
+     {
+      "label": "TOTAL NIGHT DRIVING TIME",
+      "value": "night"
+     },
+     {
+      "label": "GRAND TOTAL DRIVING TIME (NIGHT + DAY)",
+      "value": "total"
+     }
+    ]
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Drive Time Log Sheet",
+    "number": "DR 2324",
+    "revision": "08/25/26",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "CO_DR2324-drive-time-log.pdf",
+    "url": "https://dmv.colorado.gov/sites/dmv/files/documents/DR_2324_e_wo.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Student’s name",
+     "value": "student_name"
+    },
+    {
+     "label": "Permit number",
+     "value": "permit_number"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Each of the 14 entries on the official page 2 has its own 'Comments' line; LicenseLogger writes the skills practiced there (the form calls comments optional).",
+    "The official page 1 prints 'Must be at least 10 hours' beside TOTAL DAY DRIVING TIME and 'Must be at least 50 hours' beside GRAND TOTAL; the instructions say the 10 hours are NIGHT hours. We copy the boxes, not the misplaced hints.",
+    "'Page __ of __' on the log page is filled with the page count of this copy."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "CO",
+   "state_name": "Colorado",
+   "summary": [],
+   "tables": [
+    {
+     "page_total": {
+      "label": "Totals for this page",
+      "sum": [
+       "day_amount",
+       "night_amount",
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Verifier’s Initials",
+         "w": 0.9
+        },
+        {
+         "key": "day_amount",
+         "label": "Day Driving Time",
+         "w": 1
+        },
+        {
+         "key": "night_amount",
+         "label": "Night Driving Time",
+         "w": 1
+        },
+        {
+         "key": "amount",
+         "label": "Grand Total Driving Time",
+         "w": 1
+        },
+        {
+         "key": "skills",
+         "label": "Comments",
+         "w": 2.2
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 14,
+     "rows_first": 14,
+     "title": "DRIVE LOGS"
+    }
+   ],
+   "title": "Drive Time Log Sheet",
+   "unfillable": []
+  },
+  "CT": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "before_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Parent/Guardian Signature",
+      "value": ""
+     },
+     {
+      "label": "Student Signature",
+      "value": ""
+     }
+    ],
+    "text": "Instruction totaling a minimum of 40 hours was completed on this date:___________",
+    "title": "",
+    "totals": [
+     {
+      "label": "Controls, Gauges, and Maintenance (min. 2 hrs.)",
+      "value": ""
+     },
+     {
+      "label": "Learning the Basics (min. 3 hrs.)",
+      "value": ""
+     },
+     {
+      "label": "Driving in Limited Traffic (min. 6 hrs.)",
+      "value": ""
+     },
+     {
+      "label": "Handling the Vehicle in Traffic (min. 8 hrs.)",
+      "value": ""
+     },
+     {
+      "label": "Parking (min. 2 hrs.)",
+      "value": ""
+     },
+     {
+      "label": "Driving on Limited-Access Highways (min. 6 hrs.)",
+      "value": ""
+     },
+     {
+      "label": "Driving at Night (min. 5 hrs.)",
+      "value": "night"
+     },
+     {
+      "label": "Handling Bad Weather and Emergencies (min. 3 hrs.)",
+      "value": ""
+     },
+     {
+      "label": "Additional Practice (min. 5 hrs.)",
+      "value": ""
+     },
+     {
+      "label": "Total Hours:",
+      "value": "total"
+     }
+    ]
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Parent/Guardian Driving Instruction Log",
+    "number": "",
+    "revision": "August 1, 2008",
+    "source_pages": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "source_pdf": "CT_parent-instruction-log.pdf",
+    "url": "https://portal.ct.gov/-/media/teendriving/parentinstructionlogpdf.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Driver Name",
+     "value": "student_name"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Page 1 lists the nine lesson categories with minimum hours; pages 2-6 are the log (13 rows each, with a 'Driver Name' line).",
+    "'Hours To Date' is the running total, as the form instructs ('Use the column at the right to show the total number of hours recorded up to that time')."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "CT",
+   "state_name": "Connecticut",
+   "summary": [],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "supervisor_name",
+         "label": "Tutor",
+         "w": 1.4
+        },
+        {
+         "key": "skills",
+         "label": "What Practiced",
+         "w": 2.4
+        },
+        {
+         "key": "amount",
+         "label": "Amount of Time",
+         "w": 1
+        },
+        {
+         "key": "cumulative",
+         "label": "Hours To Date",
+         "w": 1
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 13,
+     "rows_first": 13
+    }
+   ],
+   "title": "Parent/Guardian Driving Instruction Log",
+   "unfillable": [
+    "Lesson-category hours other than 'Driving at Night' (LicenseLogger does not tag drives with CT's nine lesson categories)",
+    "Date the 40 hours were completed (write it when signing)"
+   ]
+  },
+  "DC": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "I hereby certify that I am at least 16 years and 6 months old and have been a holder of a valid learner permit for at least six months, during which time I have not admitted to, been liable for or convicted of an offense for which points may be assessed. I also certify that I have received at least 40 hours of driving experience.  Applicant’s Signature ______  Date ______",
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Tutor’s Signature",
+      "value": ""
+     },
+     {
+      "label": "Driver License No:",
+      "value": ""
+     },
+     {
+      "label": "State of Issuance:",
+      "value": ""
+     },
+     {
+      "label": "Expiration Date:",
+      "value": ""
+     },
+     {
+      "label": "Tutor’s Signature",
+      "value": ""
+     },
+     {
+      "label": "Driver License No:",
+      "value": ""
+     },
+     {
+      "label": "State of Issuance:",
+      "value": ""
+     },
+     {
+      "label": "Expiration Date:",
+      "value": ""
+     }
+    ],
+    "text": "By signing the above certification, I, the tutor, certify that the learner has received 40 hours of driving experience specified by me on the dates and times indicated.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Certification of Eligibility for Provisional License",
+    "number": "DMV-GRAD-HR40",
+    "revision": "Rev.08/24/09",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "DC_40-hour-certification.pdf",
+    "url": "https://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/form_40_hours.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Applicant Full Name (Last, First, Middle, Suffix)",
+     "value": "student_name_lfm"
+    },
+    {
+     "label": "Learner Permit No.",
+     "value": "permit_number"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "One page: 11 rows after the printed Example row. The 'Amount of Time' column holds the clock times (the example shows '8:15 am – 10:15 am') and 'Hours/Minutes' the length.",
+    "Two tutor signature blocks are printed; each tutor certifies only the hours they supervised."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "DC",
+   "state_name": "District of Columbia",
+   "summary": [],
+   "tables": [
+    {
+     "example_row": "02/10/05 | Jane Doe | 8:15 am – 10:15 am | 2 hours",
+     "page_total": {
+      "label": "Total Hours",
+      "sum": [
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 1
+        },
+        {
+         "key": "supervisor_name",
+         "label": "Tutor’s Name (Please Print)",
+         "w": 2.2
+        },
+        {
+         "key": "time_range",
+         "label": "Amount of Time",
+         "w": 1.6
+        },
+        {
+         "key": "amount",
+         "label": "Hours/Minutes",
+         "w": 1
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 11,
+     "rows_first": 11
+    }
+   ],
+   "title": "Certification of Eligibility for Provisional License",
+   "unfillable": [
+    "Tutor driver license number, state of issuance and expiration date (a photocopy of each tutor's license must be attached)"
+   ]
+  },
+  "DE": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "Please complete and sign this form and return it to your teen’s driver education teacher prior to any unsupervised driving.",
+    "fields": [
+     {
+      "label": "Student Name",
+      "value": "student_name"
+     },
+     {
+      "label": "High School",
+      "value": ""
+     },
+     {
+      "label": "Teacher’s Name",
+      "value": ""
+     }
+    ],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Parent/Guardian Signature",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "I certify that my son/daughter has completed 50-hours of supervised driving during the first six months in the Graduated Driver License program.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Supervised Driving Log (Parent's Supervised Driving Program guide)",
+    "number": "",
+    "revision": "",
+    "source_pages": [
+     25,
+     26,
+     27
+    ],
+    "source_pdf": "DE_parents-supervised-driving-program.pdf",
+    "url": "https://dmv.de.gov/forms/driver_serv_forms/pdfs/ParentsSupervisedDrivingProgram.pdf"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "RoadReady template: 28 rows per page with a TOTAL row; the last page adds GRAND TOTAL.",
+    "'Day/Night' is a pair of check boxes on the form; LicenseLogger writes Day, Night or Day + Night.",
+    "'Location of Practice' gets the drive's start/end place names; the form's examples are road types (rural, highway).",
+    "Log pages are PDF pages 25-27 of the DE guide; page 27 has 13 rows, TOTAL, GRAND TOTAL and the parent certification."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     576,
+     756
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "DE",
+   "state_name": "Delaware",
+   "summary": [
+    {
+     "label": "GRAND TOTAL",
+     "value": "total"
+    }
+   ],
+   "tables": [
+    {
+     "page_total": {
+      "label": "TOTAL",
+      "sum": [
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "location",
+         "label": "Location of Practice (ex. rural, highway)",
+         "w": 1.5
+        },
+        {
+         "key": "day_or_night",
+         "label": "Day/Night",
+         "w": 0.9
+        },
+        {
+         "key": "weather",
+         "label": "Weather",
+         "w": 0.8
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 1.8
+        },
+        {
+         "key": "amount",
+         "label": "Driving Time",
+         "w": 0.8
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Adult’s Initials",
+         "w": 0.7
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 28,
+     "rows_first": 28
+    }
+   ],
+   "title": "SUPERVISED DRIVING LOG",
+   "unfillable": [
+    "High School",
+    "Teacher’s Name"
+   ]
+  },
+  "FL": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "INSTRUCTIONS: 1. One parent, legal guardian, or other responsible adult 21 years old or older must sign this form. 2. All signatures must be notarized or witnessed by an examiner.",
+    "fields": [],
+    "notary": {
+     "lines": [
+      "Notary Public or DL Examiner-Signature",
+      "Print, Type, or Stamp Commissioned Name of Notary Public"
+     ],
+     "text": "COUNTY OF ______ Sworn to (or affirmed) and subscribed before me this ____day of ______, 20____, by ______ who is personally known to me or produced identification. ______ as proof of identification. (Identification type and number)",
+     "title": "STATE OF FLORIDA"
+    },
+    "signatures": [
+     {
+      "label": "Signature of Parent, Legal Guardian or Responsible Adult",
+      "value": ""
+     },
+     {
+      "label": "Print Name",
+      "value": ""
+     }
+    ],
+    "text": "I do hereby certify that {student_name}, a minor, date of birth {birthday}, has driven a minimum of 50 hours during the past 12 months, of which 10 hours of driving were at night per Section 322.05(3), Florida Statutes.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Certification of Driving Experience of a Minor",
+    "number": "HSMV 71143",
+    "revision": "Rev 01/11",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "FL_HSMV71143.pdf",
+    "url": "https://www.flhsmv.gov/pdf/forms/71143.pdf"
+   },
+   "header_fields": [],
+   "kind": "certification",
+   "legend": null,
+   "notes": [
+    "The name blank is printed as 'First Middle Last'; LicenseLogger writes the name on file."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "FL",
+   "state_name": "Florida",
+   "subtitle": "STATE OF FLORIDA DEPARTMENT OF HIGHWAY SAFETY AND MOTOR VEHICLES",
+   "summary": [],
+   "tables": [],
+   "title": "CERTIFICATION OF DRIVING EXPERIENCE OF A MINOR",
+   "unfillable": []
+  },
+  "IA": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": null,
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Supervised Driving Log (Parent's Supervised Driving Program guide)",
+    "number": "",
+    "revision": "",
+    "source_pages": [
+     23,
+     24,
+     25,
+     26,
+     27
+    ],
+    "source_pdf": "IA_parents-supervised-driving-program.pdf",
+    "url": "https://iowadot.gov/media/7147/download"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "RoadReady template: 28 rows per page with a TOTAL row; the last page adds GRAND TOTAL.",
+    "'Day/Night' is a pair of check boxes on the form; LicenseLogger writes Day, Night or Day + Night.",
+    "'Location of Practice' gets the drive's start/end place names; the form's examples are road types (rural, highway).",
+    "Log pages are PDF pages 23-27 of the Iowa DOT guide; the Iowa copy has no certification block (the guide prints none)."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     576,
+     756
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "IA",
+   "state_name": "Iowa",
+   "summary": [
+    {
+     "label": "GRAND TOTAL",
+     "value": "total"
+    }
+   ],
+   "tables": [
+    {
+     "page_total": {
+      "label": "TOTAL",
+      "sum": [
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "location",
+         "label": "Location of Practice (ex. rural, highway)",
+         "w": 1.5
+        },
+        {
+         "key": "day_or_night",
+         "label": "Day/Night",
+         "w": 0.9
+        },
+        {
+         "key": "weather",
+         "label": "Weather",
+         "w": 0.8
+        },
+        {
+         "key": "skills",
+         "label": "Skills practiced",
+         "w": 1.8
+        },
+        {
+         "key": "amount",
+         "label": "Driving time",
+         "w": 0.8
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Adult’s Initials",
+         "w": 0.7
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 28,
+     "rows_first": 28
+    }
+   ],
+   "title": "SUPERVISED DRIVING LOG",
+   "unfillable": []
+  },
+  "IN": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "Completed hours/minutes must be entered on the approved log(s). Multiple logs may be completed and attached, if necessary.",
+    "mode": "transfer",
+    "source": "IN_SF54706-supervised-driving-log.pdf p.1"
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "I swear or affirm that the information entered on this form is true and correct. I understand that making a false statement may constitute the crime of perjury.",
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Signature of Parent or Legal Guardian (if Applicant is under eighteen (18) years of age)",
+      "value": ""
+     },
+     {
+      "label": "Printed Name",
+      "value": ""
+     },
+     {
+      "label": "Date (mm/dd/yyyy)",
+      "value": ""
+     },
+     {
+      "label": "Signature of Applicant",
+      "value": ""
+     },
+     {
+      "label": "Date (mm/dd/yyyy)",
+      "value": ""
+     }
+    ],
+    "text": "I certify that the driver named above has completed fifty (50) hours of supervised driving practice, ten (10) of which included nighttime driving practice, with:",
+    "title": "SECTION 2. AFFIRMATION AND SIGNATURE",
+    "totals": []
+   },
+   "date_format": "mm/dd/yyyy",
+   "form": {
+    "extra_sources": [],
+    "name": "Log of Supervised Driving Practice",
+    "number": "State Form 54706",
+    "revision": "R5 / 8-24",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "IN_SF54706-supervised-driving-log.pdf",
+    "url": "https://forms.in.gov/download.aspx?id=9758"
+   },
+   "header_fields": [
+    {
+     "label": "Driver Name (last, first, middle initial)",
+     "value": "student_name_lfm"
+    },
+    {
+     "label": "Driver’s License Number (DLN)",
+     "value": "permit_number"
+    },
+    {
+     "label": "Bioptic Drivers Only - Please Check Here:",
+     "value": ""
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Two side-by-side DATE / DAY / NIGHT column sets: about 30 rows each on page 1 and 22 on page 2, above Section 2.",
+    "The form has no totals boxes; the affirmation lists the five kinds of eligible supervisors (bullets not reproduced)."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "IN",
+   "state_name": "Indiana",
+   "summary": [],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "DATE (mm/dd/yyyy)",
+         "w": 1.1
+        },
+        {
+         "group": "Drive Time Hours / Minutes",
+         "key": "day_amount",
+         "label": "DAY",
+         "w": 0.8
+        },
+        {
+         "group": "Drive Time Hours / Minutes",
+         "key": "night_amount",
+         "label": "NIGHT",
+         "w": 0.8
+        }
+       ],
+       "filter": "all"
+      },
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "DATE (mm/dd/yyyy)",
+         "w": 1.1
+        },
+        {
+         "group": "Drive Time Hours / Minutes",
+         "key": "day_amount",
+         "label": "DAY",
+         "w": 0.8
+        },
+        {
+         "group": "Drive Time Hours / Minutes",
+         "key": "night_amount",
+         "label": "NIGHT",
+         "w": 0.8
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 22,
+     "rows_first": 30,
+     "title": "SECTION 1. DRIVING LOG"
+    }
+   ],
+   "title": "LOG OF SUPERVISED DRIVING PRACTICE",
+   "unfillable": [
+    "Bioptic check box"
+   ]
+  },
+  "KS": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Signature of Parent/Guardian:",
+      "value": ""
+     },
+     {
+      "label": "DL#",
+      "value": ""
+     },
+     {
+      "label": "Date:",
+      "value": ""
+     }
+    ],
+    "text": "I certify that I am the parent or guardian of the above-named applicant and that he/she has completed at least 50 hours of supervised driving (with at least 10 of those hours at night) with a licensed adult 21 year of age or over.",
+    "title": "Driving Time Certification",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Permission Affidavit for Kansas Credential (Driving Time Certification)",
+    "number": "DE-98",
+    "revision": "Rev. 8/21",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "KS_DE-98-permission-affidavit.pdf",
+    "url": "https://www.ksrevenue.gov/pdf/de98.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Applicant Name:",
+     "value": "student_name"
+    },
+    {
+     "label": "DOB:",
+     "value": "birthday"
+    },
+    {
+     "label": "DL#",
+     "value": "permit_number"
+    }
+   ],
+   "kind": "certification",
+   "legend": null,
+   "notes": [],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "KS",
+   "state_name": "Kansas",
+   "summary": [],
+   "tables": [],
+   "title": "Permission Affidavit for Kansas Credential",
+   "unfillable": [
+    "Permission section signature and DL#",
+    "Farm Permit certifications"
+   ]
+  },
+  "KY": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "The above record has been reviewed by a Kentucky State Police License Examiner and shows that the applicant and parent/guardian have documented 60 hours of driving.  KSP License Examiner ______ Date ______",
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Applicant's Signature",
+      "value": ""
+     },
+     {
+      "label": "Parent/Guardian Signature",
+      "value": ""
+     }
+    ],
+    "text": "By signing below, I certify that this practice-driving log is correct.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Practice Driving Log",
+    "number": "",
+    "revision": "",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "KY_practice-driving-log.pdf",
+    "url": "https://drive.ky.gov/Drivers/Documents/Practice-Driving-Log-03-25.pdf"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Day drives go in the DAY DRIVING RECORD (page 1, 31 rows) and night drives in the NIGHT DRIVING RECORD (page 2, 33 rows). A drive with both day and night minutes is split into one row in each record.",
+    "The form has no name field and no totals boxes.",
+    "No revision is printed; the DMV file name dates it 03-25 (state_logs.csv)."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "KY",
+   "state_name": "Kentucky",
+   "summary": [],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date of Driving",
+         "w": 1
+        },
+        {
+         "key": "amount",
+         "label": "Amount of Driving time",
+         "w": 1
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Parent/Guardian Initials",
+         "w": 1
+        }
+       ],
+       "filter": "day"
+      }
+     ],
+     "rows": 31,
+     "rows_first": 31,
+     "title": "DAY DRIVING RECORD (50 hours mandatory)"
+    },
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 1
+        },
+        {
+         "key": "amount",
+         "label": "Amount of Driving Time",
+         "w": 1
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Parent/Guardian Initials",
+         "w": 1
+        }
+       ],
+       "filter": "night"
+      }
+     ],
+     "rows": 33,
+     "rows_first": 33,
+     "title": "NIGHT DRIVING RECORD (10 hours mandatory)"
+    }
+   ],
+   "title": "PRACTICE DRIVING LOG",
+   "unfillable": [
+    "KSP License Examiner and Date (completed by the examiner)"
+   ]
+  },
+  "MA": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "2. Completion of Skills Program: The applicant has completed the additional 30 hours of required supervised driving and successfully completed an RMV approved driver skills development program.  2. Parent/Guardian Signature: ______",
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "1. Parent/Guardian Signature:",
+      "value": ""
+     },
+     {
+      "label": "Printed Name:",
+      "value": ""
+     }
+    ],
+    "text": "1. The applicant has completed the additional 40 hours of required supervised driving.",
+    "title": "B. Parent/Guardian Consent for Applicants under the age of 18:",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [
+     {
+      "pages": [
+       1
+      ],
+      "pdf": "MA_road-test-application.pdf",
+      "role": "certification",
+      "url": "https://www.mass.gov/doc/class-d-or-m-road-test-application-0/download"
+     }
+    ],
+    "name": "Supervised Driving Log + Class D or M Road Test Application (section B)",
+    "number": "",
+    "revision": "",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "MA_supervised-driving-log.pdf",
+    "url": "https://www.mass.gov/doc/supervised-driving-log/download"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "The log is optional tracking; the parent certifies the hours in section B of the Road Test Application. Only the hours lines of section B are reproduced; sign the official application."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "MA",
+   "state_name": "Massachusetts",
+   "summary": [],
+   "tables": [
+    {
+     "page_total": {
+      "label": "Total Hours this sheet",
+      "sum": [
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date_time",
+         "label": "Date & Time",
+         "w": 1.2
+        },
+        {
+         "key": "amount",
+         "label": "Driving Time (Hours/Minutes)",
+         "w": 1
+        },
+        {
+         "key": "day_or_night",
+         "label": "Day or Night",
+         "w": 0.8
+        },
+        {
+         "key": "blank",
+         "label": "Driving Environment (ex. rural, highway, city)",
+         "w": 1.5
+        },
+        {
+         "key": "weather",
+         "label": "Weather Conditions",
+         "w": 1
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 2
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 13,
+     "rows_first": 13
+    }
+   ],
+   "title": "Supervised Driving Log",
+   "unfillable": [
+    "Driving Environment (LicenseLogger does not record road type)",
+    "The rest of the Road Test Application (sections A and C)"
+   ]
+  },
+  "MD": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "OR I hereby certify that ________, who is 25 years of age or older, has had a minimum of 14 hours behind the wheel driving practice,",
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Signature of parent, guardian, mentor, or coach",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     },
+     {
+      "label": "Driver’s License Number",
+      "value": ""
+     }
+    ],
+    "text": "I hereby certify that {student_name}, who is under 25 years of age, has had a minimum of 60 hours behind the wheel driving practice, has demonstrated that they can safely operate a motor vehicle, and has been under the supervision of a valid license holder 21 years of age or older, who has been licensed for at least three years.",
+    "title": "Certification for Rookie Drivers",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Practice Log (Rookie Driver Skills Log)",
+    "number": "",
+    "revision": "",
+    "source_pages": [
+     25,
+     26,
+     27,
+     28
+    ],
+    "source_pdf": "MD_RD-006-rookie-driver-skills-log.pdf",
+    "url": "https://mva.maryland.gov/media/152/download"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "MVA catalogues the booklet as RD-006 (state_logs.csv); the number is not printed on the log pages. The second (25 or older) certification option is left blank.",
+    "Booklet pages 25-27 (15 rows, then 30 rows per page); the certification is on page 28.",
+    "The form's certification continues with the 6 hours of instruction and a penalty-of-perjury paragraph; only the first sentence is quoted here, the printed copy carries the full text."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     396,
+     612
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "MD",
+   "state_name": "Maryland",
+   "summary": [],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "start_time",
+         "label": "Start Time",
+         "w": 0.9
+        },
+        {
+         "key": "skills",
+         "label": "Skill/Activity",
+         "w": 2
+        },
+        {
+         "key": "end_time",
+         "label": "End Time",
+         "w": 0.9
+        },
+        {
+         "key": "amount",
+         "label": "Total Number of Hours Completed",
+         "w": 1.1
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 30,
+     "rows_first": 15
+    }
+   ],
+   "title": "Practice Log",
+   "unfillable": [
+    "Driver’s License Number of the signer",
+    "The '25 years of age or older' certification option"
+   ]
+  },
+  "ME": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hours",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Print Name",
+      "value": ""
+     },
+     {
+      "label": "Relationship",
+      "value": ""
+     },
+     {
+      "label": "Signature",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "I hereby certify that the permittee named on this form has completed 70 hours of actual driving which included 10 hours of after dark driving.",
+    "title": "CERTIFICATION OF DRIVING TIME",
+    "totals": [
+     {
+      "label": "TOTAL HOURS OF PRACTICE DRIVING:",
+      "value": "total"
+     },
+     {
+      "label": "TOTAL HOURS OF NIGHT DRIVING:",
+      "value": "night"
+     }
+    ]
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Driving Log",
+    "number": "MVE-21",
+    "revision": "Rev. 10/25",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "ME_MVE-21-permittee-driving-log.pdf",
+    "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/MVE-21%20Permittee%20Driving%20Log%20Rev%2010-25_2.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Name:",
+     "value": "student_name"
+    },
+    {
+     "label": "Date of Birth:",
+     "value": "birthday"
+    },
+    {
+     "label": "Mailing Address:",
+     "value": ""
+    },
+    {
+     "label": "Telephone Number:",
+     "value": ""
+    },
+    {
+     "label": "History Number (from top left of learner's permit above date of birth):",
+     "value": ""
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Landscape letter, 24 rows on page 1 and 25 on page 2.",
+    "Hours columns are written as decimal hours (the form asks for 'Number of Driving Hours')."
+   ],
+   "page": {
+    "orientation": "landscape",
+    "size": [
+     792,
+     612
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "ME",
+   "state_name": "Maine",
+   "summary": [],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date_time",
+         "label": "Date and Time",
+         "w": 1.3
+        },
+        {
+         "key": "amount",
+         "label": "Number of Driving Hours",
+         "w": 1
+        },
+        {
+         "key": "night_amount",
+         "label": "Number of After Dark Driving Hours",
+         "w": 1.1
+        },
+        {
+         "key": "supervisor_name",
+         "label": "Supervising Driver’s Name and Age",
+         "w": 2.4
+        },
+        {
+         "key": "blank",
+         "label": "License Number of Supervising Driver",
+         "w": 1.3
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 25,
+     "rows_first": 24
+    }
+   ],
+   "title": "DRIVING LOG (Please print your information)",
+   "unfillable": [
+    "Mailing Address",
+    "Telephone Number",
+    "History Number",
+    "Supervising driver's age and License Number of Supervising Driver"
+   ]
+  },
+  "MI": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "The log that follows and the free mobile app, RoadReady®, are the preferred formats. Other driving log formats will be accepted.",
+    "mode": "accepted",
+    "source": "MI_supervised-driving-guide.pdf p.25"
+   },
+   "amount_format": "hours",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "Segment 2 Driver Education: The signature of the parent or legal guardian below signifies that the driver named above has completed the above requirements. Daytime Hours Completed (30 Minimum): ______ Nighttime Hours Completed (2 minimum): ______  Parent or Legal Guardian’s Signature ________ Date ____",
+    "fields": [
+     {
+      "label": "Teen Driver’s Name",
+      "value": "student_name"
+     },
+     {
+      "label": "Level 1 Learner’s License Number",
+      "value": "permit_number"
+     }
+    ],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Parent or Legal Guardian’s Signature",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "a person may be issued a Level 2 graduated licensing status if the person presents a certification by the parent or guardian that the person, accompanied by his or her licensed parent or legal guardian or, with the permission of the parent or legal guardian, any licensed driver 21 years of age or older, has accumulated a total of not less than 50 hours of behind-the-wheel experience including not less than 10 nighttime hours.",
+    "title": "Driving Skills Test",
+    "totals": [
+     {
+      "label": "Grand Total Daytime Hours (40 Minimum):",
+      "value": "day"
+     },
+     {
+      "label": "Grand Total Night Hours (10 minimum):",
+      "value": "night"
+     }
+    ]
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Supervised Driving Log (Supervised Driving Guide)",
+    "number": "",
+    "revision": "Rev. 08/2019",
+    "source_pages": [
+     26,
+     27,
+     28
+    ],
+    "source_pdf": "MI_supervised-driving-guide.pdf",
+    "url": "https://www.michigan.gov/sos/-/media/Project/Websites/sos/License-and-ID/Drivers-under-18/Supervised-Driving-Guide.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Name of New Driver:",
+     "value": "student_name"
+    }
+   ],
+   "kind": "full_log",
+   "legend": "Lessons/Recommended Practice Hours: 1. Before you start the engine (1) 2. Moving, steering and stopping (1) 3. How close are you? (1) 4. Backing up (1) 5. Driving on a quiet street (5) 6. Looking ahead (5) 7. Turning around (1) 8. Parking (3) 9. Multi-lane roads (10) 10. City driving (10) 11. Freeway driving (10) 12. Roundabouts (2) 13. Winter Driving (as much as possible). Nighttime Hours: Driving time that is 30 minutes after sunset to 30 minutes before sunrise.",
+   "notes": [
+    "Log pages are PDF pages 26-28 of the SOS Supervised Driving Guide (RoadReady template, Rev. 08/2019): 27, 34 and 13 rows.",
+    "Each page ends with a Subtotal box (Subtotal 1/2/3 Day/Night Hours); page 2 carries 'Subtotal 1 & 2'.",
+    "Hours are written as decimal hours (1.5 = 1 h 30 min) because the columns are headed 'Day Hours' / 'Night Hours'."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     576,
+     756
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "MI",
+   "state_name": "Michigan",
+   "summary": [
+    {
+     "label": "Subtotal 1 & 2 Daytime Hours:",
+     "value": "day"
+    },
+    {
+     "label": "Subtotal 1 & 2 Nighttime Hours:",
+     "value": "night"
+    }
+   ],
+   "tables": [
+    {
+     "page_total": {
+      "label": "Subtotal Day/Night Hours",
+      "sum": [
+       "day_amount",
+       "night_amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "blank",
+         "label": "Lesson No.",
+         "w": 0.7
+        },
+        {
+         "key": "day_amount",
+         "label": "Day Hours",
+         "w": 0.7
+        },
+        {
+         "key": "night_amount",
+         "label": "Night Hours",
+         "w": 0.7
+        },
+        {
+         "key": "weather",
+         "label": "Weather Conditions",
+         "w": 1.2
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Supervisor’s Initials",
+         "w": 0.9
+        },
+        {
+         "key": "notes",
+         "label": "Notes",
+         "w": 2.2
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 34,
+     "rows_first": 27
+    }
+   ],
+   "title": "SUPERVISED DRIVING LOG",
+   "unfillable": [
+    "Lesson No. (the guide's lesson numbers 1-13; LicenseLogger does not tag drives with them)",
+    "Segment 2 Driver Education hours (hours at the time Segment 2 started) and its signature"
+   ]
+  },
+  "MN": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "Attach additional sheets of this Supervised Driving Log template, as needed (logs completed on any other document will not be accepted).",
+    "mode": "transfer",
+    "source": "MN_supervised-driving-log.pdf p.1"
+   },
+   "amount_format": "minutes",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Signature of Primary Driving Supervisor",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "I hereby affirm that I am the parent/guardian who has supervised my teen driver for the majority of the required driving hours, and that my teen has driven the hours listed above.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Supervised Driving Log",
+    "number": "",
+    "revision": "Rev. 06/2021",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "MN_supervised-driving-log.pdf",
+    "url": "https://assets.dps.mn.gov/files/dvs/dvs-supervised-driving-log.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Student’s Name",
+     "value": "student_name"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Two side-by-side column sets of about 25 rows each (left fills first), after a printed sample row.",
+    "Amounts are minutes, as on the form."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "MN",
+   "state_name": "Minnesota",
+   "summary": [
+    {
+     "label": "DAY:",
+     "value": "day_minutes"
+    },
+    {
+     "label": "NIGHT:",
+     "value": "night_minutes"
+    },
+    {
+     "label": "TOTAL MINUTES:",
+     "value": "total_minutes"
+    },
+    {
+     "label": "TOTAL DRIVING HOURS",
+     "value": "total_hours"
+    }
+   ],
+   "tables": [
+    {
+     "example_row": "8/15/14 | 90 | 30 | 120 | parking; turns",
+     "page_total": {
+      "label": "TOTALS",
+      "sum": [
+       "day_amount",
+       "night_amount",
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "day_amount",
+         "label": "Day Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "night_amount",
+         "label": "Night Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "amount",
+         "label": "Total Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 1.9
+        }
+       ],
+       "filter": "all"
+      },
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "day_amount",
+         "label": "Day Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "night_amount",
+         "label": "Night Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "amount",
+         "label": "Total Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 1.9
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 25,
+     "rows_first": 25
+    }
+   ],
+   "title": "Supervised Driving Log",
+   "unfillable": []
+  },
+  "MO": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": null,
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Driver Experience Log",
+    "number": "Form 4901",
+    "revision": "Revised 02-2014",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "MO_4901-driver-experience-log.pdf",
+    "url": "https://dor.mo.gov/forms/4901.pdf"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "One page, about 20 rows, a Grand Total box and no signature lines (the parent accompanies the teen to the license office)."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "MO",
+   "state_name": "Missouri",
+   "summary": [],
+   "tables": [
+    {
+     "page_total": {
+      "label": "Grand Total",
+      "sum": [
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 1
+        },
+        {
+         "key": "start_time",
+         "label": "Start Time",
+         "w": 1
+        },
+        {
+         "key": "end_time",
+         "label": "End Time",
+         "w": 1
+        },
+        {
+         "key": "amount",
+         "label": "Total Time",
+         "w": 1
+        },
+        {
+         "key": "supervisor_name",
+         "label": "Trainer’s Name",
+         "w": 1.6
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 20,
+     "rows_first": 20
+    }
+   ],
+   "title": "Driver Experience Log",
+   "unfillable": []
+  },
+  "MT": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "Use this log to track your teen’s 50 hours of practice driving (including 10 hours at night) OR consider using a mobile application log",
+    "mode": "accepted",
+    "source": "MT_teen-driving-log.pdf p.1"
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Parent/Guardian",
+      "value": ""
+     },
+     {
+      "label": "Teen Driver",
+      "value": ""
+     }
+    ],
+    "text": "",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Practice Driving Log",
+    "number": "",
+    "revision": "",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "MT_teen-driving-log.pdf",
+    "url": "https://mvdmt.gov/wp-content/uploads/2023/10/MV-TD-Teen-Driving-Log.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "This Driving Log belongs to:",
+     "value": "student_name"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "The file is catalogued as MV-TD (state_logs.csv); no number is printed on the page.",
+    "Two side-by-side column sets of about 24 rows; one TOTAL TIME box under the right-hand set.",
+    "The form prints no certification sentence, only the two signature lines."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "MT",
+   "state_name": "Montana",
+   "summary": [],
+   "tables": [
+    {
+     "page_total": {
+      "label": "TOTAL TIME",
+      "sum": [
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "conditions_skills",
+         "label": "Conditions & Skills EX: intersections, full stops, yields, scanning for hazards",
+         "w": 2
+        },
+        {
+         "key": "amount",
+         "label": "Amount of Time",
+         "w": 0.8
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Initials",
+         "w": 0.6
+        }
+       ],
+       "filter": "all"
+      },
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "conditions_skills",
+         "label": "Conditions & Skills EX: intersections, full stops, yields, scanning for hazards",
+         "w": 2
+        },
+        {
+         "key": "amount",
+         "label": "Amount of Time",
+         "w": 0.8
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Initials",
+         "w": 0.6
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 24,
+     "rows_first": 24
+    }
+   ],
+   "title": "PRACTICE DRIVING LOG",
+   "unfillable": []
+  },
+  "NC": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "Driving log showing at least 60 hours of driving (digital and printed copies accepted)",
+    "mode": "accepted",
+    "source": "NCDMV Level 2 page, quoted in state_logs.csv"
+   },
+   "amount_format": "hours",
+   "cert_position": "before_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "(Supervising Driver’s Signature)",
+      "value": ""
+     },
+     {
+      "label": "(Date)",
+      "value": ""
+     }
+    ],
+    "text": "I {supervisor_name}, do certify that the information on this form is true and accurate and is in accordance with N.C. G.S. 20-11(d),",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Driving Log to Advance to N.C. Level 2 Limited Provisional Driver License",
+    "number": "DL-4A",
+    "revision": "09/2011",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "NC_DL-4A.pdf",
+    "url": "https://www.ncdot.gov/dmv/downloads/Documents/DL-4A.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Customer Name: (Please Print Name)",
+     "value": "student_name"
+    },
+    {
+     "label": "Customer’s DL Number:",
+     "value": "permit_number"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "The certification sits at the top of page 1 above the first 19 rows; page 2 has 39 rows and the totals line.",
+    "'TIME OF DAY' / 'TIME OF NIGHT' are read as the daytime and nighttime amounts of each drive.",
+    "The supervising driver's printed name in the certification is the supervisor with the most logged drives."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "NC",
+   "state_name": "North Carolina",
+   "summary": [
+    {
+     "label": "Total Day Hours Driven:",
+     "value": "day_hours"
+    },
+    {
+     "label": "Total Night Hours Driven:",
+     "value": "night_hours"
+    },
+    {
+     "label": "Grand Total:",
+     "value": "total_hours"
+    }
+   ],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "DATE",
+         "w": 0.9
+        },
+        {
+         "key": "day_amount",
+         "label": "TIME OF DAY",
+         "w": 0.9
+        },
+        {
+         "key": "night_amount",
+         "label": "TIME OF NIGHT",
+         "w": 0.9
+        },
+        {
+         "key": "amount",
+         "label": "AMOUNT OF DRIVING TIME (E.G. # HOURS)",
+         "w": 1.1
+        },
+        {
+         "key": "supervisor_name",
+         "label": "SUPERVISING DRIVER’S PRINTED NAME",
+         "w": 2
+        },
+        {
+         "key": "blank",
+         "label": "SUPERVISING DRIVER’S DL (Number and State)",
+         "w": 1.3
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 39,
+     "rows_first": 19
+    }
+   ],
+   "title": "DRIVING LOG TO ADVANCE TO N.C. LEVEL 2 LIMITED PROVISIONAL DRIVER LICENSE",
+   "unfillable": [
+    "SUPERVISING DRIVER’S DL (Number and State)"
+   ]
+  },
+  "NE": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "I also certify that all 50 hours were spent with a parent, guardian, or adult at least twenty-one years of age, who has a current Nebraska operator’s license or who is licensed in another state. I certify that all information submitted by me regarding this is true and correct.",
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Signature of Parent, Guardian or Licensed Driver 21 Years of Age or Older",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "I certify that {student_name}, (Applicant’s Name) with permit number {permit_number}, has had a minimum of 50 hours of lawful behind-the-wheel motor vehicle operation, including at least 10 hours between sunset and sunrise under conditions that reflect department-approved driver safety course curriculum and is sufficiently prepared and able to operate a motor vehicle safely.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "School Permit/Provisional Operator's Permit 50 Hour Certification",
+    "number": "DMV 06-91/TSIE3",
+    "revision": "1/08",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "NE_POP-50hr-certification.pdf",
+    "url": "https://dmv.nebraska.gov/sites/dmv.nebraska.gov/files/doc/dls/forms/pop50hrcert.pdf"
+   },
+   "header_fields": [],
+   "kind": "certification",
+   "legend": null,
+   "notes": [],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "NE",
+   "state_name": "Nebraska",
+   "subtitle": "SCHOOL PERMIT/PROVISIONAL OPERATOR’S PERMIT",
+   "summary": [],
+   "tables": [],
+   "title": "50 HOUR CERTIFICATION",
+   "unfillable": []
+  },
+  "NJ": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "Please print and sign by hand prior to visiting an Agency",
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Print Name of Parent, Guardian, or Supervising Driver",
+      "value": ""
+     },
+     {
+      "label": "Signature of Parent, Guardian, or Supervising Driver",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "I certify that I am the parent/guardian of the applicant, or that I am at least 21 years of age and hold a valid New Jersey driver’s license, and that I accompanied and supervised the applicant during practice driving hours. I certify that the applicant has completed a minimum of 50 hours of supervised driving, including 10 hours during darkness.",
+    "title": "CERTIFICATION",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Certification of Supervised Driving",
+    "number": "BA-CSD",
+    "revision": "rev 1/25",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "NJ_BA-CSD.pdf",
+    "url": "https://www.nj.gov/mvc/pdf/license/BA-CSD.pdf"
+   },
+   "header_fields": [],
+   "kind": "certification",
+   "legend": null,
+   "notes": [
+    "The form has no applicant-name or totals fields; the student's name appears only in this copy's footer.",
+    "MVC says its 'Share the Keys' practice log is for tracking only and cannot replace BA-CSD (state_logs.csv)."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "NJ",
+   "state_name": "New Jersey",
+   "summary": [],
+   "tables": [],
+   "title": "CERTIFICATION OF SUPERVISED DRIVING",
+   "unfillable": []
+  },
+  "NV": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "Only the DLD-130 or the RoadReady app log is accepted; signatures must be originals and photocopies are not acceptable.",
+    "mode": "transfer",
+    "source": "state_logs.csv (NV other_rules) and NV_DLD-130.pdf p.1"
+   },
+   "amount_format": "minutes",
+   "cert_position": "before_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Signature of Parent/Legal Guardian",
+      "value": ""
+     },
+     {
+      "label": "License/ID Number",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     },
+     {
+      "label": "Signature of Notary Public or Field Services Representative",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "I, the undersigned, do hereby certify that I am the ______ of the person named above, and that he/she has completed the required number of hours of behind-the-wheel driving experience with a restricted license, instruction permit, or restricted permit issued pursuant to NRS 483.267. 483.270 or 483.280.",
+    "title": "Parent/Legal Guardian Certification of Behind-The-Wheel Driver Experience",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [
+     {
+      "pages": [
+       1
+      ],
+      "pdf": "NV_DLD-130A-additional-sheet.pdf",
+      "role": "additional sheet",
+      "url": "https://dmv.nv.gov/pdfforms/dld130a.pdf"
+     }
+    ],
+    "name": "Beginning Driver Experience Log",
+    "number": "DLD130",
+    "revision": "1/2023",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "NV_DLD-130.pdf",
+    "url": "https://dmv.nv.gov/pdfforms/dld130.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Applicant’s Name",
+     "value": "student_name"
+    },
+    {
+     "label": "Instruction Permit or Restricted License No.",
+     "value": "permit_number"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Page 1 is the certification (parent signs; notary or DMV Field Services representative signs); page 2 is the log with Column A (daytime) and Column B (nighttime), about 17 rows each, then the DLD-130A additional sheet.",
+    "Each drive goes on its own line. A drive with both day and night minutes is split: the day part in Column A and the night part in Column B, with begin/end times split at the day/night boundary (evening drives: day first; drives starting before noon: night first).",
+    "Times use AM/PM; the form rejects military time."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "NV",
+   "state_name": "Nevada",
+   "summary": [
+    {
+     "label": "Subtotal Column A",
+     "value": "day_minutes"
+    },
+    {
+     "label": "Subtotal Column B",
+     "value": "night_minutes"
+    },
+    {
+     "label": "Minutes Subtotal from Additional Sheets",
+     "value": ""
+    },
+    {
+     "label": "Total Minutes",
+     "value": "total_minutes"
+    },
+    {
+     "label": "Total Hours (Divide Total Minutes by 60)",
+     "value": "total_hours"
+    }
+   ],
+   "tables": [
+    {
+     "example_row": "01/17/23 EXAMPLE | 6:00 am | 8:00 am | 120",
+     "page_total": {
+      "label": "Subtotal",
+      "sum": [
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "group": "Time of Day Please indicate AM or PM Do not use military time",
+         "key": "start_time",
+         "label": "Begin",
+         "w": 0.8
+        },
+        {
+         "group": "Time of Day Please indicate AM or PM Do not use military time",
+         "key": "end_time",
+         "label": "End",
+         "w": 0.8
+        },
+        {
+         "key": "amount",
+         "label": "Minutes",
+         "w": 0.7
+        }
+       ],
+       "filter": "day",
+       "title": "Column A- Daytime Driving"
+      },
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "group": "Time of Day Please indicate AM or PM Do not use military time",
+         "key": "start_time",
+         "label": "Begin",
+         "w": 0.8
+        },
+        {
+         "group": "Time of Day Please indicate AM or PM Do not use military time",
+         "key": "end_time",
+         "label": "End",
+         "w": 0.8
+        },
+        {
+         "key": "amount",
+         "label": "Minutes",
+         "w": 0.7
+        }
+       ],
+       "filter": "night",
+       "title": "Column B – Nighttime Driving"
+      }
+     ],
+     "rows": 17,
+     "rows_first": 17,
+     "title": "Beginning Driver Experience Log"
+    }
+   ],
+   "title": "Beginning Driver Experience Log",
+   "unfillable": [
+    "Relationship (blank in the certification sentence)",
+    "FOR DEPARTMENT USE ONLY section",
+    "Minutes Subtotal from Additional Sheets (this copy lists every drive)"
+   ]
+  },
+  "NY": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Printed Name of Parent/Guardian or Representative of a Government Agency/Facility",
+      "value": ""
+     },
+     {
+      "label": "Signature of Parent/Guardian or Representative of a Government Agency/Facility",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     },
+     {
+      "label": "Name of Government Facility (if applicable)",
+      "value": ""
+     }
+    ],
+    "text": "I certify that I am the parent/guardian or representative of a government agency or facility. I also certify that the applicant has completed at least 50 hours of supervised driving, including 15 hours after sunset.",
+    "title": "CERTIFICATION",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Certification of Supervised Driving",
+    "number": "MV-262",
+    "revision": "3/25",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "NY_MV-262.pdf",
+    "url": "https://dmv.ny.gov/forms/mv262.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Applicant Name",
+     "value": "student_name"
+    },
+    {
+     "label": "Learner Permit ID Number",
+     "value": "permit_number"
+    },
+    {
+     "label": "Address",
+     "value": ""
+    }
+   ],
+   "kind": "certification",
+   "legend": null,
+   "notes": [
+    "The certification continues with the driving-school and regional-restriction clauses and a falsification warning; only its first two sentences are quoted here.",
+    "The driving-school table is for hours certified by a school; LicenseLogger leaves it blank."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "NY",
+   "state_name": "New York",
+   "summary": [],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "blank",
+         "label": "Name of School",
+         "w": 1.4
+        },
+        {
+         "key": "blank",
+         "label": "Driving School License Number",
+         "w": 1
+        },
+        {
+         "key": "blank",
+         "label": "Instructor’s Name",
+         "w": 1.2
+        },
+        {
+         "key": "blank",
+         "label": "Instructor Certificate Number",
+         "w": 1
+        },
+        {
+         "key": "blank",
+         "label": "Number of Hours Certified",
+         "w": 0.8
+        },
+        {
+         "key": "blank",
+         "label": "Administrator or Owner or Instructor’s Signature",
+         "w": 1.4
+        }
+       ],
+       "filter": "none"
+      }
+     ],
+     "rows": 9,
+     "rows_first": 9
+    }
+   ],
+   "title": "CERTIFICATION OF SUPERVISED DRIVING",
+   "unfillable": [
+    "Address",
+    "Driving school table (completed and signed by the school)"
+   ]
+  },
+  "OH": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "Supervised driving hours may be documented manually by filling in the log included or by using the RoadReady Ohio App.",
+    "mode": "transfer",
+    "source": "OH_BMV5791-fifty-hour-affidavit.pdf p.1"
+   },
+   "amount_format": "hr_min",
+   "cert_position": "before_log",
+   "certification": {
+    "fields": [],
+    "notary": {
+     "lines": [
+      "Signature of Notary Public",
+      "My commission expires"
+     ],
+     "text": "Sworn to and subscribed in my presence this ___ day of ___, 20___ in ___ County, State of ___.",
+     "title": "(Notary Seal)"
+    },
+    "signatures": [
+     {
+      "label": "SIGNATURE OF ELIGIBLE ADULT",
+      "value": ""
+     }
+    ],
+    "text": "The eligible adult identified above personally appeared before me and attested that the temporary permit holder has truthfully recorded in the Supervised Driving Log section the completion of at least fifty (50) hours of actual driving experience.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Fifty Hour Affidavit",
+    "number": "BMV 5791",
+    "revision": "9/25",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "OH_BMV5791-fifty-hour-affidavit.pdf",
+    "url": "https://dam.assets.ohio.gov/image/upload/publicsafety.ohio.gov/bmv5791.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "NAME OF TEMPORARY PERMIT HOLDER",
+     "value": "student_name"
+    },
+    {
+     "label": "TEMPORARY INSTRUCTION PERMIT I.D. #",
+     "value": "permit_number"
+    },
+    {
+     "label": "ADDRESS",
+     "value": ""
+    },
+    {
+     "label": "CITY",
+     "value": ""
+    },
+    {
+     "label": "STATE",
+     "value": ""
+    },
+    {
+     "label": "ZIP CODE",
+     "value": ""
+    },
+    {
+     "label": "NAME OF ELIGIBLE ADULT*",
+     "value": ""
+    },
+    {
+     "label": "DRIVER LICENSE / I.D. CARD #",
+     "value": ""
+    },
+    {
+     "label": "RELATIONSHIP TO TEMPORARY PERMIT HOLDER",
+     "value": ""
+    },
+    {
+     "label": "E-MAIL ADDRESS OR TELEPHONE #",
+     "value": ""
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Page 1 is the affidavit (signed before a notary); page 2 is the Supervised Driving Log with 26 rows.",
+    "The form's log has no totals boxes; the footer line states the minimums. LicenseLogger adds nothing beyond the printed text."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "OH",
+   "state_name": "Ohio",
+   "summary": [
+    {
+     "label": "Minimum of 50 hours of required supervised driving. 40 hours of day time driving and 10 hours of night time.",
+     "value": ""
+    }
+   ],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "DATE",
+         "w": 0.9
+        },
+        {
+         "key": "supervisor_name",
+         "label": "Supervising Licensed Driver Name",
+         "w": 1.8
+        },
+        {
+         "key": "blank",
+         "label": "Supervising Adult Ohio Driver License #",
+         "w": 1.5
+        },
+        {
+         "group": "Start & End Time Include AM or PM",
+         "key": "start_time",
+         "label": "Start",
+         "w": 0.85
+        },
+        {
+         "group": "Start & End Time Include AM or PM",
+         "key": "end_time",
+         "label": "End",
+         "w": 0.85
+        },
+        {
+         "group": "Total Day Time",
+         "key": "day_hours_part",
+         "label": "Hours",
+         "w": 0.6
+        },
+        {
+         "group": "Total Day Time",
+         "key": "day_minutes_part",
+         "label": "Minutes",
+         "w": 0.6
+        },
+        {
+         "group": "Total Night Time",
+         "key": "night_hours_part",
+         "label": "Hours",
+         "w": 0.6
+        },
+        {
+         "group": "Total Night Time",
+         "key": "night_minutes_part",
+         "label": "Minutes",
+         "w": 0.6
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 26,
+     "rows_first": 26,
+     "title": "SUPERVISED DRIVING LOG"
+    }
+   ],
+   "title": "FIFTY HOUR AFFIDAVIT",
+   "unfillable": [
+    "ADDRESS / CITY / STATE / ZIP CODE",
+    "NAME OF ELIGIBLE ADULT*, DRIVER LICENSE / I.D. CARD #, RELATIONSHIP, E-MAIL ADDRESS OR TELEPHONE #",
+    "Supervising Adult Ohio Driver License # (LicenseLogger does not store supervisors' license numbers)",
+    "Notary section"
+   ]
+  },
+  "OK": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": {
+     "lines": [
+      "[SEAL]",
+      "My commission expires:",
+      "Notary Public"
+     ],
+     "text": "State of ______, County of ______ Subscribed and sworn to before me this ____ day of ______, ____.",
+     "title": "This document must be completed in the presence of a notary public."
+    },
+    "signatures": [
+     {
+      "label": "Signature of Parent/Legal Guardian",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "I declare upon oath and under penalty of perjury that I am the Parent/Legal Guardian of the applicant named below. I further declare that the person listed below has received a minimum of fifty (50) hours of actual behind-the-wheel training, of which at least ten (10) hours of said training was at night,",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [
+     {
+      "pages": [
+       1
+      ],
+      "pdf": "OK_50hd-older-DPS-version.pdf",
+      "role": "older DPS version (not used)",
+      "url": "https://oklahoma.gov/content/dam/ok/en/dps/docs/50hd.pdf"
+     }
+    ],
+    "name": "Affidavit of Driver Training",
+    "number": "",
+    "revision": "SOK 12/2025",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "OK_affidavit-driver-training.pdf",
+    "url": "https://oklahoma.gov/content/dam/service-oklahoma/Documents/Affidavit%20Driver%20Training%2011-23-22%20-%20Fillable.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Last Name:",
+     "value": "student_last"
+    },
+    {
+     "label": "First Name:",
+     "value": "student_first"
+    },
+    {
+     "label": "Middle Name:",
+     "value": ""
+    },
+    {
+     "label": "Driver License #:",
+     "value": "permit_number"
+    },
+    {
+     "label": "Date of Birth:",
+     "value": "birthday"
+    }
+   ],
+   "kind": "certification",
+   "legend": null,
+   "notes": [
+    "Current Service Oklahoma version (SOK 12/2025). The older DPS 300 version is in the folder for reference only."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "OK",
+   "state_name": "Oklahoma",
+   "summary": [],
+   "tables": [],
+   "title": "AFFIDAVIT OF DRIVER TRAINING",
+   "unfillable": [
+    "Middle Name",
+    "PARENT/LEGAL GUARDIAN INFORMATION",
+    "STATE OF OKLAHOMA / COUNTY OF (venue at top)"
+   ]
+  },
+  "OR": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": null,
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Practice Driving Log",
+    "number": "",
+    "revision": "",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "OR_practice-driving-log.pdf",
+    "url": "https://www.oregon.gov/odot/DMV/Teen/Documents/teen_drive_log.pdf"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "One page, about 21 rows, no totals box (the 'Cumulative Hours' column carries the running total) and no signature: Oregon certifies hours on the DMV license application.",
+    "Teen's initials are taken from the student's name."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "OR",
+   "state_name": "Oregon",
+   "summary": [],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "skills",
+         "label": "Session Topic/Focus",
+         "w": 2.2
+        },
+        {
+         "key": "amount",
+         "label": "Time (Hours/Min)",
+         "w": 0.9
+        },
+        {
+         "key": "cumulative",
+         "label": "Cumulative Hours",
+         "w": 0.9
+        },
+        {
+         "key": "student_initials",
+         "label": "Teen’s Initials",
+         "w": 0.7
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Adult’s Initials",
+         "w": 0.7
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 21,
+     "rows_first": 21
+    }
+   ],
+   "title": "Practice Driving Log",
+   "unfillable": []
+  },
+  "PA": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "I hereby certify this minor has printed or viewed educational materials provided on PennDOT's website on the dangers of distracted driving.",
+    "fields": [
+     {
+      "label": "(PRINT NAME OF MINOR)",
+      "value": "student_name"
+     },
+     {
+      "label": "(LEARNER'S PERMIT NUMBER)",
+      "value": "permit_number"
+     }
+    ],
+    "notary": {
+     "lines": [
+      "Signature of Person Administering Oath",
+      "EXAM CENTER",
+      "EXAMINER #",
+      "INSTRUCTOR #"
+     ],
+     "text": "SUBSCRIBED AND SWORN TO BEFORE ME: MO. DAY YEAR",
+     "title": "SIGN IN PRESENCE OF NOTARY, DRIVER LICENSE EXAMINER, END-OF-COURSE SKILL TEST TEACHER, CERTIFIED THIRD PARTY EXAMINER, OR MOTORCYCLE SAFETY INSTRUCTOR"
+    },
+    "signatures": [
+     {
+      "label": "(signature of parent, guardian, person in loco parentis or spouse at least 18 years of age)",
+      "value": ""
+     },
+     {
+      "label": "(print name as it appears in signature)",
+      "value": ""
+     }
+    ],
+    "text": "I hereby certify that this minor applicant has completed at least 65 hours of supervised practical driving experience, including (except for a motorcycle permit applicant *) 10 hours of nighttime driving and 5 hours of inclement weather driving. This behind-the-wheel experience was given by a licensed driver(s) 21 years of age or older.",
+    "title": "PARENT OR GUARDIAN CERTIFICATION FORM",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [
+     {
+      "pages": [
+       1
+      ],
+      "pdf": "PA_DL-180C.pdf",
+      "role": "certification",
+      "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bdl/bdl-form/dl-180c.pdf"
+     }
+    ],
+    "name": "Supervised Driving Log (PUB 385A) + Parent or Guardian Certification Form",
+    "number": "DL-180C",
+    "revision": "6-25",
+    "source_pages": [
+     27,
+     28
+    ],
+    "source_pdf": "PA_PUB385A-parents-supervised-driving-program.pdf",
+    "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bdl/bdl-publications/pub%20385a.pdf"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "RoadReady template: 28 rows per page with a TOTAL row; the last page adds GRAND TOTAL.",
+    "'Day/Night' is a pair of check boxes on the form; LicenseLogger writes Day, Night or Day + Night.",
+    "'Location of Practice' gets the drive's start/end place names; the form's examples are road types (rural, highway).",
+    "The log is PUB 385A pages 27-28 (RoadReady template, optional); the certification is the separate DL-180C, reproduced after the log.",
+    "DL-180C has no totals boxes; LicenseLogger's computed totals (total, night, weather) appear only in the separate 'Computed by LicenseLogger' box."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     576,
+     756
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "PA",
+   "state_name": "Pennsylvania",
+   "summary": [],
+   "tables": [
+    {
+     "page_total": {
+      "label": "TOTAL",
+      "sum": [
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "location",
+         "label": "Location of Practice (ex. rural, highway)",
+         "w": 1.5
+        },
+        {
+         "key": "day_or_night",
+         "label": "Day/Night",
+         "w": 0.9
+        },
+        {
+         "key": "weather",
+         "label": "Weather",
+         "w": 0.8
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 1.8
+        },
+        {
+         "key": "amount",
+         "label": "Driving Time",
+         "w": 0.8
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Adult’s Initials",
+         "w": 0.7
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 28,
+     "rows_first": 28
+    }
+   ],
+   "title": "SUPERVISED DRIVING LOG",
+   "unfillable": [
+    "Weather column on the log is the weather tag; the 5 inclement-weather hours are totalled from LicenseLogger's weather minutes"
+   ]
+  },
+  "RI": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "According to Rhode Island General Law § 31-10-6, (b)(2)(iii), a person under the age of eighteen (18) must complete a minimum of fifty (50) hours of driving experience, with ten (10) of those hours being completed at night.",
+    "fields": [
+     {
+      "label": "Driver’s Name",
+      "value": "student_name"
+     },
+     {
+      "label": "Permit Number",
+      "value": "permit_number"
+     }
+    ],
+    "notary": {
+     "lines": [
+      "Notary Public",
+      "Commission Date"
+     ],
+     "text": "",
+     "title": ""
+    },
+    "signatures": [
+     {
+      "label": "Parent/Guardian",
+      "value": ""
+     }
+    ],
+    "text": "The notarized signature of a parent, below, states that the minor seeking to obtain a provisional license has completed the above requirements.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Supervised Driving Log (Supervised Driving Guide)",
+    "number": "",
+    "revision": "",
+    "source_pages": [
+     16
+    ],
+    "source_pdf": "RI_supervised-driving-guide.pdf",
+    "url": "https://dmv.ri.gov/sites/g/files/xkgbur556/files/documents/guides/SupervisedDrivingGuide.pdf"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "The guide prints the log as a two-page spread (each half 396 x 612 pt): 9 tall rows on the left half, 3 rows plus the notarized certification on the right half."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     396,
+     612
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "RI",
+   "state_name": "Rhode Island",
+   "summary": [],
+   "tables": [
+    {
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "amount",
+         "label": "Driving Time",
+         "w": 0.8
+        },
+        {
+         "key": "day_or_night",
+         "label": "Day/ Night",
+         "w": 0.6
+        },
+        {
+         "key": "blank",
+         "label": "Driving Environment (ex. rural, highway)",
+         "w": 1.4
+        },
+        {
+         "key": "weather",
+         "label": "Weather",
+         "w": 0.8
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 1.6
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 9,
+     "rows_first": 9
+    }
+   ],
+   "title": "Supervised Driving Log",
+   "unfillable": [
+    "Driving Environment (LicenseLogger does not record road type)"
+   ]
+  },
+  "SC": {
+   "abbrev": {
+    "Backing": "BUC",
+    "Backing up": "BUC",
+    "Following distance": "KSAC",
+    "Freeway": "ID",
+    "Heavy traffic": "PT",
+    "Highway": "ID",
+    "Highway merge": "ID",
+    "Hill parking": "PH",
+    "Intersections": "I",
+    "Lane changes": "LC",
+    "Left turns": "LT",
+    "Night driving": "ND",
+    "Parallel parking": "PP",
+    "Right turns": "RT",
+    "Stops": "SSC",
+    "U-turn": "UT",
+    "U-turns": "UT",
+    "Unprotected lefts": "LT"
+   },
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": null,
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Supervised Driving Log",
+    "number": "DL-008A",
+    "revision": "Rev. 01/26",
+    "source_pages": [
+     1,
+     2,
+     3
+    ],
+    "source_pdf": "SC_DL-008A-supervised-driving-log.pdf",
+    "url": "https://dmv.sc.gov/sites/scdmv/files/2026-01/DL-008A.pdf"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": "DRIVING SKILLS TO PRACTICE. Level I: Backing Up the Car (BUC), Driving a “Stick” (DS), Lane Choice and Control (LCC), Left Turn/Right Turn (LT/RT), Looking Ahead in Traffic (LAT), Starting and Stopping the Car (SSC). Level II: Intersections (I), Keeping Space Around the Car (KSAC), Lane Changes (LC), Practicing in Traffic (PT). Level III: Parking on Hills (PH), Parallel Parking (PP), U-Turn (UT). Level IV: Interstate Driving (ID), Night Driving (ND), Adverse Conditions (AC), Special Problems and Emergencies (SPE).",
+   "notes": [
+    "13 rows on page 1 after the sample row, 30 rows on pages 2-3. No signature on the log: the certification is on the PDLA issued by authorized schools (not downloadable)."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "SC",
+   "state_name": "South Carolina",
+   "summary": [
+    {
+     "label": "TOTAL PRACTICE TIME",
+     "value": "total"
+    }
+   ],
+   "tables": [
+    {
+     "example_row": "1/16 | Sample-SSC, LC, BUC, RT,LT | 1 hr. | 30 min. | BUC, LC | Mom",
+     "page_total": {
+      "label": "TOTAL PRACTICE TIME",
+      "sum": [
+       "day_amount",
+       "night_amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "skills_abbrev",
+         "label": "Driving Skills Practiced",
+         "w": 2.6
+        },
+        {
+         "group": "Driving Time Hours/Minutes 30 min, 1 hr., etc.",
+         "key": "day_amount",
+         "label": "DAY",
+         "w": 0.8
+        },
+        {
+         "group": "Driving Time Hours/Minutes 30 min, 1 hr., etc.",
+         "key": "night_amount",
+         "label": "NIGHT",
+         "w": 0.8
+        },
+        {
+         "key": "blank",
+         "label": "Skills Needing More Practice (use abbreviations)",
+         "w": 1.4
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Adult Initials",
+         "w": 0.8
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 30,
+     "rows_first": 13
+    }
+   ],
+   "title": "SUPERVISED DRIVING LOG",
+   "unfillable": [
+    "Skills Needing More Practice (use abbreviations)"
+   ]
+  },
+  "SD": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "minutes",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": {
+     "lines": [
+      "Notary",
+      "(SEAL)",
+      "Commission Expires:"
+     ],
+     "text": "This form must be signed in front of a notary of the public or South Dakota driver license examiner.",
+     "title": "OR"
+    },
+    "signatures": [
+     {
+      "label": "Parent/Guardian Name (Please Print)",
+      "value": ""
+     },
+     {
+      "label": "Parent/Guardian Signature",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     },
+     {
+      "label": "Driver Examiner Signature/Number",
+      "value": ""
+     }
+    ],
+    "text": "I certify that (minor) {student_name}, has completed 50 hours of *adult supervised driving since the issuance of the Learner’s Permit. Of the 50 hours, 10 have been in inclement weather and 10 have been after dark.",
+    "title": "AFFIDAVIT OF COMPLETION OF REQUIRED SUPERVISED DRIVING",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [
+     {
+      "pages": [
+       1
+      ],
+      "pdf": "SD_supervised-driving-affidavit.pdf",
+      "role": "certification",
+      "url": "https://www.sd.gov/sys_attachment.do?sys_id=da62dd3647806e10237fbd51026d43c6"
+     }
+    ],
+    "name": "Supervised Driving Log + Affidavit of Completion of Required Supervised Driving",
+    "number": "",
+    "revision": "Rev. 04-22-21",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "SD_supervised-driving-log.pdf",
+    "url": "https://www.sd.gov/sys_attachment.do?sys_id=92421d3647806e10237fbd51026d4390"
+   },
+   "header_fields": [
+    {
+     "label": "Student Name:",
+     "value": "student_name"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Two side-by-side column sets of about 25 rows; the affidavit is a separate one-page form (Rev. 04-22-2021), reproduced after the log.",
+    "Inclement Weather Minutes are LicenseLogger's weather minutes (minutes of drives tagged with bad weather)."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "SD",
+   "state_name": "South Dakota",
+   "summary": [
+    {
+     "label": "Inc. Weather:",
+     "value": "weather_minutes"
+    },
+    {
+     "label": "Night:",
+     "value": "night_minutes"
+    },
+    {
+     "label": "Day:",
+     "value": "day_minutes"
+    },
+    {
+     "label": "Total Minutes:",
+     "value": "total_minutes"
+    }
+   ],
+   "tables": [
+    {
+     "page_total": {
+      "label": "TOTALS",
+      "sum": [
+       "weather_amount",
+       "night_amount",
+       "day_amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "weather_amount",
+         "label": "Inclement Weather Minutes",
+         "w": 0.8
+        },
+        {
+         "key": "night_amount",
+         "label": "Night Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "day_amount",
+         "label": "Day Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 1.8
+        }
+       ],
+       "filter": "all"
+      },
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.9
+        },
+        {
+         "key": "weather_amount",
+         "label": "Inclement Weather Minutes",
+         "w": 0.8
+        },
+        {
+         "key": "night_amount",
+         "label": "Night Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "day_amount",
+         "label": "Day Minutes",
+         "w": 0.7
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 1.8
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 25,
+     "rows_first": 25
+    }
+   ],
+   "title": "Supervised Driving Log",
+   "unfillable": []
+  },
+  "TN": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Signature of parent, guardian or licensed instructor",
+      "value": ""
+     },
+     {
+      "label": "Relationship to Permit Holder:",
+      "value": ""
+     }
+    ],
+    "text": "I affirm that I am the above named parent/guardian or licensed instructor, and I certify that the above named permit holder (under the age of 18) has completed fifty (50) hours of behind the wheel driving including a minimum of ten (10) hours of driving at night.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Certification of 50 Hours Behind the Wheel Driving Experience",
+    "number": "SF-1256",
+    "revision": "02/13",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "TN_SF-1256.pdf",
+    "url": "https://www.tn.gov/content/dam/tn/safety/documents/gdl50hrcertificate.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "NAME OF PERMIT HOLDER:",
+     "value": "student_name"
+    },
+    {
+     "label": "TENN PERMIT NUMBER:",
+     "value": "permit_number"
+    },
+    {
+     "label": "SOCIAL SECURITY NUMBER:",
+     "value": ""
+    },
+    {
+     "label": "STREET ADDRESS",
+     "value": ""
+    },
+    {
+     "label": "CITY",
+     "value": ""
+    },
+    {
+     "label": "STATE",
+     "value": ""
+    },
+    {
+     "label": "ZIP CODE",
+     "value": ""
+    },
+    {
+     "label": "NAME OF PARENT, GUARDIAN OR LICENSED INSTRUCTOR:",
+     "value": ""
+    },
+    {
+     "label": "DRIVER LICENSE NUMBER:",
+     "value": ""
+    },
+    {
+     "label": "SOCIAL SECURITY NUMBER:",
+     "value": ""
+    },
+    {
+     "label": "ADDRESS",
+     "value": ""
+    },
+    {
+     "label": "CITY",
+     "value": ""
+    },
+    {
+     "label": "STATE",
+     "value": ""
+    },
+    {
+     "label": "ZIP CODE",
+     "value": ""
+    }
+   ],
+   "kind": "certification",
+   "legend": null,
+   "notes": [
+    "The lower half of the page is a GDL information table (not a form field) and is not reproduced."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "TN",
+   "state_name": "Tennessee",
+   "summary": [],
+   "tables": [],
+   "title": "CERTIFICATION OF 50 HOURS BEHIND THE WHEEL DRIVING EXPERIENCE",
+   "unfillable": [
+    "Social Security numbers (never stored or printed by LicenseLogger)",
+    "Addresses",
+    "Parent/guardian/instructor name and license number"
+   ]
+  },
+  "TX": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Parent/Guardian’s Signature (if over 18 years of age student’s signature)",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "I certify and endorse that the above record is true and correct and my student has completed 30 hours of guided practice which includes at least 10 hours at nighttime.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Driver Education 30 Hour Behind the Wheel Log",
+    "number": "DES150N",
+    "revision": "December 2024",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "TX_DES150N.pdf",
+    "url": "https://www.tdlr.texas.gov/driver/files/DES150N-Texas-30-Hour-Behind-the-Wheel-Log.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Student’s Name:",
+     "value": "student_name"
+    },
+    {
+     "label": "DL #:",
+     "value": "permit_number"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Only two (2) hours of behind-the-wheel instruction per day count toward the 30 hours (printed on the form); totals use LicenseLogger's capped credit.",
+    "LicenseLogger lists drives in date order; it does not assign drives to the form's pre-printed lesson sessions."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "TX",
+   "state_name": "Texas",
+   "summary": [],
+   "tables": [
+    {
+     "page_total": {
+      "label": "TOTAL",
+      "sum": [
+       "day_amount",
+       "night_amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "blank",
+         "label": "Lesson Time",
+         "w": 0.7
+        },
+        {
+         "key": "blank",
+         "label": "Practice Session",
+         "w": 1.5
+        },
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "start_time",
+         "label": "Time (am/pm)",
+         "w": 0.8
+        },
+        {
+         "key": "day_amount",
+         "label": "Daytime Hours",
+         "w": 0.8
+        },
+        {
+         "key": "night_amount",
+         "label": "Nighttime Hours",
+         "w": 0.8
+        },
+        {
+         "key": "blank",
+         "label": "Adult’s Signature and DL #",
+         "w": 1.9
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 32,
+     "rows_first": 32
+    }
+   ],
+   "title": "DRIVER EDUCATION 30 HOUR BEHIND THE WHEEL LOG",
+   "unfillable": [
+    "Lesson Time and Practice Session (the form pre-prints 10 sessions with 32 slots and set day/night amounts; copy each drive into the matching session row)",
+    "Adult’s Signature and DL # on every row"
+   ]
+  },
+  "UT": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": {
+     "lines": [
+      "Person authorized to administer oaths"
+     ],
+     "text": "",
+     "title": "STATE OF UTAH, COUNTY OF"
+    },
+    "signatures": [
+     {
+      "label": "X",
+      "value": ""
+     },
+     {
+      "label": "hereby affirmed ___ day of ___ 20___ Day Month Year",
+      "value": ""
+     }
+    ],
+    "text": "I CERTIFY THAT: Said applicant has completed 40 hours of driving, of which at least ten hours were after sunset, in compliance with Utah Code Annotated Section 53-3-211 or 53-3-210.5 Utah Code Annotated 1953 as amended.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Driver License Application Affidavit (40-hour certification)",
+    "number": "",
+    "revision": "Rev 10/2020",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "UT_DLD-application-affidavit.pdf",
+    "url": "https://dld.utah.gov/wp-content/uploads/DLD-Affidavit-REV-10.26-.pdf"
+   },
+   "header_fields": [],
+   "kind": "certification",
+   "legend": null,
+   "notes": [
+    "Legal-size page (612 x 1008 pt). The 40-hour certification is its own 'I CERTIFY THAT' box with an unlabeled 'X' signature line and 'hereby affirmed ... day of ... 20' date line; the oath block is shared with the other sections."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     1008
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "UT",
+   "state_name": "Utah",
+   "summary": [],
+   "tables": [],
+   "title": "I CERTIFY THAT",
+   "unfillable": [
+    "ID AFFIDAVIT, DL AFFIDAVIT and ASSUMPTION OF LIABILITY sections (each signed on its own 'X' line)"
+   ]
+  },
+  "VT": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "before_log",
+   "certification": {
+    "extra_text": "To the best of your knowledge, has your child ever been convicted of any motor vehicle/driving offenses? [ ] Yes [ ] No",
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Printed Name of Parent/Guardian",
+      "value": ""
+     },
+     {
+      "label": "Parent/Guardian License #",
+      "value": ""
+     },
+     {
+      "label": "Signature of Parent/Guardian",
+      "value": ""
+     },
+     {
+      "label": "Date Signed",
+      "value": ""
+     }
+    ],
+    "text": "Do you certify that your child has received a minimum of 40 additional hours of practice behind the wheel, with at least 10 hours being nighttime driving?",
+    "title": "TO BE COMPLETED BY THE PARENT OR GUARDIAN",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Driving Practice Log Sheet",
+    "number": "VN-210",
+    "revision": "2M 07/2019",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "VT_VN-210.pdf",
+    "url": "https://dmv.vermont.gov/sites/dmv/files/documents/VN-210-Driving_Practice_Log_Sheet.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "Name: Last",
+     "value": "student_last"
+    },
+    {
+     "label": "First",
+     "value": "student_first"
+    },
+    {
+     "label": "Middle",
+     "value": ""
+    },
+    {
+     "label": "Mailing Address (Street, Road or PO Box):",
+     "value": ""
+    },
+    {
+     "label": "City:",
+     "value": ""
+    },
+    {
+     "label": "Date of Birth:",
+     "value": "birthday"
+    },
+    {
+     "label": "Learner’s Permit Number:",
+     "value": "permit_number"
+    },
+    {
+     "label": "Date Permit Issued:",
+     "value": "permit_issued"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Landscape folded sheet: page 1 holds the applicant/parent section, pages 2-3 the log (Columns 1-3), page 4 the grand totals. This copy keeps the order: certification page first, then log pages with two columns each.",
+    "VT does not print a day/night column; night time is not shown per row on this form."
+   ],
+   "page": {
+    "orientation": "landscape",
+    "size": [
+     792,
+     612
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "VT",
+   "state_name": "Vermont",
+   "summary": [
+    {
+     "label": "Combined Practice Time of Columns 1 & 2:",
+     "value": ""
+    },
+    {
+     "label": "Total Practice Time of Column 3:",
+     "value": ""
+    },
+    {
+     "label": "Total Practice Time of Any Additional Sheets:",
+     "value": ""
+    },
+    {
+     "label": "GRAND TOTAL OF PRACTICE TIME (Columns 1, 2 and 3)",
+     "value": "total"
+    }
+   ],
+   "tables": [
+    {
+     "page_total": {
+      "label": "Total Practice Time of Column",
+      "sum": [
+       "amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "start_time",
+         "label": "Time of Day",
+         "w": 0.8
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 2
+        },
+        {
+         "key": "blank",
+         "label": "Driving Environment",
+         "w": 1.2
+        },
+        {
+         "key": "amount",
+         "label": "Practice Duration",
+         "w": 0.8
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Initials of Provider",
+         "w": 0.7
+        }
+       ],
+       "filter": "all",
+       "title": "Column 1"
+      },
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "start_time",
+         "label": "Time of Day",
+         "w": 0.8
+        },
+        {
+         "key": "skills",
+         "label": "Skills Practiced",
+         "w": 2
+        },
+        {
+         "key": "blank",
+         "label": "Driving Environment",
+         "w": 1.2
+        },
+        {
+         "key": "amount",
+         "label": "Practice Duration",
+         "w": 0.8
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Initials of Provider",
+         "w": 0.7
+        }
+       ],
+       "filter": "all",
+       "title": "Column 2"
+      }
+     ],
+     "rows": 22,
+     "rows_first": 22
+    }
+   ],
+   "title": "DRIVING PRACTICE LOG SHEET",
+   "unfillable": [
+    "Middle name, Mailing Address, City",
+    "Driving Environment",
+    "Yes/No answers, including the 40-hour certification question (the parent answers by hand)",
+    "Per-column subtotals across sheets (the grand total is filled)"
+   ]
+  },
+  "WA": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "extra_text": "I declare under penalty of perjury under the law of Washington that the foregoing is true and correct.",
+    "fields": [],
+    "notary": {
+     "lines": [
+      "Signature",
+      "Printed or stamped name",
+      "Title",
+      "Notary expiration date"
+     ],
+     "text": "State of ______, County of ______ Signed or attested before me on ______ by ______ (Name of person)",
+     "title": "Notarization"
+    },
+    "signatures": [
+     {
+      "label": "Signature of parent/ guardian",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     },
+     {
+      "label": "Driver license/ ID card number",
+      "value": ""
+     },
+     {
+      "label": "State",
+      "value": ""
+     }
+    ],
+    "text": "I certify the above-named individual has at least 50 hours of driving experience, 10 of which were at night. A licensed driver with at least 3 years experience supervised this driving.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [],
+    "name": "Parental Authorization Affidavit",
+    "number": "DLE-520-003",
+    "revision": "R/4/25",
+    "source_pages": [
+     1
+    ],
+    "source_pdf": "WA_parental-authorization-affidavit.pdf",
+    "url": "https://dol.wa.gov/forms/view/520003/download?inline="
+   },
+   "header_fields": [
+    {
+     "label": "Last name of applicant",
+     "value": "student_last"
+    },
+    {
+     "label": "First name",
+     "value": "student_first"
+    },
+    {
+     "label": "Middle name",
+     "value": ""
+    },
+    {
+     "label": "Suffix",
+     "value": ""
+    },
+    {
+     "label": "whose date of birth is",
+     "value": "birthday"
+    }
+   ],
+   "kind": "certification",
+   "legend": null,
+   "notes": [
+    "Used when the authorized signer cannot be present; notarization applies only then."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "WA",
+   "state_name": "Washington",
+   "summary": [],
+   "tables": [],
+   "title": "Parental Authorization Affidavit",
+   "unfillable": [
+    "custodial parent / legal guardian / employer / responsible adult check boxes",
+    "Instruction permit / Driver license / Motorcycle check boxes",
+    "Licensing services representative"
+   ]
+  },
+  "WI": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hr_min",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [
+     {
+      "label": "Minor Name – Print",
+      "value": "student_name"
+     }
+    ],
+    "notary": {
+     "lines": [
+      "(DMV Authorized Agent or Notary Signature)",
+      "(My Commission Expires)"
+     ],
+     "text": "State of Wisconsin County of ___ Subscribed and sworn to before me on this date",
+     "title": ""
+    },
+    "signatures": [
+     {
+      "label": "Sponsor Name – Print",
+      "value": ""
+     },
+     {
+      "label": "Relationship to Applicant",
+      "value": ""
+     },
+     {
+      "label": "Sponsor Wisconsin DL/ID Number",
+      "value": ""
+     },
+     {
+      "label": "(Sponsor Signature – Must be Witnessed by DMV Agent or Notarized)",
+      "value": ""
+     }
+    ],
+    "text": "If required for this application, I certify that the applicant has accumulated at least 50 hours of driving experience, 10 of which were at night.",
+    "title": "Sponsor Certification:",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [
+     {
+      "pages": [
+       2
+      ],
+      "pdf": "WI_MV3001-application.pdf",
+      "role": "certification (sponsor section)",
+      "url": "https://www.wisconsindot.gov/Documents/formdocs/mv3001.pdf"
+     }
+    ],
+    "name": "Wisconsin Graduated Driver Licensing Supervised Driving Log",
+    "number": "HS-303",
+    "revision": "7/2021",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "WI_HS-303.pdf",
+    "url": "https://wisconsindot.gov/Documents/dmv/shared/hs303.pdf"
+   },
+   "header_fields": [],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "Landscape letter: 15 rows on page 1, 11 on page 2, Sub-Totals per page and 'Total Hours Day + Night'.",
+    "Roadway condition comes from the drive's road-surface tags (Dry, Wet, Icy, Snow) when present.",
+    "The sponsor certification is part of the MV3001 license application, reproduced after the log; sign the official application."
+   ],
+   "page": {
+    "orientation": "landscape",
+    "size": [
+     792,
+     612
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "WI",
+   "state_name": "Wisconsin",
+   "summary": [
+    {
+     "label": "Total Hours Day + Night",
+     "value": "total"
+    }
+   ],
+   "tables": [
+    {
+     "page_total": {
+      "label": "Sub-Totals",
+      "sum": [
+       "day_amount",
+       "night_amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date_time",
+         "label": "DATE & TIME",
+         "w": 1.1
+        },
+        {
+         "key": "blank",
+         "label": "DRIVING ENVIRONMENT (residential, city, rural highway, expressway, etc.)",
+         "w": 1.4
+        },
+        {
+         "key": "skills",
+         "label": "* DRIVING SKILLS PRACTICED",
+         "w": 2
+        },
+        {
+         "group": "CONDITIONS: (sun, rain, snow, dry, wet, icy, etc.)",
+         "key": "weather",
+         "label": "Weather",
+         "w": 0.8
+        },
+        {
+         "group": "CONDITIONS: (sun, rain, snow, dry, wet, icy, etc.)",
+         "key": "roadway",
+         "label": "Roadway",
+         "w": 0.8
+        },
+        {
+         "group": "DRIVING TIME HOURS/MINUTES",
+         "key": "day_amount",
+         "label": "Day",
+         "w": 0.7
+        },
+        {
+         "group": "DRIVING TIME HOURS/MINUTES",
+         "key": "night_amount",
+         "label": "Night",
+         "w": 0.7
+        },
+        {
+         "key": "blank",
+         "label": "MENTOR: P = Parent PD = Parent Designee QI = Qualified Instructor",
+         "w": 1.1
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "MENTOR INITIALS",
+         "w": 0.8
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 11,
+     "rows_first": 15
+    }
+   ],
+   "title": "WISCONSIN GRADUATED DRIVER LICENSING SUPERVISED DRIVING LOG",
+   "unfillable": [
+    "DRIVING ENVIRONMENT",
+    "MENTOR (P / PD / QI)",
+    "Sponsor DL/ID number, relationship and signature; the rest of MV3001"
+   ]
+  },
+  "WV": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hours",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "SIGNATURE OF PARENT OR GUARDIAN",
+      "value": ""
+     },
+     {
+      "label": "DRIVER’S LICENSE NUMBER OF PARENT/GUARDIAN",
+      "value": ""
+     },
+     {
+      "label": "DATE",
+      "value": ""
+     }
+    ],
+    "text": "I hereby certify that {student_name} who bears instruction permit number {permit_number} has completed a minimum of 50 hours of behind-the-wheel practice and is under the supervision of an adult 21 years of age or older with a current valid driver’s license.",
+    "title": "",
+    "totals": []
+   },
+   "date_format": "m/d/yy",
+   "evidence_exempt": [
+    "50-Hour Certification Log for Driver’s License Applicants Under Age 18"
+   ],
+   "form": {
+    "extra_sources": [],
+    "name": "50-Hour Certification Log for Driver's License Applicants Under Age 18",
+    "number": "DMV-10-GDL",
+    "revision": "REV 09/14",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "WV_DMV-GDL-10.pdf",
+    "url": "https://webapps.transportation.wv.gov/TWS/WVDOTDocumentStorageMigration/PDF/Transportation/DMV/DMVFormSearch/DMV-GDL-10.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "NAME",
+     "value": "student_name"
+    },
+    {
+     "label": "PERMIT NUMBER",
+     "value": "permit_number"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "The title is part of the header graphic (not in the PDF text layer); read from the rendered page.",
+    "About 12 rows per page after the printed example rows. The certification sentence continues 'Under penalty of perjury, I ...' and is cut off in the PDF text layer; check the printed form."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "WV",
+   "state_name": "West Virginia",
+   "summary": [
+    {
+     "label": "Enter total practice hours here.",
+     "value": "total_hours"
+    }
+   ],
+   "tables": [
+    {
+     "example_row": "2/19/11 | City-Interstate | 2:00 PM-5:00 | Good | 3 | 0 | SD",
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "Date",
+         "w": 0.8
+        },
+        {
+         "key": "location",
+         "label": "Location of Practice",
+         "w": 1.4
+        },
+        {
+         "key": "time_range",
+         "label": "Time Period",
+         "w": 1.2
+        },
+        {
+         "key": "weather",
+         "label": "Weather Conditions",
+         "w": 1
+        },
+        {
+         "group": "Time Spent",
+         "key": "day_amount",
+         "label": "Daytime",
+         "w": 0.8
+        },
+        {
+         "group": "Time Spent",
+         "key": "night_amount",
+         "label": "Nighttime",
+         "w": 0.8
+        },
+        {
+         "key": "supervisor_initials",
+         "label": "Initials of Supervising Adult Driver",
+         "w": 0.9
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 12,
+     "rows_first": 12
+    }
+   ],
+   "title": "50-Hour Certification Log for Driver’s License Applicants Under Age 18",
+   "unfillable": [
+    "DRIVER’S LICENSE NUMBER OF PARENT/GUARDIAN"
+   ]
+  },
+  "WY": {
+   "abbrev": {},
+   "acceptance": {
+    "basis": "",
+    "mode": "check",
+    "source": ""
+   },
+   "amount_format": "hours",
+   "cert_position": "after_log",
+   "certification": {
+    "fields": [
+     {
+      "label": "Driver’s Name:",
+      "value": "student_name"
+     },
+     {
+      "label": "Date of Birth:",
+      "value": "birthday"
+     },
+     {
+      "label": "Driver License No.:",
+      "value": "permit_number"
+     }
+    ],
+    "notary": null,
+    "signatures": [
+     {
+      "label": "Parent/Guardian Signature",
+      "value": ""
+     },
+     {
+      "label": "Date",
+      "value": ""
+     }
+    ],
+    "text": "I, ______, legal parent/guardian of the above-named minor, do hereby certify that said minor has completed 50 hours of actual driving time, including at least 10 hours of nighttime driving as stated in W.S. 31-7-110(g).",
+    "title": "BEHIND-THE-WHEEL DRIVING CERTIFICATION",
+    "totals": [
+     {
+      "label": "Total Daytime Driving Hours:",
+      "value": "day_hours"
+     },
+     {
+      "label": "Total Nighttime Driving Hours:",
+      "value": "night_hours"
+     },
+     {
+      "label": "Total Driving Hours:",
+      "value": "total_hours"
+     }
+    ]
+   },
+   "date_format": "m/d/yy",
+   "form": {
+    "extra_sources": [
+     {
+      "pages": [
+       1
+      ],
+      "pdf": "WY_FSGDL-01.pdf",
+      "role": "certification",
+      "url": "https://www.dot.state.wy.us/files/live/sites/wydot/files/shared/Driver_Services/Forms/BEHIND-THE-WHEEL%20DRIVING%20CERTIFICATION%20(FSGDL-01)%2020190620.pdf"
+     }
+    ],
+    "name": "Behind-the-Wheel Driving Log (optional) + Behind-the-Wheel Driving Certification",
+    "number": "FSGDL-01",
+    "revision": "20190620",
+    "source_pages": [
+     1,
+     2
+    ],
+    "source_pdf": "WY_btw-driving-log-optional.pdf",
+    "url": "https://www.dot.state.wy.us/files/live/sites/wydot/files/shared/Driver_Services/Forms/Behind-the-Wheel%20Driving%20Log%20(OPTIONAL)%20090613.pdf"
+   },
+   "header_fields": [
+    {
+     "label": "NAME",
+     "value": "student_name"
+    },
+    {
+     "label": "DATE OF BIRTH",
+     "value": "birthday"
+    },
+    {
+     "label": "DRIVER LICENSE NUMBER",
+     "value": "permit_number"
+    }
+   ],
+   "kind": "full_log",
+   "legend": null,
+   "notes": [
+    "The log (09/06/13) is optional; the FSGDL-01 certification is the required form and is reproduced after the log.",
+    "'TOTAL FOR DATE' is per drive here; two drives on one date appear on two lines."
+   ],
+   "page": {
+    "orientation": "portrait",
+    "size": [
+     612,
+     792
+    ]
+   },
+   "schema": "licenselogger.log_layout/v1",
+   "state_code": "WY",
+   "state_name": "Wyoming",
+   "summary": [
+    {
+     "label": "TOTAL DRIVING HOURS:",
+     "value": "total_hours"
+    }
+   ],
+   "tables": [
+    {
+     "page_total": {
+      "label": "TOTAL DAY DRIVING HOURS: TOTAL NIGHT DRIVING HOURS:",
+      "sum": [
+       "day_amount",
+       "night_amount"
+      ]
+     },
+     "panels": [
+      {
+       "columns": [
+        {
+         "key": "date",
+         "label": "DATE",
+         "w": 1
+        },
+        {
+         "key": "day_amount",
+         "label": "TIME DAY DRIVING",
+         "w": 1
+        },
+        {
+         "key": "night_amount",
+         "label": "TIME NIGHT DRIVING",
+         "w": 1
+        },
+        {
+         "key": "amount",
+         "label": "TOTAL FOR DATE",
+         "w": 1
+        }
+       ],
+       "filter": "all"
+      }
+     ],
+     "rows": 30,
+     "rows_first": 23
+    }
+   ],
+   "title": "BEHIND-THE-WHEEL DRIVING LOG",
+   "unfillable": []
+  }
+ }
+}

@@ -1,0 +1,234 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "DE",
+ "state_name": "Delaware",
+ "kind": "full_log",
+ "title": "SUPERVISED DRIVING LOG",
+ "subtitle": "",
+ "form_label": "",
+ "source_pdf": "DE_parents-supervised-driving-program.pdf",
+ "page": {
+  "width": 576,
+  "height": 756
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Delaware Supervised Driving Log (Parent's Supervised Driving Program guide); check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "RoadReady template: 28 rows per page with a TOTAL row; the last page adds GRAND TOTAL.",
+  "'Day/Night' is a pair of check boxes on the form; LicenseLogger writes Day, Night or Day + Night.",
+  "'Location of Practice' gets the drive's start/end place names; the form's examples are road types (rural, highway).",
+  "Log pages are PDF pages 25-27 of the DE guide; page 27 has 13 rows, TOTAL, GRAND TOTAL and the parent certification."
+ ],
+ "unfillable": [
+  "High School",
+  "Teacher’s Name"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 28,
+      "total": {
+       "label": "TOTAL",
+       "cells": [
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "5 hr 50 min",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.8,
+          "key": "date"
+         },
+         {
+          "label": "Location of Practice (ex. rural, highway)",
+          "group": "",
+          "w": 1.5,
+          "key": "location"
+         },
+         {
+          "label": "Day/Night",
+          "group": "",
+          "w": 0.9,
+          "key": "day_or_night"
+         },
+         {
+          "label": "Weather",
+          "group": "",
+          "w": 0.8,
+          "key": "weather"
+         },
+         {
+          "label": "Skills Practiced",
+          "group": "",
+          "w": 1.8,
+          "key": "skills"
+         },
+         {
+          "label": "Driving Time",
+          "group": "",
+          "w": 0.8,
+          "key": "amount"
+         },
+         {
+          "label": "Adult’s Initials",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "Mueller to Pflugerville",
+          "Day",
+          "Sunny",
+          "Parking lot, Backing",
+          "1 hr 30 min",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "",
+          "Day",
+          "",
+          "",
+          "45 min",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "Home - Mueller",
+          "Day + Night",
+          "",
+          "Stops, Left turns, Parking",
+          "50 min",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "Mueller to Round Rock",
+          "Day + Night",
+          "Light rain",
+          "Highway merge, Lane changes, Following distance",
+          "1 hr 45 min",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "Home - Mueller",
+          "Night",
+          "",
+          "Night driving, Headlights",
+          "1 hr",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "GRAND TOTAL",
+       "value": "5 hr 50 min"
+      }
+     ]
+    },
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Student Name",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "High School",
+       "value": ""
+      },
+      {
+       "label": "Teacher’s Name",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I certify that my son/daughter has completed 50-hours of supervised driving during the first six months in the Graduated Driver License program."
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "Please complete and sign this form and return it to your teen’s driver education teacher prior to any unsupervised driving."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parent/Guardian Signature",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "ME",
+  "state_name": "Maine",
+  "kind": "full_log",
+  "form": {
+    "name": "Driving Log",
+    "number": "MVE-21",
+    "revision": "Rev. 10/25",
+    "source_pdf": "ME_MVE-21-permittee-driving-log.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/MVE-21%20Permittee%20Driving%20Log%20Rev%2010-25_2.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      792,
+      612
+    ],
+    "orientation": "landscape"
+  },
+  "title": "DRIVING LOG (Please print your information)",
+  "header_fields": [
+    {
+      "label": "Name:",
+      "value": "student_name"
+    },
+    {
+      "label": "Date of Birth:",
+      "value": "birthday"
+    },
+    {
+      "label": "Mailing Address:",
+      "value": ""
+    },
+    {
+      "label": "Telephone Number:",
+      "value": ""
+    },
+    {
+      "label": "History Number (from top left of learner's permit above date of birth):",
+      "value": ""
+    }
+  ],
+  "amount_format": "hours",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date and Time",
+              "key": "date_time",
+              "w": 1.3
+            },
+            {
+              "label": "Number of Driving Hours",
+              "key": "amount",
+              "w": 1
+            },
+            {
+              "label": "Number of After Dark Driving Hours",
+              "key": "night_amount",
+              "w": 1.1
+            },
+            {
+              "label": "Supervising Driver’s Name and Age",
+              "key": "supervisor_name",
+              "w": 2.4
+            },
+            {
+              "label": "License Number of Supervising Driver",
+              "key": "blank",
+              "w": 1.3
+            }
+          ]
+        }
+      ],
+      "rows": 25,
+      "rows_first": 24
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "CERTIFICATION OF DRIVING TIME",
+    "text": "I hereby certify that the permittee named on this form has completed 70 hours of actual driving which included 10 hours of after dark driving.",
+    "fields": [],
+    "totals": [
+      {
+        "label": "TOTAL HOURS OF PRACTICE DRIVING:",
+        "value": "total"
+      },
+      {
+        "label": "TOTAL HOURS OF NIGHT DRIVING:",
+        "value": "night"
+      }
+    ],
+    "signatures": [
+      {
+        "label": "Print Name",
+        "value": ""
+      },
+      {
+        "label": "Relationship",
+        "value": ""
+      },
+      {
+        "label": "Signature",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Mailing Address",
+    "Telephone Number",
+    "History Number",
+    "Supervising driver's age and License Number of Supervising Driver"
+  ],
+  "notes": [
+    "Landscape letter, 24 rows on page 1 and 25 on page 2.",
+    "Hours columns are written as decimal hours (the form asks for 'Number of Driving Hours')."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

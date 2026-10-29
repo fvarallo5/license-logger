@@ -1,0 +1,120 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "MA",
+  "state_name": "Massachusetts",
+  "kind": "full_log",
+  "form": {
+    "name": "Supervised Driving Log + Class D or M Road Test Application (section B)",
+    "number": "",
+    "revision": "",
+    "source_pdf": "MA_supervised-driving-log.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://www.mass.gov/doc/supervised-driving-log/download",
+    "extra_sources": [
+      {
+        "pdf": "MA_road-test-application.pdf",
+        "pages": [
+          1
+        ],
+        "role": "certification",
+        "url": "https://www.mass.gov/doc/class-d-or-m-road-test-application-0/download"
+      }
+    ]
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Supervised Driving Log",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date & Time",
+              "key": "date_time",
+              "w": 1.2
+            },
+            {
+              "label": "Driving Time (Hours/Minutes)",
+              "key": "amount",
+              "w": 1
+            },
+            {
+              "label": "Day or Night",
+              "key": "day_or_night",
+              "w": 0.8
+            },
+            {
+              "label": "Driving Environment (ex. rural, highway, city)",
+              "key": "blank",
+              "w": 1.5
+            },
+            {
+              "label": "Weather Conditions",
+              "key": "weather",
+              "w": 1
+            },
+            {
+              "label": "Skills Practiced",
+              "key": "skills",
+              "w": 2
+            }
+          ]
+        }
+      ],
+      "rows": 13,
+      "rows_first": 13,
+      "page_total": {
+        "label": "Total Hours this sheet",
+        "sum": [
+          "amount"
+        ]
+      }
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "B. Parent/Guardian Consent for Applicants under the age of 18:",
+    "text": "1. The applicant has completed the additional 40 hours of required supervised driving.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "1. Parent/Guardian Signature:",
+        "value": ""
+      },
+      {
+        "label": "Printed Name:",
+        "value": ""
+      }
+    ],
+    "notary": null,
+    "extra_text": "2. Completion of Skills Program: The applicant has completed the additional 30 hours of required supervised driving and successfully completed an RMV approved driver skills development program.  2. Parent/Guardian Signature: ______"
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Driving Environment (LicenseLogger does not record road type)",
+    "The rest of the Road Test Application (sections A and C)"
+  ],
+  "notes": [
+    "The log is optional tracking; the parent certifies the hours in section B of the Road Test Application. Only the hours lines of section B are reproduced; sign the official application."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

@@ -1,0 +1,244 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "AR",
+ "state_name": "Arkansas",
+ "kind": "generic",
+ "title": "Supervised driving log",
+ "subtitle": "",
+ "form_label": "",
+ "source_pdf": "",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "LicenseLogger generic layout: Arkansas has no official log form. Check what your licensing office accepts.",
+ "disclaimer_mode": "generic_no_form",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "No official log or certification form.",
+  "LicenseLogger's own layout (no official form layout on file)."
+ ],
+ "unfillable": [],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Student",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "Permit #",
+       "value": "A1234567"
+      },
+      {
+       "label": "Permit issued",
+       "value": "4/14/26"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 24,
+      "total": {
+       "label": "Page total",
+       "cells": [
+        [
+         "",
+         "",
+         "",
+         "5 hr 50 min",
+         "1 hr 55 min",
+         "",
+         "",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Start",
+          "group": "",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "End",
+          "group": "",
+          "w": 0.8,
+          "key": "end_time"
+         },
+         {
+          "label": "Time",
+          "group": "",
+          "w": 0.9,
+          "key": "amount"
+         },
+         {
+          "label": "Night",
+          "group": "",
+          "w": 0.9,
+          "key": "night_amount"
+         },
+         {
+          "label": "Weather",
+          "group": "",
+          "w": 0.9,
+          "key": "weather"
+         },
+         {
+          "label": "Supervisor",
+          "group": "",
+          "w": 1.6,
+          "key": "supervisor_name"
+         },
+         {
+          "label": "Initials",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "11:30 AM",
+          "1 hr 30 min",
+          "",
+          "Sunny",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "4:50 PM",
+          "45 min",
+          "",
+          "",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "6:15 AM",
+          "7:05 AM",
+          "50 min",
+          "20 min",
+          "",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "7:25 PM",
+          "1 hr 45 min",
+          "35 min",
+          "Light rain",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "8:10 PM",
+          "1 hr",
+          "1 hr",
+          "",
+          "Ana Lopez",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Parent / guardian"
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parent / guardian signature",
+       "value": ""
+      },
+      {
+       "label": "Printed name",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

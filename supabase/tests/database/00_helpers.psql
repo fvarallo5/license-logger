@@ -1,0 +1,15 @@
+-- Shared by every test file (each file \ir-includes this inside its transaction).
+create extension if not exists pgtap with schema extensions;
+set search_path = public, extensions;
+
+-- Act as a signed-in user: reset role; select pg_temp.login('<uuid>'); set local role authenticated;
+create or replace function pg_temp.login(p_user uuid) returns void language sql as $$
+  select set_config('request.jwt.claims',
+                    json_build_object('sub', p_user, 'role', 'authenticated', 'is_anonymous', false)::text, true);
+$$;
+create or replace function pg_temp.logout() returns void language sql as $$
+  select set_config('request.jwt.claims', '', true);
+$$;
+create or replace function pg_temp.drive(p_code text) returns uuid language sql immutable as $$
+  select extensions.uuid_generate_v5('6ba7b811-9dad-11d1-80b4-00c04fd430c8'::uuid, 'licenselogger-seed:' || p_code);
+$$;

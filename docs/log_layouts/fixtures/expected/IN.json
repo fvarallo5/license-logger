@@ -1,0 +1,206 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "IN",
+ "state_name": "Indiana",
+ "kind": "full_log",
+ "title": "LOG OF SUPERVISED DRIVING PRACTICE",
+ "subtitle": "",
+ "form_label": "State Form 54706 (R5 / 8-24)",
+ "source_pdf": "IN_SF54706-supervised-driving-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Filled copy to transfer/print onto the official Indiana State Form 54706 Log of Supervised Driving Practice. Indiana accepts only its own form: \"Completed hours/minutes must be entered on the approved log(s). Multiple logs may be completed and attached, if necessary.\" (IN_SF54706-supervised-driving-log.pdf p.1).",
+ "disclaimer_mode": "transfer",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Two side-by-side DATE / DAY / NIGHT column sets: about 30 rows each on page 1 and 22 on page 2, above Section 2.",
+  "The form has no totals boxes; the affirmation lists the five kinds of eligible supervisors (bullets not reproduced)."
+ ],
+ "unfillable": [
+  "Bioptic check box"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Driver Name (last, first, middle initial)",
+       "value": "Lopez, Maya"
+      },
+      {
+       "label": "Driver’s License Number (DLN)",
+       "value": "A1234567"
+      },
+      {
+       "label": "Bioptic Drivers Only - Please Check Here:",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "SECTION 1. DRIVING LOG",
+      "row_count": 30,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "DATE (mm/dd/yyyy)",
+          "group": "",
+          "w": 1.1,
+          "key": "date"
+         },
+         {
+          "label": "DAY",
+          "group": "Drive Time Hours / Minutes",
+          "w": 0.8,
+          "key": "day_amount"
+         },
+         {
+          "label": "NIGHT",
+          "group": "Drive Time Hours / Minutes",
+          "w": 0.8,
+          "key": "night_amount"
+         }
+        ],
+        "rows": [
+         [
+          "09/27/2026",
+          "1 hr 30 min",
+          ""
+         ],
+         [
+          "09/30/2026",
+          "45 min",
+          ""
+         ],
+         [
+          "10/12/2026",
+          "30 min",
+          "20 min"
+         ],
+         [
+          "10/12/2026",
+          "1 hr 10 min",
+          "35 min"
+         ],
+         [
+          "10/18/2026",
+          "",
+          "1 hr"
+         ]
+        ]
+       },
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "DATE (mm/dd/yyyy)",
+          "group": "",
+          "w": 1.1,
+          "key": "date"
+         },
+         {
+          "label": "DAY",
+          "group": "Drive Time Hours / Minutes",
+          "w": 0.8,
+          "key": "day_amount"
+         },
+         {
+          "label": "NIGHT",
+          "group": "Drive Time Hours / Minutes",
+          "w": 0.8,
+          "key": "night_amount"
+         }
+        ],
+        "rows": []
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "SECTION 2. AFFIRMATION AND SIGNATURE"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I certify that the driver named above has completed fifty (50) hours of supervised driving practice, ten (10) of which included nighttime driving practice, with:"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I swear or affirm that the information entered on this form is true and correct. I understand that making a false statement may constitute the crime of perjury."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Signature of Parent or Legal Guardian (if Applicant is under eighteen (18) years of age)",
+       "value": ""
+      },
+      {
+       "label": "Printed Name",
+       "value": ""
+      },
+      {
+       "label": "Date (mm/dd/yyyy)",
+       "value": ""
+      },
+      {
+       "label": "Signature of Applicant",
+       "value": ""
+      },
+      {
+       "label": "Date (mm/dd/yyyy)",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
