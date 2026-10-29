@@ -155,6 +155,26 @@ export function createMockClient(): SupabaseClient {
       return null;
     },
     qbo_sync_status: () => [],
+    compute_instructor_pay: (a) => {
+      const taught = demo.lessons.filter(
+        (l) =>
+          l.status === "taught" &&
+          String(l.start_at).slice(0, 10) >= String(a.p_period_start) &&
+          String(l.start_at).slice(0, 10) <= String(a.p_period_end),
+      );
+      const by: Record<string, number> = {};
+      for (const l of taught) {
+        const hrs = (new Date(String(l.end_at)).getTime() - new Date(String(l.start_at)).getTime()) / 3600000;
+        by[String(l.instructor_id)] = (by[String(l.instructor_id)] ?? 0) + hrs;
+      }
+      return Object.entries(by).map(([instructor_id, hours]) => ({
+        instructor_id,
+        hours: Math.round(hours * 100) / 100,
+        rate: 35,
+        amount: Math.round(hours * 35 * 100) / 100,
+      }));
+    },
+    member_hourly_rate: () => 35,
     create_school: () => demo.school,
     add_car: (a) => {
       const id = `car-${Date.now()}`;

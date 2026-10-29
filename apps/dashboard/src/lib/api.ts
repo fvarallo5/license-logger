@@ -728,3 +728,49 @@ export async function updateLotCoords(
     check(await sb.from("lots").update({ lat, lng }).eq("id", lotId).eq("school_id", schoolId));
   }
 }
+
+// ---------- instructor pay ----------
+export type InstructorPayRow = { instructor_id: string; hours: number; rate: number; amount: number };
+
+export async function computeInstructorPay(
+  sb: SupabaseClient,
+  schoolId: string,
+  periodStart: string,
+  periodEnd: string,
+): Promise<InstructorPayRow[]> {
+  try {
+    return check(
+      await sb.rpc("compute_instructor_pay", {
+        p_school_id: schoolId,
+        p_period_start: periodStart,
+        p_period_end: periodEnd,
+      }),
+    ) as InstructorPayRow[];
+  } catch {
+    // Client-side fallback for demo / pre-migration: taught lessons × member_hourly_rate RPC or 0
+    const lessons = check(
+      await sb.rpc("school_schedule", {
+        p_school_id: schoolId,
+        p_from: periodStart + "T00:00:00.000Z",
+        p_to: periodEnd + "T23:59:59.999Z",
+      }),
+    ) as { instructor_id: string; start_at: string; end_at: string; status: string }[];
+    const taught = lessons.filter((l) => l.status === "taught");
+    const by: Record<string, number> = {};
+    for (const l of taught) {
+      const hrs = (new Date(l.end_at).getTime() - new Date(l.start_at).getTime()) / 3600000;
+      by[l.instructor_id] = (by[l.instructor_id] ?? 0) + hrs;
+    }
+    const out: InstructorPayRow[] = [];
+    for (const [instructor_id, hours] of Object.entries(by)) {
+      let rate = 0;
+      try {
+        rate = Number(check(await sb.rpc("member_hourly_rate", { p_school_id: schoolId, p_user_id: instructor_id }))) || 0;
+      } catch {
+        rate = 0;
+      }
+      out.push({ instructor_id, hours: Math.round(hours * 100) / 100, rate, amount: Math.round(hours * rate * 100) / 100 });
+    }
+    return out;
+  }
+}
