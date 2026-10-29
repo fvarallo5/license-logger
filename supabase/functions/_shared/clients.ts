@@ -1,4 +1,4 @@
-import { createClient, type SupabaseClient } from "jsr:@supabase/supabase-js@2";
+import { createClient, type SupabaseClient } from "npm:@supabase/supabase-js@2";
 import { env } from "./env.ts";
 
 /** Acts as the signed-in caller: RLS applies. Use for every read/write on a user's behalf. */

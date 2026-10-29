@@ -3,7 +3,7 @@
 //  Webhooks (CloudEvents): https://developer.intuit.com/app/developer/qbo/docs/develop/webhooks/cloudevents-webhooks
 // Access tokens last 60 minutes. Refresh tokens roll (~100 days) and now have a 5-year hard limit;
 // always store the newest refresh token Intuit returns.
-import type { SupabaseClient } from "jsr:@supabase/supabase-js@2";
+import type { SupabaseClient } from "npm:@supabase/supabase-js@2";
 import { env, envOr } from "./env.ts";
 
 export const AUTHORIZE_URL = "https://appcenter.intuit.com/connect/oauth2";

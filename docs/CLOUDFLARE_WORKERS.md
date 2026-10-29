@@ -34,6 +34,24 @@ Authentication → URL configuration:
 - **Site URL:** `https://app.licenselogger.com`
 - **Redirect URLs:** include `https://app.licenselogger.com` and `https://app.licenselogger.com/**` (and any `*.workers.dev` preview URL while testing).
 
+## If GitHub check fails in the same second
+
+Workers Builds is dying at **initialization**, before `npm ci`. Typical causes:
+
+1. **Stale API token** — Settings → Build → API Token → Create new token, then Retry build.
+2. **Root directory** — set to `apps/dashboard` (or leave repo root / `web/`; all three have wrangler configs now).
+3. **Worker name** must stay `license-logger`.
+
+Local wrangler is not logged in, so this agent cannot `wrangler deploy` to production. After `npx wrangler login` in this repo, deploy is:
+
+```sh
+cd apps/dashboard
+npm run build
+npx wrangler deploy
+```
+
+Do not change DNS. `app.licenselogger.com` is already on this Worker.
+
 ## Local check
 
 ```sh
