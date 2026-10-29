@@ -77,6 +77,22 @@ class Query implements PromiseLike<Res> {
     this.one = "single";
     return this;
   }
+  insert(row: Row | Row[]) {
+    const rows = Array.isArray(row) ? row : [row];
+    for (const r of rows) this.rows.push({ id: r.id ?? `row-${Date.now()}`, ...r });
+    return this;
+  }
+  update(patch: Row) {
+    const hit = this.rows.filter((r) => this.filters.every((f) => f(r)));
+    for (const r of hit) Object.assign(r, patch);
+    return this;
+  }
+  delete() {
+    const keep = this.rows.filter((r) => !this.filters.every((f) => f(r)));
+    this.rows.length = 0;
+    this.rows.push(...keep);
+    return this;
+  }
   then<A, B>(ok?: ((v: Res) => A | PromiseLike<A>) | null, bad?: ((e: unknown) => B | PromiseLike<B>) | null) {
     const all = this.rows.filter((r) => this.filters.every((f) => f(r)));
     const hit = all.slice(this.from, this.to + 1);

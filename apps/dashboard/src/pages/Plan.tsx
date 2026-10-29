@@ -67,6 +67,7 @@ export default function PlanPage() {
       setErr(friendly(e));
       setTemplates([]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- tick forces reload after mutations
   }, [schoolId, from, to, p.instructorOnly, me, tick]);
 
   useEffect(() => {

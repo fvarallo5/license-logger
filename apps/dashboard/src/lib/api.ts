@@ -490,3 +490,153 @@ export async function declineReservation(sb: SupabaseClient, reservationId: stri
   if (reason.trim().length < 1) throw new Error("Decline reason is required.");
   check(await sb.rpc("decline_reservation", { p_reservation_id: reservationId, p_reason: reason.trim() }));
 }
+
+// ---------- packages / pay ----------
+export async function listPackageCatalog(sb: SupabaseClient, schoolId: string): Promise<import("./types").PackageCatalog[]> {
+  return check(
+    await sb
+      .from("package_catalog")
+      .select("id, school_id, name, hours, price, kind, active")
+      .eq("school_id", schoolId)
+      .eq("active", true)
+      .order("hours"),
+  ) as import("./types").PackageCatalog[];
+}
+
+export async function upsertPackageCatalog(
+  sb: SupabaseClient,
+  row: { id?: string; schoolId: string; name: string; hours: number; price: number; kind?: string },
+): Promise<string> {
+  if (row.id) {
+    check(
+      await sb
+        .from("package_catalog")
+        .update({ name: row.name, hours: row.hours, price: row.price, kind: row.kind ?? "btw" })
+        .eq("id", row.id)
+        .eq("school_id", row.schoolId)
+        .select("id")
+        .single(),
+    );
+    return row.id;
+  }
+  const data = check(
+    await sb
+      .from("package_catalog")
+      .insert({
+        school_id: row.schoolId,
+        name: row.name,
+        hours: row.hours,
+        price: row.price,
+        kind: row.kind ?? "btw",
+        active: true,
+      })
+      .select("id")
+      .single(),
+  ) as { id: string };
+  return data.id;
+}
+
+export async function deactivatePackage(sb: SupabaseClient, schoolId: string, id: string): Promise<void> {
+  check(await sb.from("package_catalog").update({ active: false }).eq("id", id).eq("school_id", schoolId));
+}
+
+export async function assignStudentPackage(
+  sb: SupabaseClient,
+  args: { schoolId: string; studentId: string; catalogId: string; hours: number },
+): Promise<string> {
+  // Prefer RPC when migration applied; fall back to table write.
+  try {
+    const id = check(
+      await sb.rpc("assign_student_package", {
+        p_school_id: args.schoolId,
+        p_student_id: args.studentId,
+        p_catalog_id: args.catalogId,
+      }),
+    );
+    return String(id);
+  } catch {
+    const data = check(
+      await sb
+        .from("student_packages")
+        .insert({
+          school_id: args.schoolId,
+          student_id: args.studentId,
+          catalog_id: args.catalogId,
+          hours_total: args.hours,
+          hours_left: args.hours,
+          status: "active",
+        })
+        .select("id")
+        .single(),
+    ) as { id: string };
+    return data.id;
+  }
+}
+
+export async function listInvoices(sb: SupabaseClient, schoolId: string): Promise<import("./types").Invoice[]> {
+  return check(
+    await sb
+      .from("invoices")
+      .select("id, school_id, student_id, doc_number, txn_date, due_date, total, balance, status, memo, sync_status, created_at")
+      .eq("school_id", schoolId)
+      .order("txn_date", { ascending: false })
+      .limit(100),
+  ) as import("./types").Invoice[];
+}
+
+export async function recordPayment(
+  sb: SupabaseClient,
+  args: {
+    schoolId: string;
+    customerId: string;
+    invoiceId?: string | null;
+    studentId?: string | null;
+    amount: number;
+    method?: string;
+    reference?: string;
+    receivedOn?: string;
+  },
+): Promise<string> {
+  try {
+    const id = check(
+      await sb.rpc("record_invoice_payment", {
+        p_school_id: args.schoolId,
+        p_customer_id: args.customerId,
+        p_invoice_id: args.invoiceId ?? null,
+        p_student_id: args.studentId ?? null,
+        p_amount: args.amount,
+        p_method: args.method ?? "cash",
+        p_reference: args.reference ?? "",
+        p_received_on: args.receivedOn ?? null,
+      }),
+    );
+    return String(id);
+  } catch {
+    const data = check(
+      await sb
+        .from("payments")
+        .insert({
+          school_id: args.schoolId,
+          customer_id: args.customerId,
+          invoice_id: args.invoiceId ?? null,
+          student_id: args.studentId ?? null,
+          amount: args.amount,
+          method: args.method ?? "cash",
+          reference: args.reference ?? "",
+          received_on: args.receivedOn ?? new Date().toISOString().slice(0, 10),
+        })
+        .select("id")
+        .single(),
+    ) as { id: string };
+    return data.id;
+  }
+}
+
+export async function listBillingCustomers(
+  sb: SupabaseClient,
+  schoolId: string,
+): Promise<{ id: string; display_name: string; student_id: string | null }[]> {
+  return check(
+    await sb.from("billing_customers").select("id, display_name, student_id").eq("school_id", schoolId).order("display_name").limit(200),
+  ) as { id: string; display_name: string; student_id: string | null }[];
+}

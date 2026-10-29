@@ -242,6 +242,50 @@ export const demo = {
         active: true,
       },
     ],
+    package_catalog: [
+      { id: "pkg-1", school_id: SCHOOL, name: "6-hour BTW", hours: 6, price: 360, kind: "btw", active: true },
+      { id: "pkg-2", school_id: SCHOOL, name: "10-hour BTW", hours: 10, price: 550, kind: "btw", active: true },
+    ],
+    student_packages: [
+      {
+        id: "sp-1",
+        school_id: SCHOOL,
+        student_id: "s-1",
+        catalog_id: "pkg-2",
+        hours_total: 10,
+        hours_left: 7,
+        status: "active",
+        created_at: day(-20),
+      },
+    ],
+    billing_customers: [
+      {
+        id: "bc-1",
+        school_id: SCHOOL,
+        student_id: "s-1",
+        display_name: "Alex Parent",
+        email: "parent@example.com",
+        phone: "",
+        active: true,
+      },
+    ],
+    invoices: [
+      {
+        id: "inv-1",
+        school_id: SCHOOL,
+        student_id: "s-1",
+        doc_number: "INV-1001",
+        txn_date: day(-5).slice(0, 10),
+        due_date: day(10).slice(0, 10),
+        total: 550,
+        balance: 200,
+        status: "partially_paid",
+        memo: "",
+        sync_status: "local",
+        created_at: day(-5),
+      },
+    ],
+    payments: [],
     school_invites: [
       {
         id: 7,

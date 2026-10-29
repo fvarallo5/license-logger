@@ -226,3 +226,48 @@ export interface Reservation {
   decline_reason: string | null;
   created_at: string;
 }
+
+export interface PackageCatalog {
+  id: string;
+  school_id: string;
+  name: string;
+  hours: number;
+  price: number;
+  kind: string;
+  active: boolean;
+}
+export interface StudentPackage {
+  id: string;
+  school_id: string;
+  student_id: string;
+  catalog_id: string | null;
+  hours_total: number;
+  hours_left: number;
+  status: string;
+  created_at: string;
+}
+export interface Invoice {
+  id: string;
+  school_id: string;
+  student_id: string | null;
+  doc_number: string | null;
+  txn_date: string;
+  due_date: string | null;
+  total: number;
+  balance: number;
+  status: string;
+  memo: string;
+  sync_status: string;
+  created_at: string;
+}
+export interface Payment {
+  id: string;
+  school_id: string;
+  invoice_id: string | null;
+  student_id: string | null;
+  amount: number;
+  received_on: string;
+  method: string;
+  reference: string;
+  created_at: string;
+}
