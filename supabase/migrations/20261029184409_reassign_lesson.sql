@@ -1,9 +1,7 @@
--- ============================================================================
--- NOT APPLIED — do not push until Frank types "push".
--- Phase 1 Board needs this to reassign instructor/car on a booked lesson.
--- Live today only has mark_lesson / book_lesson; lessons have SELECT-only RLS
--- (no authenticated UPDATE), so a SECURITY DEFINER RPC is required.
--- ============================================================================
+-- Applied on live nqfjudwncistygsmcgrq as 20261029184409_reassign_lesson
+-- (schema_migrations created_by fvarallo5@gmail.com).
+-- Board Reassign: change lessons.instructor_id / car_id via SECURITY DEFINER.
+-- Live lessons RLS is SELECT-only; updates go through RPCs.
 
 create or replace function public.reassign_lesson(
   p_lesson_id uuid,
@@ -36,7 +34,6 @@ begin
   if rec.status not in ('booked', 'in_lesson') then
     raise exception 'Only open lessons can be reassigned';
   end if;
-  -- Desk staff (or the current instructor) may reassign — mirrors can_schedule_row on live.
   if not private.can_schedule_row(rec.school_id, rec.instructor_id) then
     raise exception 'Not allowed to reassign this lesson' using errcode = '42501';
   end if;
@@ -54,7 +51,7 @@ begin
 
   update public.lessons
   set instructor_id = p_instructor_id,
-      car_id = p_car_id,
+      car_id = coalesce(p_car_id, rec.car_id),
       updated_at = now()
   where id = rec.id;
 end;

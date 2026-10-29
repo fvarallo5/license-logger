@@ -23,6 +23,7 @@ Live applied the same logical migrations under later timestamps, plus two live-o
 | 20261024001813 | ll_independent_students | 20261023120800_ll_independent_students.sql |
 | 20261024001821 | ll_state_rules_v2 | 20261023120900_ll_state_rules_v2.sql |
 | 20261024001827 | ll_state_rules_data | 20261023121000_ll_state_rules_data.sql |
+| 20261029184409 | reassign_lesson | 20261029184409_reassign_lesson.sql (applied on live; EXECUTE authenticated only) |
 
 **Do not `supabase db push` to production** without comparing this map. Staging should apply the repo migrations on a fresh project. Production already has the objects.
 

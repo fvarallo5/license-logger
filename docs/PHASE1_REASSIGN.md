@@ -1,9 +1,7 @@
-# Phase 1 — `reassign_lesson` (NOT APPLIED)
+# Phase 1 — `reassign_lesson` (applied)
 
-File: `supabase/migrations/_NOT_APPLIED_reassign_lesson.sql`
+Live: `nqfjudwncistygsmcgrq` version `20261029184409` name `reassign_lesson`.
 
-**Why:** Board “Reassign” needs to change `lessons.instructor_id` / `car_id`. Live RLS on `lessons` is SELECT-only for authenticated users; updates go through SECURITY DEFINER RPCs. No such RPC exists on live yet.
+Repo file: `supabase/migrations/20261029184409_reassign_lesson.sql`
 
-**Rules followed:** `search_path = ''`, revoke from `anon`/`public`, grant execute to `authenticated` only, permission check via `private.can_schedule_row`.
-
-**Apply:** Frank types `push` after reviewing. Then rename to a normal timestamped migration or `supabase migration repair` as appropriate.
+Board “Reassign” changes `lessons.instructor_id` / `car_id`. Live RLS on `lessons` is SELECT-only; updates go through this SECURITY DEFINER RPC (`search_path ''`, revoke anon/public, grant execute to `authenticated`). Permission check: `private.can_schedule_row`. Null `p_car_id` keeps the current car (`coalesce`).

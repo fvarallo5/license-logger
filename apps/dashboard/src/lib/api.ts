@@ -328,10 +328,7 @@ export async function listCars(sb: SupabaseClient, schoolId: string): Promise<Ca
   ) as Car[];
 }
 
-/**
- * Reassign instructor (and optional car) on a booked lesson.
- * Requires migration supabase/migrations/_NOT_APPLIED_reassign_lesson.sql (NOT applied on live yet).
- */
+/** Reassign instructor (and optional car) on a booked lesson. Live RPC `reassign_lesson`. */
 export async function reassignLesson(
   sb: SupabaseClient,
   lessonId: string,

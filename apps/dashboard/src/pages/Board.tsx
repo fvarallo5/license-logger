@@ -166,7 +166,7 @@ export default function BoardPage() {
         setQueueN(await pendingCount());
         setReassign(null);
       } else if (/function|PGRST202|not exist|schema cache/i.test(msg)) {
-        setErr("Reassign isn't on the server yet. Apply supabase/migrations/_NOT_APPLIED_reassign_lesson.sql (Frank must type push).");
+        setErr("Reassign RPC is missing from the schema cache. Hard-refresh the dashboard.");
       } else {
         setErr(msg);
       }
@@ -424,7 +424,7 @@ function ReassignModal({
         </button>
       </div>
       <p className="muted" style={{ fontSize: 12 }}>
-        Needs server RPC <code>reassign_lesson</code> (migration flagged NOT APPLIED until Frank types push).
+        Saves via <code>reassign_lesson</code> (desk staff or the current instructor).
       </p>
     </Modal>
   );
