@@ -660,3 +660,17 @@ td.warn,
   color: #b45309;
   font-weight: 600;
 }
+
+.pwa-toast {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: #0f1b2d;
+  color: #fff;
+  font-size: 0.9rem;
+}

@@ -20,6 +20,7 @@ import Pay from "./pages/Pay";
 import Fleet from "./pages/Fleet";
 import Payouts from "./pages/Payouts";
 import { usePendingSignoffs } from "./lib/usePendingSignoffs";
+import { PwaChrome } from "./components/PwaChrome";
 import type { Membership } from "./lib/types";
 
 function DeskShell({
@@ -38,6 +39,7 @@ function DeskShell({
 
   return (
     <>
+      <PwaChrome />
       {isDemo && <div className="demo-banner">DEMO DATA · not connected to a real school</div>}
       <header className="top">
         <div className="logo">
