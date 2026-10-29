@@ -15,7 +15,9 @@
     "typecheck": "npm run typecheck -w apps/dashboard",
     "format": "npm run format -w apps/dashboard",
     "format:check": "npm run format:check -w apps/dashboard",
-    "ci": "npm run ci -w apps/dashboard"
+    "ci": "npm run ci -w apps/dashboard",
+    "deploy": "npm run build && npx wrangler deploy",
+    "deploy:dry": "npm run build && npx wrangler deploy --dry-run"
   },
   "engines": {
     "node": ">=20"

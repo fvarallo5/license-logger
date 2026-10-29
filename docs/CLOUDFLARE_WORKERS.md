@@ -4,7 +4,7 @@ Worker name: **`license-logger`** (Workers Builds → `fvarallo5/license-logger`
 
 | Setting | Value |
 |---|---|
-| Root directory | `apps/dashboard` |
+| Root directory | repo root **or** `apps/dashboard` (both wrangler configs exist) |
 | Build command | `npm ci && npm run build` |
 | Deploy command | `npx wrangler deploy` |
 | Node version | `20` (`NODE_VERSION=20`) |
