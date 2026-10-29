@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'services/cloud_sync.dart';
 import 'package:provider/provider.dart';
 
 import 'shell.dart';
 import 'state/app_state.dart';
 import 'theme/app_theme.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await CloudSync.instance.init();
   runApp(const LicenseLoggerApp());
 }
 

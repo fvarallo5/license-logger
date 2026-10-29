@@ -8,6 +8,7 @@ import '../models/lesson.dart';
 import '../services/battery_mode.dart';
 import '../state/app_state.dart';
 import 'profile_screen.dart';
+import '../services/cloud_sync.dart';
 
 Future<void> showSettingsSheet(BuildContext context) {
   return showModalBottomSheet<void>(
@@ -52,6 +53,15 @@ class SettingsSheet extends StatelessWidget {
                   ),
                 );
               },
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: const Text('Cloud sync'),
+              subtitle: Text(
+                CloudSync.enabled
+                    ? 'On (LL_CLOUD). Sign-in required to upload drives.'
+                    : 'Off — local only. Build with --dart-define=LL_CLOUD=true to enable.',
+              ),
             ),
             const SizedBox(height: 8),
             SegmentedButton<LessonSeat>(
