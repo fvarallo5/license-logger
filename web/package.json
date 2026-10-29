@@ -1,0 +1,18 @@
+{
+  "name": "license-logger",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm --prefix ../apps/dashboard ci && npm --prefix ../apps/dashboard run build && node ./copy-dist.mjs",
+    "deploy": "wrangler deploy",
+    "deploy:dry": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "npm@11.4.2"
+}

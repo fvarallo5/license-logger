@@ -2,13 +2,15 @@
 
 Worker name: **`license-logger`** (Workers Builds → `fvarallo5/license-logger`).
 
+Wrangler configs exist at **repo root**, **`apps/dashboard`**, and **`web/`** (shim if the dashboard root is still the retired sample folder). Each has `name = license-logger`, a `main` worker, and SPA assets.
+
 | Setting | Value |
 |---|---|
-| Root directory | repo root **or** `apps/dashboard` (both wrangler configs exist) |
+| Root directory | `apps/dashboard` (preferred). Repo root and `web/` also work. |
 | Build command | `npm ci && npm run build` |
 | Deploy command | `npx wrangler deploy` |
 | Node version | `20` (`NODE_VERSION=20`) |
-| Config | `apps/dashboard/wrangler.jsonc` → assets from `./dist`, SPA `not_found_handling` |
+| Config | `wrangler.jsonc` → `main` `./worker.js`, assets from `./dist`, binding `ASSETS`, SPA `not_found_handling` |
 
 ## Build env vars (Workers Builds → Variables)
 
