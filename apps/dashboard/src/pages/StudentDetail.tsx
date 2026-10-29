@@ -1,7 +1,18 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../lib/supabase";
-import { type DriveCursor, exportReport, getStudent, releaseStudent, ruleProgress, stateResources, studentDrivesPage } from "../lib/api";
+import {
+  type DriveCursor,
+  exportReport,
+  getStudent,
+  listStudentChecklist,
+  releaseStudent,
+  ruleProgress,
+  setChecklistItem,
+  stateResources,
+  studentDrivesPage,
+  upsertChecklistItem,
+} from "../lib/api";
 import { usePaged } from "../lib/usePaged";
 import { useSession } from "../session";
 import { perms } from "../lib/perms";
@@ -80,6 +91,7 @@ export default function StudentDetail() {
             <div className="kpi mono">{student.join_code}</div>
             <p className="muted">The student enters this in the LicenseLogger app to connect to this profile.</p>
           </Card>
+          <SkillsCard studentId={student.id} />
           <ExportCard studentId={student.id} />
           <ResourcesCard state={student.state_code} permitOn={student.permit_on} />
         </div>
@@ -205,6 +217,67 @@ function DrivesCard({ studentId }: { studentId: string }) {
         </div>
       )}
       <Pager {...pg} />
+    </Card>
+  );
+}
+
+function SkillsCard({ studentId }: { studentId: string }) {
+  const [rows, setRows] = useState<{ student_id: string; item_key: string; label: string; done: boolean; source: string }[] | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+  const [label, setLabel] = useState("");
+  const load = useCallback(async () => {
+    try {
+      setRows(await listStudentChecklist(supabase, studentId));
+      setErr(null);
+    } catch (e) {
+      setErr((e as Error).message);
+      setRows([]);
+    }
+  }, [studentId]);
+  useEffect(() => {
+    void load();
+  }, [load]);
+  async function toggle(key: string, done: boolean) {
+    await setChecklistItem(supabase, studentId, key, done);
+    await load();
+  }
+  async function add() {
+    if (!label.trim()) return;
+    const key = label
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "_")
+      .slice(0, 40);
+    await upsertChecklistItem(supabase, { studentId, itemKey: key || `skill_${Date.now()}`, label: label.trim() });
+    setLabel("");
+    await load();
+  }
+  return (
+    <Card title="Skills / road-test readiness" count={rows ? `${rows.filter((r) => r.done).length}/${rows.length}` : undefined}>
+      {err && <ErrorBox error={err} onRetry={load} />}
+      {rows === null ? (
+        <Loading />
+      ) : !rows.length ? (
+        <Empty>No checklist items yet. Add school-defined skills below.</Empty>
+      ) : (
+        <ul className="skills-list">
+          {rows.map((r) => (
+            <li key={r.item_key}>
+              <label className="row">
+                <input type="checkbox" checked={r.done} onChange={(e) => void toggle(r.item_key, e.target.checked)} />
+                <span>{r.label}</span>
+                <span className="muted">{r.source}</span>
+              </label>
+            </li>
+          ))}
+        </ul>
+      )}
+      <div className="row" style={{ marginTop: "0.75rem" }}>
+        <input value={label} onChange={(e) => setLabel(e.target.value)} placeholder="New skill (e.g. Parallel park)" />
+        <button className="btn primary" disabled={!label.trim()} onClick={() => void add()}>
+          Add
+        </button>
+      </div>
     </Card>
   );
 }

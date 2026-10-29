@@ -812,3 +812,46 @@ export async function requestSlot(
     ),
   );
 }
+
+// ---------- skills / checklist ----------
+export type ChecklistItem = { student_id: string; item_key: string; label: string; done: boolean; source: string };
+
+export async function listStudentChecklist(sb: SupabaseClient, studentId: string): Promise<ChecklistItem[]> {
+  return check(
+    await sb.from("student_checklist").select("student_id, item_key, label, done, source").eq("student_id", studentId).order("item_key"),
+  ) as ChecklistItem[];
+}
+
+export async function setChecklistItem(sb: SupabaseClient, studentId: string, itemKey: string, done: boolean): Promise<void> {
+  try {
+    check(await sb.rpc("set_student_checklist_item", { p_student_id: studentId, p_item_key: itemKey, p_done: done }));
+  } catch {
+    check(await sb.from("student_checklist").update({ done }).eq("student_id", studentId).eq("item_key", itemKey));
+  }
+}
+
+export async function upsertChecklistItem(
+  sb: SupabaseClient,
+  args: { studentId: string; itemKey: string; label: string; done?: boolean },
+): Promise<void> {
+  try {
+    check(
+      await sb.rpc("upsert_student_checklist_item", {
+        p_student_id: args.studentId,
+        p_item_key: args.itemKey,
+        p_label: args.label,
+        p_done: args.done ?? false,
+      }),
+    );
+  } catch {
+    check(
+      await sb.from("student_checklist").upsert({
+        student_id: args.studentId,
+        item_key: args.itemKey,
+        label: args.label,
+        done: args.done ?? false,
+        source: "school",
+      }),
+    );
+  }
+}

@@ -294,6 +294,10 @@ export const demo = {
     ],
     payments: [],
     family_links: [],
+    student_checklist: [
+      { student_id: "s-1", item_key: "parallel", label: "Parallel park", done: false, source: "school" },
+      { student_id: "s-1", item_key: "highway", label: "Highway merge", done: true, source: "school" },
+    ],
     school_invites: [
       {
         id: 7,
