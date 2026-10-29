@@ -1,0 +1,168 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "WI",
+  "state_name": "Wisconsin",
+  "kind": "full_log",
+  "form": {
+    "name": "Wisconsin Graduated Driver Licensing Supervised Driving Log",
+    "number": "HS-303",
+    "revision": "7/2021",
+    "source_pdf": "WI_HS-303.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://wisconsindot.gov/Documents/dmv/shared/hs303.pdf",
+    "extra_sources": [
+      {
+        "pdf": "WI_MV3001-application.pdf",
+        "pages": [
+          2
+        ],
+        "role": "certification (sponsor section)",
+        "url": "https://www.wisconsindot.gov/Documents/formdocs/mv3001.pdf"
+      }
+    ]
+  },
+  "page": {
+    "size": [
+      792,
+      612
+    ],
+    "orientation": "landscape"
+  },
+  "title": "WISCONSIN GRADUATED DRIVER LICENSING SUPERVISED DRIVING LOG",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "DATE & TIME",
+              "key": "date_time",
+              "w": 1.1
+            },
+            {
+              "label": "DRIVING ENVIRONMENT (residential, city, rural highway, expressway, etc.)",
+              "key": "blank",
+              "w": 1.4
+            },
+            {
+              "label": "* DRIVING SKILLS PRACTICED",
+              "key": "skills",
+              "w": 2
+            },
+            {
+              "label": "Weather",
+              "key": "weather",
+              "w": 0.8,
+              "group": "CONDITIONS: (sun, rain, snow, dry, wet, icy, etc.)"
+            },
+            {
+              "label": "Roadway",
+              "key": "roadway",
+              "w": 0.8,
+              "group": "CONDITIONS: (sun, rain, snow, dry, wet, icy, etc.)"
+            },
+            {
+              "label": "Day",
+              "key": "day_amount",
+              "w": 0.7,
+              "group": "DRIVING TIME HOURS/MINUTES"
+            },
+            {
+              "label": "Night",
+              "key": "night_amount",
+              "w": 0.7,
+              "group": "DRIVING TIME HOURS/MINUTES"
+            },
+            {
+              "label": "MENTOR: P = Parent PD = Parent Designee QI = Qualified Instructor",
+              "key": "blank",
+              "w": 1.1
+            },
+            {
+              "label": "MENTOR INITIALS",
+              "key": "supervisor_initials",
+              "w": 0.8
+            }
+          ]
+        }
+      ],
+      "rows": 11,
+      "rows_first": 15,
+      "page_total": {
+        "label": "Sub-Totals",
+        "sum": [
+          "day_amount",
+          "night_amount"
+        ]
+      }
+    }
+  ],
+  "summary": [
+    {
+      "label": "Total Hours Day + Night",
+      "value": "total"
+    }
+  ],
+  "certification": {
+    "title": "Sponsor Certification:",
+    "text": "If required for this application, I certify that the applicant has accumulated at least 50 hours of driving experience, 10 of which were at night.",
+    "fields": [
+      {
+        "label": "Minor Name – Print",
+        "value": "student_name"
+      }
+    ],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Sponsor Name – Print",
+        "value": ""
+      },
+      {
+        "label": "Relationship to Applicant",
+        "value": ""
+      },
+      {
+        "label": "Sponsor Wisconsin DL/ID Number",
+        "value": ""
+      },
+      {
+        "label": "(Sponsor Signature – Must be Witnessed by DMV Agent or Notarized)",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "",
+      "text": "State of Wisconsin County of ___ Subscribed and sworn to before me on this date",
+      "lines": [
+        "(DMV Authorized Agent or Notary Signature)",
+        "(My Commission Expires)"
+      ]
+    }
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "DRIVING ENVIRONMENT",
+    "MENTOR (P / PD / QI)",
+    "Sponsor DL/ID number, relationship and signature; the rest of MV3001"
+  ],
+  "notes": [
+    "Landscape letter: 15 rows on page 1, 11 on page 2, Sub-Totals per page and 'Total Hours Day + Night'.",
+    "Roadway condition comes from the drive's road-surface tags (Dry, Wet, Icy, Snow) when present.",
+    "The sponsor certification is part of the MV3001 license application, reproduced after the log; sign the official application."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

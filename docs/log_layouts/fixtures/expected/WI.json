@@ -1,0 +1,267 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "WI",
+ "state_name": "Wisconsin",
+ "kind": "full_log",
+ "title": "WISCONSIN GRADUATED DRIVER LICENSING SUPERVISED DRIVING LOG",
+ "subtitle": "",
+ "form_label": "HS-303 (7/2021)",
+ "source_pdf": "WI_HS-303.pdf",
+ "page": {
+  "width": 792,
+  "height": 612
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Wisconsin HS-303 Wisconsin Graduated Driver Licensing Supervised Driving Log; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Landscape letter: 15 rows on page 1, 11 on page 2, Sub-Totals per page and 'Total Hours Day + Night'.",
+  "Roadway condition comes from the drive's road-surface tags (Dry, Wet, Icy, Snow) when present.",
+  "The sponsor certification is part of the MV3001 license application, reproduced after the log; sign the official application."
+ ],
+ "unfillable": [
+  "DRIVING ENVIRONMENT",
+  "MENTOR (P / PD / QI)",
+  "Sponsor DL/ID number, relationship and signature; the rest of MV3001"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 15,
+      "total": {
+       "label": "Sub-Totals",
+       "cells": [
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "3 hr 55 min",
+         "1 hr 55 min",
+         "",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "DATE & TIME",
+          "group": "",
+          "w": 1.1,
+          "key": "date_time"
+         },
+         {
+          "label": "DRIVING ENVIRONMENT (residential, city, rural highway, expressway, etc.)",
+          "group": "",
+          "w": 1.4,
+          "key": "blank"
+         },
+         {
+          "label": "* DRIVING SKILLS PRACTICED",
+          "group": "",
+          "w": 2,
+          "key": "skills"
+         },
+         {
+          "label": "Weather",
+          "group": "CONDITIONS: (sun, rain, snow, dry, wet, icy, etc.)",
+          "w": 0.8,
+          "key": "weather"
+         },
+         {
+          "label": "Roadway",
+          "group": "CONDITIONS: (sun, rain, snow, dry, wet, icy, etc.)",
+          "w": 0.8,
+          "key": "roadway"
+         },
+         {
+          "label": "Day",
+          "group": "DRIVING TIME HOURS/MINUTES",
+          "w": 0.7,
+          "key": "day_amount"
+         },
+         {
+          "label": "Night",
+          "group": "DRIVING TIME HOURS/MINUTES",
+          "w": 0.7,
+          "key": "night_amount"
+         },
+         {
+          "label": "MENTOR: P = Parent PD = Parent Designee QI = Qualified Instructor",
+          "group": "",
+          "w": 1.1,
+          "key": "blank"
+         },
+         {
+          "label": "MENTOR INITIALS",
+          "group": "",
+          "w": 0.8,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26 10:00 AM",
+          "",
+          "Parking lot, Backing",
+          "Sunny",
+          "Dry",
+          "1 hr 30 min",
+          "",
+          "",
+          "AL"
+         ],
+         [
+          "9/30/26 4:05 PM",
+          "",
+          "",
+          "",
+          "",
+          "45 min",
+          "",
+          "",
+          "CL"
+         ],
+         [
+          "10/12/26 6:15 AM",
+          "",
+          "Stops, Left turns, Parking",
+          "",
+          "",
+          "30 min",
+          "20 min",
+          "",
+          "AL"
+         ],
+         [
+          "10/12/26 5:40 PM",
+          "",
+          "Highway merge, Lane changes, Following distance",
+          "Light rain",
+          "Wet",
+          "1 hr 10 min",
+          "35 min",
+          "",
+          "CL"
+         ],
+         [
+          "10/18/26 7:10 PM",
+          "",
+          "Night driving, Headlights",
+          "",
+          "Dry",
+          "",
+          "1 hr",
+          "",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Total Hours Day + Night",
+       "value": "5 hr 50 min"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Sponsor Certification:"
+    },
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Minor Name – Print",
+       "value": "Maya Lopez"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "If required for this application, I certify that the applicant has accumulated at least 50 hours of driving experience, 10 of which were at night."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Sponsor Name – Print",
+       "value": ""
+      },
+      {
+       "label": "Relationship to Applicant",
+       "value": ""
+      },
+      {
+       "label": "Sponsor Wisconsin DL/ID Number",
+       "value": ""
+      },
+      {
+       "label": "(Sponsor Signature – Must be Witnessed by DMV Agent or Notarized)",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "notary",
+     "title": "",
+     "text": "State of Wisconsin County of ___ Subscribed and sworn to before me on this date",
+     "lines": [
+      "(DMV Authorized Agent or Notary Signature)",
+      "(My Commission Expires)"
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,214 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "TX",
+ "state_name": "Texas",
+ "kind": "full_log",
+ "title": "DRIVER EDUCATION 30 HOUR BEHIND THE WHEEL LOG",
+ "subtitle": "",
+ "form_label": "DES150N (December 2024)",
+ "source_pdf": "TX_DES150N.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Texas DES150N Driver Education 30 Hour Behind the Wheel Log; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Only two (2) hours of behind-the-wheel instruction per day count toward the 30 hours (printed on the form); totals use LicenseLogger's capped credit.",
+  "LicenseLogger lists drives in date order; it does not assign drives to the form's pre-printed lesson sessions."
+ ],
+ "unfillable": [
+  "Lesson Time and Practice Session (the form pre-prints 10 sessions with 32 slots and set day/night amounts; copy each drive into the matching session row)",
+  "Adult’s Signature and DL # on every row"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Student’s Name:",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "DL #:",
+       "value": "A1234567"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 32,
+      "total": {
+       "label": "TOTAL",
+       "cells": [
+        [
+         "",
+         "",
+         "",
+         "",
+         "3 hr 55 min",
+         "1 hr 55 min",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Lesson Time",
+          "group": "",
+          "w": 0.7,
+          "key": "blank"
+         },
+         {
+          "label": "Practice Session",
+          "group": "",
+          "w": 1.5,
+          "key": "blank"
+         },
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.8,
+          "key": "date"
+         },
+         {
+          "label": "Time (am/pm)",
+          "group": "",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "Daytime Hours",
+          "group": "",
+          "w": 0.8,
+          "key": "day_amount"
+         },
+         {
+          "label": "Nighttime Hours",
+          "group": "",
+          "w": 0.8,
+          "key": "night_amount"
+         },
+         {
+          "label": "Adult’s Signature and DL #",
+          "group": "",
+          "w": 1.9,
+          "key": "blank"
+         }
+        ],
+        "rows": [
+         [
+          "",
+          "",
+          "9/27/26",
+          "10:00 AM",
+          "1 hr 30 min",
+          "",
+          ""
+         ],
+         [
+          "",
+          "",
+          "9/30/26",
+          "4:05 PM",
+          "45 min",
+          "",
+          ""
+         ],
+         [
+          "",
+          "",
+          "10/12/26",
+          "6:15 AM",
+          "30 min",
+          "20 min",
+          ""
+         ],
+         [
+          "",
+          "",
+          "10/12/26",
+          "5:40 PM",
+          "1 hr 10 min",
+          "35 min",
+          ""
+         ],
+         [
+          "",
+          "",
+          "10/18/26",
+          "7:10 PM",
+          "",
+          "1 hr",
+          ""
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I certify and endorse that the above record is true and correct and my student has completed 30 hours of guided practice which includes at least 10 hours at nighttime."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parent/Guardian’s Signature (if over 18 years of age student’s signature)",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

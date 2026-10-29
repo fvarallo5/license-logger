@@ -1,0 +1,67 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "UT",
+  "state_name": "Utah",
+  "kind": "certification",
+  "form": {
+    "name": "Driver License Application Affidavit (40-hour certification)",
+    "number": "",
+    "revision": "Rev 10/2020",
+    "source_pdf": "UT_DLD-application-affidavit.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://dld.utah.gov/wp-content/uploads/DLD-Affidavit-REV-10.26-.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      1008
+    ],
+    "orientation": "portrait"
+  },
+  "title": "I CERTIFY THAT",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "I CERTIFY THAT: Said applicant has completed 40 hours of driving, of which at least ten hours were after sunset, in compliance with Utah Code Annotated Section 53-3-211 or 53-3-210.5 Utah Code Annotated 1953 as amended.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "X",
+        "value": ""
+      },
+      {
+        "label": "hereby affirmed ___ day of ___ 20___ Day Month Year",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "STATE OF UTAH, COUNTY OF",
+      "text": "",
+      "lines": [
+        "Person authorized to administer oaths"
+      ]
+    }
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "ID AFFIDAVIT, DL AFFIDAVIT and ASSUMPTION OF LIABILITY sections (each signed on its own 'X' line)"
+  ],
+  "notes": [
+    "Legal-size page (612 x 1008 pt). The 40-hour certification is its own 'I CERTIFY THAT' box with an unlabeled 'X' signature line and 'hereby affirmed ... day of ... 20' date line; the oath block is shared with the other sections."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

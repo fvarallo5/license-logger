@@ -1,0 +1,182 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "SD",
+  "state_name": "South Dakota",
+  "kind": "full_log",
+  "form": {
+    "name": "Supervised Driving Log + Affidavit of Completion of Required Supervised Driving",
+    "number": "",
+    "revision": "Rev. 04-22-21",
+    "source_pdf": "SD_supervised-driving-log.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://www.sd.gov/sys_attachment.do?sys_id=92421d3647806e10237fbd51026d4390",
+    "extra_sources": [
+      {
+        "pdf": "SD_supervised-driving-affidavit.pdf",
+        "pages": [
+          1
+        ],
+        "role": "certification",
+        "url": "https://www.sd.gov/sys_attachment.do?sys_id=da62dd3647806e10237fbd51026d43c6"
+      }
+    ]
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Supervised Driving Log",
+  "header_fields": [
+    {
+      "label": "Student Name:",
+      "value": "student_name"
+    }
+  ],
+  "amount_format": "minutes",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Inclement Weather Minutes",
+              "key": "weather_amount",
+              "w": 0.8
+            },
+            {
+              "label": "Night Minutes",
+              "key": "night_amount",
+              "w": 0.7
+            },
+            {
+              "label": "Day Minutes",
+              "key": "day_amount",
+              "w": 0.7
+            },
+            {
+              "label": "Skills Practiced",
+              "key": "skills",
+              "w": 1.8
+            }
+          ]
+        },
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Inclement Weather Minutes",
+              "key": "weather_amount",
+              "w": 0.8
+            },
+            {
+              "label": "Night Minutes",
+              "key": "night_amount",
+              "w": 0.7
+            },
+            {
+              "label": "Day Minutes",
+              "key": "day_amount",
+              "w": 0.7
+            },
+            {
+              "label": "Skills Practiced",
+              "key": "skills",
+              "w": 1.8
+            }
+          ]
+        }
+      ],
+      "rows": 25,
+      "rows_first": 25,
+      "page_total": {
+        "label": "TOTALS",
+        "sum": [
+          "weather_amount",
+          "night_amount",
+          "day_amount"
+        ]
+      }
+    }
+  ],
+  "summary": [
+    {
+      "label": "Inc. Weather:",
+      "value": "weather_minutes"
+    },
+    {
+      "label": "Night:",
+      "value": "night_minutes"
+    },
+    {
+      "label": "Day:",
+      "value": "day_minutes"
+    },
+    {
+      "label": "Total Minutes:",
+      "value": "total_minutes"
+    }
+  ],
+  "certification": {
+    "title": "AFFIDAVIT OF COMPLETION OF REQUIRED SUPERVISED DRIVING",
+    "text": "I certify that (minor) {student_name}, has completed 50 hours of *adult supervised driving since the issuance of the Learner’s Permit. Of the 50 hours, 10 have been in inclement weather and 10 have been after dark.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Parent/Guardian Name (Please Print)",
+        "value": ""
+      },
+      {
+        "label": "Parent/Guardian Signature",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      },
+      {
+        "label": "Driver Examiner Signature/Number",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "OR",
+      "text": "This form must be signed in front of a notary of the public or South Dakota driver license examiner.",
+      "lines": [
+        "Notary",
+        "(SEAL)",
+        "Commission Expires:"
+      ]
+    }
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "Two side-by-side column sets of about 25 rows; the affidavit is a separate one-page form (Rev. 04-22-2021), reproduced after the log.",
+    "Inclement Weather Minutes are LicenseLogger's weather minutes (minutes of drives tagged with bad weather)."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

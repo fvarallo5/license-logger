@@ -1,0 +1,77 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "KS",
+  "state_name": "Kansas",
+  "kind": "certification",
+  "form": {
+    "name": "Permission Affidavit for Kansas Credential (Driving Time Certification)",
+    "number": "DE-98",
+    "revision": "Rev. 8/21",
+    "source_pdf": "KS_DE-98-permission-affidavit.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://www.ksrevenue.gov/pdf/de98.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Permission Affidavit for Kansas Credential",
+  "header_fields": [
+    {
+      "label": "Applicant Name:",
+      "value": "student_name"
+    },
+    {
+      "label": "DOB:",
+      "value": "birthday"
+    },
+    {
+      "label": "DL#",
+      "value": "permit_number"
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "Driving Time Certification",
+    "text": "I certify that I am the parent or guardian of the above-named applicant and that he/she has completed at least 50 hours of supervised driving (with at least 10 of those hours at night) with a licensed adult 21 year of age or over.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of Parent/Guardian:",
+        "value": ""
+      },
+      {
+        "label": "DL#",
+        "value": ""
+      },
+      {
+        "label": "Date:",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Permission section signature and DL#",
+    "Farm Permit certifications"
+  ],
+  "notes": [],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

@@ -1,0 +1,276 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "OH",
+ "state_name": "Ohio",
+ "kind": "full_log",
+ "title": "FIFTY HOUR AFFIDAVIT",
+ "subtitle": "",
+ "form_label": "BMV 5791 (9/25)",
+ "source_pdf": "OH_BMV5791-fifty-hour-affidavit.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Filled copy to transfer/print onto the official Ohio BMV 5791 Fifty Hour Affidavit. Ohio accepts only its own form: \"Supervised driving hours may be documented manually by filling in the log included or by using the RoadReady Ohio App.\" (OH_BMV5791-fifty-hour-affidavit.pdf p.1).",
+ "disclaimer_mode": "transfer",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Page 1 is the affidavit (signed before a notary); page 2 is the Supervised Driving Log with 26 rows.",
+  "The form's log has no totals boxes; the footer line states the minimums. LicenseLogger adds nothing beyond the printed text."
+ ],
+ "unfillable": [
+  "ADDRESS / CITY / STATE / ZIP CODE",
+  "NAME OF ELIGIBLE ADULT*, DRIVER LICENSE / I.D. CARD #, RELATIONSHIP, E-MAIL ADDRESS OR TELEPHONE #",
+  "Supervising Adult Ohio Driver License # (LicenseLogger does not store supervisors' license numbers)",
+  "Notary section"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "NAME OF TEMPORARY PERMIT HOLDER",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "TEMPORARY INSTRUCTION PERMIT I.D. #",
+       "value": "A1234567"
+      },
+      {
+       "label": "ADDRESS",
+       "value": ""
+      },
+      {
+       "label": "CITY",
+       "value": ""
+      },
+      {
+       "label": "STATE",
+       "value": ""
+      },
+      {
+       "label": "ZIP CODE",
+       "value": ""
+      },
+      {
+       "label": "NAME OF ELIGIBLE ADULT*",
+       "value": ""
+      },
+      {
+       "label": "DRIVER LICENSE / I.D. CARD #",
+       "value": ""
+      },
+      {
+       "label": "RELATIONSHIP TO TEMPORARY PERMIT HOLDER",
+       "value": ""
+      },
+      {
+       "label": "E-MAIL ADDRESS OR TELEPHONE #",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "The eligible adult identified above personally appeared before me and attested that the temporary permit holder has truthfully recorded in the Supervised Driving Log section the completion of at least fifty (50) hours of actual driving experience."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "SIGNATURE OF ELIGIBLE ADULT",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "notary",
+     "title": "(Notary Seal)",
+     "text": "Sworn to and subscribed in my presence this ___ day of ___, 20___ in ___ County, State of ___.",
+     "lines": [
+      "Signature of Notary Public",
+      "My commission expires"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "SUPERVISED DRIVING LOG",
+      "row_count": 26,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "DATE",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Supervising Licensed Driver Name",
+          "group": "",
+          "w": 1.8,
+          "key": "supervisor_name"
+         },
+         {
+          "label": "Supervising Adult Ohio Driver License #",
+          "group": "",
+          "w": 1.5,
+          "key": "blank"
+         },
+         {
+          "label": "Start",
+          "group": "Start & End Time Include AM or PM",
+          "w": 0.85,
+          "key": "start_time"
+         },
+         {
+          "label": "End",
+          "group": "Start & End Time Include AM or PM",
+          "w": 0.85,
+          "key": "end_time"
+         },
+         {
+          "label": "Hours",
+          "group": "Total Day Time",
+          "w": 0.6,
+          "key": "day_hours_part"
+         },
+         {
+          "label": "Minutes",
+          "group": "Total Day Time",
+          "w": 0.6,
+          "key": "day_minutes_part"
+         },
+         {
+          "label": "Hours",
+          "group": "Total Night Time",
+          "w": 0.6,
+          "key": "night_hours_part"
+         },
+         {
+          "label": "Minutes",
+          "group": "Total Night Time",
+          "w": 0.6,
+          "key": "night_minutes_part"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "Ana Lopez",
+          "",
+          "10:00 AM",
+          "11:30 AM",
+          "1",
+          "30",
+          "",
+          ""
+         ],
+         [
+          "9/30/26",
+          "Carlos Lopez",
+          "",
+          "4:05 PM",
+          "4:50 PM",
+          "0",
+          "45",
+          "",
+          ""
+         ],
+         [
+          "10/12/26",
+          "Ana Lopez",
+          "",
+          "6:15 AM",
+          "7:05 AM",
+          "0",
+          "30",
+          "0",
+          "20"
+         ],
+         [
+          "10/12/26",
+          "Carlos Lopez",
+          "",
+          "5:40 PM",
+          "7:25 PM",
+          "1",
+          "10",
+          "0",
+          "35"
+         ],
+         [
+          "10/18/26",
+          "Ana Lopez",
+          "",
+          "7:10 PM",
+          "8:10 PM",
+          "",
+          "",
+          "1",
+          "0"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Minimum of 50 hours of required supervised driving. 40 hours of day time driving and 10 hours of night time.",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

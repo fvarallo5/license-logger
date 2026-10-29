@@ -1,0 +1,101 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "OK",
+  "state_name": "Oklahoma",
+  "kind": "certification",
+  "form": {
+    "name": "Affidavit of Driver Training",
+    "number": "",
+    "revision": "SOK 12/2025",
+    "source_pdf": "OK_affidavit-driver-training.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://oklahoma.gov/content/dam/service-oklahoma/Documents/Affidavit%20Driver%20Training%2011-23-22%20-%20Fillable.pdf",
+    "extra_sources": [
+      {
+        "pdf": "OK_50hd-older-DPS-version.pdf",
+        "pages": [
+          1
+        ],
+        "role": "older DPS version (not used)",
+        "url": "https://oklahoma.gov/content/dam/ok/en/dps/docs/50hd.pdf"
+      }
+    ]
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "AFFIDAVIT OF DRIVER TRAINING",
+  "header_fields": [
+    {
+      "label": "Last Name:",
+      "value": "student_last"
+    },
+    {
+      "label": "First Name:",
+      "value": "student_first"
+    },
+    {
+      "label": "Middle Name:",
+      "value": ""
+    },
+    {
+      "label": "Driver License #:",
+      "value": "permit_number"
+    },
+    {
+      "label": "Date of Birth:",
+      "value": "birthday"
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "I declare upon oath and under penalty of perjury that I am the Parent/Legal Guardian of the applicant named below. I further declare that the person listed below has received a minimum of fifty (50) hours of actual behind-the-wheel training, of which at least ten (10) hours of said training was at night,",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of Parent/Legal Guardian",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "This document must be completed in the presence of a notary public.",
+      "text": "State of ______, County of ______ Subscribed and sworn to before me this ____ day of ______, ____.",
+      "lines": [
+        "[SEAL]",
+        "My commission expires:",
+        "Notary Public"
+      ]
+    }
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Middle Name",
+    "PARENT/LEGAL GUARDIAN INFORMATION",
+    "STATE OF OKLAHOMA / COUNTY OF (venue at top)"
+  ],
+  "notes": [
+    "Current Service Oklahoma version (SOK 12/2025). The older DPS 300 version is in the folder for reference only."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

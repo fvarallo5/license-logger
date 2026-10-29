@@ -1,52 +1,48 @@
 # LicenseLogger
 
-Driving school hours for students, instructors, and the school desk. UltraForge LLC.
-
-This is a new Flutter shell. It is not a copy of TrekTrack.
+Driving-school hours and desk. UltraForge LLC.
 
 | | |
 |---|---|
-| Store name | LicenseLogger |
-| Subtitle | Driving school hours |
-| Domain | licenselogger.com |
-| Desk | [app.licenselogger.com](https://app.licenselogger.com) |
-| Bundle | `com.ultraforge.licenselogger` |
-| Dart package | `license_logger` |
-| Support | support.ultraforgellc@gmail.com |
+| Product | LicenseLogger |
+| Domain | [licenselogger.com](https://licenselogger.com) |
+| Desk PWA | [app.licenselogger.com](https://app.licenselogger.com) |
+| Supabase | `nqfjudwncistygsmcgrq` (us-east-2) |
+| Phone bundle | `com.ultraforge.licenselogger` |
 
-## Phone v1
+## Monorepo layout
 
-Local hours on the device until the school desk exists.
-
-- First launch: profile (name, birthday, state, optional permit date). State rules fill hour goals and the test-ready checklist
-- Header: logo, status (Ready / Watching / Driving), settings
-- Dashboard: compact Track start-trip box, this-week calendar (expand to month), checklist `(done/N)` for road-test eligibility
-- Lessons: GPS map of saved routes plus the drive list
-- A trip must cover 15 miles per hour of driving (and at least 0.5 mi) or it is discarded: "Trip Too Short To Save"
-- Auto-track: same GPS engine as TrekTrack (Balanced start ~17s / 60 m / ~9 mph, park 120s + 45s stitch, silence failsafe, adaptive in-lesson sampling, idle GPS sleep + significant-change wake). iOS vehicle gate (Motion & Fitness) sleeps GPS until automotive; Android is GPS-only.
-- Hours: 50h permit arc (green) with night overlay (yellow), week/month/all list filter
-- Settings: profile, seat, auto-track, iOS vehicle gate, GPS Saver/Balanced/Accuracy, hour/night goals, night window (default 6pm–6am)
-- State GDL catalog: 50 states + DC from the Oct 17, 2026 requirements spreadsheet; confirm with the DMV before applying
-
-Hours persist in `SharedPreferences`. No account, no TrekTrack API.
-
-## Run
-
-```sh
-flutter run -d "iPhone 16 Plus"
+```
+apps/dashboard/     School desk (React + Vite PWA) — canonical signed-in UI
+apps/mobile/        Flutter student / family app
+supabase/           Migrations + Edge Functions
+docs/               Launch plan, state rules, Cloudflare, migration map
+scripts/            Local test helpers
 ```
 
-Desk PWA shell (sample data, no Auth yet). Live: `https://app.licenselogger.com` and `/portal`.
+The old sample desk (`web/`) was retired in Phase 0. Use `apps/dashboard`.
+
+## Quick start (desk)
 
 ```sh
-cd web
+cp apps/dashboard/.env.example apps/dashboard/.env.local
+# set VITE_SUPABASE_PUBLISHABLE_KEY (anon / publishable only)
 npm install
-npm run dev
+npm run dev          # Vite on the dashboard
+npm run ci           # format + typecheck + lint + test + build
 ```
 
-Open `http://127.0.0.1:5175` (Board / Plan / Students) and `http://127.0.0.1:5175/portal`.
+Never put `service_role` / `sb_secret_` in the dashboard. The app refuses to start if you do.
 
-## Do not
+## Backend
 
-- Copy `mileage-tracker` into this repo
-- Reuse TrekTrack’s App ID, App Group, or `.env`
+Migrations and functions live under `supabase/`. **Production already has the schema applied** (see `docs/LIVE_MIGRATION_MAP.md`). Do not `db push` to prod without Frank typing `push` and comparing the map. Edge functions are not deployed yet.
+
+## Hosting
+
+Cloudflare Pages for the desk — `docs/CLOUDFLARE_PAGES.md`.
+
+## Standing rules
+
+- Migrations go live only after Frank types `push`.
+- Merges need Frank’s explicit okay.

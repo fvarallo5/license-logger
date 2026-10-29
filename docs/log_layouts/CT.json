@@ -1,0 +1,151 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "CT",
+  "state_name": "Connecticut",
+  "kind": "full_log",
+  "form": {
+    "name": "Parent/Guardian Driving Instruction Log",
+    "number": "",
+    "revision": "August 1, 2008",
+    "source_pdf": "CT_parent-instruction-log.pdf",
+    "source_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "url": "https://portal.ct.gov/-/media/teendriving/parentinstructionlogpdf.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Parent/Guardian Driving Instruction Log",
+  "header_fields": [
+    {
+      "label": "Driver Name",
+      "value": "student_name"
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Tutor",
+              "key": "supervisor_name",
+              "w": 1.4
+            },
+            {
+              "label": "What Practiced",
+              "key": "skills",
+              "w": 2.4
+            },
+            {
+              "label": "Amount of Time",
+              "key": "amount",
+              "w": 1
+            },
+            {
+              "label": "Hours To Date",
+              "key": "cumulative",
+              "w": 1
+            }
+          ]
+        }
+      ],
+      "rows": 13,
+      "rows_first": 13
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "Instruction totaling a minimum of 40 hours was completed on this date:___________",
+    "fields": [],
+    "totals": [
+      {
+        "label": "Controls, Gauges, and Maintenance (min. 2 hrs.)",
+        "value": ""
+      },
+      {
+        "label": "Learning the Basics (min. 3 hrs.)",
+        "value": ""
+      },
+      {
+        "label": "Driving in Limited Traffic (min. 6 hrs.)",
+        "value": ""
+      },
+      {
+        "label": "Handling the Vehicle in Traffic (min. 8 hrs.)",
+        "value": ""
+      },
+      {
+        "label": "Parking (min. 2 hrs.)",
+        "value": ""
+      },
+      {
+        "label": "Driving on Limited-Access Highways (min. 6 hrs.)",
+        "value": ""
+      },
+      {
+        "label": "Driving at Night (min. 5 hrs.)",
+        "value": "night"
+      },
+      {
+        "label": "Handling Bad Weather and Emergencies (min. 3 hrs.)",
+        "value": ""
+      },
+      {
+        "label": "Additional Practice (min. 5 hrs.)",
+        "value": ""
+      },
+      {
+        "label": "Total Hours:",
+        "value": "total"
+      }
+    ],
+    "signatures": [
+      {
+        "label": "Parent/Guardian Signature",
+        "value": ""
+      },
+      {
+        "label": "Student Signature",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "before_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Lesson-category hours other than 'Driving at Night' (LicenseLogger does not tag drives with CT's nine lesson categories)",
+    "Date the 40 hours were completed (write it when signing)"
+  ],
+  "notes": [
+    "Page 1 lists the nine lesson categories with minimum hours; pages 2-6 are the log (13 rows each, with a 'Driver Name' line).",
+    "'Hours To Date' is the running total, as the form instructs ('Use the column at the right to show the total number of hours recorded up to that time')."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

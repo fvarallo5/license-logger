@@ -1,0 +1,116 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "RI",
+  "state_name": "Rhode Island",
+  "kind": "full_log",
+  "form": {
+    "name": "Supervised Driving Log (Supervised Driving Guide)",
+    "number": "",
+    "revision": "",
+    "source_pdf": "RI_supervised-driving-guide.pdf",
+    "source_pages": [
+      16
+    ],
+    "url": "https://dmv.ri.gov/sites/g/files/xkgbur556/files/documents/guides/SupervisedDrivingGuide.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      396,
+      612
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Supervised Driving Log",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.8
+            },
+            {
+              "label": "Driving Time",
+              "key": "amount",
+              "w": 0.8
+            },
+            {
+              "label": "Day/ Night",
+              "key": "day_or_night",
+              "w": 0.6
+            },
+            {
+              "label": "Driving Environment (ex. rural, highway)",
+              "key": "blank",
+              "w": 1.4
+            },
+            {
+              "label": "Weather",
+              "key": "weather",
+              "w": 0.8
+            },
+            {
+              "label": "Skills Practiced",
+              "key": "skills",
+              "w": 1.6
+            }
+          ]
+        }
+      ],
+      "rows": 9,
+      "rows_first": 9
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "The notarized signature of a parent, below, states that the minor seeking to obtain a provisional license has completed the above requirements.",
+    "fields": [
+      {
+        "label": "Driver’s Name",
+        "value": "student_name"
+      },
+      {
+        "label": "Permit Number",
+        "value": "permit_number"
+      }
+    ],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Parent/Guardian",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "",
+      "text": "",
+      "lines": [
+        "Notary Public",
+        "Commission Date"
+      ]
+    },
+    "extra_text": "According to Rhode Island General Law § 31-10-6, (b)(2)(iii), a person under the age of eighteen (18) must complete a minimum of fifty (50) hours of driving experience, with ten (10) of those hours being completed at night."
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Driving Environment (LicenseLogger does not record road type)"
+  ],
+  "notes": [
+    "The guide prints the log as a two-page spread (each half 396 x 612 pt): 9 tall rows on the left half, 3 rows plus the notarized certification on the right half."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

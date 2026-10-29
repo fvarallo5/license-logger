@@ -1,0 +1,135 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "DC",
+  "state_name": "District of Columbia",
+  "kind": "full_log",
+  "form": {
+    "name": "Certification of Eligibility for Provisional License",
+    "number": "DMV-GRAD-HR40",
+    "revision": "Rev.08/24/09",
+    "source_pdf": "DC_40-hour-certification.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/form_40_hours.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Certification of Eligibility for Provisional License",
+  "header_fields": [
+    {
+      "label": "Applicant Full Name (Last, First, Middle, Suffix)",
+      "value": "student_name_lfm"
+    },
+    {
+      "label": "Learner Permit No.",
+      "value": "permit_number"
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 1
+            },
+            {
+              "label": "Tutor’s Name (Please Print)",
+              "key": "supervisor_name",
+              "w": 2.2
+            },
+            {
+              "label": "Amount of Time",
+              "key": "time_range",
+              "w": 1.6
+            },
+            {
+              "label": "Hours/Minutes",
+              "key": "amount",
+              "w": 1
+            }
+          ]
+        }
+      ],
+      "rows": 11,
+      "rows_first": 11,
+      "page_total": {
+        "label": "Total Hours",
+        "sum": [
+          "amount"
+        ]
+      },
+      "example_row": "02/10/05 | Jane Doe | 8:15 am – 10:15 am | 2 hours"
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "By signing the above certification, I, the tutor, certify that the learner has received 40 hours of driving experience specified by me on the dates and times indicated.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Tutor’s Signature",
+        "value": ""
+      },
+      {
+        "label": "Driver License No:",
+        "value": ""
+      },
+      {
+        "label": "State of Issuance:",
+        "value": ""
+      },
+      {
+        "label": "Expiration Date:",
+        "value": ""
+      },
+      {
+        "label": "Tutor’s Signature",
+        "value": ""
+      },
+      {
+        "label": "Driver License No:",
+        "value": ""
+      },
+      {
+        "label": "State of Issuance:",
+        "value": ""
+      },
+      {
+        "label": "Expiration Date:",
+        "value": ""
+      }
+    ],
+    "notary": null,
+    "extra_text": "I hereby certify that I am at least 16 years and 6 months old and have been a holder of a valid learner permit for at least six months, during which time I have not admitted to, been liable for or convicted of an offense for which points may be assessed. I also certify that I have received at least 40 hours of driving experience.  Applicant’s Signature ______  Date ______"
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Tutor driver license number, state of issuance and expiration date (a photocopy of each tutor's license must be attached)"
+  ],
+  "notes": [
+    "One page: 11 rows after the printed Example row. The 'Amount of Time' column holds the clock times (the example shows '8:15 am – 10:15 am') and 'Hours/Minutes' the length.",
+    "Two tutor signature blocks are printed; each tutor certifies only the hours they supervised."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

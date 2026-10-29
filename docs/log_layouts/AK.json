@@ -1,0 +1,102 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "AK",
+  "state_name": "Alaska",
+  "kind": "certification",
+  "form": {
+    "name": "Parent/Guardian Consent for a Minor",
+    "number": "Form 433",
+    "revision": "Rev. 08/28/2018",
+    "source_pdf": "AK_Form433-parental-consent.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://dmv.alaska.gov/media/cuebehop/433.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "PARENT/GUARDIAN CONSENT FOR A MINOR",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "To obtain a Provisional License, I certify that the applicant has had at least 10 hours of driving experience in inclement weather (snow, ice, rain, darkness, etc.) for a total of 40 hours driving experience.",
+    "fields": [
+      {
+        "label": "Parent’s / Guardian’s Name",
+        "value": ""
+      },
+      {
+        "label": "Applicant’s Name",
+        "value": "student_name"
+      },
+      {
+        "label": "whose date of birth is",
+        "value": "birthday"
+      }
+    ],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Parents Driver’s License #:",
+        "value": ""
+      },
+      {
+        "label": "Issuing State:",
+        "value": ""
+      },
+      {
+        "label": "Your Relationship to Applicant:",
+        "value": ""
+      },
+      {
+        "label": "Your Mailing Address:",
+        "value": ""
+      },
+      {
+        "label": "Email",
+        "value": ""
+      },
+      {
+        "label": "Phone",
+        "value": ""
+      },
+      {
+        "label": "Signature:",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "",
+      "text": "Sworn and subscribed before me this ____ day of ______, 20",
+      "lines": [
+        "Notary Public or DMV Representative (LOGIN ID & Office Number)",
+        "My Commission Expires:"
+      ]
+    }
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Parent's name, license, address and contact details",
+    "SELECT ONLY ONE license-type check boxes"
+  ],
+  "notes": [
+    "The 40-hour certification is one sentence inside the parental consent form; 'If parent not present at DMV form must have the parents signature notarized.'"
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

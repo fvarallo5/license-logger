@@ -1,0 +1,108 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "IA",
+  "state_name": "Iowa",
+  "kind": "full_log",
+  "form": {
+    "name": "Supervised Driving Log (Parent's Supervised Driving Program guide)",
+    "number": "",
+    "revision": "",
+    "source_pdf": "IA_parents-supervised-driving-program.pdf",
+    "source_pages": [
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "url": "https://iowadot.gov/media/7147/download",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      576,
+      756
+    ],
+    "orientation": "portrait"
+  },
+  "title": "SUPERVISED DRIVING LOG",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.8
+            },
+            {
+              "label": "Location of Practice (ex. rural, highway)",
+              "key": "location",
+              "w": 1.5
+            },
+            {
+              "label": "Day/Night",
+              "key": "day_or_night",
+              "w": 0.9
+            },
+            {
+              "label": "Weather",
+              "key": "weather",
+              "w": 0.8
+            },
+            {
+              "label": "Skills practiced",
+              "key": "skills",
+              "w": 1.8
+            },
+            {
+              "label": "Driving time",
+              "key": "amount",
+              "w": 0.8
+            },
+            {
+              "label": "Adult’s Initials",
+              "key": "supervisor_initials",
+              "w": 0.7
+            }
+          ]
+        }
+      ],
+      "rows": 28,
+      "rows_first": 28,
+      "page_total": {
+        "label": "TOTAL",
+        "sum": [
+          "amount"
+        ]
+      }
+    }
+  ],
+  "summary": [
+    {
+      "label": "GRAND TOTAL",
+      "value": "total"
+    }
+  ],
+  "certification": null,
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "RoadReady template: 28 rows per page with a TOTAL row; the last page adds GRAND TOTAL.",
+    "'Day/Night' is a pair of check boxes on the form; LicenseLogger writes Day, Night or Day + Night.",
+    "'Location of Practice' gets the drive's start/end place names; the form's examples are road types (rural, highway).",
+    "Log pages are PDF pages 23-27 of the Iowa DOT guide; the Iowa copy has no certification block (the guide prints none)."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

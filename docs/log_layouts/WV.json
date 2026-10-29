@@ -1,0 +1,134 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "WV",
+  "state_name": "West Virginia",
+  "kind": "full_log",
+  "form": {
+    "name": "50-Hour Certification Log for Driver's License Applicants Under Age 18",
+    "number": "DMV-10-GDL",
+    "revision": "REV 09/14",
+    "source_pdf": "WV_DMV-GDL-10.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://webapps.transportation.wv.gov/TWS/WVDOTDocumentStorageMigration/PDF/Transportation/DMV/DMVFormSearch/DMV-GDL-10.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "50-Hour Certification Log for Driver’s License Applicants Under Age 18",
+  "header_fields": [
+    {
+      "label": "NAME",
+      "value": "student_name"
+    },
+    {
+      "label": "PERMIT NUMBER",
+      "value": "permit_number"
+    }
+  ],
+  "amount_format": "hours",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.8
+            },
+            {
+              "label": "Location of Practice",
+              "key": "location",
+              "w": 1.4
+            },
+            {
+              "label": "Time Period",
+              "key": "time_range",
+              "w": 1.2
+            },
+            {
+              "label": "Weather Conditions",
+              "key": "weather",
+              "w": 1
+            },
+            {
+              "label": "Daytime",
+              "key": "day_amount",
+              "w": 0.8,
+              "group": "Time Spent"
+            },
+            {
+              "label": "Nighttime",
+              "key": "night_amount",
+              "w": 0.8,
+              "group": "Time Spent"
+            },
+            {
+              "label": "Initials of Supervising Adult Driver",
+              "key": "supervisor_initials",
+              "w": 0.9
+            }
+          ]
+        }
+      ],
+      "rows": 12,
+      "rows_first": 12,
+      "example_row": "2/19/11 | City-Interstate | 2:00 PM-5:00 | Good | 3 | 0 | SD"
+    }
+  ],
+  "summary": [
+    {
+      "label": "Enter total practice hours here.",
+      "value": "total_hours"
+    }
+  ],
+  "certification": {
+    "title": "",
+    "text": "I hereby certify that {student_name} who bears instruction permit number {permit_number} has completed a minimum of 50 hours of behind-the-wheel practice and is under the supervision of an adult 21 years of age or older with a current valid driver’s license.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "SIGNATURE OF PARENT OR GUARDIAN",
+        "value": ""
+      },
+      {
+        "label": "DRIVER’S LICENSE NUMBER OF PARENT/GUARDIAN",
+        "value": ""
+      },
+      {
+        "label": "DATE",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "DRIVER’S LICENSE NUMBER OF PARENT/GUARDIAN"
+  ],
+  "notes": [
+    "The title is part of the header graphic (not in the PDF text layer); read from the rendered page.",
+    "About 12 rows per page after the printed example rows. The certification sentence continues 'Under penalty of perjury, I ...' and is cut off in the PDF text layer; check the printed form."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  },
+  "evidence_exempt": [
+    "50-Hour Certification Log for Driver’s License Applicants Under Age 18"
+  ]
+}

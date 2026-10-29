@@ -1,0 +1,20 @@
+{
+  "_doc": "Shared conformance input for buildLogDocument (TypeScript) and LogDocumentBuilder (Dart). state_code is replaced per state.",
+  "state_code": "XX",
+  "student": { "first": "Maya", "last": "Lopez", "permit_number": "A1234567", "birthday": "2010-03-09", "permit_issued": "2026-04-14", "school": "Green Light Driving" },
+  "main_supervisor": "Ana Lopez",
+  "drives": [
+    { "date": "2026-10-18", "start": "19:10", "end": "20:10", "minutes": 60, "night_minutes": 60, "weather_minutes": 0, "weather": "", "roadway": "Dry",
+      "supervisor": "Ana Lopez", "initials": "AL", "skills": ["Night driving", "Headlights"], "conditions": ["Dry", "Night"], "location": "Home - Mueller", "notes": "Short loop" },
+    { "date": "2026-10-12", "start": "17:40", "end": "19:25", "minutes": 105, "night_minutes": 35, "weather_minutes": 105, "weather": "Light rain", "roadway": "Wet",
+      "supervisor": "Carlos Lopez", "initials": "CL", "skills": ["Highway merge", "Lane changes", "Following distance"], "conditions": ["Wet", "Light rain"], "location": "Mueller to Round Rock", "notes": "" },
+    { "date": "2026-10-12", "start": "06:15", "end": "07:05", "minutes": 50, "night_minutes": 20, "weather_minutes": 0, "weather": "", "roadway": "",
+      "supervisor": "Ana Lopez", "initials": "AL", "skills": ["Stops", "Left turns", "Parking"], "conditions": [], "location": "Home - Mueller", "notes": "Before school" },
+    { "date": "2026-09-27", "start": "10:00", "end": "11:30", "minutes": 90, "night_minutes": 0, "weather_minutes": 0, "weather": "Sunny", "roadway": "Dry",
+      "supervisor": "Ana Lopez", "initials": "AL", "skills": ["Parking lot", "Backing"], "conditions": ["Sunny", "Dry"], "location": "Mueller to Pflugerville", "notes": "" },
+    { "date": "2026-09-30", "start": "16:05", "end": "16:50", "minutes": 45, "night_minutes": 0, "weather_minutes": 0, "weather": "", "roadway": "",
+      "supervisor": "Carlos Lopez", "initials": "CL", "skills": [], "conditions": ["Heavy traffic"], "location": "", "notes": "" }
+  ],
+  "totals": { "total": 350, "day": 235, "night": 115, "weather": 105 },
+  "excluded": { "unsigned_drives": 1, "unsigned_minutes": 40, "lessons": 2 }
+}

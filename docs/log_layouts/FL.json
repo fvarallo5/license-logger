@@ -1,0 +1,68 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "FL",
+  "state_name": "Florida",
+  "kind": "certification",
+  "form": {
+    "name": "Certification of Driving Experience of a Minor",
+    "number": "HSMV 71143",
+    "revision": "Rev 01/11",
+    "source_pdf": "FL_HSMV71143.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://www.flhsmv.gov/pdf/forms/71143.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "CERTIFICATION OF DRIVING EXPERIENCE OF A MINOR",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "I do hereby certify that {student_name}, a minor, date of birth {birthday}, has driven a minimum of 50 hours during the past 12 months, of which 10 hours of driving were at night per Section 322.05(3), Florida Statutes.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of Parent, Legal Guardian or Responsible Adult",
+        "value": ""
+      },
+      {
+        "label": "Print Name",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "STATE OF FLORIDA",
+      "text": "COUNTY OF ______ Sworn to (or affirmed) and subscribed before me this ____day of ______, 20____, by ______ who is personally known to me or produced identification. ______ as proof of identification. (Identification type and number)",
+      "lines": [
+        "Notary Public or DL Examiner-Signature",
+        "Print, Type, or Stamp Commissioned Name of Notary Public"
+      ]
+    },
+    "extra_text": "INSTRUCTIONS: 1. One parent, legal guardian, or other responsible adult 21 years old or older must sign this form. 2. All signatures must be notarized or witnessed by an examiner."
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "The name blank is printed as 'First Middle Last'; LicenseLogger writes the name on file."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  },
+  "subtitle": "STATE OF FLORIDA DEPARTMENT OF HIGHWAY SAFETY AND MOTOR VEHICLES"
+}

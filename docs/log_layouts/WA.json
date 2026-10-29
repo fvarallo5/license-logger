@@ -1,0 +1,102 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "WA",
+  "state_name": "Washington",
+  "kind": "certification",
+  "form": {
+    "name": "Parental Authorization Affidavit",
+    "number": "DLE-520-003",
+    "revision": "R/4/25",
+    "source_pdf": "WA_parental-authorization-affidavit.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://dol.wa.gov/forms/view/520003/download?inline=",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Parental Authorization Affidavit",
+  "header_fields": [
+    {
+      "label": "Last name of applicant",
+      "value": "student_last"
+    },
+    {
+      "label": "First name",
+      "value": "student_first"
+    },
+    {
+      "label": "Middle name",
+      "value": ""
+    },
+    {
+      "label": "Suffix",
+      "value": ""
+    },
+    {
+      "label": "whose date of birth is",
+      "value": "birthday"
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "I certify the above-named individual has at least 50 hours of driving experience, 10 of which were at night. A licensed driver with at least 3 years experience supervised this driving.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of parent/ guardian",
+        "value": ""
+      },
+      {
+        "label": "Date",
+        "value": ""
+      },
+      {
+        "label": "Driver license/ ID card number",
+        "value": ""
+      },
+      {
+        "label": "State",
+        "value": ""
+      }
+    ],
+    "notary": {
+      "title": "Notarization",
+      "text": "State of ______, County of ______ Signed or attested before me on ______ by ______ (Name of person)",
+      "lines": [
+        "Signature",
+        "Printed or stamped name",
+        "Title",
+        "Notary expiration date"
+      ]
+    },
+    "extra_text": "I declare under penalty of perjury under the law of Washington that the foregoing is true and correct."
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "custodial parent / legal guardian / employer / responsible adult check boxes",
+    "Instruction permit / Driver license / Motorcycle check boxes",
+    "Licensing services representative"
+  ],
+  "notes": [
+    "Used when the authorized signer cannot be present; notarization applies only then."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

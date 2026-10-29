@@ -1,0 +1,181 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "MD",
+ "state_name": "Maryland",
+ "kind": "full_log",
+ "title": "Practice Log",
+ "subtitle": "",
+ "form_label": "",
+ "source_pdf": "MD_RD-006-rookie-driver-skills-log.pdf",
+ "page": {
+  "width": 396,
+  "height": 612
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Maryland Practice Log (Rookie Driver Skills Log); check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "MVA catalogues the booklet as RD-006 (state_logs.csv); the number is not printed on the log pages. The second (25 or older) certification option is left blank.",
+  "Booklet pages 25-27 (15 rows, then 30 rows per page); the certification is on page 28.",
+  "The form's certification continues with the 6 hours of instruction and a penalty-of-perjury paragraph; only the first sentence is quoted here, the printed copy carries the full text."
+ ],
+ "unfillable": [
+  "Driver’s License Number of the signer",
+  "The '25 years of age or older' certification option"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 15,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Start Time",
+          "group": "",
+          "w": 0.9,
+          "key": "start_time"
+         },
+         {
+          "label": "Skill/Activity",
+          "group": "",
+          "w": 2,
+          "key": "skills"
+         },
+         {
+          "label": "End Time",
+          "group": "",
+          "w": 0.9,
+          "key": "end_time"
+         },
+         {
+          "label": "Total Number of Hours Completed",
+          "group": "",
+          "w": 1.1,
+          "key": "amount"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "Parking lot, Backing",
+          "11:30 AM",
+          "1 hr 30 min"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "",
+          "4:50 PM",
+          "45 min"
+         ],
+         [
+          "10/12/26",
+          "6:15 AM",
+          "Stops, Left turns, Parking",
+          "7:05 AM",
+          "50 min"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "Highway merge, Lane changes, Following distance",
+          "7:25 PM",
+          "1 hr 45 min"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "Night driving, Headlights",
+          "8:10 PM",
+          "1 hr"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Certification for Rookie Drivers"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I hereby certify that Maya Lopez, who is under 25 years of age, has had a minimum of 60 hours behind the wheel driving practice, has demonstrated that they can safely operate a motor vehicle, and has been under the supervision of a valid license holder 21 years of age or older, who has been licensed for at least three years."
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "OR I hereby certify that ________, who is 25 years of age or older, has had a minimum of 14 hours behind the wheel driving practice,"
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Signature of parent, guardian, mentor, or coach",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      },
+      {
+       "label": "Driver’s License Number",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

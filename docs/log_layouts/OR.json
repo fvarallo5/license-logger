@@ -1,0 +1,86 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "OR",
+  "state_name": "Oregon",
+  "kind": "full_log",
+  "form": {
+    "name": "Practice Driving Log",
+    "number": "",
+    "revision": "",
+    "source_pdf": "OR_practice-driving-log.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://www.oregon.gov/odot/DMV/Teen/Documents/teen_drive_log.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "Practice Driving Log",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "Session Topic/Focus",
+              "key": "skills",
+              "w": 2.2
+            },
+            {
+              "label": "Time (Hours/Min)",
+              "key": "amount",
+              "w": 0.9
+            },
+            {
+              "label": "Cumulative Hours",
+              "key": "cumulative",
+              "w": 0.9
+            },
+            {
+              "label": "Teen’s Initials",
+              "key": "student_initials",
+              "w": 0.7
+            },
+            {
+              "label": "Adult’s Initials",
+              "key": "supervisor_initials",
+              "w": 0.7
+            }
+          ]
+        }
+      ],
+      "rows": 21,
+      "rows_first": 21
+    }
+  ],
+  "summary": [],
+  "certification": null,
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [],
+  "notes": [
+    "One page, about 21 rows, no totals box (the 'Cumulative Hours' column carries the running total) and no signature: Oregon certifies hours on the DMV license application.",
+    "Teen's initials are taken from the student's name."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

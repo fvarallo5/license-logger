@@ -1,0 +1,276 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "NV",
+ "state_name": "Nevada",
+ "kind": "full_log",
+ "title": "Beginning Driver Experience Log",
+ "subtitle": "",
+ "form_label": "DLD130 (1/2023)",
+ "source_pdf": "NV_DLD-130.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Filled copy to transfer/print onto the official Nevada DLD130 Beginning Driver Experience Log. Nevada accepts only its own form: \"Only the DLD-130 or the RoadReady app log is accepted; signatures must be originals and photocopies are not acceptable.\" (state_logs.csv (NV other_rules) and NV_DLD-130.pdf p.1).",
+ "disclaimer_mode": "transfer",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Page 1 is the certification (parent signs; notary or DMV Field Services representative signs); page 2 is the log with Column A (daytime) and Column B (nighttime), about 17 rows each, then the DLD-130A additional sheet.",
+  "Each drive goes on its own line. A drive with both day and night minutes is split: the day part in Column A and the night part in Column B, with begin/end times split at the day/night boundary (evening drives: day first; drives starting before noon: night first).",
+  "Times use AM/PM; the form rejects military time."
+ ],
+ "unfillable": [
+  "Relationship (blank in the certification sentence)",
+  "FOR DEPARTMENT USE ONLY section",
+  "Minutes Subtotal from Additional Sheets (this copy lists every drive)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Applicant’s Name",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "Instruction Permit or Restricted License No.",
+       "value": "A1234567"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Parent/Legal Guardian Certification of Behind-The-Wheel Driver Experience"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I, the undersigned, do hereby certify that I am the ______ of the person named above, and that he/she has completed the required number of hours of behind-the-wheel driving experience with a restricted license, instruction permit, or restricted permit issued pursuant to NRS 483.267. 483.270 or 483.280."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Signature of Parent/Legal Guardian",
+       "value": ""
+      },
+      {
+       "label": "License/ID Number",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      },
+      {
+       "label": "Signature of Notary Public or Field Services Representative",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "Beginning Driver Experience Log",
+      "row_count": 17,
+      "total": {
+       "label": "Subtotal",
+       "cells": [
+        [
+         "",
+         "",
+         "",
+         "235"
+        ],
+        [
+         "",
+         "",
+         "",
+         "115"
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "Column A- Daytime Driving",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Begin",
+          "group": "Time of Day Please indicate AM or PM Do not use military time",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "End",
+          "group": "Time of Day Please indicate AM or PM Do not use military time",
+          "w": 0.8,
+          "key": "end_time"
+         },
+         {
+          "label": "Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "amount"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "11:30 AM",
+          "90"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "4:50 PM",
+          "45"
+         ],
+         [
+          "10/12/26",
+          "6:35 AM",
+          "7:05 AM",
+          "30"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "6:50 PM",
+          "70"
+         ]
+        ]
+       },
+       {
+        "title": "Column B – Nighttime Driving",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Begin",
+          "group": "Time of Day Please indicate AM or PM Do not use military time",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "End",
+          "group": "Time of Day Please indicate AM or PM Do not use military time",
+          "w": 0.8,
+          "key": "end_time"
+         },
+         {
+          "label": "Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "amount"
+         }
+        ],
+        "rows": [
+         [
+          "10/12/26",
+          "6:15 AM",
+          "6:35 AM",
+          "20"
+         ],
+         [
+          "10/12/26",
+          "6:50 PM",
+          "7:25 PM",
+          "35"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "8:10 PM",
+          "60"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Subtotal Column A",
+       "value": "235"
+      },
+      {
+       "label": "Subtotal Column B",
+       "value": "115"
+      },
+      {
+       "label": "Minutes Subtotal from Additional Sheets",
+       "value": ""
+      },
+      {
+       "label": "Total Minutes",
+       "value": "350"
+      },
+      {
+       "label": "Total Hours (Divide Total Minutes by 60)",
+       "value": "5.83"
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "350"
+      },
+      {
+       "label": "Day",
+       "value": "235"
+      },
+      {
+       "label": "Night",
+       "value": "115"
+      },
+      {
+       "label": "Bad weather",
+       "value": "105"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

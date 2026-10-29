@@ -1,0 +1,155 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "MO",
+ "state_name": "Missouri",
+ "kind": "full_log",
+ "title": "Driver Experience Log",
+ "subtitle": "",
+ "form_label": "Form 4901 (Revised 02-2014)",
+ "source_pdf": "MO_4901-driver-experience-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Missouri Form 4901 Driver Experience Log; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "One page, about 20 rows, a Grand Total box and no signature lines (the parent accompanies the teen to the license office)."
+ ],
+ "unfillable": [],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 20,
+      "total": {
+       "label": "Grand Total",
+       "cells": [
+        [
+         "",
+         "",
+         "",
+         "5 hr 50 min",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 1,
+          "key": "date"
+         },
+         {
+          "label": "Start Time",
+          "group": "",
+          "w": 1,
+          "key": "start_time"
+         },
+         {
+          "label": "End Time",
+          "group": "",
+          "w": 1,
+          "key": "end_time"
+         },
+         {
+          "label": "Total Time",
+          "group": "",
+          "w": 1,
+          "key": "amount"
+         },
+         {
+          "label": "Trainer’s Name",
+          "group": "",
+          "w": 1.6,
+          "key": "supervisor_name"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "11:30 AM",
+          "1 hr 30 min",
+          "Ana Lopez"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "4:50 PM",
+          "45 min",
+          "Carlos Lopez"
+         ],
+         [
+          "10/12/26",
+          "6:15 AM",
+          "7:05 AM",
+          "50 min",
+          "Ana Lopez"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "7:25 PM",
+          "1 hr 45 min",
+          "Carlos Lopez"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "8:10 PM",
+          "1 hr",
+          "Ana Lopez"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

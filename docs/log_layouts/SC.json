@@ -1,0 +1,123 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "SC",
+  "state_name": "South Carolina",
+  "kind": "full_log",
+  "form": {
+    "name": "Supervised Driving Log",
+    "number": "DL-008A",
+    "revision": "Rev. 01/26",
+    "source_pdf": "SC_DL-008A-supervised-driving-log.pdf",
+    "source_pages": [
+      1,
+      2,
+      3
+    ],
+    "url": "https://dmv.sc.gov/sites/scdmv/files/2026-01/DL-008A.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "SUPERVISED DRIVING LOG",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 0.8
+            },
+            {
+              "label": "Driving Skills Practiced",
+              "key": "skills_abbrev",
+              "w": 2.6
+            },
+            {
+              "label": "DAY",
+              "key": "day_amount",
+              "w": 0.8,
+              "group": "Driving Time Hours/Minutes 30 min, 1 hr., etc."
+            },
+            {
+              "label": "NIGHT",
+              "key": "night_amount",
+              "w": 0.8,
+              "group": "Driving Time Hours/Minutes 30 min, 1 hr., etc."
+            },
+            {
+              "label": "Skills Needing More Practice (use abbreviations)",
+              "key": "blank",
+              "w": 1.4
+            },
+            {
+              "label": "Adult Initials",
+              "key": "supervisor_initials",
+              "w": 0.8
+            }
+          ]
+        }
+      ],
+      "rows": 30,
+      "rows_first": 13,
+      "page_total": {
+        "label": "TOTAL PRACTICE TIME",
+        "sum": [
+          "day_amount",
+          "night_amount"
+        ]
+      },
+      "example_row": "1/16 | Sample-SSC, LC, BUC, RT,LT | 1 hr. | 30 min. | BUC, LC | Mom"
+    }
+  ],
+  "summary": [
+    {
+      "label": "TOTAL PRACTICE TIME",
+      "value": "total"
+    }
+  ],
+  "certification": null,
+  "cert_position": "after_log",
+  "legend": "DRIVING SKILLS TO PRACTICE. Level I: Backing Up the Car (BUC), Driving a “Stick” (DS), Lane Choice and Control (LCC), Left Turn/Right Turn (LT/RT), Looking Ahead in Traffic (LAT), Starting and Stopping the Car (SSC). Level II: Intersections (I), Keeping Space Around the Car (KSAC), Lane Changes (LC), Practicing in Traffic (PT). Level III: Parking on Hills (PH), Parallel Parking (PP), U-Turn (UT). Level IV: Interstate Driving (ID), Night Driving (ND), Adverse Conditions (AC), Special Problems and Emergencies (SPE).",
+  "abbrev": {
+    "Backing": "BUC",
+    "Backing up": "BUC",
+    "Left turns": "LT",
+    "Unprotected lefts": "LT",
+    "Right turns": "RT",
+    "Lane changes": "LC",
+    "Intersections": "I",
+    "Following distance": "KSAC",
+    "Highway": "ID",
+    "Freeway": "ID",
+    "Highway merge": "ID",
+    "Night driving": "ND",
+    "Parallel parking": "PP",
+    "Hill parking": "PH",
+    "U-turn": "UT",
+    "U-turns": "UT",
+    "Stops": "SSC",
+    "Heavy traffic": "PT"
+  },
+  "unfillable": [
+    "Skills Needing More Practice (use abbreviations)"
+  ],
+  "notes": [
+    "13 rows on page 1 after the sample row, 30 rows on pages 2-3. No signature on the log: the certification is on the PDLA issued by authorized schools (not downloadable)."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

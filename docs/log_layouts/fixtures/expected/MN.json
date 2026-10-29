@@ -1,0 +1,247 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "MN",
+ "state_name": "Minnesota",
+ "kind": "full_log",
+ "title": "Supervised Driving Log",
+ "subtitle": "",
+ "form_label": "(Rev. 06/2021)",
+ "source_pdf": "MN_supervised-driving-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Filled copy to transfer/print onto the official Minnesota Supervised Driving Log. Minnesota accepts only its own form: \"Attach additional sheets of this Supervised Driving Log template, as needed (logs completed on any other document will not be accepted).\" (MN_supervised-driving-log.pdf p.1).",
+ "disclaimer_mode": "transfer",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Two side-by-side column sets of about 25 rows each (left fills first), after a printed sample row.",
+  "Amounts are minutes, as on the form."
+ ],
+ "unfillable": [],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Student’s Name",
+       "value": "Maya Lopez"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 25,
+      "total": {
+       "label": "TOTALS",
+       "cells": [
+        [
+         "",
+         "235",
+         "115",
+         "350",
+         ""
+        ],
+        [
+         "",
+         "0",
+         "0",
+         "0",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Day Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "day_amount"
+         },
+         {
+          "label": "Night Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "night_amount"
+         },
+         {
+          "label": "Total Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "amount"
+         },
+         {
+          "label": "Skills Practiced",
+          "group": "",
+          "w": 1.9,
+          "key": "skills"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "90",
+          "",
+          "90",
+          "Parking lot, Backing"
+         ],
+         [
+          "9/30/26",
+          "45",
+          "",
+          "45",
+          ""
+         ],
+         [
+          "10/12/26",
+          "30",
+          "20",
+          "50",
+          "Stops, Left turns, Parking"
+         ],
+         [
+          "10/12/26",
+          "70",
+          "35",
+          "105",
+          "Highway merge, Lane changes, Following distance"
+         ],
+         [
+          "10/18/26",
+          "",
+          "60",
+          "60",
+          "Night driving, Headlights"
+         ]
+        ]
+       },
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Day Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "day_amount"
+         },
+         {
+          "label": "Night Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "night_amount"
+         },
+         {
+          "label": "Total Minutes",
+          "group": "",
+          "w": 0.7,
+          "key": "amount"
+         },
+         {
+          "label": "Skills Practiced",
+          "group": "",
+          "w": 1.9,
+          "key": "skills"
+         }
+        ],
+        "rows": []
+       }
+      ]
+     }
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "DAY:",
+       "value": "235"
+      },
+      {
+       "label": "NIGHT:",
+       "value": "115"
+      },
+      {
+       "label": "TOTAL MINUTES:",
+       "value": "350"
+      },
+      {
+       "label": "TOTAL DRIVING HOURS",
+       "value": "5.83"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I hereby affirm that I am the parent/guardian who has supervised my teen driver for the majority of the required driving hours, and that my teen has driven the hours listed above."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Signature of Primary Driving Supervisor",
+       "value": ""
+      },
+      {
+       "label": "Date",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "350"
+      },
+      {
+       "label": "Day",
+       "value": "235"
+      },
+      {
+       "label": "Night",
+       "value": "115"
+      },
+      {
+       "label": "Bad weather",
+       "value": "105"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

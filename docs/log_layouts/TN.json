@@ -1,0 +1,120 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "TN",
+  "state_name": "Tennessee",
+  "kind": "certification",
+  "form": {
+    "name": "Certification of 50 Hours Behind the Wheel Driving Experience",
+    "number": "SF-1256",
+    "revision": "02/13",
+    "source_pdf": "TN_SF-1256.pdf",
+    "source_pages": [
+      1
+    ],
+    "url": "https://www.tn.gov/content/dam/tn/safety/documents/gdl50hrcertificate.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "CERTIFICATION OF 50 HOURS BEHIND THE WHEEL DRIVING EXPERIENCE",
+  "header_fields": [
+    {
+      "label": "NAME OF PERMIT HOLDER:",
+      "value": "student_name"
+    },
+    {
+      "label": "TENN PERMIT NUMBER:",
+      "value": "permit_number"
+    },
+    {
+      "label": "SOCIAL SECURITY NUMBER:",
+      "value": ""
+    },
+    {
+      "label": "STREET ADDRESS",
+      "value": ""
+    },
+    {
+      "label": "CITY",
+      "value": ""
+    },
+    {
+      "label": "STATE",
+      "value": ""
+    },
+    {
+      "label": "ZIP CODE",
+      "value": ""
+    },
+    {
+      "label": "NAME OF PARENT, GUARDIAN OR LICENSED INSTRUCTOR:",
+      "value": ""
+    },
+    {
+      "label": "DRIVER LICENSE NUMBER:",
+      "value": ""
+    },
+    {
+      "label": "SOCIAL SECURITY NUMBER:",
+      "value": ""
+    },
+    {
+      "label": "ADDRESS",
+      "value": ""
+    },
+    {
+      "label": "CITY",
+      "value": ""
+    },
+    {
+      "label": "STATE",
+      "value": ""
+    },
+    {
+      "label": "ZIP CODE",
+      "value": ""
+    }
+  ],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "I affirm that I am the above named parent/guardian or licensed instructor, and I certify that the above named permit holder (under the age of 18) has completed fifty (50) hours of behind the wheel driving including a minimum of ten (10) hours of driving at night.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Signature of parent, guardian or licensed instructor",
+        "value": ""
+      },
+      {
+        "label": "Relationship to Permit Holder:",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "Social Security numbers (never stored or printed by LicenseLogger)",
+    "Addresses",
+    "Parent/guardian/instructor name and license number"
+  ],
+  "notes": [
+    "The lower half of the page is a GDL information table (not a form field) and is not reproduced."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

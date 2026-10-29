@@ -1,0 +1,120 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "KY",
+  "state_name": "Kentucky",
+  "kind": "full_log",
+  "form": {
+    "name": "Practice Driving Log",
+    "number": "",
+    "revision": "",
+    "source_pdf": "KY_practice-driving-log.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://drive.ky.gov/Drivers/Documents/Practice-Driving-Log-03-25.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "PRACTICE DRIVING LOG",
+  "header_fields": [],
+  "amount_format": "hr_min",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "day",
+          "columns": [
+            {
+              "label": "Date of Driving",
+              "key": "date",
+              "w": 1
+            },
+            {
+              "label": "Amount of Driving time",
+              "key": "amount",
+              "w": 1
+            },
+            {
+              "label": "Parent/Guardian Initials",
+              "key": "supervisor_initials",
+              "w": 1
+            }
+          ]
+        }
+      ],
+      "rows": 31,
+      "rows_first": 31,
+      "title": "DAY DRIVING RECORD (50 hours mandatory)"
+    },
+    {
+      "panels": [
+        {
+          "filter": "night",
+          "columns": [
+            {
+              "label": "Date",
+              "key": "date",
+              "w": 1
+            },
+            {
+              "label": "Amount of Driving Time",
+              "key": "amount",
+              "w": 1
+            },
+            {
+              "label": "Parent/Guardian Initials",
+              "key": "supervisor_initials",
+              "w": 1
+            }
+          ]
+        }
+      ],
+      "rows": 33,
+      "rows_first": 33,
+      "title": "NIGHT DRIVING RECORD (10 hours mandatory)"
+    }
+  ],
+  "summary": [],
+  "certification": {
+    "title": "",
+    "text": "By signing below, I certify that this practice-driving log is correct.",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "Applicant's Signature",
+        "value": ""
+      },
+      {
+        "label": "Parent/Guardian Signature",
+        "value": ""
+      }
+    ],
+    "notary": null,
+    "extra_text": "The above record has been reviewed by a Kentucky State Police License Examiner and shows that the applicant and parent/guardian have documented 60 hours of driving.  KSP License Examiner ______ Date ______"
+  },
+  "cert_position": "after_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "KSP License Examiner and Date (completed by the examiner)"
+  ],
+  "notes": [
+    "Day drives go in the DAY DRIVING RECORD (page 1, 31 rows) and night drives in the NIGHT DRIVING RECORD (page 2, 33 rows). A drive with both day and night minutes is split into one row in each record.",
+    "The form has no name field and no totals boxes.",
+    "No revision is printed; the DMV file name dates it 03-25 (state_logs.csv)."
+  ],
+  "acceptance": {
+    "mode": "check",
+    "basis": "",
+    "source": ""
+  }
+}

@@ -1,0 +1,183 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "SC",
+ "state_name": "South Carolina",
+ "kind": "full_log",
+ "title": "SUPERVISED DRIVING LOG",
+ "subtitle": "",
+ "form_label": "DL-008A (Rev. 01/26)",
+ "source_pdf": "SC_DL-008A-supervised-driving-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official South Carolina DL-008A Supervised Driving Log; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "13 rows on page 1 after the sample row, 30 rows on pages 2-3. No signature on the log: the certification is on the PDLA issued by authorized schools (not downloadable)."
+ ],
+ "unfillable": [
+  "Skills Needing More Practice (use abbreviations)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 1",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 13,
+      "total": {
+       "label": "TOTAL PRACTICE TIME",
+       "cells": [
+        [
+         "",
+         "",
+         "3 hr 55 min",
+         "1 hr 55 min",
+         "",
+         ""
+        ]
+       ]
+      },
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.8,
+          "key": "date"
+         },
+         {
+          "label": "Driving Skills Practiced",
+          "group": "",
+          "w": 2.6,
+          "key": "skills_abbrev"
+         },
+         {
+          "label": "DAY",
+          "group": "Driving Time Hours/Minutes 30 min, 1 hr., etc.",
+          "w": 0.8,
+          "key": "day_amount"
+         },
+         {
+          "label": "NIGHT",
+          "group": "Driving Time Hours/Minutes 30 min, 1 hr., etc.",
+          "w": 0.8,
+          "key": "night_amount"
+         },
+         {
+          "label": "Skills Needing More Practice (use abbreviations)",
+          "group": "",
+          "w": 1.4,
+          "key": "blank"
+         },
+         {
+          "label": "Adult Initials",
+          "group": "",
+          "w": 0.8,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "Parking lot, BUC",
+          "1 hr 30 min",
+          "",
+          "",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "",
+          "45 min",
+          "",
+          "",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "SSC, LT, Parking",
+          "30 min",
+          "20 min",
+          "",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "ID, LC, KSAC",
+          "1 hr 10 min",
+          "35 min",
+          "",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "ND, Headlights",
+          "",
+          "1 hr",
+          "",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "style": "legend",
+     "text": "DRIVING SKILLS TO PRACTICE. Level I: Backing Up the Car (BUC), Driving a “Stick” (DS), Lane Choice and Control (LCC), Left Turn/Right Turn (LT/RT), Looking Ahead in Traffic (LAT), Starting and Stopping the Car (SSC). Level II: Intersections (I), Keeping Space Around the Car (KSAC), Lane Changes (LC), Practicing in Traffic (PT). Level III: Parking on Hills (PH), Parallel Parking (PP), U-Turn (UT). Level IV: Interstate Driving (ID), Night Driving (ND), Adverse Conditions (AC), Special Problems and Emergencies (SPE)."
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "TOTAL PRACTICE TIME",
+       "value": "5 hr 50 min"
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

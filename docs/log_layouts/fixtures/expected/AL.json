@@ -1,0 +1,213 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "AL",
+ "state_name": "Alabama",
+ "kind": "certification",
+ "title": "Graduated Driver License Form",
+ "subtitle": "",
+ "form_label": "DL-31 (Rev 09/21)",
+ "source_pdf": "AL_DL-31.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Alabama DL-31 Graduated Driver License Form (Behind the Wheel Verification); check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The same page also carries 'PERMISSION TO DRIVE WITHOUT SUPERVISION' (signature + Name of Applicant) and a driver-education CERTIFICATE OF COMPLETION box."
+ ],
+ "unfillable": [
+  "CERTIFICATE OF COMPLETION (driver education box)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "BEHIND THE WHEEL VERIFICATION FORM"
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "______ certify that the applicant Has completed a minimum of 50 hours of behind-the-wheel driving practice as required by section 32-6-7.2 of the Code of Alabama 1975."
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "PERMISSION TO DRIVE WITHOUT SUPERVISION: ______ consent to the licensure of Maya Lopez and granting permission for the applicant to drive without supervision as required by section 32-6-7.2 of the Code of Alabama 1975."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Signature of Parent or Legal Guardian",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Supporting drive record (LicenseLogger; not part of the official form)"
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 5,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Start",
+          "group": "",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "End",
+          "group": "",
+          "w": 0.8,
+          "key": "end_time"
+         },
+         {
+          "label": "Time",
+          "group": "",
+          "w": 0.9,
+          "key": "amount"
+         },
+         {
+          "label": "Night",
+          "group": "",
+          "w": 0.9,
+          "key": "night_amount"
+         },
+         {
+          "label": "Weather",
+          "group": "",
+          "w": 0.9,
+          "key": "weather"
+         },
+         {
+          "label": "Supervisor",
+          "group": "",
+          "w": 1.6,
+          "key": "supervisor_name"
+         },
+         {
+          "label": "Initials",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "11:30 AM",
+          "1 hr 30 min",
+          "",
+          "Sunny",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "4:50 PM",
+          "45 min",
+          "",
+          "",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "6:15 AM",
+          "7:05 AM",
+          "50 min",
+          "20 min",
+          "",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "7:25 PM",
+          "1 hr 45 min",
+          "35 min",
+          "Light rain",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "8:10 PM",
+          "1 hr",
+          "1 hr",
+          "",
+          "Ana Lopez",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

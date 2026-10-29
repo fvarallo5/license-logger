@@ -1,0 +1,128 @@
+{
+  "schema": "licenselogger.log_layout/v1",
+  "state_code": "NC",
+  "state_name": "North Carolina",
+  "kind": "full_log",
+  "form": {
+    "name": "Driving Log to Advance to N.C. Level 2 Limited Provisional Driver License",
+    "number": "DL-4A",
+    "revision": "09/2011",
+    "source_pdf": "NC_DL-4A.pdf",
+    "source_pages": [
+      1,
+      2
+    ],
+    "url": "https://www.ncdot.gov/dmv/downloads/Documents/DL-4A.pdf",
+    "extra_sources": []
+  },
+  "page": {
+    "size": [
+      612,
+      792
+    ],
+    "orientation": "portrait"
+  },
+  "title": "DRIVING LOG TO ADVANCE TO N.C. LEVEL 2 LIMITED PROVISIONAL DRIVER LICENSE",
+  "header_fields": [
+    {
+      "label": "Customer Name: (Please Print Name)",
+      "value": "student_name"
+    },
+    {
+      "label": "Customer’s DL Number:",
+      "value": "permit_number"
+    }
+  ],
+  "amount_format": "hours",
+  "date_format": "m/d/yy",
+  "tables": [
+    {
+      "panels": [
+        {
+          "filter": "all",
+          "columns": [
+            {
+              "label": "DATE",
+              "key": "date",
+              "w": 0.9
+            },
+            {
+              "label": "TIME OF DAY",
+              "key": "day_amount",
+              "w": 0.9
+            },
+            {
+              "label": "TIME OF NIGHT",
+              "key": "night_amount",
+              "w": 0.9
+            },
+            {
+              "label": "AMOUNT OF DRIVING TIME (E.G. # HOURS)",
+              "key": "amount",
+              "w": 1.1
+            },
+            {
+              "label": "SUPERVISING DRIVER’S PRINTED NAME",
+              "key": "supervisor_name",
+              "w": 2
+            },
+            {
+              "label": "SUPERVISING DRIVER’S DL (Number and State)",
+              "key": "blank",
+              "w": 1.3
+            }
+          ]
+        }
+      ],
+      "rows": 39,
+      "rows_first": 19
+    }
+  ],
+  "summary": [
+    {
+      "label": "Total Day Hours Driven:",
+      "value": "day_hours"
+    },
+    {
+      "label": "Total Night Hours Driven:",
+      "value": "night_hours"
+    },
+    {
+      "label": "Grand Total:",
+      "value": "total_hours"
+    }
+  ],
+  "certification": {
+    "title": "",
+    "text": "I {supervisor_name}, do certify that the information on this form is true and accurate and is in accordance with N.C. G.S. 20-11(d),",
+    "fields": [],
+    "totals": [],
+    "signatures": [
+      {
+        "label": "(Supervising Driver’s Signature)",
+        "value": ""
+      },
+      {
+        "label": "(Date)",
+        "value": ""
+      }
+    ],
+    "notary": null
+  },
+  "cert_position": "before_log",
+  "legend": null,
+  "abbrev": {},
+  "unfillable": [
+    "SUPERVISING DRIVER’S DL (Number and State)"
+  ],
+  "notes": [
+    "The certification sits at the top of page 1 above the first 19 rows; page 2 has 39 rows and the totals line.",
+    "'TIME OF DAY' / 'TIME OF NIGHT' are read as the daytime and nighttime amounts of each drive.",
+    "The supervising driver's printed name in the certification is the supervisor with the most logged drives."
+  ],
+  "acceptance": {
+    "mode": "accepted",
+    "basis": "Driving log showing at least 60 hours of driving (digital and printed copies accepted)",
+    "source": "NCDMV Level 2 page, quoted in state_logs.csv"
+  }
+}

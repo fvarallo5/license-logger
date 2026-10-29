@@ -1,0 +1,270 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "TN",
+ "state_name": "Tennessee",
+ "kind": "certification",
+ "title": "CERTIFICATION OF 50 HOURS BEHIND THE WHEEL DRIVING EXPERIENCE",
+ "subtitle": "",
+ "form_label": "SF-1256 (02/13)",
+ "source_pdf": "TN_SF-1256.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Tennessee SF-1256 Certification of 50 Hours Behind the Wheel Driving Experience; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The lower half of the page is a GDL information table (not a form field) and is not reproduced."
+ ],
+ "unfillable": [
+  "Social Security numbers (never stored or printed by LicenseLogger)",
+  "Addresses",
+  "Parent/guardian/instructor name and license number"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "NAME OF PERMIT HOLDER:",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "TENN PERMIT NUMBER:",
+       "value": "A1234567"
+      },
+      {
+       "label": "SOCIAL SECURITY NUMBER:",
+       "value": ""
+      },
+      {
+       "label": "STREET ADDRESS",
+       "value": ""
+      },
+      {
+       "label": "CITY",
+       "value": ""
+      },
+      {
+       "label": "STATE",
+       "value": ""
+      },
+      {
+       "label": "ZIP CODE",
+       "value": ""
+      },
+      {
+       "label": "NAME OF PARENT, GUARDIAN OR LICENSED INSTRUCTOR:",
+       "value": ""
+      },
+      {
+       "label": "DRIVER LICENSE NUMBER:",
+       "value": ""
+      },
+      {
+       "label": "SOCIAL SECURITY NUMBER:",
+       "value": ""
+      },
+      {
+       "label": "ADDRESS",
+       "value": ""
+      },
+      {
+       "label": "CITY",
+       "value": ""
+      },
+      {
+       "label": "STATE",
+       "value": ""
+      },
+      {
+       "label": "ZIP CODE",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "I affirm that I am the above named parent/guardian or licensed instructor, and I certify that the above named permit holder (under the age of 18) has completed fifty (50) hours of behind the wheel driving including a minimum of ten (10) hours of driving at night."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Signature of parent, guardian or licensed instructor",
+       "value": ""
+      },
+      {
+       "label": "Relationship to Permit Holder:",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Supporting drive record (LicenseLogger; not part of the official form)"
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 5,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Start",
+          "group": "",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "End",
+          "group": "",
+          "w": 0.8,
+          "key": "end_time"
+         },
+         {
+          "label": "Time",
+          "group": "",
+          "w": 0.9,
+          "key": "amount"
+         },
+         {
+          "label": "Night",
+          "group": "",
+          "w": 0.9,
+          "key": "night_amount"
+         },
+         {
+          "label": "Weather",
+          "group": "",
+          "w": 0.9,
+          "key": "weather"
+         },
+         {
+          "label": "Supervisor",
+          "group": "",
+          "w": 1.6,
+          "key": "supervisor_name"
+         },
+         {
+          "label": "Initials",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "11:30 AM",
+          "1 hr 30 min",
+          "",
+          "Sunny",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "4:50 PM",
+          "45 min",
+          "",
+          "",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "6:15 AM",
+          "7:05 AM",
+          "50 min",
+          "20 min",
+          "",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "7:25 PM",
+          "1 hr 45 min",
+          "35 min",
+          "Light rain",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "8:10 PM",
+          "1 hr",
+          "1 hr",
+          "",
+          "Ana Lopez",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

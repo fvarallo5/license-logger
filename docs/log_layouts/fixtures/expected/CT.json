@@ -1,0 +1,225 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "CT",
+ "state_name": "Connecticut",
+ "kind": "full_log",
+ "title": "Parent/Guardian Driving Instruction Log",
+ "subtitle": "",
+ "form_label": "(August 1, 2008)",
+ "source_pdf": "CT_parent-instruction-log.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Connecticut Parent/Guardian Driving Instruction Log; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "Page 1 lists the nine lesson categories with minimum hours; pages 2-6 are the log (13 rows each, with a 'Driver Name' line).",
+  "'Hours To Date' is the running total, as the form instructs ('Use the column at the right to show the total number of hours recorded up to that time')."
+ ],
+ "unfillable": [
+  "Lesson-category hours other than 'Driving at Night' (LicenseLogger does not tag drives with CT's nine lesson categories)",
+  "Date the 40 hours were completed (write it when signing)"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Driver Name",
+       "value": "Maya Lopez"
+      }
+     ]
+    },
+    {
+     "type": "totals",
+     "items": [
+      {
+       "label": "Controls, Gauges, and Maintenance (min. 2 hrs.)",
+       "value": ""
+      },
+      {
+       "label": "Learning the Basics (min. 3 hrs.)",
+       "value": ""
+      },
+      {
+       "label": "Driving in Limited Traffic (min. 6 hrs.)",
+       "value": ""
+      },
+      {
+       "label": "Handling the Vehicle in Traffic (min. 8 hrs.)",
+       "value": ""
+      },
+      {
+       "label": "Parking (min. 2 hrs.)",
+       "value": ""
+      },
+      {
+       "label": "Driving on Limited-Access Highways (min. 6 hrs.)",
+       "value": ""
+      },
+      {
+       "label": "Driving at Night (min. 5 hrs.)",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Handling Bad Weather and Emergencies (min. 3 hrs.)",
+       "value": ""
+      },
+      {
+       "label": "Additional Practice (min. 5 hrs.)",
+       "value": ""
+      },
+      {
+       "label": "Total Hours:",
+       "value": "5 hr 50 min"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "Instruction totaling a minimum of 40 hours was completed on this date:___________"
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parent/Guardian Signature",
+       "value": ""
+      },
+      {
+       "label": "Student Signature",
+       "value": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 13,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Tutor",
+          "group": "",
+          "w": 1.4,
+          "key": "supervisor_name"
+         },
+         {
+          "label": "What Practiced",
+          "group": "",
+          "w": 2.4,
+          "key": "skills"
+         },
+         {
+          "label": "Amount of Time",
+          "group": "",
+          "w": 1,
+          "key": "amount"
+         },
+         {
+          "label": "Hours To Date",
+          "group": "",
+          "w": 1,
+          "key": "cumulative"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "Ana Lopez",
+          "Parking lot, Backing",
+          "1 hr 30 min",
+          "1 hr 30 min"
+         ],
+         [
+          "9/30/26",
+          "Carlos Lopez",
+          "",
+          "45 min",
+          "2 hr 15 min"
+         ],
+         [
+          "10/12/26",
+          "Ana Lopez",
+          "Stops, Left turns, Parking",
+          "50 min",
+          "3 hr 5 min"
+         ],
+         [
+          "10/12/26",
+          "Carlos Lopez",
+          "Highway merge, Lane changes, Following distance",
+          "1 hr 45 min",
+          "4 hr 50 min"
+         ],
+         [
+          "10/18/26",
+          "Ana Lopez",
+          "Night driving, Headlights",
+          "1 hr",
+          "5 hr 50 min"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

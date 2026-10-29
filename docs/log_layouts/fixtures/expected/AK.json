@@ -1,0 +1,254 @@
+{
+ "schema": "licenselogger.log_document/v1",
+ "state_code": "AK",
+ "state_name": "Alaska",
+ "kind": "certification",
+ "title": "PARENT/GUARDIAN CONSENT FOR A MINOR",
+ "subtitle": "",
+ "form_label": "Form 433 (Rev. 08/28/2018)",
+ "source_pdf": "AK_Form433-parental-consent.pdf",
+ "page": {
+  "width": 612,
+  "height": 792
+ },
+ "disclaimer": "Prepared with LicenseLogger from the official Alaska Form 433 Parent/Guardian Consent for a Minor; check your state accepts this copy.",
+ "disclaimer_mode": "check",
+ "footer": "Maya Lopez - prepared with LicenseLogger",
+ "notes": [
+  "The 40-hour certification is one sentence inside the parental consent form; 'If parent not present at DMV form must have the parents signature notarized.'"
+ ],
+ "unfillable": [
+  "Parent's name, license, address and contact details",
+  "SELECT ONLY ONE license-type check boxes"
+ ],
+ "pages": [
+  {
+   "label": "Page 1 of 2",
+   "blocks": [
+    {
+     "type": "fields",
+     "items": [
+      {
+       "label": "Parent’s / Guardian’s Name",
+       "value": ""
+      },
+      {
+       "label": "Applicant’s Name",
+       "value": "Maya Lopez"
+      },
+      {
+       "label": "whose date of birth is",
+       "value": "3/9/10"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "style": "cert",
+     "text": "To obtain a Provisional License, I certify that the applicant has had at least 10 hours of driving experience in inclement weather (snow, ice, rain, darkness, etc.) for a total of 40 hours driving experience."
+    },
+    {
+     "type": "signatures",
+     "items": [
+      {
+       "label": "Parents Driver’s License #:",
+       "value": ""
+      },
+      {
+       "label": "Issuing State:",
+       "value": ""
+      },
+      {
+       "label": "Your Relationship to Applicant:",
+       "value": ""
+      },
+      {
+       "label": "Your Mailing Address:",
+       "value": ""
+      },
+      {
+       "label": "Email",
+       "value": ""
+      },
+      {
+       "label": "Phone",
+       "value": ""
+      },
+      {
+       "label": "Signature:",
+       "value": ""
+      }
+     ]
+    },
+    {
+     "type": "notary",
+     "title": "",
+     "text": "Sworn and subscribed before me this ____ day of ______, 20",
+     "lines": [
+      "Notary Public or DMV Representative (LOGIN ID & Office Number)",
+      "My Commission Expires:"
+     ]
+    },
+    {
+     "type": "computed",
+     "title": "Computed by LicenseLogger (not part of the official form)",
+     "items": [
+      {
+       "label": "Credited total",
+       "value": "5 hr 50 min"
+      },
+      {
+       "label": "Day",
+       "value": "3 hr 55 min"
+      },
+      {
+       "label": "Night",
+       "value": "1 hr 55 min"
+      },
+      {
+       "label": "Bad weather",
+       "value": "1 hr 45 min"
+      },
+      {
+       "label": "Signed drives listed",
+       "value": "5"
+      },
+      {
+       "label": "Not listed: unsigned",
+       "value": "1 (40 min)"
+      },
+      {
+       "label": "Not listed: school lessons",
+       "value": "2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Page 2 of 2",
+   "blocks": [
+    {
+     "type": "text",
+     "style": "heading",
+     "text": "Supporting drive record (LicenseLogger; not part of the official form)"
+    },
+    {
+     "type": "table",
+     "table": {
+      "title": "",
+      "row_count": 5,
+      "total": null,
+      "panels": [
+       {
+        "title": "",
+        "columns": [
+         {
+          "label": "Date",
+          "group": "",
+          "w": 0.9,
+          "key": "date"
+         },
+         {
+          "label": "Start",
+          "group": "",
+          "w": 0.8,
+          "key": "start_time"
+         },
+         {
+          "label": "End",
+          "group": "",
+          "w": 0.8,
+          "key": "end_time"
+         },
+         {
+          "label": "Time",
+          "group": "",
+          "w": 0.9,
+          "key": "amount"
+         },
+         {
+          "label": "Night",
+          "group": "",
+          "w": 0.9,
+          "key": "night_amount"
+         },
+         {
+          "label": "Weather",
+          "group": "",
+          "w": 0.9,
+          "key": "weather"
+         },
+         {
+          "label": "Supervisor",
+          "group": "",
+          "w": 1.6,
+          "key": "supervisor_name"
+         },
+         {
+          "label": "Initials",
+          "group": "",
+          "w": 0.7,
+          "key": "supervisor_initials"
+         }
+        ],
+        "rows": [
+         [
+          "9/27/26",
+          "10:00 AM",
+          "11:30 AM",
+          "1 hr 30 min",
+          "",
+          "Sunny",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "9/30/26",
+          "4:05 PM",
+          "4:50 PM",
+          "45 min",
+          "",
+          "",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/12/26",
+          "6:15 AM",
+          "7:05 AM",
+          "50 min",
+          "20 min",
+          "",
+          "Ana Lopez",
+          "AL"
+         ],
+         [
+          "10/12/26",
+          "5:40 PM",
+          "7:25 PM",
+          "1 hr 45 min",
+          "35 min",
+          "Light rain",
+          "Carlos Lopez",
+          "CL"
+         ],
+         [
+          "10/18/26",
+          "7:10 PM",
+          "8:10 PM",
+          "1 hr",
+          "1 hr",
+          "",
+          "Ana Lopez",
+          "AL"
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}
