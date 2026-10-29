@@ -28,3 +28,10 @@ Live applied the same logical migrations under later timestamps, plus two live-o
 **Do not `supabase db push` to production** without comparing this map. Staging should apply the repo migrations on a fresh project. Production already has the objects.
 
 **Dashboard note:** `mark_lesson` on live accepts `taught` (not `completed`). Phase 0 patches the desk to send `taught`.
+
+| 20261029192814 | fleet_compliance | 20261029192814_fleet_compliance.sql |
+| 20261029192816 | device_push_tokens | 20261029192816_device_push_tokens.sql |
+| 20261029192818 | pay_packages_lockdown | 20261029192818_pay_packages_lockdown.sql |
+| 20261029192822 | instructor_pay | 20261029192822_instructor_pay.sql |
+| 20261029192825 | skills_checklist_rpc | 20261029192825_skills_checklist_rpc.sql |
+| 20261029192841 | request_slot_family | 20261029192841_request_slot_family.sql (live 12-arg RPC; family/desk allowed) |

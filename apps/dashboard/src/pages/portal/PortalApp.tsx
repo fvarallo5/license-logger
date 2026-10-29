@@ -151,7 +151,7 @@ export default function PortalApp() {
               <button className="btn primary" disabled={busy || !start || !end} onClick={() => void submitRequest()}>
                 Send request
               </button>
-              <p className="muted">Requires migration `_NOT_APPLIED_request_slot.sql` on live.</p>
+              <p className="muted">Sends a request to the school. They accept or decline on Plan.</p>
             </Card>
             <Card title="Billing" count={invoices.length}>
               {!invoices.length ? (
