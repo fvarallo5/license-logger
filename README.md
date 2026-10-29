@@ -40,7 +40,7 @@ Migrations and functions live under `supabase/`. **Production already has the sc
 
 ## Hosting
 
-Cloudflare Pages for the desk — `docs/CLOUDFLARE_PAGES.md`.
+Cloudflare Worker `license-logger` for the desk — `docs/CLOUDFLARE_WORKERS.md`.
 
 ## Standing rules
 
