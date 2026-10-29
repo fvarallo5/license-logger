@@ -168,6 +168,12 @@ export const demo = {
         school_id: SCHOOL,
         instructor_id: "u-2",
         car_id: "car-1",
+        service_due: day(20).slice(0, 10),
+        reg_due: day(90).slice(0, 10),
+        ins_due: day(40).slice(0, 10),
+        dual_control: true,
+        odo_miles: 12000,
+        notes: "",
         lot_id: null,
         name: "Marcus weekdays",
         kind: "btw",
@@ -218,6 +224,7 @@ export const demo = {
         created_at: day(-1),
       },
     ],
+    lots: [{ id: "lot-1", school_id: SCHOOL, name: "Main lot", lat: 40.7128, lng: -74.006, is_default: true }],
     cars: [
       {
         id: "car-1",

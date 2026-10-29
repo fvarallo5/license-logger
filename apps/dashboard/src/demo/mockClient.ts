@@ -156,6 +156,26 @@ export function createMockClient(): SupabaseClient {
     },
     qbo_sync_status: () => [],
     create_school: () => demo.school,
+    add_car: (a) => {
+      const id = `car-${Date.now()}`;
+      (t.cars as Row[]).push({
+        id,
+        school_id: a.p_school_id,
+        name: a.p_name,
+        plate: a.p_plate,
+        color: a.p_color,
+        model: a.p_model,
+        dual_control: true,
+        assigned_user_id: a.p_assigned_user_id,
+        active: true,
+      });
+      return id;
+    },
+    add_lot: (a) => {
+      const id = `lot-${Date.now()}`;
+      (t.lots as Row[]).push({ id, school_id: a.p_school_id, name: a.p_name, lat: null, lng: null, is_default: !!a.p_is_default });
+      return id;
+    },
     add_slot_template: (a) => {
       const id = `tpl-${Date.now()}`;
       (t.slot_templates as Row[]).push({

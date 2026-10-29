@@ -157,7 +157,21 @@ export interface Car {
   model: string;
   dual_control: boolean;
   assigned_user_id: string | null;
+  odo_miles?: number;
+  service_due?: string | null;
+  inspect_due?: string | null;
+  reg_due?: string | null;
+  ins_due?: string | null;
+  notes?: string;
   active: boolean;
+}
+export interface Lot {
+  id: string;
+  school_id: string;
+  name: string;
+  lat: number | null;
+  lng: number | null;
+  is_default: boolean;
 }
 export interface Member {
   school_id: string;

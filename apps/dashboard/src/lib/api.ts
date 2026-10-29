@@ -353,7 +353,9 @@ export async function listCars(sb: SupabaseClient, schoolId: string): Promise<Ca
   return check(
     await sb
       .from("cars")
-      .select("id, school_id, name, plate, color, model, dual_control, assigned_user_id, active")
+      .select(
+        "id, school_id, name, plate, color, model, dual_control, assigned_user_id, odo_miles, service_due, inspect_due, reg_due, ins_due, notes, active",
+      )
       .eq("school_id", schoolId)
       .eq("active", true)
       .order("name"),
@@ -659,4 +661,70 @@ export async function listBillingCustomers(
   return check(
     await sb.from("billing_customers").select("id, display_name, student_id").eq("school_id", schoolId).order("display_name").limit(200),
   ) as { id: string; display_name: string; student_id: string | null }[];
+}
+
+// ---------- fleet ----------
+export async function listLots(sb: SupabaseClient, schoolId: string): Promise<import("./types").Lot[]> {
+  return check(
+    await sb.from("lots").select("id, school_id, name, lat, lng, is_default").eq("school_id", schoolId).order("name"),
+  ) as import("./types").Lot[];
+}
+
+export async function addLot(sb: SupabaseClient, schoolId: string, name: string, isDefault = false): Promise<string> {
+  return String(check(await sb.rpc("add_lot", { p_school_id: schoolId, p_name: name, p_is_default: isDefault })));
+}
+
+export async function addCar(
+  sb: SupabaseClient,
+  args: { schoolId: string; name: string; plate?: string; color?: string; model?: string; assignedUserId?: string | null },
+): Promise<string> {
+  return String(
+    check(
+      await sb.rpc("add_car", {
+        p_school_id: args.schoolId,
+        p_name: args.name,
+        p_plate: args.plate ?? "",
+        p_color: args.color ?? "#1156C1",
+        p_model: args.model ?? "",
+        p_assigned_user_id: args.assignedUserId ?? null,
+        p_odo_miles: 0,
+      }),
+    ),
+  );
+}
+
+export async function updateCarCompliance(
+  sb: SupabaseClient,
+  carId: string,
+  schoolId: string,
+  patch: Partial<{
+    service_due: string | null;
+    inspect_due: string | null;
+    reg_due: string | null;
+    ins_due: string | null;
+    dual_control: boolean;
+    notes: string;
+    assigned_user_id: string | null;
+    odo_miles: number;
+  }>,
+): Promise<void> {
+  try {
+    check(await sb.rpc("update_car_compliance", { p_car_id: carId, p_school_id: schoolId, p_patch: patch }));
+  } catch {
+    check(await sb.from("cars").update(patch).eq("id", carId).eq("school_id", schoolId));
+  }
+}
+
+export async function updateLotCoords(
+  sb: SupabaseClient,
+  lotId: string,
+  schoolId: string,
+  lat: number | null,
+  lng: number | null,
+): Promise<void> {
+  try {
+    check(await sb.rpc("update_lot_coords", { p_lot_id: lotId, p_school_id: schoolId, p_lat: lat, p_lng: lng }));
+  } catch {
+    check(await sb.from("lots").update({ lat, lng }).eq("id", lotId).eq("school_id", schoolId));
+  }
 }

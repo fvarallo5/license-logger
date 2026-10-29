@@ -17,6 +17,7 @@ import Settings from "./pages/Settings";
 import QuickBooks from "./pages/QuickBooks";
 import Packages from "./pages/Packages";
 import Pay from "./pages/Pay";
+import Fleet from "./pages/Fleet";
 import { usePendingSignoffs } from "./lib/usePendingSignoffs";
 import type { Membership } from "./lib/types";
 
@@ -78,6 +79,7 @@ function DeskShell({
         )}
         <NavLink to="/schedule">Schedule</NavLink>
         <NavLink to="/people">People</NavLink>
+        {p.manageSchool && <NavLink to="/fleet">Fleet</NavLink>}
         {p.manageSchool && <NavLink to="/settings">Settings</NavLink>}
         {p.viewBilling && <NavLink to="/pay">Pay</NavLink>}
         {p.viewBilling && <NavLink to="/packages">Packages</NavLink>}
@@ -92,6 +94,7 @@ function DeskShell({
           <Route path="/drives" element={p.reviewDrives ? <Drives /> : <Navigate to="/board" />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/people" element={<People />} />
+          <Route path="/fleet" element={p.manageSchool ? <Fleet /> : <Navigate to="/board" />} />
           <Route path="/settings" element={p.manageSchool ? <Settings /> : <Navigate to="/board" />} />
           <Route path="/pay" element={p.viewBilling ? <Pay /> : <Navigate to="/board" />} />
           <Route path="/packages" element={p.viewBilling ? <Packages /> : <Navigate to="/board" />} />
