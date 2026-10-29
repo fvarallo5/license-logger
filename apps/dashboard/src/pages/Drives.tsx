@@ -36,7 +36,9 @@ export default function Drives() {
       <PageHeader
         title="Sign-offs"
         desc="Drives waiting for review. You sign instructor lessons here; parents sign practice drives in their app."
-      />
+      >
+        {!pg.loading && <span className="pill">{pg.rows.length} in queue</span>}
+      </PageHeader>
       {msg && (
         <div className={`alert ${msg.tone}`} role="status">
           {msg.text}

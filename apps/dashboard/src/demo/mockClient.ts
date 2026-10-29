@@ -10,8 +10,12 @@ class Query implements PromiseLike<Res> {
   private from = 0;
   private to = Infinity;
   private one: "single" | "maybe" | null = null;
+  private wantCount = false;
+  private headOnly = false;
   constructor(private rows: Row[]) {}
-  select() {
+  select(_cols?: string, opts?: { count?: string; head?: boolean }) {
+    if (opts?.count) this.wantCount = true;
+    if (opts?.head) this.headOnly = true;
     return this;
   }
   order() {
@@ -74,9 +78,12 @@ class Query implements PromiseLike<Res> {
     return this;
   }
   then<A, B>(ok?: ((v: Res) => A | PromiseLike<A>) | null, bad?: ((e: unknown) => B | PromiseLike<B>) | null) {
-    const hit = this.rows.filter((r) => this.filters.every((f) => f(r))).slice(this.from, this.to + 1);
-    const data = this.one ? (hit[0] ?? null) : hit;
-    return Promise.resolve<Res>({ data, error: null }).then(ok, bad);
+    const all = this.rows.filter((r) => this.filters.every((f) => f(r)));
+    const hit = all.slice(this.from, this.to + 1);
+    const data = this.headOnly ? null : this.one ? (hit[0] ?? null) : hit;
+    const res: Res & { count?: number | null } = { data, error: null };
+    if (this.wantCount) res.count = all.length;
+    return Promise.resolve(res).then(ok, bad);
   }
 }
 

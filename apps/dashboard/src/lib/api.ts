@@ -185,6 +185,16 @@ export interface DriveCursor {
   started_at: string;
   id: string;
 }
+export async function pendingDrivesCount(sb: SupabaseClient, schoolId: string): Promise<number> {
+  const { count, error } = await sb
+    .from("drives")
+    .select("id", { count: "exact", head: true })
+    .eq("school_id", schoolId)
+    .eq("status", "pending");
+  if (error) throw error;
+  return count ?? 0;
+}
+
 /** Pending sign-off queue for one school, newest first, keyset-paginated on the drives table (RLS-scoped). */
 export async function pendingDrivesPage(
   sb: SupabaseClient,

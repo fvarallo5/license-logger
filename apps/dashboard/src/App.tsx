@@ -15,27 +15,22 @@ import People from "./pages/People";
 import Schedule from "./pages/Schedule";
 import Settings from "./pages/Settings";
 import QuickBooks from "./pages/QuickBooks";
+import { usePendingSignoffs } from "./lib/usePendingSignoffs";
+import type { Membership } from "./lib/types";
 
-export default function App() {
-  const s = useSession();
-  if (configError)
-    return (
-      <main id="main">
-        <ErrorBox error={configError} />
-      </main>
-    );
-  if (!s.ready) return <Loading label="Starting…" />;
-  if (s.recovery) return <NewPasswordPage />;
-  if (!s.session) return <AuthPage />;
-  if (s.loadingSchools && !s.memberships.length) return <Loading label="Loading your school…" />;
-  if (s.schoolError)
-    return (
-      <main>
-        <ErrorBox error={s.schoolError} onRetry={() => void s.refreshSchools()} />
-      </main>
-    );
-  if (!s.current) return <Onboarding />;
-  const p = perms(s.current);
+function DeskShell({
+  current,
+  memberships,
+  email,
+  selectSchool,
+}: {
+  current: Membership;
+  memberships: Membership[];
+  email: string | undefined;
+  selectSchool: (id: string) => void;
+}) {
+  const p = perms(current);
+  const pending = usePendingSignoffs(supabase, current.school_id, p.reviewDrives);
 
   return (
     <>
@@ -45,20 +40,20 @@ export default function App() {
           <i />
           LicenseLogger
         </div>
-        {s.memberships.length > 1 ? (
-          <select aria-label="School" value={s.current.school_id} onChange={(e) => s.selectSchool(e.target.value)}>
-            {s.memberships.map((m) => (
+        {memberships.length > 1 ? (
+          <select aria-label="School" value={current.school_id} onChange={(e) => selectSchool(e.target.value)}>
+            {memberships.map((m) => (
               <option key={m.school_id} value={m.school_id}>
                 {m.schools?.name ?? m.school_id}
               </option>
             ))}
           </select>
         ) : (
-          <span className="pill">{s.current.schools?.name}</span>
+          <span className="pill">{current.schools?.name}</span>
         )}
         <div className="spacer" />
-        <span className="pill">{roleLabel[s.current.role]}</span>
-        <span className="who">{s.session.user.email}</span>
+        <span className="pill">{roleLabel[current.role]}</span>
+        <span className="who">{email}</span>
         <button className="btn sm" onClick={() => void supabase.auth.signOut()}>
           Sign out
         </button>
@@ -69,7 +64,16 @@ export default function App() {
         </NavLink>
         <NavLink to="/plan">Plan</NavLink>
         <NavLink to="/students">Students</NavLink>
-        {p.reviewDrives && <NavLink to="/drives">Sign-offs</NavLink>}
+        {p.reviewDrives && (
+          <NavLink to="/drives">
+            Sign-offs
+            {pending.count > 0 && (
+              <span className="nav-badge" aria-label={`${pending.count} pending`}>
+                {pending.count > 99 ? "99+" : pending.count}
+              </span>
+            )}
+          </NavLink>
+        )}
         <NavLink to="/schedule">Schedule</NavLink>
         <NavLink to="/people">People</NavLink>
         {p.manageSchool && <NavLink to="/settings">Settings</NavLink>}
@@ -91,4 +95,27 @@ export default function App() {
       </main>
     </>
   );
+}
+
+export default function App() {
+  const s = useSession();
+  if (configError)
+    return (
+      <main id="main">
+        <ErrorBox error={configError} />
+      </main>
+    );
+  if (!s.ready) return <Loading label="Starting…" />;
+  if (s.recovery) return <NewPasswordPage />;
+  if (!s.session) return <AuthPage />;
+  if (s.loadingSchools && !s.memberships.length) return <Loading label="Loading your school…" />;
+  if (s.schoolError)
+    return (
+      <main>
+        <ErrorBox error={s.schoolError} onRetry={() => void s.refreshSchools()} />
+      </main>
+    );
+  if (!s.current) return <Onboarding />;
+
+  return <DeskShell current={s.current} memberships={s.memberships} email={s.session.user.email} selectSchool={s.selectSchool} />;
 }
