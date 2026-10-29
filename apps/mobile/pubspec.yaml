@@ -35,7 +35,10 @@ dependencies:
   geolocator: ^14.0.3
   intl: ^0.20.2
   latlong2: ^0.10.1
+  path_provider: ^2.1.5
+  pdf: ^3.11.3
   provider: ^6.1.2
+  share_plus: ^13.3.1
   shared_preferences: ^2.5.3
   supabase_flutter: ^2.9.1
 
@@ -61,10 +64,29 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/data/state_rules.json
+    - assets/data/log_layouts.json
+
+  fonts:
+    - family: Geist
+      fonts:
+        - asset: assets/fonts/Geist-400.ttf
+          weight: 400
+        - asset: assets/fonts/Geist-500.ttf
+          weight: 500
+        - asset: assets/fonts/Geist-600.ttf
+          weight: 600
+        - asset: assets/fonts/Geist-700.ttf
+          weight: 700
+    - family: GeistMono
+      fonts:
+        - asset: assets/fonts/GeistMono-400.ttf
+          weight: 400
+        - asset: assets/fonts/GeistMono-500.ttf
+          weight: 500
+        - asset: assets/fonts/GeistMono-600.ttf
+          weight: 600
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
