@@ -1,3 +1,8 @@
+-- UPDATED 2026-10-30: still NOT a migration. Enable pg_cron + pg_net in Dashboard first.
+-- Replace <project-ref> with nqfjudwncistygsmcgrq and set LL_APP_LINK=https://app.licenselogger.com
+-- on Edge Function secrets. Run only after Frank types "push" for related migrations AND
+-- Edge Functions are deployed.
+
 -- Background jobs. NOT a migration: run it once per environment (staging, then production)
 -- in the SQL Editor AFTER the Edge Functions are deployed and their secrets are set.
 -- Needs the pg_cron and pg_net extensions (Dashboard > Integrations > Cron / Database > Extensions).

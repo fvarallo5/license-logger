@@ -2,6 +2,7 @@
 // Each email carries its outbox idempotency_key as Resend's Idempotency-Key: retries never double-send.
 // Also runs daily housekeeping when called with ?housekeeping=1.
 import { json, requireCron } from "../_shared/http.ts";
+import { rateLimit } from "../_shared/rate_limit.ts";
 import { serviceClient } from "../_shared/clients.ts";
 import { envOr } from "../_shared/env.ts";
 import { type Email, escapeHtml, layout, sendEmail } from "../_shared/email.ts";
@@ -18,7 +19,7 @@ type Note = {
 
 function render(n: Note): Email | null {
   if (!n.to_email) return null;
-  const app = envOr("LL_APP_LINK", "https://licenselogger.example/app");
+  const app = envOr("LL_APP_LINK", "https://app.licenselogger.com");
   if (n.kind === "drive_pending") {
     const first = n.payload.student_first_name ?? "Your student";
     const mins = Number(n.payload.minutes ?? 0);
@@ -43,6 +44,9 @@ function render(n: Note): Email | null {
 Deno.serve(async (req) => {
   const deny = requireCron(req);
   if (deny) return deny;
+  if (!rateLimit("send-notifications", { capacity: 120, refillPerSec: 2 })) {
+    return json(req, { error: "rate limited" }, 429);
+  }
   const svc = serviceClient();
 
   if (new URL(req.url).searchParams.get("housekeeping") === "1") {

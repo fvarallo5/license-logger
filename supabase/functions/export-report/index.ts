@@ -7,6 +7,8 @@
 // All data is read AS THE CALLER (RLS decides what they may export). The service role is
 // used only to write the file, record it, and sign the URL.
 import { json, pgStatus, preflight } from "../_shared/http.ts";
+import { asUuid, readJsonLimited } from "../_shared/validate.ts";
+import { rateLimit } from "../_shared/rate_limit.ts";
 import { requireUser, serviceClient, userClient } from "../_shared/clients.ts";
 import {
   type Drive,
@@ -27,11 +29,21 @@ Deno.serve(async (req) => {
   if (req.method !== "POST") return json(req, { error: "POST only" }, 405);
   const user = await requireUser(req);
   if (!user) return json(req, { error: "Sign in required" }, 401);
-  const { student_id, format = "pdf", drive_id = null, layout = "report" } = await req.json().catch(() => ({}));
-  if (!student_id || !["pdf", "csv"].includes(format)) {
+  if (!rateLimit(`export-report:${user.id}`, { capacity: 40, refillPerSec: 0.2 })) {
+    return json(req, { error: "rate limited" }, 429);
+  }
+  const parsed = await readJsonLimited(req, 8_000);
+  if (!parsed.ok) return parsed.response;
+  const body = (parsed.body ?? {}) as Record<string, unknown>;
+  const student_id = asUuid(body.student_id);
+  const format = body.format ?? "pdf";
+  const drive_id = body.drive_id == null || body.drive_id === "" ? null : asUuid(body.drive_id);
+  const layout = body.layout ?? "report";
+  if (body.drive_id && !drive_id) return json(req, { error: "drive_id must be a uuid" }, 400);
+  if (!student_id || !["pdf", "csv"].includes(String(format))) {
     return json(req, { error: "student_id and format (pdf|csv) required" }, 400);
   }
-  if (!["report", "state"].includes(layout)) return json(req, { error: "layout must be report or state" }, 400);
+  if (!["report", "state"].includes(String(layout))) return json(req, { error: "layout must be report or state" }, 400);
 
   const db = userClient(req);
   const svc = serviceClient();
