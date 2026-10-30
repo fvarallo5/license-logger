@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "demo": "vite --mode demo",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/verify-dist.mjs",
     "build:demo": "vite build --mode demo --outDir dist-demo",
     "typecheck": "tsc -b --noEmit",
     "lint": "eslint .",
@@ -17,7 +17,8 @@
     "format:check": "prettier --check .",
     "ci": "npm run format:check && npm run typecheck && npm run lint && npm test && npm run build",
     "deploy": "wrangler deploy",
-    "deploy:dry": "wrangler deploy --dry-run"
+    "deploy:dry": "wrangler deploy --dry-run",
+    "verify:dist": "node scripts/verify-dist.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",

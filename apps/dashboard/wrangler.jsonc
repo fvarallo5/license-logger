@@ -1,10 +1,13 @@
 {
+  // Desk PWA — assets MUST be Vite's dist/ (never apps/dashboard/src).
+  // Workers Builds: Root directory = apps/dashboard, Build = npm ci && npm run build, Deploy = npx wrangler deploy
   "name": "license-logger",
   "main": "./worker.js",
   "compatibility_date": "2024-12-05",
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    "html_handling": "auto-trailing-slash"
   }
 }

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, render, screen, waitFor, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { createMockClient } from "../demo/mockClient";
 
@@ -25,8 +25,9 @@ describe("Sign-offs badge", () => {
         </SessionProvider>
       </MemoryRouter>,
     );
+    const nav = await screen.findByRole("navigation", { name: "Main" });
     await waitFor(() => {
-      const link = screen.getByRole("link", { name: /Sign-offs/i });
+      const link = within(nav).getByRole("link", { name: /Sign-offs/i });
       expect(link.textContent).toMatch(/\d/);
     });
   });

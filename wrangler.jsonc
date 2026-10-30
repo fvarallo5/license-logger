@@ -1,10 +1,12 @@
 {
+  // Prefer Root directory = apps/dashboard in Workers Builds. This root config is a fallback.
   "name": "license-logger",
   "main": "./apps/dashboard/worker.js",
   "compatibility_date": "2024-12-05",
   "assets": {
     "directory": "./apps/dashboard/dist",
     "binding": "ASSETS",
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    "html_handling": "auto-trailing-slash"
   }
 }

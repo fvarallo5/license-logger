@@ -684,3 +684,81 @@ td.warn,
   padding: 0.35rem 0;
   border-bottom: 1px solid var(--border, #e5e7eb);
 }
+
+/* —— Audit fixes: a11y skip + phone dock —— */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 8px 14px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+nav.tabs a.nav-secondary {
+  margin-left: auto;
+  color: var(--muted);
+  font-weight: 400;
+}
+nav.dock {
+  display: none;
+}
+@media (max-width: 720px) {
+  header.top .who {
+    display: none;
+  }
+  nav.tabs {
+    /* keep horizontal scroll for overflow admin tabs */
+    -webkit-overflow-scrolling: touch;
+  }
+  nav.dock {
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    z-index: 40;
+    gap: 0;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+    justify-content: space-around;
+  }
+  nav.dock a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    position: relative;
+  }
+  nav.dock a.active {
+    color: var(--ink);
+  }
+  nav.dock a.active::after {
+    content: "";
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 4px;
+    height: 2px;
+    background: var(--lime, #9ac700);
+    border-radius: 2px;
+  }
+  .dock-dot {
+    position: absolute;
+    top: 6px;
+    right: calc(50% - 22px);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e11d48;
+  }
+  main#main {
+    padding-bottom: 64px;
+  }
+}
