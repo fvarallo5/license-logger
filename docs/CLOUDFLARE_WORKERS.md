@@ -1,62 +1,72 @@
 # Cloudflare Worker — LicenseLogger desk
 
-Worker name: **`license-logger`** (Workers Builds → `fvarallo5/license-logger`).
+Worker name: **`license-logger`** (custom domain `app.licenselogger.com`).
 
-Wrangler configs exist at **repo root**, **`apps/dashboard`**, and **`web/`** (shim if the dashboard root is still the retired sample folder). Each has `name = license-logger`, a `main` worker, and SPA assets.
+## Critical (audit 2026-10-30)
+
+As of the audit, **Workers Builds is not attached** to this Worker (`GET …/builds/workers/license-logger` → 404). The live site was still serving an **old sample desk** (`/src/main.jsx` + grain-wash textures), not `apps/dashboard`’s Vite build. That means:
+
+1. Merges to `main` do **not** auto-deploy.
+2. `sw.js` / `manifest.webmanifest` / `/board` return 404 until a real `dist/` deploy lands.
+
+**Fix once (Frank):** Cloudflare Dashboard → Workers & Pages → `license-logger` → Settings → Builds:
 
 | Setting | Value |
 |---|---|
-| Root directory | `apps/dashboard` (preferred). Repo root and `web/` also work. |
+| Connect repo | `fvarallo5/license-logger` |
+| Root directory | `apps/dashboard` |
 | Build command | `npm ci && npm run build` |
 | Deploy command | `npx wrangler deploy` |
-| Node version | `20` (`NODE_VERSION=20`) |
-| Config | `wrangler.jsonc` → `main` `./worker.js`, assets from `./dist`, binding `ASSETS`, SPA `not_found_handling` |
+| Node | `20` (`NODE_VERSION=20`) |
+
+Or deploy manually after login:
+
+```sh
+cd apps/dashboard
+npm ci
+# ensure VITE_* are in .env / Workers Builds vars
+npm run build          # runs verify-dist (fails if index still points at /src)
+npx wrangler deploy
+```
+
+Then hard-refresh `https://app.licenselogger.com/` — HTML title should be **LicenseLogger · School dashboard**, scripts under `/assets/…`, and `/sw.js` + `/manifest.webmanifest` should be 200.
+
+## Wrangler configs
+
+Configs exist at **repo root**, **`apps/dashboard`**, and a shim under **`web/`**. Prefer **`apps/dashboard`**.
+
+| Setting | Value |
+|---|---|
+| `main` | `./worker.js` (SPA passthrough to `ASSETS`) |
+| assets.directory | `./dist` |
+| assets.not_found_handling | `single-page-application` |
 
 ## Build env vars (Workers Builds → Variables)
 
 | Name | Value |
 |---|---|
 | `VITE_SUPABASE_URL` | `https://nqfjudwncistygsmcgrq.supabase.co` |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | publishable / anon key only (never `service_role`) |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | publishable / anon key only (never `service_role` / `sb_secret_`) |
 | `VITE_SITE_URL` | `https://app.licenselogger.com` |
 | `NODE_VERSION` | `20` |
+| `VITE_ENABLE_QBO` | omit or `0` until Intuit is ready; set `1` to show QuickBooks nav |
 
 These are baked in at **build** time by Vite. Redeploy after changing them.
-
-## Custom domain
-
-`app.licenselogger.com` → Worker `license-logger`.
 
 ## Supabase Auth
 
 Authentication → URL configuration:
 
 - **Site URL:** `https://app.licenselogger.com`
-- **Redirect URLs:** include `https://app.licenselogger.com` and `https://app.licenselogger.com/**` (and any `*.workers.dev` preview URL while testing).
+- **Redirect URLs:** `https://app.licenselogger.com` and `https://app.licenselogger.com/**` (plus any `*.workers.dev` preview).
 
-## If GitHub check fails in the same second
-
-Workers Builds is dying at **initialization**, before `npm ci`. Typical causes:
-
-1. **Stale API token** — Settings → Build → API Token → Create new token, then Retry build.
-2. **Root directory** — set to `apps/dashboard` (or leave repo root / `web/`; all three have wrangler configs now).
-3. **Worker name** must stay `license-logger`.
-
-Local wrangler is not logged in, so this agent cannot `wrangler deploy` to production. After `npx wrangler login` in this repo, deploy is:
-
-```sh
-cd apps/dashboard
-npm run build
-npx wrangler deploy
-```
-
-Do not change DNS. `app.licenselogger.com` is already on this Worker.
+Also enable **Leaked password protection** (Auth → Attack Protection / Password security) — advisor WARN.
 
 ## Local check
 
 ```sh
 cd apps/dashboard
 npm ci
-npm run build
+npm run ci
 npx wrangler deploy --dry-run
 ```

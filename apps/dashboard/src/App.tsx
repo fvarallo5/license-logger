@@ -1,28 +1,32 @@
+import { Suspense, lazy } from "react";
 import { NavLink, Navigate, Route, Routes } from "react-router-dom";
 import { configError, isDemo, supabase } from "./lib/supabase";
 import { useSession } from "./session";
 import { perms } from "./lib/perms";
 import { roleLabel } from "./lib/format";
 import { ErrorBox, Loading } from "./components/ui";
-import AuthPage, { NewPasswordPage } from "./pages/Auth";
-import Onboarding from "./pages/Onboarding";
-import Board from "./pages/Board";
-import Plan from "./pages/Plan";
-import Students from "./pages/Students";
-import StudentDetail from "./pages/StudentDetail";
-import Drives from "./pages/Drives";
-import People from "./pages/People";
-import Schedule from "./pages/Schedule";
-import Settings from "./pages/Settings";
-import QuickBooks from "./pages/QuickBooks";
-import Packages from "./pages/Packages";
-import Pay from "./pages/Pay";
-import Fleet from "./pages/Fleet";
-import Payouts from "./pages/Payouts";
-import PortalApp from "./pages/portal/PortalApp";
 import { usePendingSignoffs } from "./lib/usePendingSignoffs";
 import { PwaChrome } from "./components/PwaChrome";
 import type { Membership } from "./lib/types";
+
+const AuthPage = lazy(() => import("./pages/Auth"));
+const NewPasswordPage = lazy(() => import("./pages/Auth").then((m) => ({ default: m.NewPasswordPage })));
+const Onboarding = lazy(() => import("./pages/Onboarding"));
+const Board = lazy(() => import("./pages/Board"));
+const Plan = lazy(() => import("./pages/Plan"));
+const Students = lazy(() => import("./pages/Students"));
+const StudentDetail = lazy(() => import("./pages/StudentDetail"));
+const Drives = lazy(() => import("./pages/Drives"));
+const People = lazy(() => import("./pages/People"));
+const Settings = lazy(() => import("./pages/Settings"));
+const QuickBooks = lazy(() => import("./pages/QuickBooks"));
+const Packages = lazy(() => import("./pages/Packages"));
+const Pay = lazy(() => import("./pages/Pay"));
+const Fleet = lazy(() => import("./pages/Fleet"));
+const Payouts = lazy(() => import("./pages/Payouts"));
+const PortalApp = lazy(() => import("./pages/portal/PortalApp"));
+
+const ENABLE_QBO = import.meta.env.VITE_ENABLE_QBO === "1";
 
 function DeskShell({
   current,
@@ -37,9 +41,14 @@ function DeskShell({
 }) {
   const p = perms(current);
   const pending = usePendingSignoffs(supabase, current.school_id, p.reviewDrives);
+  const showBilling = p.viewBilling;
+  const showAdmin = p.manageSchool;
 
   return (
     <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
       <PwaChrome />
       {isDemo && <div className="demo-banner">DEMO DATA · not connected to a real school</div>}
       <header className="top">
@@ -61,9 +70,6 @@ function DeskShell({
         <div className="spacer" />
         <span className="pill">{roleLabel[current.role]}</span>
         <span className="who">{email}</span>
-        <NavLink className="btn sm" to="/portal">
-          Family
-        </NavLink>
         <button className="btn sm" onClick={() => void supabase.auth.signOut()}>
           Sign out
         </button>
@@ -84,34 +90,53 @@ function DeskShell({
             )}
           </NavLink>
         )}
-        <NavLink to="/schedule">Schedule</NavLink>
         <NavLink to="/people">People</NavLink>
-        {p.manageSchool && <NavLink to="/fleet">Fleet</NavLink>}
-        {p.manageSchool && <NavLink to="/settings">Settings</NavLink>}
-        {p.viewBilling && <NavLink to="/pay">Pay</NavLink>}
-        {p.viewBilling && <NavLink to="/payouts">Payouts</NavLink>}
-        {p.viewBilling && <NavLink to="/packages">Packages</NavLink>}
-        {p.viewBilling && <NavLink to="/quickbooks">QuickBooks</NavLink>}
+        {showAdmin && <NavLink to="/fleet">Fleet</NavLink>}
+        {showAdmin && <NavLink to="/settings">Settings</NavLink>}
+        {showBilling && <NavLink to="/pay">Pay</NavLink>}
+        {showBilling && <NavLink to="/payouts">Payouts</NavLink>}
+        {showBilling && <NavLink to="/packages">Packages</NavLink>}
+        {showBilling && ENABLE_QBO && <NavLink to="/quickbooks">QuickBooks</NavLink>}
+        <NavLink to="/portal" className="nav-secondary">
+          Family portal
+        </NavLink>
       </nav>
-      <main>
-        <Routes>
-          <Route path="/board" element={<Board />} />
-          <Route path="/plan" element={<Plan />} />
-          <Route path="/students" element={<Students />} />
-          <Route path="/students/:id" element={<StudentDetail />} />
-          <Route path="/drives" element={p.reviewDrives ? <Drives /> : <Navigate to="/board" />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/people" element={<People />} />
-          <Route path="/fleet" element={p.manageSchool ? <Fleet /> : <Navigate to="/board" />} />
-          <Route path="/settings" element={p.manageSchool ? <Settings /> : <Navigate to="/board" />} />
-          <Route path="/pay" element={p.viewBilling ? <Pay /> : <Navigate to="/board" />} />
-          <Route path="/payouts" element={p.viewBilling ? <Payouts /> : <Navigate to="/board" />} />
-          <Route path="/packages" element={p.viewBilling ? <Packages /> : <Navigate to="/board" />} />
-          <Route path="/quickbooks" element={p.viewBilling ? <QuickBooks /> : <Navigate to="/board" />} />
-          <Route path="/portal" element={<PortalApp />} />
-          <Route path="*" element={<Navigate to="/board" />} />
-        </Routes>
+      <main id="main">
+        <Suspense fallback={<Loading label="Loading…" />}>
+          <Routes>
+            <Route path="/board" element={<Board />} />
+            <Route path="/plan" element={<Plan />} />
+            <Route path="/students" element={<Students />} />
+            <Route path="/students/:id" element={<StudentDetail />} />
+            <Route path="/drives" element={p.reviewDrives ? <Drives /> : <Navigate to="/board" replace />} />
+            <Route path="/people" element={<People />} />
+            <Route path="/fleet" element={showAdmin ? <Fleet /> : <Navigate to="/board" replace />} />
+            <Route path="/settings" element={showAdmin ? <Settings /> : <Navigate to="/board" replace />} />
+            <Route path="/pay" element={showBilling ? <Pay /> : <Navigate to="/board" replace />} />
+            <Route path="/payouts" element={showBilling ? <Payouts /> : <Navigate to="/board" replace />} />
+            <Route path="/packages" element={showBilling ? <Packages /> : <Navigate to="/board" replace />} />
+            <Route path="/quickbooks" element={showBilling ? <QuickBooks /> : <Navigate to="/board" replace />} />
+            <Route path="/portal" element={<PortalApp />} />
+            {/* Schedule was a thin week list; Board Week covers it — keep redirect for old bookmarks */}
+            <Route path="/schedule" element={<Navigate to="/board" replace />} />
+            <Route path="*" element={<Navigate to="/board" replace />} />
+          </Routes>
+        </Suspense>
       </main>
+      {/* Instructor/admin phone dock: fastest path to today's work */}
+      <nav className="dock" aria-label="Quick">
+        <NavLink to="/board" end>
+          Board
+        </NavLink>
+        <NavLink to="/plan">Plan</NavLink>
+        <NavLink to="/students">Students</NavLink>
+        {p.reviewDrives && (
+          <NavLink to="/drives">
+            Sign-offs
+            {pending.count > 0 && <span className="dock-dot" aria-hidden />}
+          </NavLink>
+        )}
+      </nav>
     </>
   );
 }
@@ -125,16 +150,23 @@ export default function App() {
       </main>
     );
   if (!s.ready) return <Loading label="Starting…" />;
-  if (s.recovery) return <NewPasswordPage />;
-  if (!s.session) return <AuthPage />;
-  if (s.loadingSchools && !s.memberships.length) return <Loading label="Loading your school…" />;
-  if (s.schoolError)
-    return (
-      <main>
-        <ErrorBox error={s.schoolError} onRetry={() => void s.refreshSchools()} />
-      </main>
-    );
-  if (!s.current) return <Onboarding />;
-
-  return <DeskShell current={s.current} memberships={s.memberships} email={s.session.user.email} selectSchool={s.selectSchool} />;
+  return (
+    <Suspense fallback={<Loading label="Loading…" />}>
+      {s.recovery ? (
+        <NewPasswordPage />
+      ) : !s.session ? (
+        <AuthPage />
+      ) : s.loadingSchools && !s.memberships.length ? (
+        <Loading label="Loading your school…" />
+      ) : s.schoolError ? (
+        <main id="main">
+          <ErrorBox error={s.schoolError} onRetry={() => void s.refreshSchools()} />
+        </main>
+      ) : !s.current ? (
+        <Onboarding />
+      ) : (
+        <DeskShell current={s.current} memberships={s.memberships} email={s.session.user.email} selectSchool={s.selectSchool} />
+      )}
+    </Suspense>
+  );
 }

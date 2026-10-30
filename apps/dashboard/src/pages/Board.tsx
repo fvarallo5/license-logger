@@ -249,9 +249,14 @@ export default function BoardPage() {
 
       <div className="board-filters">
         {!p.instructorOnly && (
-          <label>
+          <label htmlFor="board-instructor">
             Instructor
-            <select aria-label="Filter by instructor" value={instructorFilter} onChange={(e) => setInstructorFilter(e.target.value)}>
+            <select
+              id="board-instructor"
+              aria-label="Filter by instructor"
+              value={instructorFilter}
+              onChange={(e) => setInstructorFilter(e.target.value)}
+            >
               <option value="all">All instructors</option>
               {instructors.map((m) => (
                 <option key={m.user_id} value={m.user_id}>
@@ -261,9 +266,9 @@ export default function BoardPage() {
             </select>
           </label>
         )}
-        <label>
+        <label htmlFor="board-car">
           Car
-          <select aria-label="Filter by car" value={carFilter} onChange={(e) => setCarFilter(e.target.value)}>
+          <select id="board-car" aria-label="Filter by car" value={carFilter} onChange={(e) => setCarFilter(e.target.value)}>
             <option value="all">All cars</option>
             {cars.map((c) => (
               <option key={c.id} value={c.id}>
@@ -291,7 +296,7 @@ export default function BoardPage() {
       ) : filtered.length === 0 ? (
         <Empty>
           No lessons in this range
-          {forceInstructor ? " for you" : ""}. Try another day, or open Schedule to book.
+          {forceInstructor ? " for you" : ""}. Try another day, or open <Link to="/plan">Plan</Link> to book.
         </Empty>
       ) : (
         <div className="board-list">
