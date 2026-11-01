@@ -1,20 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import L from "leaflet";
+import * as L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import type { Lot } from "../lib/types";
 
-/** Fix default marker icons under Vite (Leaflet looks for images next to CSS). */
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x,
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
-});
+/** CSS pin — avoids Leaflet default PNG URLs that break under Vite/Workers Builds. */
+function pinIcon() {
+  return L.divIcon({
+    className: "lot-pin",
+    html: '<span class="lot-pin-dot"></span>',
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
+  });
+}
 
 const OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const DEFAULT_CENTER: L.LatLngExpression = [39.8283, -98.5795]; // continental US
@@ -113,7 +110,7 @@ export function LotMap({
       for (const l of pinned) {
         const ll: L.LatLngExpression = [Number(l.lat), Number(l.lng)];
         latLngs.push(ll);
-        L.marker(ll)
+        L.marker(ll, { icon: pinIcon() })
           .bindPopup(`<strong>${escapeHtml(l.name)}</strong>`)
           .addTo(layer);
       }
