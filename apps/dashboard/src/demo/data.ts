@@ -201,16 +201,13 @@ export const demo = {
         template_id: "tpl-1",
         lesson_id: null,
         start_at: (() => {
+          // Keep inside the current Mon–Sun week (tomorrow falls next week on Sundays).
           const d = new Date();
-          d.setHours(0, 0, 0, 0);
-          d.setDate(d.getDate() + 1);
           d.setHours(15, 0, 0, 0);
           return d.toISOString();
         })(),
         end_at: (() => {
           const d = new Date();
-          d.setHours(0, 0, 0, 0);
-          d.setDate(d.getDate() + 1);
           d.setHours(16, 0, 0, 0);
           return d.toISOString();
         })(),
