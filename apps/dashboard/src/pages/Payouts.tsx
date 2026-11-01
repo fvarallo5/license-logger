@@ -45,7 +45,7 @@ export default function PayoutsPage() {
 
   return (
     <>
-      <PageHeader title="Payouts" desc="Taught lesson hours × hourly rate. Rates hidden without Pay access (RLS + Phase 4 lockdown).">
+      <PageHeader title="Payouts" desc="Taught lesson hours × each instructor’s hourly rate. Only people with Pay access can see rates.">
         <label className="row">
           From
           <input type="date" value={from} onChange={(e) => setFrom(e.target.value)} />
@@ -88,7 +88,7 @@ export default function PayoutsPage() {
         )}
       </Card>
       <p className="muted">
-        Saving pay runs to <code>instructor_pay_runs</code> requires the Phase 7 migration. Until then this is a live compute view.
+        Totals update from taught lessons. Saving a pay run will be available once payroll history is turned on for your school.
       </p>
     </>
   );

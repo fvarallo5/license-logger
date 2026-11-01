@@ -204,7 +204,7 @@ export function LotMap({
           ))}
         </ul>
       )}
-      <div ref={host} className="lot-map-canvas" role="application" aria-label="Lots map" />
+      <div ref={host} className="lot-map-canvas" role="application" aria-label="Lots map" title="Lots map" />
       <p className="muted lot-map-help">
         {hint ??
           (pinned.length

@@ -64,7 +64,7 @@ export default function QuickBooks() {
       <PageHeader title="QuickBooks" desc="Sync students, invoices and payments with QuickBooks Online." />
       {!ENABLE && (
         <div className="alert warn">
-          Connect is behind <code>VITE_ENABLE_QBO=1</code>. Deploy <code>qbo-*</code> edge functions and set Intuit secrets first (see
+          QuickBooks sync is not enabled for this deployment yet. Ask your LicenseLogger admin to turn it on (see
           docs/PHASE5_EXPORT_QBO.md). Status still loads.
         </div>
       )}
@@ -118,7 +118,7 @@ export default function QuickBooks() {
             <button
               className="btn primary"
               disabled={!ENABLE || busy}
-              title={ENABLE ? "Start Intuit OAuth" : "Set VITE_ENABLE_QBO=1 after deploying qbo-* functions"}
+              title={ENABLE ? "Connect QuickBooks" : "QuickBooks connection is not enabled yet"}
               onClick={() => void connect()}
             >
               Connect to QuickBooks

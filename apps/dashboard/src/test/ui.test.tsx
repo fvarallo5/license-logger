@@ -28,7 +28,7 @@ describe("dashboard with mocked Supabase", () => {
   it("shows the roster after sign-in", async () => {
     renderAt("/students");
     expect(await screen.findByText("Avery Brooks")).toBeTruthy();
-    expect(screen.getByText("Lone Star Driving Academy")).toBeTruthy();
+    expect(screen.getAllByText("Lone Star Driving Academy").length).toBeGreaterThan(0);
   });
   it("lists pending drives and explains practice sign-off", async () => {
     renderAt("/drives");

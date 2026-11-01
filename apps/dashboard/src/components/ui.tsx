@@ -7,8 +7,13 @@ export function Loading({ label = "Loading…" }: { label?: string }) {
     </div>
   );
 }
-export function Empty({ children }: { children: ReactNode }) {
-  return <div className="state">{children}</div>;
+export function Empty({ children, title }: { children: ReactNode; title?: string }) {
+  return (
+    <div className="state empty-state">
+      {title && <div className="empty-title">{title}</div>}
+      <div className="empty-body">{children}</div>
+    </div>
+  );
 }
 export function ErrorBox({ error, onRetry }: { error: string; onRetry?: () => void }) {
   return (

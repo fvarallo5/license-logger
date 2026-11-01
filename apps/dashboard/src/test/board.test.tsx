@@ -28,8 +28,10 @@ function renderAt(path: string) {
 }
 
 describe("Board page", () => {
-  it("is the default landing route and shows Today / Week", async () => {
+  it("Home is the default landing; Board shows Today / Week", async () => {
     renderAt("/");
+    expect(await screen.findByRole("heading", { name: /Good / })).toBeTruthy();
+    renderAt("/board");
     expect(await screen.findByRole("heading", { name: "Board" })).toBeTruthy();
     expect(screen.getByRole("tab", { name: "Today" })).toBeTruthy();
     expect(screen.getByRole("tab", { name: "Week" })).toBeTruthy();
