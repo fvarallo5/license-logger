@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { addCar, addLot, friendly, listCars, listLots, membersPage, profileNames, updateCarCompliance, updateLotCoords } from "../lib/api";
 import { useSchool } from "../session";
+import { LotMap } from "../components/LotMap";
 import type { Car, Lot, Member } from "../lib/types";
 import { Card, Empty, ErrorBox, Loading, Modal, PageHeader } from "../components/ui";
 
@@ -14,7 +15,9 @@ function dueTone(d: string | null | undefined): string {
 }
 
 export default function FleetPage() {
-  const schoolId = useSchool().school_id;
+  const membership = useSchool();
+  const schoolId = membership.school_id;
+  const schoolCity = membership.schools?.city ?? "";
   const [cars, setCars] = useState<Car[] | null>(null);
   const [lots, setLots] = useState<Lot[]>([]);
   const [instructors, setInstructors] = useState<Member[]>([]);
@@ -57,17 +60,6 @@ export default function FleetPage() {
   }, [load]);
 
   const mapLots = useMemo(() => lots.filter((l) => l.lat != null && l.lng != null), [lots]);
-  const osmSrc = useMemo(() => {
-    if (!mapLots.length) return null;
-    const lats = mapLots.map((l) => Number(l.lat));
-    const lngs = mapLots.map((l) => Number(l.lng));
-    const minLat = Math.min(...lats) - 0.01;
-    const maxLat = Math.max(...lats) + 0.01;
-    const minLng = Math.min(...lngs) - 0.01;
-    const maxLng = Math.max(...lngs) + 0.01;
-    const markers = mapLots.map((l) => `&marker=${l.lat}%2C${l.lng}`).join("");
-    return `https://www.openstreetmap.org/export/embed.html?bbox=${minLng}%2C${minLat}%2C${maxLng}%2C${maxLat}&layer=mapnik${markers}`;
-  }, [mapLots]);
 
   async function saveCar() {
     setBusy(true);
@@ -134,10 +126,17 @@ export default function FleetPage() {
       {err && <ErrorBox error={err} onRetry={load} />}
 
       <Card title="Map" count={mapLots.length ? `${mapLots.length} pinned` : undefined}>
-        {osmSrc ? (
-          <iframe title="Lots map" src={osmSrc} style={{ width: "100%", height: 280, border: 0, borderRadius: 8 }} loading="lazy" />
+        {!lots.length ? (
+          <Empty>Add a lot, then search an address or click the map to pin it. OpenStreetMap — no API key.</Empty>
         ) : (
-          <Empty>Add lat/lng on a lot to pin it on the map (OpenStreetMap embed — no API key).</Empty>
+          <LotMap
+            lots={lots}
+            schoolCity={schoolCity}
+            onPin={async (lotId, lat, lng) => {
+              await updateLotCoords(supabase, lotId, schoolId, lat, lng);
+              await load();
+            }}
+          />
         )}
         {lots.length > 0 && (
           <ul className="fleet-lots">
@@ -145,20 +144,9 @@ export default function FleetPage() {
               <li key={l.id}>
                 <strong>{l.name}</strong>
                 {l.is_default && <span className="pill">default</span>}
-                <span className="muted">{l.lat != null && l.lng != null ? `${l.lat}, ${l.lng}` : "no coords"}</span>
-                <button
-                  className="btn sm"
-                  onClick={() => {
-                    const lat = prompt("Latitude", l.lat != null ? String(l.lat) : "");
-                    const lng = prompt("Longitude", l.lng != null ? String(l.lng) : "");
-                    if (lat == null || lng == null) return;
-                    void updateLotCoords(supabase, l.id, schoolId, lat === "" ? null : Number(lat), lng === "" ? null : Number(lng)).then(
-                      load,
-                    );
-                  }}
-                >
-                  Set coords
-                </button>
+                <span className="muted">
+                  {l.lat != null && l.lng != null ? `${Number(l.lat).toFixed(5)}, ${Number(l.lng).toFixed(5)}` : "not pinned yet"}
+                </span>
               </li>
             ))}
           </ul>

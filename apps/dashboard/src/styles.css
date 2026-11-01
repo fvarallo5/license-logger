@@ -762,3 +762,71 @@ nav.dock {
     padding-bottom: 64px;
   }
 }
+
+/* —— Fleet lot map (Leaflet + OSM, no API key) —— */
+.lot-map {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.lot-map-toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.lot-map-toolbar input {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+}
+.lot-map-canvas {
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  z-index: 0;
+}
+.lot-map-hits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  max-height: 160px;
+  overflow: auto;
+  background: var(--surface);
+}
+.lot-map-hits li {
+  border-bottom: 1px solid var(--line);
+}
+.lot-map-hits li:last-child {
+  border-bottom: 0;
+}
+.lot-map-hits button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  white-space: normal;
+}
+.lot-map-help {
+  margin: 0;
+  font-size: 12px;
+}
+.fleet-lots {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.fleet-lots li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}

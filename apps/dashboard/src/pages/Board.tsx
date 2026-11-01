@@ -58,9 +58,10 @@ export default function BoardPage() {
       ]);
       setLessons(ls);
       setCars(carRows);
-      setInstructors(memPage.rows.filter((m) => m.role === "instructor" || m.role === "owner" || m.role === "admin"));
+      const staff = memPage.rows.filter((m) => m.role === "instructor" || m.role === "owner" || m.role === "admin");
+      setInstructors(staff);
       const studentIds = [...new Set(ls.map((l) => l.student_id).filter(Boolean))] as string[];
-      const instructorIds = [...new Set(ls.map((l) => l.instructor_id).filter(Boolean))];
+      const instructorIds = [...new Set([...ls.map((l) => l.instructor_id).filter(Boolean), ...staff.map((m) => m.user_id)])] as string[];
       const [prof, studentNames] = await Promise.all([profileNames(supabase, instructorIds), fetchStudentNames(studentIds)]);
       setNames({ ...prof, ...studentNames });
       if (p.reviewDrives) {
