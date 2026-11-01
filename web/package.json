@@ -13,6 +13,5 @@
   },
   "engines": {
     "node": ">=20"
-  },
-  "packageManager": "npm@11.4.2"
+  }
 }

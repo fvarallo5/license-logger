@@ -783,6 +783,20 @@ nav.dock {
   background: var(--surface);
   color: var(--ink);
 }
+.lot-pin {
+  background: transparent;
+  border: none;
+}
+.lot-pin-dot {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 2px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: #0f1b2d;
+  box-shadow: 0 0 0 2px #fff;
+}
 .lot-map-canvas {
   height: 300px;
   width: 100%;
