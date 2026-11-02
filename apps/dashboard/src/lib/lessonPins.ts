@@ -71,3 +71,17 @@ export function weekStart(d: Date): Date {
   x.setDate(x.getDate() - day);
   return x;
 }
+
+export function monthStart(d: Date): Date {
+  return new Date(d.getFullYear(), d.getMonth(), 1);
+}
+
+export function addMonths(d: Date, n: number): Date {
+  return new Date(d.getFullYear(), d.getMonth() + n, Math.min(d.getDate(), 28));
+}
+
+/** Six Monday-start weeks covering the month of `d`. */
+export function monthCells(d: Date): Date[] {
+  const start = weekStart(monthStart(d));
+  return Array.from({ length: 42 }, (_, i) => addDays(start, i));
+}
