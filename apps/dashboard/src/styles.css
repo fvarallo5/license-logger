@@ -1452,8 +1452,15 @@ nav.dock a.active {
     gap: 6px;
     grid-template-columns: 56px 8px minmax(0, 1fr) auto;
   }
-  .ll-cal-grid.week {
-    grid-template-columns: 1fr;
+  .ll-week-strip {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .ll-week-day {
+    padding: 6px 2px;
+  }
+  .ll-week-dn {
+    font-size: 14px;
   }
 }
 
@@ -1472,6 +1479,7 @@ nav.tabs {
 }
 .ll-split-pane {
   min-width: 0;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -1479,6 +1487,20 @@ nav.tabs {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 12px;
+}
+.ll-split-pane[aria-label="Map pane"] {
+  min-height: 420px;
+}
+.ll-split-pane[aria-label="Map pane"] .ll-lesson-map {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.ll-split-pane[aria-label="Map pane"] .ll-lesson-map-canvas {
+  flex: 1;
+  height: auto;
+  min-height: 360px;
 }
 .ll-split-h {
   margin: 0;
@@ -1543,6 +1565,98 @@ nav.tabs {
 }
 .ll-cal-grid.day {
   display: block;
+}
+.ll-week-strip {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.ll-week-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.ll-week-day:hover {
+  border-color: var(--primary);
+}
+.ll-week-day.is-on {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+.ll-week-wd {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.ll-week-dn {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.ll-week-n {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary-hover);
+}
+.ll-week-n.is-zero {
+  color: var(--muted);
+  opacity: 0.55;
+}
+.ll-cal-grid.month {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+.ll-month-cell {
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.ll-month-cell.is-out {
+  opacity: 0.45;
+}
+.ll-month-cell.is-on {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.ll-month-dn {
+  font-size: 12px;
+  font-weight: 700;
+}
+.ll-month-chip {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 4px;
+  box-sizing: border-box;
+}
+.ll-month-more {
+  font-size: 10px;
+  color: var(--muted);
 }
 .ll-cal-dayhead {
   font-size: 11px;
@@ -1653,5 +1767,8 @@ nav.tabs {
 @media (max-width: 900px) {
   .ll-cal-grid.week {
     grid-template-columns: 1fr;
+  }
+  .ll-week-strip {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 }

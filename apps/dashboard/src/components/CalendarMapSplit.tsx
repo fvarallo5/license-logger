@@ -27,7 +27,7 @@ export function CalendarMapSplit({
 }) {
   const desktop = useDesktopMedia(900);
   const [lots, setLots] = useState<Lot[]>([]);
-  const [view, setView] = useState<CalView>("day");
+  const [view, setView] = useState<CalView>("week");
   const [anchor, setAnchor] = useState(() => new Date());
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
