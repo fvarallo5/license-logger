@@ -40,9 +40,10 @@ describe("Desk nav (audit)", () => {
     expect(nav.textContent || "").not.toMatch(/QuickBooks/);
   });
 
-  it("keeps a phone quick dock", async () => {
+  it("keeps main nav in the sidebar (desktop-first; no mobile dock)", async () => {
     renderAt("/board");
     await screen.findByRole("heading", { name: "Board" });
-    expect(screen.getByRole("navigation", { name: "Quick" })).toBeTruthy();
+    expect(screen.getByRole("navigation", { name: "Main" })).toBeTruthy();
+    expect(screen.queryByRole("navigation", { name: "Quick" })).toBeNull();
   });
 });

@@ -111,8 +111,8 @@ function SettingsForm({ initial, refresh }: { initial: School; refresh: () => Pr
       </form>
       <Card title="Coming next">
         <p className="muted">
-          Lesson packages and pricing, cars and lots, and slot templates are in the database already; their editors arrive in the next
-          dashboard update.
+          Manage packages under Packages, cars and lots under Fleet, and weekly availability under Plan. More school editors arrive in the
+          next dashboard update.
         </p>
       </Card>
     </>

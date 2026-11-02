@@ -20,6 +20,8 @@ import { enqueueMutation, flushMutationQueue, isNetworkError, isOnline, pendingC
 import { useSchool, useSession } from "../session";
 import type { Car, Drive, Lesson, Member } from "../lib/types";
 import { Badge, Card, Empty, ErrorBox, Loading, Modal, PageHeader } from "../components/ui";
+import { CalendarMapSplit } from "../components/CalendarMapSplit";
+import { useDesktopMedia } from "../lib/theme";
 
 export default function BoardPage() {
   const { session } = useSession();
@@ -27,6 +29,7 @@ export default function BoardPage() {
   const p = perms(current);
   const schoolId = current.school_id;
   const me = session?.user.id ?? "";
+  const desktop = useDesktopMedia(900);
 
   const [view, setView] = useState<BoardView>("today");
   const [anchor, setAnchor] = useState(() => new Date());
@@ -231,6 +234,23 @@ export default function BoardPage() {
       )}
 
       {err && <ErrorBox error={err} onRetry={() => setTick((t) => t + 1)} />}
+
+      {lessons && lessons.length >= 0 && (
+        <CalendarMapSplit
+          schoolId={schoolId}
+          lessons={lessons}
+          names={names}
+          title={
+            desktop
+              ? view === "week"
+                ? "Week schedule & map"
+                : "Today schedule & map"
+              : view === "week"
+                ? "Week schedule"
+                : "Today schedule"
+          }
+        />
+      )}
 
       {p.reviewDrives && pending.length > 0 && (
         <Card title="Pending sign-offs" count={pending.length} actions={<Link to="/drives">Open queue</Link>}>

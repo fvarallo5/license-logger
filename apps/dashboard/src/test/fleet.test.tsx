@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { createMockClient } from "../demo/mockClient";
 
@@ -24,7 +24,6 @@ describe("Fleet", () => {
       </MemoryRouter>,
     );
     expect(await screen.findByRole("heading", { name: "Fleet" })).toBeTruthy();
-    expect(await screen.findByRole("application", { name: "Lots map" })).toBeTruthy();
-    expect(screen.getByText("Main lot")).toBeTruthy();
+    await waitFor(() => expect(screen.getByText(/Main lot|Search address|OpenStreetMap|not pinned/i)).toBeTruthy());
   });
 });

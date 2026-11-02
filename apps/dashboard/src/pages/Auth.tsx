@@ -12,6 +12,7 @@ export default function AuthPage() {
   const [name, setName] = useState("");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ tone: "ok" | "bad"; text: string } | null>(null);
+  const [signupDone, setSignupDone] = useState(false);
 
   async function submit(e: FormEvent) {
     e.preventDefault();
@@ -29,7 +30,10 @@ export default function AuthPage() {
           options: { emailRedirectTo: siteUrl(), data: { full_name: name, account_type: "school" } },
         });
         if (error) throw error;
-        if (!data.session) setMsg({ tone: "ok", text: "Check your email to confirm your account, then sign in." });
+        if (!data.session) {
+          setSignupDone(true);
+          setMsg({ tone: "ok", text: "Check your email to confirm your account, then sign in." });
+        }
       } else {
         const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: siteUrl() });
         if (error) throw error;
@@ -52,25 +56,49 @@ export default function AuthPage() {
         </div>
         <h2 style={{ marginTop: 0 }}>{title}</h2>
         {msg && (
-          <div className={`alert ${msg.tone}`} role="alert">
+          <div className={`alert ${msg.tone} ${signupDone ? "alert-lg" : ""}`} role="alert">
             {msg.text}
+            {signupDone && (
+              <div className="row" style={{ marginTop: 12 }}>
+                <button
+                  type="button"
+                  className="btn primary"
+                  onClick={() => {
+                    setMode("signin");
+                    setSignupDone(false);
+                    setMsg(null);
+                  }}
+                >
+                  Back to sign in
+                </button>
+              </div>
+            )}
           </div>
         )}
         {mode === "signup" && (
           <div className="field">
             <label htmlFor="name">Your name</label>
-            <input id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+            <input id="name" value={name} onChange={(e) => setName(e.target.value)} required disabled={signupDone} />
           </div>
         )}
         <div className="field">
           <label htmlFor="email">Email</label>
-          <input id="email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <input
+            id="email"
+            type="email"
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            disabled={signupDone}
+          />
         </div>
         {mode !== "reset" && (
           <div className="field">
             <label htmlFor="pw">Password</label>
             <input
               id="pw"
+              disabled={signupDone}
               type="password"
               autoComplete={mode === "signup" ? "new-password" : "current-password"}
               value={password}
@@ -79,8 +107,8 @@ export default function AuthPage() {
             />
           </div>
         )}
-        <button className="btn primary" style={{ width: "100%" }} disabled={busy}>
-          {busy ? "Please wait…" : mode === "signin" ? "Sign in" : mode === "signup" ? "Create account" : "Send reset link"}
+        <button className="btn primary" style={{ width: "100%" }} disabled={busy || signupDone}>
+          {busy || signupDone ? "Please wait…" : mode === "signin" ? "Sign in" : mode === "signup" ? "Create account" : "Send reset link"}
         </button>
         <div className="row" style={{ justifyContent: "space-between", marginTop: 12 }}>
           {mode !== "signin" ? (

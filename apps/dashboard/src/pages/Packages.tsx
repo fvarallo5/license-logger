@@ -14,7 +14,7 @@ export default function PackagesPage() {
   const [busy, setBusy] = useState(false);
   const [name, setName] = useState("");
   const [hours, setHours] = useState("6");
-  const [price, setPrice] = useState("0");
+  const [price, setPrice] = useState("499");
   const [kind, setKind] = useState("btw");
 
   const load = useCallback(async () => {
@@ -35,7 +35,7 @@ export default function PackagesPage() {
     setEdit(null);
     setName("");
     setHours("6");
-    setPrice("0");
+    setPrice("499");
     setKind("btw");
     setShow(true);
   }

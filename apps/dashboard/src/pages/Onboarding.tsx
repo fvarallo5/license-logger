@@ -28,8 +28,8 @@ export default function Onboarding() {
       <form className="card auth-card" onSubmit={submit}>
         <h2>Set up your driving school</h2>
         <p className="muted">
-          You'll be the owner. You can invite instructors and front-desk staff after this. If someone already invited you, ask them to
-          resend the invite to {s.session?.user.email}.
+          You'll be the owner. After you create the school, Home will walk you through inviting staff, pinning your lot, pricing packages,
+          and adding a car. If someone already invited you, ask them to resend the invite to {s.session?.user.email}.
         </p>
         {err && <div className="alert bad">{err}</div>}
         <div className="field">

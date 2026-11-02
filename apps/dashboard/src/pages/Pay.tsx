@@ -83,7 +83,7 @@ export default function PayPage() {
         {invoices === null ? (
           <Loading />
         ) : !invoices.length ? (
-          <Empty>No invoices yet. Create one from QBO sync or after assigning a package (coming soon).</Empty>
+          <Empty>No invoices yet. Assign a package to a student to start billing, or record a payment when you are ready.</Empty>
         ) : (
           <div style={{ overflowX: "auto" }}>
             <table className="t">

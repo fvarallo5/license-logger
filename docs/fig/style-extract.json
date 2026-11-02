@@ -1,0 +1,340 @@
+{
+  "topColors": [
+    [
+      "#ffffff",
+      184
+    ],
+    [
+      "#017efa",
+      118
+    ],
+    [
+      "#1c1f37",
+      101
+    ],
+    [
+      "#8e8e8e",
+      87
+    ],
+    [
+      "#51cbff",
+      72
+    ],
+    [
+      "#ccd2e3",
+      63
+    ],
+    [
+      "#000000",
+      43
+    ],
+    [
+      "#fd1f9b",
+      41
+    ],
+    [
+      "#dadada",
+      38
+    ],
+    [
+      "#313131",
+      26
+    ],
+    [
+      "#30d987",
+      22
+    ],
+    [
+      "#0a194e",
+      21
+    ],
+    [
+      "#273b4a",
+      21
+    ],
+    [
+      "#c4c4c4",
+      19
+    ],
+    [
+      "#30d988",
+      14
+    ],
+    [
+      "#eaecfb",
+      12
+    ],
+    [
+      "#f1f2fa",
+      11
+    ],
+    [
+      "#fbfaff",
+      11
+    ],
+    [
+      "#fafafa",
+      10
+    ],
+    [
+      "#e6f2fe",
+      9
+    ],
+    [
+      "#254bd1",
+      9
+    ],
+    [
+      "#2a2d44",
+      8
+    ],
+    [
+      "#a9abb0",
+      7
+    ],
+    [
+      "#ecedf3",
+      7
+    ],
+    [
+      "#48b4e9",
+      6
+    ],
+    [
+      "#1b2b65",
+      6
+    ],
+    [
+      "#f5f7fb",
+      6
+    ],
+    [
+      "#dd405f",
+      6
+    ],
+    [
+      "#081a51",
+      4
+    ],
+    [
+      "#6342ff",
+      4
+    ],
+    [
+      "#e3e5f3",
+      4
+    ],
+    [
+      "#7659ff",
+      4
+    ],
+    [
+      "#fd269e",
+      4
+    ],
+    [
+      "#f8f9ff",
+      3
+    ],
+    [
+      "#cf3a59",
+      3
+    ],
+    [
+      "#aabbfa",
+      3
+    ],
+    [
+      "#445bff",
+      3
+    ],
+    [
+      "#30da88",
+      3
+    ],
+    [
+      "#e6f3ff",
+      3
+    ],
+    [
+      "#9a9a9a",
+      2
+    ]
+  ],
+  "topFonts": [
+    [
+      "size:14",
+      812
+    ],
+    [
+      "size:16",
+      766
+    ],
+    [
+      "size:12",
+      732
+    ],
+    [
+      "Gilroy",
+      656
+    ],
+    [
+      "size:18",
+      392
+    ],
+    [
+      "size:24",
+      123
+    ],
+    [
+      "size:20",
+      80
+    ],
+    [
+      "size:10",
+      69
+    ],
+    [
+      "size:32",
+      30
+    ],
+    [
+      "size:40",
+      28
+    ],
+    [
+      "Inter",
+      20
+    ],
+    [
+      "size:28",
+      19
+    ],
+    [
+      "size:22.312496185302734",
+      12
+    ]
+  ],
+  "radii": [
+    0,
+    0.5,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    12,
+    25,
+    37,
+    44,
+    52,
+    64,
+    69
+  ],
+  "names": [
+    "Document",
+    "Page 1",
+    "Internal Only Canvas",
+    "fill_icon",
+    "Dashboard V3a",
+    "Rectangle 52",
+    "Group 75",
+    "Group 2",
+    "Rectangle 2",
+    "bx:bx-bolt-circle",
+    "Vector",
+    "Dash",
+    "Group 76",
+    "Group 40",
+    "Group 37",
+    "Rectangle 7",
+    "Group 33",
+    "File & Folders",
+    "Folder_alt",
+    "Rectangle 1",
+    "Vector 55",
+    "Group 39",
+    "Rectangle 8",
+    "Group 38",
+    "Settings",
+    "Setting_alt_line",
+    "Star 2",
+    "Ellipse 5",
+    "General",
+    "Group 77",
+    "Rectangle 5",
+    "Group 29",
+    "Schedule Post",
+    "Calendar",
+    "Rectangle 25",
+    "Vector 3",
+    "Vector 4",
+    "Line 1",
+    "Line 2",
+    "Group 78",
+    "Rectangle 6",
+    "Communities",
+    "Search_alt",
+    "Ellipse 65",
+    "Ellipse 66",
+    "Vector 109",
+    "Group 79",
+    "Rectangle 9",
+    "Accounts",
+    "User_box",
+    "Ellipse 45",
+    "Ellipse 46",
+    "Rectangle 26",
+    "Workspace",
+    "Group 24",
+    "Rectangle 3",
+    "Group 1",
+    "Dashboard",
+    "Chart_fill",
+    "Subtract",
+    "Union",
+    "Vector 8",
+    "Vector 9",
+    "Vector 10",
+    "MAIN MENU",
+    "Group 35",
+    "Group 34",
+    "Inbox",
+    "Chat",
+    "Vector 7",
+    "Group 41",
+    "Rectangle 42",
+    "1",
+    "Group 81",
+    "Rectangle 4",
+    "Group 3",
+    "Analytics",
+    "Chart_alt",
+    "Group 93",
+    "Rectangle 53",
+    "Ellipse 21",
+    "bx:bxs-help-circle",
+    "Group 123",
+    "Rectangle 54",
+    "Go to help center",
+    "Need Help with Dash?",
+    "Rectangle 55",
+    "Line 19",
+    "Line 40",
+    "Group 86",
+    "Ellipse 2",
+    "bx:bx-bell",
+    "Ellipse 20",
+    "Erza Miller",
+    "Rectangle 92",
+    "Group 148",
+    "Line 33",
+    "Line 34",
+    "Line 35",
+    "Line 36"
+  ]
+}
