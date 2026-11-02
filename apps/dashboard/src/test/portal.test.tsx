@@ -21,7 +21,7 @@ describe("Portal", () => {
         </SessionProvider>
       </MemoryRouter>,
     );
-    expect(await screen.findByRole("heading", { name: "Family portal" })).toBeTruthy();
-    expect(await screen.findByText(/No linked students/i)).toBeTruthy();
+    expect(await screen.findByRole("heading", { name: "Family Portal" })).toBeTruthy();
+    expect(await screen.findByText(/No Linked Students/i)).toBeTruthy();
   });
 });

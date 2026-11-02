@@ -118,7 +118,7 @@ export function DeskShell({
             <span className="logo-mark" aria-hidden />
             <div>
               <strong>LicenseLogger</strong>
-              <small>School desk</small>
+              <small>School Desk</small>
             </div>
             <button type="button" className="btn icon ghost side-close" aria-label="Close menu" onClick={() => setOpen(false)}>
               <X size={18} />

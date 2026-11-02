@@ -46,7 +46,7 @@ export default function AuthPage() {
     }
   }
 
-  const title = { signin: "Sign in to your school", signup: "Create a school account", reset: "Reset your password" }[mode];
+  const title = { signin: "Sign In To Your School", signup: "Create A School Account", reset: "Reset Your Password" }[mode];
   return (
     <div className="auth-wrap">
       <form className="card auth-card" onSubmit={submit}>
@@ -148,7 +148,7 @@ export function NewPasswordPage() {
   return (
     <div className="auth-wrap">
       <form className="card auth-card" onSubmit={submit}>
-        <h2>Choose a new password</h2>
+        <h2>Choose A New Password</h2>
         {err && <div className="alert bad">{err}</div>}
         <div className="field">
           <label htmlFor="npw">New password</label>

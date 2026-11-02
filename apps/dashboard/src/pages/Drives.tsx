@@ -35,7 +35,7 @@ export default function Drives() {
     <>
       <PageHeader
         title="Sign-offs"
-        desc="Drives waiting for review. You sign instructor lessons here; parents sign practice drives in their app."
+        desc="Drives Waiting For Review. You Sign Instructor Lessons Here; Parents Sign Practice Drives In Their App."
       >
         {!pg.loading && <span className="pill">{pg.rows.length} in queue</span>}
       </PageHeader>
@@ -44,7 +44,7 @@ export default function Drives() {
           {msg.text}
         </div>
       )}
-      <Card title="Pending drives">
+      <Card title="Pending Drives">
         {pg.error ? (
           <ErrorBox error={pg.error} onRetry={pg.reload} />
         ) : pg.loading ? (
@@ -141,7 +141,7 @@ function ReasonModal({ action, onClose, onDone }: { action: Action; onClose: () 
     }
   }
   return (
-    <Modal title={isVoid ? "Void this drive" : "Reject this drive"} onClose={onClose}>
+    <Modal title={isVoid ? "Void This Drive" : "Reject This Drive"} onClose={onClose}>
       <p className="muted">
         {fullName(action.drive.students)} · {fmtDateTime(action.drive.started_at)} · {hrs(action.drive.duration_minutes)}
       </p>

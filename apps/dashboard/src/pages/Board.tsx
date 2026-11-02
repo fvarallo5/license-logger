@@ -194,8 +194,8 @@ export default function BoardPage() {
         title="Board"
         desc={
           p.instructorOnly
-            ? "Your lessons today — mark taught, no-show, or cancel."
-            : "Today’s lessons across the school. Filter by instructor or car."
+            ? "Your Lessons Today — Mark Taught, No-show, Or Cancel."
+            : "Today’s Lessons Across The School. Filter By Instructor Or Car."
         }
       >
         <div className="seg" role="tablist" aria-label="Board range">
@@ -241,12 +241,12 @@ export default function BoardPage() {
           lessons={lessons ?? []}
           names={names}
           defaultView="week"
-          title={desktop ? "Schedule & map" : "Schedule"}
+          title={desktop ? "Schedule & Map" : "Schedule"}
         />
       )}
 
       {p.reviewDrives && pending.length > 0 && (
-        <Card title="Pending sign-offs" count={pending.length} actions={<Link to="/drives">Open queue</Link>}>
+        <Card title="Pending Sign-offs" count={pending.length} actions={<Link to="/drives">Open queue</Link>}>
           <ul className="board-pending">
             {pending.map((d) => (
               <li key={d.id}>
@@ -408,7 +408,7 @@ function ReassignModal({
   const [instructorId, setInstructorId] = useState(lesson.instructor_id);
   const [carId, setCarId] = useState(lesson.car_id ?? "");
   return (
-    <Modal title="Reassign lesson" onClose={onClose}>
+    <Modal title="Reassign Lesson" onClose={onClose}>
       <p className="muted" style={{ marginTop: 0 }}>
         {fmtTime(lesson.start_at)}–{fmtTime(lesson.end_at)}
         {lesson.student_id ? ` · ${names[lesson.student_id] || "Student"}` : ""}

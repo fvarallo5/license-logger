@@ -115,7 +115,7 @@ export default function FleetPage() {
 
   return (
     <>
-      <PageHeader title="Fleet" desc="Cars, compliance dates, and lots. Due dates turn amber within 30 days.">
+      <PageHeader title="Fleet" desc="Cars, Compliance Dates, And Lots. Due Dates Turn Amber Within 30 Days.">
         <button className="btn" onClick={() => setShowLot(true)}>
           + Lot
         </button>
@@ -198,7 +198,7 @@ export default function FleetPage() {
       </Card>
 
       {showCar && (
-        <Modal title="Add car" onClose={() => setShowCar(false)}>
+        <Modal title="Add Car" onClose={() => setShowCar(false)}>
           <label>
             Name
             <input value={carName} onChange={(e) => setCarName(e.target.value)} required />
@@ -218,7 +218,7 @@ export default function FleetPage() {
         </Modal>
       )}
       {showLot && (
-        <Modal title="Add lot" onClose={() => setShowLot(false)}>
+        <Modal title="Add Lot" onClose={() => setShowLot(false)}>
           <label>
             Name
             <input value={lotName} onChange={(e) => setLotName(e.target.value)} required />

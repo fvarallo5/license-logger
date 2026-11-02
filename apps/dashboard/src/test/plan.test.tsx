@@ -43,6 +43,6 @@ describe("Plan page", () => {
     renderAt("/plan");
     await screen.findByRole("heading", { name: "Plan" });
     fireEvent.click(screen.getByRole("button", { name: "+ Template" }));
-    expect(await screen.findByRole("dialog", { name: "New slot template" })).toBeTruthy();
+    expect(await screen.findByRole("dialog", { name: "New Slot Template" })).toBeTruthy();
   });
 });

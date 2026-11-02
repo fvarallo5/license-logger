@@ -77,7 +77,7 @@ export default function PackagesPage() {
 
   return (
     <>
-      <PageHeader title="Packages" desc="Price book for BTW and other lesson packages. Assign on enroll or from a student.">
+      <PageHeader title="Packages" desc="Price Book For BTW And Other Lesson Packages. Assign On Enroll Or From A Student.">
         <button className="btn primary" onClick={openNew}>
           + Package
         </button>
@@ -124,7 +124,7 @@ export default function PackagesPage() {
       </Card>
 
       {show && (
-        <Modal title={edit ? "Edit package" : "New package"} onClose={() => setShow(false)}>
+        <Modal title={edit ? "Edit Package" : "New Package"} onClose={() => setShow(false)}>
           <label>
             Name
             <input value={name} onChange={(e) => setName(e.target.value)} required />

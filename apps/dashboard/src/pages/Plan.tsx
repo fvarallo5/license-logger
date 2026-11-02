@@ -78,7 +78,7 @@ export default function PlanPage() {
 
   return (
     <>
-      <PageHeader title="Plan" desc="Slot templates, booking requests, and blocks for the week.">
+      <PageHeader title="Plan" desc="Slot Templates, Booking Requests, And Blocks For The Week.">
         <button className="btn" aria-label="Previous week" onClick={() => setAnchor((a) => addDays(a, -7))}>
           ←
         </button>
@@ -98,16 +98,16 @@ export default function PlanPage() {
           </button>
         )}
         <button className="btn" onClick={() => setShowBook(true)}>
-          Book lesson
+          Book Lesson
         </button>
         <button className="btn" onClick={() => setShowBlock(true)}>
-          Block time
+          Block Time
         </button>
       </PageHeader>
 
       {err && <ErrorBox error={err} onRetry={() => setTick((t) => t + 1)} />}
 
-      <Card title="Booking requests" count={openRequests.length}>
+      <Card title="Booking Requests" count={openRequests.length}>
         {openRequests.length === 0 ? (
           <Empty>No open requests this week.</Empty>
         ) : (
@@ -157,7 +157,7 @@ export default function PlanPage() {
         )}
       </Card>
 
-      <Card title="Slot templates" count={templates === null ? "" : templates.length}>
+      <Card title="Slot Templates" count={templates === null ? "" : templates.length}>
         {templates === null ? (
           <Loading label="Loading templates…" />
         ) : templates.length === 0 ? (
@@ -280,7 +280,7 @@ function TemplateModal({
   const [busy, setBusy] = useState(false);
   const toggleDay = (d: number) => setDays((prev) => (prev.includes(d) ? prev.filter((x) => x !== d) : [...prev, d].sort()));
   return (
-    <Modal title="New slot template" onClose={onClose}>
+    <Modal title="New Slot Template" onClose={onClose}>
       <label className="stack">
         Name
         <input value={name} onChange={(e) => setName(e.target.value)} />
@@ -388,7 +388,7 @@ function BookModal({
   const [carId, setCarId] = useState("");
   const [busy, setBusy] = useState(false);
   return (
-    <Modal title="Book lesson" onClose={onClose}>
+    <Modal title="Book Lesson" onClose={onClose}>
       <label className="stack">
         Student
         <select value={studentId} onChange={(e) => setStudentId(e.target.value)}>
@@ -480,7 +480,7 @@ function BlockModal({
   const [name, setName] = useState("Blocked");
   const [busy, setBusy] = useState(false);
   return (
-    <Modal title="Block time" onClose={onClose}>
+    <Modal title="Block Time" onClose={onClose}>
       <label className="stack">
         Instructor
         <select value={instructorId} onChange={(e) => setInstructorId(e.target.value)}>

@@ -1,3 +1,19 @@
+/* Mobile zoom hygiene — prefer no pinch/double-tap zoom; inputs ≥16px avoids iOS focus zoom */
+html,
+body {
+  touch-action: manipulation;
+}
+@media (max-width: 900px) {
+  input,
+  select,
+  textarea,
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px !important;
+  }
+}
+
 @font-face {
   font-family: Geist;
   src: url("/Geist-Variable.woff2") format("woff2");

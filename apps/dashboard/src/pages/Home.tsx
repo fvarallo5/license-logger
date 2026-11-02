@@ -106,7 +106,7 @@ export default function HomePage() {
   }, [load]);
 
   const hour = new Date().getHours();
-  const hello = hour < 12 ? "Good morning" : hour < 17 ? "Good afternoon" : "Good evening";
+  const hello = hour < 12 ? "Good Morning" : hour < 17 ? "Good Afternoon" : "Good Evening";
   const items = [
     { key: "invite" as const, label: "Invite an instructor or front desk", to: "/people", icon: <UserPlus size={16} /> },
     { key: "lot" as const, label: "Pin your lot on the map", to: "/fleet", icon: <MapPin size={16} /> },
@@ -120,7 +120,7 @@ export default function HomePage() {
 
   return (
     <>
-      <PageHeader title={`${hello}`} desc={`${schoolName} · today at a glance`}>
+      <PageHeader title={`${hello}`} desc={`${schoolName} · Today At A Glance`}>
         <Link className="btn primary" to="/board">
           Open board
         </Link>
@@ -130,7 +130,7 @@ export default function HomePage() {
       <div className="kpi-grid">
         <div className="kpi">
           <div className="kpi-label">
-            <CalendarDays size={16} /> Lessons today
+            <CalendarDays size={16} /> Lessons Today
           </div>
           <div className="kpi-value">{lessons?.length ?? 0}</div>
           <Link className="kpi-link" to="/board">
@@ -172,7 +172,7 @@ export default function HomePage() {
 
       {showChecklist && (
         <Card
-          title="Get your school ready"
+          title="Get Your School Ready"
           count={`${remaining} left`}
           actions={
             <button type="button" className="btn sm ghost" onClick={() => saveCheck({ ...check, dismissed: true })}>
@@ -199,7 +199,7 @@ export default function HomePage() {
         </Card>
       )}
 
-      <Card title="Today’s lessons" count={lessons?.length ? `${lessons.length}` : undefined} actions={<Link to="/board">Board</Link>}>
+      <Card title="Today’s Lessons" count={lessons?.length ? `${lessons.length}` : undefined} actions={<Link to="/board">Board</Link>}>
         {!lessons?.length ? (
           <Empty>
             No lessons scheduled today. <Link to="/plan">Plan availability</Link> or open the <Link to="/board">Board</Link>.

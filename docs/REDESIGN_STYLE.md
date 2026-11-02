@@ -47,3 +47,11 @@ Layout borrowed from Figma: persistent left sidebar, KPI card row, soft cards, L
 ## Week view (option D)
 - 7-day strip with counts; selected day cards (time, student, instructor, status)
 - Replaces FullCalendar week everywhere (desktop + mobile)
+
+
+## Headers
+- Title Case every header/subheader in source strings (not CSS text-transform).
+
+## Mobile zoom
+- viewport maximum-scale=1, user-scalable=no; touch-action: manipulation; inputs ≥16px under 900px.
+- iOS PWA: gesturestart preventDefault in main.tsx. Safari tabs may still pinch-zoom for a11y.

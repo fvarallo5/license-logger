@@ -108,7 +108,7 @@ export function CalendarMapSplit({
   const selected = useMemo(() => calLessons.find((l) => l.id === selectedId) ?? null, [calLessons, selectedId]);
   const onSelect = useCallback((id: string | null) => setSelectedId(id), []);
   const mappable = useMemo(() => calLessons.filter((l) => Boolean(pinForLesson(l, lots))), [calLessons, lots]);
-  const heading = title ?? (desktop ? "Schedule & map" : "Schedule");
+  const heading = title ?? (desktop ? "Schedule & Map" : "Schedule");
   const layoutKey = `${view}-${anchor.toISOString().slice(0, 10)}-${calLessons.length}`;
 
   return (

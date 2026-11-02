@@ -1,4 +1,4 @@
-# LicenseLogger — UI redesign (desktop-first; calendar + map)
+# LicenseLogger — UI redesign (cumulative)
 
 Apply from the **repo root** of `fvarallo5/license-logger`.
 
@@ -9,7 +9,7 @@ git fetch origin
 git checkout -b redesign/ui-figma origin/main
 ```
 
-## Apply
+## Apply (dashboard)
 
 ```bash
 cp -R changed-files/apps/dashboard/* apps/dashboard/
@@ -21,43 +21,22 @@ npm test
 npm run build
 ```
 
-Includes (cumulative):
-1. Map fix (Leaflet lots/pins)
-2. Shell redesign (teal sidebar, KPIs, dark mode)
-3. Calendar + map desktop split; mobile list / no map
-4. FullCalendar Day + Month (lazy chunk)
-5. **60/40** calendar/map; map fills pane (`invalidateSize` + absolute canvas)
-6. **Week = option D everywhere** — 7-day strip with lesson counts + selected-day cards (time, student, instructor, status); click selects / syncs map. Defaults: Home→Day, Board→Week. Prev/next week arrows; default selected day = today when in range.
+Optional (migrations already live — **do not re-apply**): renamed SQL under `changed-files/supabase/migrations/20261030170*.sql` (no `_NOT_APPLIED_`). Copy into repo for hygiene only.
 
-## Desktop (≥900px)
+## Includes (cumulative)
 
-- Split: `3fr / 2fr` (60/40); map pane flex-fills height
-- Day / Month: FullCalendar timeGrid / dayGrid
-- Week: `WeekStripView` (not hourly FC week)
-- Palette: `#0B2E2B` sidebar, `#0D9488` primary, `#F3F6F5` canvas
-
-## Mobile (<900px)
-
-- No Leaflet / no FullCalendar
-- Day: simple list; **Week: same strip + cards (D)**
-- Compact top bar + drawer; no bottom dock
-
-## Dependencies
-
-`@fullcalendar/*` v6.1.x (Day/Month only). Week strip is custom React.
-
-## Verify
-
-```bash
-cd apps/dashboard && npm run typecheck && npm test && npm run build
-```
-
-Shots: `docs/shots/09-board-week-*` (strip), `01-home-*` (day FC), `06`/`07` mobile.
+1. Map fix, teal shell, KPIs, dark mode  
+2. Desktop 60/40 calendar+map; mobile list / no map  
+3. FullCalendar Day + Month; **Week = day-strip (option D)** everywhere  
+4. Map fills pane (`invalidateSize`)  
+5. **Title Case** headers & subheaders (source strings, not CSS)  
+6. **Mobile zoom lock**: viewport `maximum-scale=1, user-scalable=no`; `touch-action: manipulation`; inputs ≥16px on small screens; iOS standalone/PWA `gesturestart` preventDefault in `main.tsx`  
+   - Note: iOS Safari (browser tab) may still allow pinch zoom for accessibility.
 
 ## Do not
 
-- Merge / deploy without Frank OK
-- Commit secrets
-- Push migrations unless Frank says “push”
+- Merge / deploy without Frank OK  
+- Re-apply the four `20261030170*` migrations (already on `nqfjudwncistygsmcgrq`)  
+- Commit secrets  
 
 See `STYLE.md`, `docs/shots/`.
