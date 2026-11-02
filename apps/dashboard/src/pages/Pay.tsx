@@ -70,7 +70,7 @@ export default function PayPage() {
 
   return (
     <>
-      <PageHeader title="Pay" desc="Invoices and payments. Package hours draw when lessons are marked taught.">
+      <PageHeader title="Pay" desc="Invoices And Payments. Package Hours Draw When Lessons Are Marked Taught.">
         <Link className="btn" to="/packages">
           Packages
         </Link>
@@ -79,7 +79,7 @@ export default function PayPage() {
         </Link>
       </PageHeader>
       {err && <ErrorBox error={err} onRetry={load} />}
-      <Card title="Open invoices" count={open.length}>
+      <Card title="Open Invoices" count={open.length}>
         {invoices === null ? (
           <Loading />
         ) : !invoices.length ? (
@@ -110,7 +110,7 @@ export default function PayPage() {
                     <td>
                       {i.balance > 0 && i.status !== "void" && (
                         <button className="btn sm primary" onClick={() => openPay(i)}>
-                          Record payment
+                          Record Payment
                         </button>
                       )}
                     </td>
@@ -123,7 +123,7 @@ export default function PayPage() {
       </Card>
 
       {payFor && (
-        <Modal title="Record payment" onClose={() => setPayFor(null)}>
+        <Modal title="Record Payment" onClose={() => setPayFor(null)}>
           <label>
             Customer
             <select value={customerId} onChange={(e) => setCustomerId(e.target.value)} required>

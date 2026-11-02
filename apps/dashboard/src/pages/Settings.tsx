@@ -45,7 +45,7 @@ function SettingsForm({ initial, refresh }: { initial: School; refresh: () => Pr
   }
   return (
     <>
-      <PageHeader title="Settings" desc="Your school’s profile and booking rules." />
+      <PageHeader title="Settings" desc="Your School’s Profile And Booking Rules." />
       <form className="card" style={{ maxWidth: 640 }} onSubmit={save}>
         {msg && <div className="alert ok">{msg}</div>}
         {err && <ErrorBox error={err} />}
@@ -109,7 +109,7 @@ function SettingsForm({ initial, refresh }: { initial: School; refresh: () => Pr
           {busy ? "Saving…" : "Save changes"}
         </button>
       </form>
-      <Card title="Coming next">
+      <Card title="Coming Next">
         <p className="muted">
           Manage packages under Packages, cars and lots under Fleet, and weekly availability under Plan. More school editors arrive in the
           next dashboard update.

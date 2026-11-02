@@ -27,7 +27,7 @@ export default function People() {
 
   return (
     <>
-      <PageHeader title="People" desc="Instructors and staff at your school.">
+      <PageHeader title="People" desc="Instructors And Staff At Your School.">
         <div className="seg">
           {(["", "instructor", "front_desk", "admin"] as const).map((r) => (
             <button key={r} className={filter === r ? "on" : ""} onClick={() => setFilter(r)}>
@@ -118,7 +118,7 @@ function Invites({ schoolId }: { schoolId: string }) {
   const pg = usePaged((c: number | null) => invitesPage(supabase, schoolId, c ?? 0), schoolId);
   const [err, setErr] = useState<string | null>(null);
   return (
-    <Card title="Pending invites">
+    <Card title="Pending Invites">
       {err && <ErrorBox error={err} />}
       {pg.error ? (
         <ErrorBox error={pg.error} onRetry={pg.reload} />
@@ -181,7 +181,7 @@ function InviteModal({ schoolId, onClose, onDone }: { schoolId: string; onClose:
     }
   }
   return (
-    <Modal title="Invite staff" onClose={onClose}>
+    <Modal title="Invite Staff" onClose={onClose}>
       <form onSubmit={submit}>
         {err && <ErrorBox error={err} />}
         <div className="field">

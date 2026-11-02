@@ -61,7 +61,7 @@ export default function QuickBooks() {
 
   return (
     <>
-      <PageHeader title="QuickBooks" desc="Sync students, invoices and payments with QuickBooks Online." />
+      <PageHeader title="QuickBooks" desc="Sync Students, Invoices And Payments With QuickBooks Online." />
       {!ENABLE && (
         <div className="alert warn">
           QuickBooks sync is not enabled for this deployment yet. Ask your LicenseLogger admin to turn it on (see
@@ -118,7 +118,7 @@ export default function QuickBooks() {
             <button
               className="btn primary"
               disabled={!ENABLE || busy}
-              title={ENABLE ? "Connect QuickBooks" : "QuickBooks connection is not enabled yet"}
+              title={ENABLE ? "Connect QuickBooks" : "QuickBooks Connection Is Not Enabled Yet"}
               onClick={() => void connect()}
             >
               Connect to QuickBooks

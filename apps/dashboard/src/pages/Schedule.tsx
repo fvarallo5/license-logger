@@ -63,7 +63,7 @@ export default function SchedulePage() {
 
   return (
     <>
-      <PageHeader title="Schedule" desc={mine ? "Your lessons this week." : "Lessons across your school, one week at a time."}>
+      <PageHeader title="Schedule" desc={mine ? "Your Lessons This Week." : "Lessons Across Your School, One Week At A Time."}>
         <button className="btn" aria-label="Previous week" onClick={() => move(-1)}>
           ←
         </button>

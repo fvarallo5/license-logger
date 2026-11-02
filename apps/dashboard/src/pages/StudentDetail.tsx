@@ -69,7 +69,7 @@ export default function StudentDetail() {
     <>
       <PageHeader
         title={`${student.first_name} ${student.last_name}`}
-        desc={`${student.state_code} · permit ${fmtDate(student.permit_on)} · ${student.user_id ? "app connected" : "no app yet"}`}
+        desc={`${student.state_code} · Permit ${fmtDate(student.permit_on)} · ${student.user_id ? "App Connected" : "No App Yet"}`}
       >
         <Link className="btn" to="/students">
           ← Students
@@ -87,7 +87,7 @@ export default function StudentDetail() {
           <DrivesCard studentId={student.id} />
         </div>
         <div>
-          <Card title="Join code">
+          <Card title="Join Code">
             <div className="kpi mono">{student.join_code}</div>
             <p className="muted">The student enters this in the LicenseLogger app to connect to this profile.</p>
           </Card>
@@ -125,7 +125,7 @@ function ProgressCard({ studentId }: { studentId: string }) {
   }, [studentId]);
   return (
     <Card
-      title="Progress vs state rules"
+      title="Progress Vs State Rules"
       count={d?.rule ? d.rule.label : undefined}
       actions={d && (d.all_met ? <Badge tone="ok">ready</Badge> : <Badge tone="warn">in progress</Badge>)}
     >
@@ -253,7 +253,7 @@ function SkillsCard({ studentId }: { studentId: string }) {
     await load();
   }
   return (
-    <Card title="Skills / road-test readiness" count={rows ? `${rows.filter((r) => r.done).length}/${rows.length}` : undefined}>
+    <Card title="Skills / Road-test Readiness" count={rows ? `${rows.filter((r) => r.done).length}/${rows.length}` : undefined}>
       {err && <ErrorBox error={err} onRetry={load} />}
       {rows === null ? (
         <Loading />
@@ -331,7 +331,7 @@ function ResourcesCard({ state, permitOn }: { state: string; permitOn: string | 
   const links = (d?.links as { kind: string; url: string; label?: string; status?: string }[] | undefined) ?? [];
   const checklist = (d?.checklist as { step: number; text: string }[] | undefined) ?? [];
   return (
-    <Card title={`${state} resources`}>
+    <Card title={`${state} Resources`}>
       {err ? (
         <ErrorBox error={err} />
       ) : !d ? (

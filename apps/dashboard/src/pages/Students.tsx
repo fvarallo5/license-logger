@@ -35,7 +35,7 @@ export default function Students() {
 
   return (
     <>
-      <PageHeader title="Students" desc="Everyone enrolled at your school, their hours, and pending sign-offs.">
+      <PageHeader title="Students" desc="Everyone Enrolled At Your School, Their Hours, And Pending Sign-offs.">
         <div className="seg" role="tablist">
           {(["active", "requests", "former"] as Tab[]).map((t) => (
             <button key={t} role="tab" aria-selected={tab === t} className={tab === t ? "on" : ""} onClick={() => setTab(t)}>
@@ -50,7 +50,7 @@ export default function Students() {
         )}
         {p.manageStudents && (
           <button className="btn primary" onClick={() => setAdding(true)}>
-            + Add student
+            + Add Student
           </button>
         )}
       </PageHeader>
@@ -94,7 +94,7 @@ export default function Students() {
 function Roster({ schoolId }: { schoolId: string }) {
   const pg = usePaged((c: StudentCursor | null) => studentsPage(supabase, schoolId, c), schoolId);
   return (
-    <Card title="Enrolled students" count={pg.loading ? "" : `${pg.rows.length} on this page`}>
+    <Card title="Enrolled Students" count={pg.loading ? "" : `${pg.rows.length} on this page`}>
       {pg.error ? (
         <ErrorBox error={pg.error} onRetry={pg.reload} />
       ) : pg.loading ? (
@@ -169,7 +169,7 @@ function Requests({ schoolId, canManage, onDone }: { schoolId: string; canManage
     }
   }
   return (
-    <Card title="Join requests to app students" count="Students or their parents accept these in the LicenseLogger app">
+    <Card title="Join Requests To App Students" count="Students or their parents accept these in the LicenseLogger app">
       {err && <ErrorBox error={err} />}
       {pg.error ? (
         <ErrorBox error={pg.error} onRetry={pg.reload} />
@@ -219,7 +219,7 @@ function Requests({ schoolId, canManage, onDone }: { schoolId: string; canManage
 function Former({ schoolId }: { schoolId: string }) {
   const pg = usePaged((c: number | null) => formerStudentsPage(supabase, schoolId, c ?? 0), schoolId);
   return (
-    <Card title="Former students" count="Kept for your records. Their new hours are private to them.">
+    <Card title="Former Students" count="Kept for your records. Their new hours are private to them.">
       {pg.error ? (
         <ErrorBox error={pg.error} onRetry={pg.reload} />
       ) : pg.loading ? (
@@ -288,7 +288,7 @@ function AddStudent({ schoolId, onClose, onDone }: { schoolId: string; onClose: 
     }
   }
   return (
-    <Modal title="Add student" onClose={onClose}>
+    <Modal title="Add Student" onClose={onClose}>
       <form onSubmit={submit}>
         {err && <ErrorBox error={err} />}
         <div className="row">
@@ -319,7 +319,7 @@ function AddStudent({ schoolId, onClose, onDone }: { schoolId: string; onClose: 
         </div>
         <div className="row">
           <button className="btn primary" disabled={busy}>
-            {busy ? "Adding…" : "Add student"}
+            {busy ? "Adding…" : "Add Student"}
           </button>
           <button type="button" className="btn" onClick={onClose}>
             Cancel
@@ -348,7 +348,7 @@ function LinkStudent({ schoolId, onClose, onDone }: { schoolId: string; onClose:
     }
   }
   return (
-    <Modal title="Link a student who already uses the app" onClose={onClose}>
+    <Modal title="Link A Student Who Already Uses The App" onClose={onClose}>
       <p className="muted">
         Students without a school can still use LicenseLogger. Ask them for the student code shown in their app’s profile. They (or a
         parent) must accept before you see any of their drives.

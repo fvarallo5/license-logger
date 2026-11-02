@@ -105,12 +105,12 @@ export default function PortalApp() {
         </button>
       </header>
       <main>
-        <PageHeader title="Family portal" desc="Hours, request a lesson, and billing read-only." />
+        <PageHeader title="Family Portal" desc="Hours, Request A Lesson, And Billing Read-only." />
         {err && !demo && <ErrorBox error={err} onRetry={load} />}
         {links === null ? (
           <Loading />
         ) : demo ? (
-          <Card title="No linked students">
+          <Card title="No Linked Students">
             <Empty>
               Sign in with a family account that redeemed an invite, or ask the school to send a family invite. Desk staff can open{" "}
               <Link to="/board">Board</Link>.
@@ -118,7 +118,7 @@ export default function PortalApp() {
           </Card>
         ) : (
           <>
-            <Card title="Your students">
+            <Card title="Your Students">
               <select value={studentId} onChange={(e) => setStudentId(e.target.value)} aria-label="Student">
                 {links.map((l) => (
                   <option key={l.student_id} value={l.student_id}>
@@ -130,7 +130,7 @@ export default function PortalApp() {
                 Practice hours (approx): <strong>{hours}</strong>
               </p>
             </Card>
-            <Card title="Request a time">
+            <Card title="Request A Time">
               {msg && (
                 <div className="alert warn" role="status">
                   {msg}

@@ -45,7 +45,7 @@ export default function PayoutsPage() {
 
   return (
     <>
-      <PageHeader title="Payouts" desc="Taught lesson hours × each instructor’s hourly rate. Only people with Pay access can see rates.">
+      <PageHeader title="Payouts" desc="Taught Lesson Hours × Each Instructor’s Hourly Rate. Only People With Pay Access Can See Rates.">
         <label className="row">
           From
           <input type="date" value={from} onChange={(e) => setFrom(e.target.value)} />
@@ -59,7 +59,7 @@ export default function PayoutsPage() {
         </button>
       </PageHeader>
       {err && <ErrorBox error={err} onRetry={load} />}
-      <Card title="Period totals" count={rows ? `$${total.toFixed(2)}` : undefined}>
+      <Card title="Period Totals" count={rows ? `$${total.toFixed(2)}` : undefined}>
         {rows === null ? (
           <Loading />
         ) : !rows.length ? (
