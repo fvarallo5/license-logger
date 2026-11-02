@@ -238,17 +238,10 @@ export default function BoardPage() {
       {lessons && lessons.length >= 0 && (
         <CalendarMapSplit
           schoolId={schoolId}
-          lessons={lessons}
+          lessons={lessons ?? []}
           names={names}
-          title={
-            desktop
-              ? view === "week"
-                ? "Week schedule & map"
-                : "Today schedule & map"
-              : view === "week"
-                ? "Week schedule"
-                : "Today schedule"
-          }
+          defaultView="week"
+          title={desktop ? "Schedule & map" : "Schedule"}
         />
       )}
 

@@ -1452,15 +1452,8 @@ nav.dock a.active {
     gap: 6px;
     grid-template-columns: 56px 8px minmax(0, 1fr) auto;
   }
-  .ll-week-strip {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 4px;
-  }
-  .ll-week-day {
-    padding: 6px 2px;
-  }
-  .ll-week-dn {
-    font-size: 14px;
+  .ll-cal-grid.week {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1472,10 +1465,11 @@ nav.tabs {
 /* —— Calendar + map split (TrekTrack DeskOverview / .easy-home) —— */
 .ll-split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); /* 60/40 calendar/map */
   gap: 16px;
-  min-height: 0;
+  min-height: 480px;
   width: 100%;
+  align-items: stretch;
 }
 .ll-split-pane {
   min-width: 0;
@@ -1487,20 +1481,10 @@ nav.tabs {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 12px;
+  height: 100%;
 }
-.ll-split-pane[aria-label="Map pane"] {
-  min-height: 420px;
-}
-.ll-split-pane[aria-label="Map pane"] .ll-lesson-map {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-.ll-split-pane[aria-label="Map pane"] .ll-lesson-map-canvas {
-  flex: 1;
-  height: auto;
-  min-height: 360px;
+.ll-split-pane-map {
+  padding-bottom: 12px;
 }
 .ll-split-h {
   margin: 0;
@@ -1565,98 +1549,6 @@ nav.tabs {
 }
 .ll-cal-grid.day {
   display: block;
-}
-.ll-week-strip {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 6px;
-  margin-bottom: 10px;
-}
-.ll-week-day {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  padding: 8px 4px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--surface);
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-.ll-week-day:hover {
-  border-color: var(--primary);
-}
-.ll-week-day.is-on {
-  background: var(--primary-soft);
-  border-color: var(--primary);
-  box-shadow: 0 0 0 1px var(--primary);
-}
-.ll-week-wd {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-.ll-week-dn {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.1;
-}
-.ll-week-n {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--primary-hover);
-}
-.ll-week-n.is-zero {
-  color: var(--muted);
-  opacity: 0.55;
-}
-.ll-cal-grid.month {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 4px;
-}
-.ll-month-cell {
-  min-height: 72px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  padding: 6px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  text-align: left;
-}
-.ll-month-cell.is-out {
-  opacity: 0.45;
-}
-.ll-month-cell.is-on {
-  border-color: var(--primary);
-  background: var(--primary-soft);
-}
-.ll-month-dn {
-  font-size: 12px;
-  font-weight: 700;
-}
-.ll-month-chip {
-  display: block;
-  width: 100%;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 600;
-  padding: 1px 4px;
-  box-sizing: border-box;
-}
-.ll-month-more {
-  font-size: 10px;
-  color: var(--muted);
 }
 .ll-cal-dayhead {
   font-size: 11px;
@@ -1728,13 +1620,22 @@ nav.tabs {
 
 .ll-lesson-map {
   position: relative;
-  min-height: 280px;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
 }
 .ll-lesson-map-canvas {
-  height: 320px;
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid var(--line);
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+  border-radius: 0;
   z-index: 0;
 }
 .ll-map-empty {
@@ -1748,10 +1649,20 @@ nav.tabs {
   pointer-events: none;
   padding: 16px;
   text-align: center;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
 }
 .ll-map-help {
-  margin: 8px 0 0;
-  font-size: 12px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 450;
+  margin: 0;
+  padding: 6px 10px;
+  font-size: 11px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border-top: 1px solid var(--line);
+  pointer-events: none;
 }
 .ll-pin {
   background: transparent !important;
@@ -1759,16 +1670,374 @@ nav.tabs {
 }
 
 @media (max-width: 1100px) and (min-width: 901px) {
-  /* slightly tighter desktop mid sizes — keep map */
-  .ll-lesson-map-canvas {
-    height: 280px;
+  .ll-split {
+    min-height: 440px;
   }
 }
 @media (max-width: 900px) {
   .ll-cal-grid.week {
     grid-template-columns: 1fr;
   }
-  .ll-week-strip {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+/* —— FullCalendar (desktop grid) —— */
+.ll-cal-grid.mode-unused {
+  display: none;
+}
+.ll-fc {
+  flex: 1 1 auto;
+  min-height: 420px;
+  height: 100%;
+  --fc-border-color: var(--line);
+  --fc-page-bg-color: transparent;
+  --fc-neutral-bg-color: var(--bg);
+  --fc-list-event-hover-bg-color: var(--primary-soft);
+  --fc-today-bg-color: color-mix(in srgb, var(--primary) 8%, transparent);
+  --fc-now-indicator-color: #e11d48;
+  --fc-event-border-color: transparent;
+  --fc-small-font-size: 0.75rem;
+}
+.ll-fc .fc {
+  height: 100%;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--ink);
+}
+.ll-fc .fc-theme-standard td,
+.ll-fc .fc-theme-standard th,
+.ll-fc .fc-theme-standard .fc-scrollgrid {
+  border-color: var(--line);
+}
+.ll-fc .fc-col-header-cell {
+  background: var(--bg);
+  padding: 4px 0;
+}
+.ll-fc .fc-col-header-cell-cushion {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 11px;
+  text-decoration: none;
+  padding: 4px 2px;
+}
+.ll-fc .fc-timegrid-slot-label-cushion {
+  color: var(--muted);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.ll-fc .fc-timegrid-axis-cushion {
+  color: var(--muted);
+  font-size: 10px;
+}
+.ll-fc .fc-daygrid-day-number {
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 4px 6px;
+}
+.ll-fc .fc-day-today .fc-daygrid-day-number {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 999px;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.ll-fc .fc-event {
+  border-radius: 6px;
+  border-width: 0 0 0 3px;
+  box-shadow: none;
+  font-size: 11px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.ll-fc .fc-timegrid-event {
+  min-height: 18px;
+}
+.ll-fc .fc-event.ll-fc-selected {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+  z-index: 3 !important;
+}
+.ll-fc-block {
+  padding: 2px 4px;
+  line-height: 1.2;
+}
+.ll-fc-block-time {
+  font-weight: 700;
+  opacity: 0.9;
+  font-size: 10px;
+}
+.ll-fc-block-title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ll-fc-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--primary) 12%, var(--surface));
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+  overflow: hidden;
+}
+.ll-fc-chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.ll-fc-chip-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ll-fc .fc-daygrid-event {
+  background: transparent !important;
+  border: 0 !important;
+}
+.ll-fc .fc-more-link {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 10px;
+}
+.ll-fc .fc-timegrid-now-indicator-line {
+  border-color: #e11d48;
+  border-width: 2px;
+}
+.ll-fc .fc-timegrid-now-indicator-arrow {
+  border-top-color: #e11d48;
+  border-bottom-color: #e11d48;
+}
+.ll-fc-loading {
+  min-height: 200px;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+}
+.ll-cal-title {
+  font-weight: 650;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ll-split-pane .ll-cal {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+.ll-split-pane .ll-cal-grid {
+  min-height: 0;
+}
+
+/* Dark mode FullCalendar */
+[data-theme="dark"] .ll-fc {
+  --fc-page-bg-color: transparent;
+  --fc-neutral-bg-color: color-mix(in srgb, var(--surface) 80%, #000);
+  --fc-today-bg-color: color-mix(in srgb, var(--primary) 14%, transparent);
+}
+[data-theme="dark"] .ll-fc .fc-col-header-cell {
+  background: color-mix(in srgb, var(--surface) 70%, #000);
+}
+[data-theme="dark"] .ll-fc-chip {
+  background: color-mix(in srgb, var(--primary) 22%, var(--surface));
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .ll-fc {
+    min-height: 360px;
+  }
+}
+
+/* Week view: readable event blocks */
+.ll-fc .fc-timeGridWeek-view .fc-timegrid-event,
+.ll-fc .fc-timeGridWeek-view .fc-timegrid-event-harness {
+  min-width: 4.75rem;
+}
+.ll-fc .fc-timeGridWeek-view .fc-event {
+  font-size: 11px;
+}
+.ll-fc .fc-timeGridWeek-view .ll-fc-block-title {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.15;
+}
+.ll-fc .fc-timeGridWeek-view .ll-fc-block-sub {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.92;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* —— Week strip (option D) — used for Week tab everywhere —— */
+.ll-week-d {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ll-week-d-strip {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+.ll-week-d-day {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 10px 8px;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.ll-week-d-day:hover {
+  border-color: var(--primary);
+}
+.ll-week-d-day.is-on {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+.ll-week-d-day.is-today .ll-week-d-dom {
+  color: var(--primary-hover);
+}
+.ll-week-d-dow {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.ll-week-d-dom {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.ll-week-d-cnt {
+  margin-top: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-hover);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ll-week-d-detail {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+}
+.ll-week-d-detail-h {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.ll-week-d-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ll-week-d-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left-width: 4px;
+  border-radius: 10px;
+  background: var(--bg);
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.ll-week-d-card:hover {
+  border-color: var(--primary);
+}
+.ll-week-d-card.is-on {
+  background: var(--primary-soft);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+.ll-week-d-time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.25;
+}
+.ll-week-d-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ll-week-d-copy strong {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ll-week-d-copy small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .ll-week-d-strip {
+    gap: 4px;
+  }
+  .ll-week-d-day {
+    padding: 8px 4px;
+    border-radius: 10px;
+  }
+  .ll-week-d-dom {
+    font-size: 15px;
+  }
+  .ll-week-d-cnt {
+    font-size: 10px;
+  }
+  .ll-week-d-card {
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+    gap: 8px;
+    padding: 10px;
+  }
+  .ll-week-d-time {
+    font-size: 12px;
+  }
+  .ll-week-d-copy strong {
+    font-size: 13px;
   }
 }

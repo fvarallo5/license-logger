@@ -32,14 +32,18 @@ export function LessonMap({
   names,
   selectedId,
   onSelect,
+  layoutKey,
 }: {
   lessons: Lesson[];
   lots: Lot[];
   names: Record<string, string>;
   selectedId: string | null;
   onSelect: (id: string | null) => void;
+  /** Bumps on calendar view/size changes so Leaflet remeasures. */
+  layoutKey?: string | number;
 }) {
   const host = useRef<HTMLDivElement>(null);
+  const wrap = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
   const layerRef = useRef<L.LayerGroup | null>(null);
   const onSelectRef = useRef(onSelect);
@@ -51,16 +55,34 @@ export function LessonMap({
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: OSM_ATTR, maxZoom: 19 }).addTo(map);
     layerRef.current = L.layerGroup().addTo(map);
     mapRef.current = map;
-    const onResize = () => map.invalidateSize();
-    window.addEventListener("resize", onResize);
-    window.setTimeout(onResize, 80);
+
+    const invalidate = () => map.invalidateSize({ animate: false });
+    window.addEventListener("resize", invalidate);
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(() => invalidate()) : null;
+    if (wrap.current && ro) ro.observe(wrap.current);
+    if (host.current && ro) ro.observe(host.current);
+    window.setTimeout(invalidate, 40);
+    window.setTimeout(invalidate, 200);
+
     return () => {
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener("resize", invalidate);
+      ro?.disconnect();
       map.remove();
       mapRef.current = null;
       layerRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const t1 = window.setTimeout(() => map.invalidateSize({ animate: false }), 40);
+    const t2 = window.setTimeout(() => map.invalidateSize({ animate: false }), 220);
+    return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+  }, [layoutKey]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -85,9 +107,10 @@ export function LessonMap({
       const color = statusColor(lesson.status);
       const ll: L.LatLngExpression = [pin.lat, pin.lng];
       bounds.push(ll);
+      const student = lesson.student_id ? names[lesson.student_id] : "";
       const m = L.marker(ll, { icon: circleIcon(color, selected), zIndexOffset: selected ? 500 : 0 })
         .bindPopup(
-          `<strong>${escapeHtml(lesson.kind || "Lesson")}</strong><br/>${escapeHtml(names[lesson.instructor_id] || "Instructor")}<br/>${escapeHtml(pin.label)} · ${escapeHtml(lesson.status)}`,
+          `<strong>${escapeHtml(student || lesson.kind || "Lesson")}</strong><br/>${escapeHtml(names[lesson.instructor_id] || "Instructor")}<br/>${escapeHtml(pin.label)} · ${escapeHtml(lesson.status)}`,
         )
         .addTo(layer);
       m.on("click", () => onSelectRef.current(pin.lessonId));
@@ -98,13 +121,13 @@ export function LessonMap({
     }
 
     if (bounds.length) map.fitBounds(L.latLngBounds(bounds).pad(0.35), { maxZoom: 14 });
-    window.setTimeout(() => map.invalidateSize(), 60);
+    window.setTimeout(() => map.invalidateSize({ animate: false }), 60);
   }, [lessons, lots, names, selectedId]);
 
   const hasPins = lots.some((l) => l.lat != null) || lessons.some((l) => pinForLesson(l, lots));
 
   return (
-    <div className="ll-lesson-map">
+    <div ref={wrap} className="ll-lesson-map">
       {!hasPins ? <div className="ll-map-empty">No locations yet — pin a lot on Fleet to place lessons on the map.</div> : null}
       <div ref={host} className="ll-lesson-map-canvas" role="application" aria-label="Lessons map" title="Lessons map" />
       <p className="muted ll-map-help">Lots + pickup pins for visible lessons · click a pin to select</p>
