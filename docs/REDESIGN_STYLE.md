@@ -31,3 +31,19 @@ Layout borrowed from Figma: persistent left sidebar, KPI card row, soft cards, L
 - Compact top bar (44px) + 32px menu → sidebar drawer
 - No bottom dock; compact KPIs
 - Full desktop redesign (sidebar + calendar/map 50/50) at ≥900px
+
+
+## Calendar (desktop)
+- FullCalendar v6 (lazy `LessonCalendarGrid`): Day/Week time grid 7am–9pm, Month chips
+- Tokens via `--fc-*` CSS variables; dark mode under `[data-theme="dark"]`
+- Defaults: Home → Day, Board → Week
+
+
+## Split layout
+- Desktop calendar/map: **60/40** (`3fr / 2fr`)
+- Map pane must stretch with calendar; Leaflet host absolute-fill + invalidateSize
+
+
+## Week view (option D)
+- 7-day strip with counts; selected day cards (time, student, instructor, status)
+- Replaces FullCalendar week everywhere (desktop + mobile)

@@ -166,7 +166,9 @@ export default function HomePage() {
         </div>
       </div>
 
-      {lessons && <CalendarMapSplit schoolId={schoolId} lessons={lessons} names={names} schoolCity={membership.schools?.city} />}
+      {lessons && (
+        <CalendarMapSplit schoolId={schoolId} lessons={lessons} names={names} schoolCity={membership.schools?.city} defaultView="day" />
+      )}
 
       {showChecklist && (
         <Card

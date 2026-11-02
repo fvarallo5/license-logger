@@ -72,16 +72,20 @@ export function weekStart(d: Date): Date {
   return x;
 }
 
-export function monthStart(d: Date): Date {
-  return new Date(d.getFullYear(), d.getMonth(), 1);
-}
-
-export function addMonths(d: Date, n: number): Date {
-  return new Date(d.getFullYear(), d.getMonth() + n, Math.min(d.getDate(), 28));
-}
-
-/** Six Monday-start weeks covering the month of `d`. */
-export function monthCells(d: Date): Date[] {
-  const start = weekStart(monthStart(d));
-  return Array.from({ length: 42 }, (_, i) => addDays(start, i));
+/** Inclusive-ish [from, to) window for calendar fetching. */
+export function rangeForCalView(view: "day" | "week" | "month", anchor: Date): { from: Date; to: Date } {
+  if (view === "day") {
+    const from = startOfDay(anchor);
+    return { from, to: addDays(from, 1) };
+  }
+  if (view === "week") {
+    const from = weekStart(anchor);
+    return { from, to: addDays(from, 7) };
+  }
+  // month: pad with adjacent weeks so dayGrid fills
+  const first = startOfDay(new Date(anchor.getFullYear(), anchor.getMonth(), 1));
+  const from = weekStart(first);
+  const last = new Date(anchor.getFullYear(), anchor.getMonth() + 1, 0);
+  const endWeek = weekStart(last);
+  return { from, to: addDays(endWeek, 7) };
 }
