@@ -36,12 +36,16 @@ export function PageHeader({ title, desc, children }: { title: string; desc?: st
   }, [title]);
   return (
     <div className="ph">
-      <div>
+      <div className="ph-copy">
         <h1>{title}</h1>
         {desc && <p>{desc}</p>}
       </div>
-      <div className="spacer" />
-      {children}
+      {children ? (
+        <>
+          <div className="spacer" aria-hidden />
+          <div className="ph-actions">{children}</div>
+        </>
+      ) : null}
     </div>
   );
 }

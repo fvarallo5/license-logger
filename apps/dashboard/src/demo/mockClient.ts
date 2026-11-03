@@ -1,5 +1,6 @@
 // A tiny in-memory stand-in for supabase-js used by demo mode and tests. No network.
 import type { SupabaseClient } from "@supabase/supabase-js";
+import type { Database } from "../lib/database.types";
 import { demo } from "./data";
 
 type Row = Record<string, unknown>;
@@ -103,7 +104,7 @@ class Query implements PromiseLike<Res> {
   }
 }
 
-export function createMockClient(): SupabaseClient {
+export function createMockClient(): SupabaseClient<Database> {
   const t = demo.tables;
   const withSchool = (m: Row) => ({ ...m, schools: t.schools.find((s) => s.id === m.school_id) ?? null });
   const rpcs: Record<string, (a: Row) => unknown> = {
@@ -221,6 +222,7 @@ export function createMockClient(): SupabaseClient {
       return id;
     },
     book_lesson: () => `l-${Date.now()}`,
+    record_invoice_payment: () => `pay-${Date.now()}`,
     add_block: () => `l-block-${Date.now()}`,
     accept_reservation: (a) => {
       const r = (t.reservations as Row[]).find((x) => x.id === a.p_reservation_id);
@@ -255,5 +257,5 @@ export function createMockClient(): SupabaseClient {
       signOut: () => ok({}),
     },
   };
-  return client as unknown as SupabaseClient;
+  return client as unknown as SupabaseClient<Database>;
 }

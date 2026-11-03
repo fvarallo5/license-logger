@@ -1,5 +1,8 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { createMockClient } from "../demo/mockClient";
+import type { Database } from "./database.types";
+
+export type AppSupabase = SupabaseClient<Database>;
 
 export const isDemo = import.meta.env.VITE_DEMO === "1";
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
@@ -12,8 +15,8 @@ export const configError =
       ? "That looks like a SECRET key. Use the publishable/anon key only."
       : null;
 
-export const supabase: SupabaseClient = isDemo
+export const supabase: AppSupabase = isDemo
   ? createMockClient()
-  : createClient(url ?? "http://invalid.local", key ?? "missing", {
+  : createClient<Database>(url ?? "http://invalid.local", key ?? "missing", {
       auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
     });

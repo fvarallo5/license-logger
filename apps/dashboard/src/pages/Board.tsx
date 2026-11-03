@@ -198,28 +198,32 @@ export default function BoardPage() {
             : "Today’s Lessons Across The School. Filter By Instructor Or Car."
         }
       >
-        <div className="seg" role="tablist" aria-label="Board range">
-          {(["today", "week"] as BoardView[]).map((v) => (
-            <button key={v} role="tab" aria-selected={view === v} className={view === v ? "on" : ""} onClick={() => setView(v)}>
-              {v === "today" ? "Today" : "Week"}
+        <div className="board-ph-actions">
+          <div className="seg" role="tablist" aria-label="Board range">
+            {(["today", "week"] as BoardView[]).map((v) => (
+              <button key={v} role="tab" aria-selected={view === v} className={view === v ? "on" : ""} onClick={() => setView(v)}>
+                {v === "today" ? "Today" : "Week"}
+              </button>
+            ))}
+          </div>
+          <button className="btn board-refresh" onClick={() => setTick((t) => t + 1)} aria-label="Refresh board">
+            Refresh
+          </button>
+          <div className="board-date-nav">
+            <button className="btn" aria-label="Previous" onClick={() => shift(-1)}>
+              ←
             </button>
-          ))}
+            <span className="pill light board-date" aria-live="polite">
+              {rangeLabel}
+            </span>
+            <button className="btn" aria-label="Next" onClick={() => shift(1)}>
+              →
+            </button>
+            <button className="btn" onClick={() => setAnchor(new Date())}>
+              Now
+            </button>
+          </div>
         </div>
-        <button className="btn" aria-label="Previous" onClick={() => shift(-1)}>
-          ←
-        </button>
-        <span className="pill light" aria-live="polite">
-          {rangeLabel}
-        </span>
-        <button className="btn" aria-label="Next" onClick={() => shift(1)}>
-          →
-        </button>
-        <button className="btn" onClick={() => setAnchor(new Date())}>
-          Now
-        </button>
-        <button className="btn" onClick={() => setTick((t) => t + 1)} aria-label="Refresh board">
-          Refresh
-        </button>
       </PageHeader>
 
       {queueN > 0 && (

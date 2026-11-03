@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { listLots, schedule } from "../lib/api";
@@ -7,7 +7,7 @@ import { useDesktopMedia } from "../lib/theme";
 import { pinForLesson, rangeForCalView } from "../lib/lessonPins";
 import { Card } from "./ui";
 import { LessonCalendar, type CalView } from "./LessonCalendar";
-import { LessonMap } from "./LessonMap";
+const LessonMap = lazy(() => import("./LessonMap").then((m) => ({ default: m.LessonMap })));
 
 async function studentNames(ids: string[]): Promise<Record<string, string>> {
   if (!ids.length) return {};
@@ -131,7 +131,16 @@ export function CalendarMapSplit({
         {desktop && (
           <section className="ll-split-pane ll-split-pane-map" aria-label="Map pane">
             <h3 className="ll-split-h">Map</h3>
-            <LessonMap lessons={mappable} lots={lots} names={allNames} selectedId={selectedId} onSelect={onSelect} layoutKey={layoutKey} />
+            <Suspense fallback={<div className="ll-map-empty muted">Loading map…</div>}>
+              <LessonMap
+                lessons={mappable}
+                lots={lots}
+                names={allNames}
+                selectedId={selectedId}
+                onSelect={onSelect}
+                layoutKey={layoutKey}
+              />
+            </Suspense>
           </section>
         )}
       </div>

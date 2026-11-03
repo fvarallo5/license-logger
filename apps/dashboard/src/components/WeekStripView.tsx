@@ -84,8 +84,9 @@ export function WeekStripView({
             >
               <span className="ll-week-d-dow">{fmtDow(day)}</span>
               <span className="ll-week-d-dom">{day.getDate()}</span>
-              <span className="ll-week-d-cnt">
-                {n} lesson{n === 1 ? "" : "s"}
+              <span className="ll-week-d-cnt" aria-label={`${n} lesson${n === 1 ? "" : "s"}`}>
+                {n}
+                <span className="ll-week-d-cnt-lbl"> lesson{n === 1 ? "" : "s"}</span>
               </span>
             </button>
           );

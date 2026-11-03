@@ -46,6 +46,24 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return;
+          if (id.includes("react-dom") || id.includes("/react/") || id.includes("\\react\\") || id.includes("scheduler")) {
+            return "vendor-react";
+          }
+          if (id.includes("react-router")) return "vendor-router";
+          if (id.includes("@supabase")) return "vendor-supabase";
+          if (id.includes("leaflet")) return "vendor-leaflet";
+          if (id.includes("@fullcalendar")) return "vendor-fullcalendar";
+          if (id.includes("lucide-react")) return "vendor-lucide";
+        },
+      },
+    },
+    chunkSizeWarningLimit: 500,
+  },
   test: {
     environment: "jsdom",
     globals: false,

@@ -64,19 +64,21 @@ export default function SchedulePage() {
   return (
     <>
       <PageHeader title="Schedule" desc={mine ? "Your Lessons This Week." : "Lessons Across Your School, One Week At A Time."}>
-        <button className="btn" aria-label="Previous week" onClick={() => move(-1)}>
-          ←
-        </button>
-        <span className="pill light" aria-live="polite">
-          {start.toLocaleDateString(undefined, { month: "short", day: "numeric" })} –{" "}
-          {new Date(end.getTime() - 1).toLocaleDateString(undefined, { month: "short", day: "numeric" })}
-        </span>
-        <button className="btn" aria-label="Next week" onClick={() => move(1)}>
-          →
-        </button>
-        <button className="btn" onClick={() => setStart(weekStart(new Date()))}>
-          This week
-        </button>
+        <div className="board-date-nav">
+          <button className="btn" aria-label="Previous week" onClick={() => move(-1)}>
+            ←
+          </button>
+          <span className="pill light board-date" aria-live="polite">
+            {start.toLocaleDateString(undefined, { month: "short", day: "numeric" })} –{" "}
+            {new Date(end.getTime() - 1).toLocaleDateString(undefined, { month: "short", day: "numeric" })}
+          </span>
+          <button className="btn" aria-label="Next week" onClick={() => move(1)}>
+            →
+          </button>
+          <button className="btn" onClick={() => setStart(weekStart(new Date()))}>
+            This week
+          </button>
+        </div>
       </PageHeader>
       {err && <ErrorBox error={err} onRetry={() => setTick((x) => x + 1)} />}
       {!rows && !err ? (
