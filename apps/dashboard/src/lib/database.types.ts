@@ -1,7 +1,9 @@
-/** Generated from Supabase project nqfjudwncistygsmcgrq on 2026-10-30.
- *  Do not edit by hand — refresh with `supabase gen types` or MCP generate_typescript_types.
- *  Wire into the desk with: createClient<Database>(url, key)
+/**
+ * Generated from Supabase project nqfjudwncistygsmcgrq (MCP generate_typescript_types).
+ * Wire into the desk with: createClient<Database>(url, key)
+ * Do not hand-edit tables/RPCs — regenerate instead.
  */
+
 export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
 
 export type Database = {
@@ -2372,7 +2374,7 @@ export type Database = {
       };
       add_car: {
         Args: {
-          p_assigned_user_id?: string;
+          p_assigned_user_id?: string | null;
           p_color?: string;
           p_model?: string;
           p_name: string;
@@ -2388,7 +2390,7 @@ export type Database = {
       };
       add_slot_template: {
         Args: {
-          p_car_id?: string;
+          p_car_id?: string | null;
           p_days?: number[];
           p_duration_minutes?: number;
           p_instructor_id: string;
@@ -2408,11 +2410,11 @@ export type Database = {
       };
       add_student: {
         Args: {
-          p_birthday?: string;
+          p_birthday?: string | null;
           p_first_name: string;
-          p_instructor_id?: string;
+          p_instructor_id?: string | null;
           p_last_name?: string;
-          p_package_hours?: number;
+          p_package_hours?: number | null;
           p_parent_email?: string;
           p_parent_name?: string;
           p_school_id: string;
@@ -2429,7 +2431,7 @@ export type Database = {
       };
       book_lesson: {
         Args: {
-          p_car_id?: string;
+          p_car_id?: string | null;
           p_end: string;
           p_instructor_id: string;
           p_kind?: string;
@@ -2438,7 +2440,7 @@ export type Database = {
           p_school_id: string;
           p_start: string;
           p_student_id: string;
-          p_template_id?: string;
+          p_template_id?: string | null;
           p_travel_after_minutes?: number;
           p_travel_before_minutes?: number;
         };
@@ -2506,8 +2508,8 @@ export type Database = {
       leave_school: { Args: { p_student_id: string }; Returns: Json };
       list_drives: {
         Args: {
-          p_before_id?: string;
-          p_before_started_at?: string;
+          p_before_id?: string | null;
+          p_before_started_at?: string | null;
           p_limit?: number;
           p_student_id: string;
         };
@@ -2602,7 +2604,7 @@ export type Database = {
       };
       reassign_lesson: {
         Args: {
-          p_car_id?: string;
+          p_car_id?: string | null;
           p_instructor_id: string;
           p_lesson_id: string;
         };
@@ -2612,12 +2614,12 @@ export type Database = {
         Args: {
           p_amount: number;
           p_customer_id: string;
-          p_invoice_id: string;
+          p_invoice_id: string | null;
           p_method?: string;
-          p_received_on?: string;
+          p_received_on?: string | null;
           p_reference?: string;
           p_school_id: string;
-          p_student_id: string;
+          p_student_id: string | null;
         };
         Returns: string;
       };
@@ -2705,9 +2707,9 @@ export type Database = {
       };
       school_students_progress: {
         Args: {
-          p_after_first?: string;
-          p_after_id?: string;
-          p_after_last?: string;
+          p_after_first?: string | null;
+          p_after_id?: string | null;
+          p_after_last?: string | null;
           p_limit?: number;
           p_school_id: string;
         };
@@ -2743,14 +2745,14 @@ export type Database = {
         Args: {
           p_device?: Json;
           p_drive_id: string;
-          p_initials?: string;
+          p_initials?: string | null;
           p_method: string;
-          p_supervisor_id?: string;
+          p_supervisor_id?: string | null;
         };
         Returns: Json;
       };
       state_resources: {
-        Args: { p_permit_on?: string; p_state_code: string };
+        Args: { p_permit_on?: string | null; p_state_code: string };
         Returns: Json;
       };
       student_hours_by_day: {
@@ -2903,8 +2905,8 @@ export type Database = {
       };
       update_lot_coords: {
         Args: {
-          p_lat: number;
-          p_lng: number;
+          p_lat: number | null;
+          p_lng: number | null;
           p_lot_id: string;
           p_school_id: string;
         };

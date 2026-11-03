@@ -26,11 +26,13 @@ body {
   font-display: swap;
 }
 :root {
-  /* LicenseLogger brand — teal "road/go" (differs from Figma electric blue #017efa / navy #1c1f37) */
-  --primary: #0d9488;
-  --primary-hover: #0f766e;
+  /* LicenseLogger brand — WCAG AA contrast for text/UI on light surfaces */
+  --primary: #0f766e; /* links/accents ≥4.5:1 on white */
+  --primary-hover: #115e59;
+  --primary-fill: #0f766e; /* filled buttons with white label */
+  --on-primary: #ffffff;
   --primary-soft: #ccfbf1;
-  --accent: #14b8a6;
+  --accent: #0f766e;
   --sidebar: #0b2e2b;
   --sidebar-ink: #e7f8f5;
   --sidebar-muted: #8fb9b3;
@@ -42,11 +44,11 @@ body {
   --amber: #d97706;
   --lime: #5eead4;
   --surface: #ffffff;
-  --ok: #059669;
+  --ok: #047857; /* badges on --ok-soft ≥4.5:1 */
   --ok-soft: #d1fae5;
   --warn: #b45309;
   --warn-soft: #fef3c7;
-  --bad: #e11d48;
+  --bad: #be123c;
   --bad-soft: #ffe4e6;
   --shadow: 0 1px 2px rgba(15, 27, 45, 0.04), 0 8px 24px rgba(15, 27, 45, 0.06);
   --radius: 10px;
@@ -66,8 +68,10 @@ body {
   line-height: 1.45;
 }
 html[data-theme="dark"] {
-  --primary: #2dd4bf;
-  --primary-hover: #5eead4;
+  --primary: #5eead4; /* links on dark bg */
+  --primary-hover: #99f6e4;
+  --primary-fill: #0f766e; /* filled buttons: white on teal-700 */
+  --on-primary: #ffffff;
   --primary-soft: #134e4a;
   --accent: #5eead4;
   --sidebar: #061a18;
@@ -76,10 +80,10 @@ html[data-theme="dark"] {
   --sidebar-active: rgba(45, 212, 191, 0.16);
   --bg: #0a1211;
   --ink: #e8eef0;
-  --muted: #9ab0ad;
+  --muted: #a8bfbc; /* ≥4.5:1 on bg/surface */
   --line: #1e3330;
   --surface: #12201e;
-  --ok: #34d399;
+  --ok: #6ee7b7;
   --ok-soft: #064e3b;
   --warn: #fbbf24;
   --warn-soft: #78350f;
@@ -100,8 +104,9 @@ a {
   font-family: GeistMono, ui-monospace, monospace;
 }
 .demo-banner {
-  background: var(--ink);
-  color: var(--lime);
+  /* Fixed dark strip — do not use --ink (light in dark theme) */
+  background: #0b2e2b;
+  color: #99f6e4;
   font-size: 11px;
   text-align: center;
   padding: 4px 8px;
@@ -110,8 +115,8 @@ a {
   width: 100%;
 }
 header.top {
-  background: var(--ink);
-  color: #fff;
+  background: var(--sidebar);
+  color: var(--sidebar-ink);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -140,8 +145,14 @@ header.top {
   flex: 1;
 }
 .pill.light {
-  background: #e9eef5;
+  background: color-mix(in srgb, var(--surface) 70%, var(--line));
   color: var(--ink);
+  border: 1px solid var(--line);
+}
+html[data-theme="dark"] .pill.light {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line);
 }
 .who {
   font-size: 12px;
@@ -299,9 +310,9 @@ table.t td.num {
   border-color: #b8c4d6;
 }
 .btn.primary {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: #fff;
+  background: var(--primary-fill);
+  border-color: var(--primary-fill);
+  color: var(--on-primary);
 }
 .btn.danger {
   color: var(--bad);
@@ -369,12 +380,32 @@ table.t td.num {
 }
 .in,
 .field input,
-.field select {
+.field select,
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"] {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 8px 10px;
   font: inherit;
-  background: #fff;
+  background: var(--surface);
+  color: var(--ink);
+  color-scheme: light;
+}
+html[data-theme="dark"] .in,
+html[data-theme="dark"] .field input,
+html[data-theme="dark"] .field select,
+html[data-theme="dark"] input[type="date"],
+html[data-theme="dark"] input[type="time"],
+html[data-theme="dark"] input[type="datetime-local"] {
+  color-scheme: dark;
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line);
+}
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.85;
 }
 .alert {
   border-radius: var(--radius);
@@ -592,9 +623,9 @@ table.t.fixed td {
 }
 .btn.primary,
 .btn.sm.primary {
-  background: var(--primary);
-  color: #fff;
-  border-color: var(--primary);
+  background: var(--primary-fill);
+  color: var(--on-primary);
+  border-color: var(--primary-fill);
 }
 label.stack {
   display: flex;
@@ -1934,6 +1965,9 @@ nav.tabs {
   background: var(--primary-soft);
   box-shadow: 0 0 0 1px var(--primary);
 }
+.ll-week-d-day.is-on .ll-week-d-dow {
+  color: var(--primary-hover);
+}
 .ll-week-d-day.is-today .ll-week-d-dom {
   color: var(--primary-hover);
 }
@@ -2056,4 +2090,188 @@ nav.tabs {
   .ll-week-d-copy strong {
     font-size: 13px;
   }
+}
+
+/* —— Mobile header actions + schedule full-width (after .ll-split so cascade wins) —— */
+.ph-copy {
+  min-width: 0;
+}
+.ph-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.ph-btn-row {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.board-ph-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.board-date-nav {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.board-date-nav .board-date,
+.board-date-nav .pill.light {
+  min-width: 7.5rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  /* Page header: title full width, actions left-aligned full width (no spacer push) */
+  .ph {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .ph > .spacer {
+    display: none !important;
+  }
+  .ph-copy {
+    width: 100%;
+  }
+  .ph-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .ph-actions > .seg {
+    width: 100%;
+    display: flex;
+  }
+  .ph-actions > .seg button {
+    flex: 1 1 0;
+    text-align: center;
+    min-width: 0;
+  }
+  .ph-btn-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+  .ph-btn-row .btn,
+  .ph-btn-row a.btn {
+    width: 100%;
+    min-height: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* Board toolbar: row1 seg + Refresh; row2 date nav full width */
+  .board-ph-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    width: 100%;
+    align-items: stretch;
+  }
+  .board-ph-actions > .seg {
+    grid-column: 1;
+    width: 100%;
+    display: flex;
+  }
+  .board-ph-actions > .seg button {
+    flex: 1 1 0;
+  }
+  .board-ph-actions > .board-refresh {
+    grid-column: 2;
+    height: 100%;
+    min-height: 36px;
+    align-self: stretch;
+  }
+  .board-ph-actions > .board-date-nav {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    gap: 6px;
+    width: 100%;
+    align-items: center;
+  }
+  .board-ph-actions .board-date {
+    width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+  }
+  .board-date-nav {
+    width: 100%;
+  }
+  .board-date-nav:not(.board-ph-actions > .board-date-nav) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    gap: 6px;
+  }
+
+  /* Schedule split: kill 60/40 leak + tall empty pane on mobile */
+  .ll-split,
+  .ll-split.is-mobile {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+    gap: 0 !important;
+  }
+  .ll-split.is-mobile .ll-split-pane,
+  .ll-split .ll-split-pane {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+  .ll-split-pane .ll-cal {
+    flex: none;
+    min-height: 0;
+    width: 100%;
+  }
+  .ll-week-d {
+    flex: none;
+    width: 100%;
+    min-height: 0;
+  }
+  .ll-week-d-strip {
+    width: 100%;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+  .ll-week-d-detail {
+    flex: none;
+    min-height: 0;
+    height: auto;
+    width: 100%;
+  }
+  .ll-week-d-cnt-lbl {
+    display: none;
+  }
+  .ll-week-d-cnt {
+    text-overflow: clip;
+    overflow: visible;
+  }
+}
+
+/* Dark-mode badge / soft-fill contrast (WCAG AA) */
+html[data-theme="dark"] .b-info {
+  color: #99f6e4;
+  background: #115e59;
+}
+html[data-theme="dark"] .b-ok {
+  color: #a7f3d0;
+  background: #064e3b;
+}
+html[data-theme="dark"] .seg button.on {
+  color: #99f6e4;
 }

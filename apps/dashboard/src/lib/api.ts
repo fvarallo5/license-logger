@@ -1,5 +1,5 @@
 // Every database call the dashboard makes lives here, with exact live table / RPC names.
-import type { SupabaseClient } from "@supabase/supabase-js";
+import type { AppSupabase } from "./supabase";
 import type {
   Drive,
   DriveListRow,
@@ -47,7 +47,7 @@ const pageRange = (page: number): [number, number] => [page * PAGE_SIZE, page * 
 const offsetPage = <T>(rows: T[], page: number): Page<T, number> => ({ rows, next: rows.length === PAGE_SIZE ? page + 1 : null });
 
 // ---------- schools & membership ----------
-export async function myMemberships(sb: SupabaseClient, userId: string): Promise<Membership[]> {
+export async function myMemberships(sb: AppSupabase, userId: string): Promise<Membership[]> {
   const r = await sb
     .from("school_members")
     .select(
@@ -58,14 +58,14 @@ export async function myMemberships(sb: SupabaseClient, userId: string): Promise
   return check(r) as unknown as Membership[];
 }
 /** Claims any pending staff invites for the signed-in email. Safe to call on every sign-in. */
-export async function acceptMyInvites(sb: SupabaseClient): Promise<number> {
+export async function acceptMyInvites(sb: AppSupabase): Promise<number> {
   const r = await sb.rpc("accept_my_invites");
   return r.error ? 0 : Number(r.data ?? 0);
 }
-export async function createSchool(sb: SupabaseClient, name: string, city: string): Promise<string> {
+export async function createSchool(sb: AppSupabase, name: string, city: string): Promise<string> {
   return check(await sb.rpc("create_school", { p_name: name, p_city: city })) as string;
 }
-export async function updateSchool(sb: SupabaseClient, s: School): Promise<void> {
+export async function updateSchool(sb: AppSupabase, s: School): Promise<void> {
   check(
     await sb.rpc("update_school", {
       p_school_id: s.id,
@@ -87,7 +87,7 @@ export interface StudentCursor {
   id: string;
 }
 export async function studentsPage(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   schoolId: string,
   after: StudentCursor | null,
   limit = PAGE_SIZE,
@@ -113,7 +113,7 @@ export interface NewStudent {
   instructor_id: string | null;
   package_hours: number | null;
 }
-export async function addStudent(sb: SupabaseClient, schoolId: string, s: NewStudent): Promise<string> {
+export async function addStudent(sb: AppSupabase, schoolId: string, s: NewStudent): Promise<string> {
   return check(
     await sb.rpc("add_student", {
       p_school_id: schoolId,
@@ -127,7 +127,7 @@ export async function addStudent(sb: SupabaseClient, schoolId: string, s: NewStu
     }),
   ) as string;
 }
-export async function getStudent(sb: SupabaseClient, id: string): Promise<Student | null> {
+export async function getStudent(sb: AppSupabase, id: string): Promise<Student | null> {
   return check(
     await sb
       .from("students")
@@ -138,17 +138,17 @@ export async function getStudent(sb: SupabaseClient, id: string): Promise<Studen
       .maybeSingle(),
   ) as Student | null;
 }
-export async function releaseStudent(sb: SupabaseClient, studentId: string): Promise<unknown> {
+export async function releaseStudent(sb: AppSupabase, studentId: string): Promise<unknown> {
   return check(await sb.rpc("release_student", { p_student_id: studentId }));
 }
 /** School asks an independent student (by the code shown in their app) to join. The STUDENT/FAMILY accepts in the app. */
-export async function requestStudentLink(sb: SupabaseClient, schoolId: string, code: string): Promise<unknown> {
+export async function requestStudentLink(sb: AppSupabase, schoolId: string, code: string): Promise<unknown> {
   return check(await sb.rpc("request_student_link", { p_school_id: schoolId, p_student_code: code.trim() }));
 }
-export async function cancelLinkRequest(sb: SupabaseClient, requestId: string): Promise<void> {
+export async function cancelLinkRequest(sb: AppSupabase, requestId: string): Promise<void> {
   check(await sb.rpc("cancel_student_link_request", { p_request_id: requestId }));
 }
-export async function linkRequestsPage(sb: SupabaseClient, schoolId: string, page: number): Promise<Page<LinkRequest, number>> {
+export async function linkRequestsPage(sb: AppSupabase, schoolId: string, page: number): Promise<Page<LinkRequest, number>> {
   const rows = check(
     await sb
       .from("school_link_requests")
@@ -159,7 +159,7 @@ export async function linkRequestsPage(sb: SupabaseClient, schoolId: string, pag
   ) as LinkRequest[];
   return offsetPage(rows, page);
 }
-export async function formerStudentsPage(sb: SupabaseClient, schoolId: string, page: number): Promise<Page<Enrollment, number>> {
+export async function formerStudentsPage(sb: AppSupabase, schoolId: string, page: number): Promise<Page<Enrollment, number>> {
   const rows = check(
     await sb
       .from("school_enrollments")
@@ -173,10 +173,10 @@ export async function formerStudentsPage(sb: SupabaseClient, schoolId: string, p
 }
 
 // ---------- progress & resources ----------
-export async function ruleProgress(sb: SupabaseClient, studentId: string): Promise<RuleProgress> {
-  return check(await sb.rpc("student_rule_progress", { p_student_id: studentId })) as RuleProgress;
+export async function ruleProgress(sb: AppSupabase, studentId: string): Promise<RuleProgress> {
+  return check(await sb.rpc("student_rule_progress", { p_student_id: studentId })) as unknown as RuleProgress;
 }
-export async function stateResources(sb: SupabaseClient, state: string, permitOn: string | null): Promise<Record<string, unknown>> {
+export async function stateResources(sb: AppSupabase, state: string, permitOn: string | null): Promise<Record<string, unknown>> {
   return check(await sb.rpc("state_resources", { p_state_code: state, p_permit_on: permitOn })) as Record<string, unknown>;
 }
 
@@ -185,7 +185,7 @@ export interface DriveCursor {
   started_at: string;
   id: string;
 }
-export async function pendingDrivesCount(sb: SupabaseClient, schoolId: string): Promise<number> {
+export async function pendingDrivesCount(sb: AppSupabase, schoolId: string): Promise<number> {
   const { count, error } = await sb
     .from("drives")
     .select("id", { count: "exact", head: true })
@@ -197,7 +197,7 @@ export async function pendingDrivesCount(sb: SupabaseClient, schoolId: string): 
 
 /** Pending sign-off queue for one school, newest first, keyset-paginated on the drives table (RLS-scoped). */
 export async function pendingDrivesPage(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   schoolId: string,
   before: DriveCursor | null,
   limit = PAGE_SIZE,
@@ -217,7 +217,7 @@ export async function pendingDrivesPage(
   return { rows, next: rows.length === limit && last ? { started_at: last.started_at, id: last.id } : null };
 }
 export async function studentDrivesPage(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   studentId: string,
   before: DriveCursor | null,
   limit = PAGE_SIZE,
@@ -234,7 +234,7 @@ export async function studentDrivesPage(
   return { rows, next: rows.length === limit && last ? { started_at: last.started_at, id: last.id } : null };
 }
 /** Instructor sign-off. The backend only lets the school sign LESSON drives; practice drives are signed by family. */
-export async function signLesson(sb: SupabaseClient, driveId: string): Promise<unknown> {
+export async function signLesson(sb: AppSupabase, driveId: string): Promise<unknown> {
   return check(
     await sb.rpc("sign_drive", {
       p_drive_id: driveId,
@@ -245,10 +245,10 @@ export async function signLesson(sb: SupabaseClient, driveId: string): Promise<u
     }),
   );
 }
-export async function rejectDrive(sb: SupabaseClient, driveId: string, reason: string): Promise<void> {
+export async function rejectDrive(sb: AppSupabase, driveId: string, reason: string): Promise<void> {
   check(await sb.rpc("reject_drive", { p_drive_id: driveId, p_reason: reason }));
 }
-export async function voidDrive(sb: SupabaseClient, driveId: string, reason: string): Promise<void> {
+export async function voidDrive(sb: AppSupabase, driveId: string, reason: string): Promise<void> {
   if (reason.trim().length < 3) throw new Error("Please give a reason (at least 3 characters).");
   check(await sb.rpc("void_drive", { p_drive_id: driveId, p_reason: reason }));
 }
@@ -256,7 +256,7 @@ export async function voidDrive(sb: SupabaseClient, driveId: string, reason: str
 // ---------- reports ----------
 export type ExportResult = { ok: true; url: string } | { ok: false; notDeployed: boolean; message: string };
 export async function exportReport(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   body: { student_id: string; format: "pdf" | "csv"; layout?: "report" | "state"; drive_id?: string },
 ): Promise<ExportResult> {
   const { data, error } = await sb.functions.invoke("export-report", { body });
@@ -284,20 +284,20 @@ export async function exportReport(
 }
 
 // ---------- people & scheduling ----------
-export async function membersPage(sb: SupabaseClient, schoolId: string, page: number, role?: Role): Promise<Page<Member, number>> {
+export async function membersPage(sb: AppSupabase, schoolId: string, page: number, role?: Role): Promise<Page<Member, number>> {
   let q = sb.from("school_members").select("school_id, user_id, role, license_expires, hourly_rate, color").eq("school_id", schoolId);
   if (role) q = q.eq("role", role);
   const rows = check(await q.order("created_at").range(...pageRange(page))) as Member[];
   return offsetPage(rows, page);
 }
-export async function profileNames(sb: SupabaseClient, ids: string[]): Promise<Record<string, string>> {
+export async function profileNames(sb: AppSupabase, ids: string[]): Promise<Record<string, string>> {
   if (!ids.length) return {};
   const { data } = await sb.from("profiles").select("id, full_name").in("id", ids);
   const out: Record<string, string> = {};
   for (const p of (data ?? []) as { id: string; full_name: string }[]) out[p.id] = p.full_name;
   return out;
 }
-export async function invitesPage(sb: SupabaseClient, schoolId: string, page: number): Promise<Page<Invite, number>> {
+export async function invitesPage(sb: AppSupabase, schoolId: string, page: number): Promise<Page<Invite, number>> {
   const rows = check(
     await sb
       .from("school_invites")
@@ -309,27 +309,27 @@ export async function invitesPage(sb: SupabaseClient, schoolId: string, page: nu
   ) as Invite[];
   return offsetPage(rows, page);
 }
-export async function inviteToSchool(sb: SupabaseClient, schoolId: string, email: string, role: Exclude<Role, "owner">): Promise<void> {
+export async function inviteToSchool(sb: AppSupabase, schoolId: string, email: string, role: Exclude<Role, "owner">): Promise<void> {
   check(await sb.rpc("invite_to_school", { p_school_id: schoolId, p_email: email.trim(), p_role: role, p_access: {} }));
 }
-export async function revokeInvite(sb: SupabaseClient, id: number): Promise<void> {
+export async function revokeInvite(sb: AppSupabase, id: number): Promise<void> {
   check(await sb.rpc("revoke_invite", { p_invite_id: id }));
 }
-export async function schedule(sb: SupabaseClient, schoolId: string, from: Date, to: Date): Promise<Lesson[]> {
+export async function schedule(sb: AppSupabase, schoolId: string, from: Date, to: Date): Promise<Lesson[]> {
   return check(await sb.rpc("school_schedule", { p_school_id: schoolId, p_from: from.toISOString(), p_to: to.toISOString() })) as Lesson[];
 }
-export async function markLesson(sb: SupabaseClient, lessonId: string, status: "taught" | "cancelled" | "no_show"): Promise<void> {
+export async function markLesson(sb: AppSupabase, lessonId: string, status: "taught" | "cancelled" | "no_show"): Promise<void> {
   check(await sb.rpc("mark_lesson", { p_lesson_id: lessonId, p_status: status }));
 }
 
 // ---------- QuickBooks (read-only status in v1) ----------
-export async function qboStatus(sb: SupabaseClient, schoolId: string): Promise<QboStatus | null> {
+export async function qboStatus(sb: AppSupabase, schoolId: string): Promise<QboStatus | null> {
   const rows = check(await sb.rpc("qbo_sync_status", { p_school_id: schoolId })) as QboStatus[] | null;
   return rows?.[0] ?? null;
 }
 
 /** Starts Intuit OAuth via qbo-connect edge function. Returns authorize URL. */
-export async function qboConnect(sb: SupabaseClient, schoolId: string): Promise<{ url: string } | { notDeployed: true; message: string }> {
+export async function qboConnect(sb: AppSupabase, schoolId: string): Promise<{ url: string } | { notDeployed: true; message: string }> {
   const { data, error } = await sb.functions.invoke("qbo-connect", { body: { school_id: schoolId } });
   if (!error) {
     const url = (data as { url?: string } | null)?.url;
@@ -343,13 +343,13 @@ export async function qboConnect(sb: SupabaseClient, schoolId: string): Promise<
   throw error;
 }
 
-export async function qboSyncNow(sb: SupabaseClient, schoolId: string): Promise<void> {
+export async function qboSyncNow(sb: AppSupabase, schoolId: string): Promise<void> {
   const { error } = await sb.functions.invoke("qbo-sync", { body: { school_id: schoolId } });
   if (error) throw error;
 }
 
 // ---------- board (cars + offline-aware lesson marks) ----------
-export async function listCars(sb: SupabaseClient, schoolId: string): Promise<Car[]> {
+export async function listCars(sb: AppSupabase, schoolId: string): Promise<Car[]> {
   return check(
     await sb
       .from("cars")
@@ -366,12 +366,7 @@ export async function listCars(sb: SupabaseClient, schoolId: string): Promise<Ca
  * Reassign instructor (and optional car) on a booked lesson.
  * Requires migration supabase/migrations/_NOT_APPLIED_reassign_lesson.sql (NOT applied on live yet).
  */
-export async function reassignLesson(
-  sb: SupabaseClient,
-  lessonId: string,
-  instructorId: string,
-  carId: string | null = null,
-): Promise<void> {
+export async function reassignLesson(sb: AppSupabase, lessonId: string, instructorId: string, carId: string | null = null): Promise<void> {
   check(
     await sb.rpc("reassign_lesson", {
       p_lesson_id: lessonId,
@@ -382,7 +377,7 @@ export async function reassignLesson(
 }
 
 // ---------- plan / templates / booking ----------
-export async function listSlotTemplates(sb: SupabaseClient, schoolId: string): Promise<SlotTemplate[]> {
+export async function listSlotTemplates(sb: AppSupabase, schoolId: string): Promise<SlotTemplate[]> {
   return check(
     await sb
       .from("slot_templates")
@@ -395,7 +390,7 @@ export async function listSlotTemplates(sb: SupabaseClient, schoolId: string): P
   ) as SlotTemplate[];
 }
 
-export async function listReservations(sb: SupabaseClient, schoolId: string, from: Date, to: Date): Promise<Reservation[]> {
+export async function listReservations(sb: AppSupabase, schoolId: string, from: Date, to: Date): Promise<Reservation[]> {
   return check(
     await sb
       .from("reservations")
@@ -410,7 +405,7 @@ export async function listReservations(sb: SupabaseClient, schoolId: string, fro
 }
 
 export async function addSlotTemplate(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   args: {
     schoolId: string;
     instructorId: string;
@@ -451,7 +446,7 @@ export async function addSlotTemplate(
 }
 
 export async function bookLesson(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   args: {
     schoolId: string;
     studentId: string;
@@ -486,7 +481,7 @@ export async function bookLesson(
 }
 
 export async function addBlock(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   schoolId: string,
   instructorId: string,
   start: string,
@@ -504,17 +499,17 @@ export async function addBlock(
   ) as string;
 }
 
-export async function acceptReservation(sb: SupabaseClient, reservationId: string): Promise<string> {
+export async function acceptReservation(sb: AppSupabase, reservationId: string): Promise<string> {
   return check(await sb.rpc("accept_reservation", { p_reservation_id: reservationId })) as string;
 }
 
-export async function declineReservation(sb: SupabaseClient, reservationId: string, reason: string): Promise<void> {
+export async function declineReservation(sb: AppSupabase, reservationId: string, reason: string): Promise<void> {
   if (reason.trim().length < 1) throw new Error("Decline reason is required.");
   check(await sb.rpc("decline_reservation", { p_reservation_id: reservationId, p_reason: reason.trim() }));
 }
 
 // ---------- packages / pay ----------
-export async function listPackageCatalog(sb: SupabaseClient, schoolId: string): Promise<import("./types").PackageCatalog[]> {
+export async function listPackageCatalog(sb: AppSupabase, schoolId: string): Promise<import("./types").PackageCatalog[]> {
   return check(
     await sb
       .from("package_catalog")
@@ -526,7 +521,7 @@ export async function listPackageCatalog(sb: SupabaseClient, schoolId: string): 
 }
 
 export async function upsertPackageCatalog(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   row: { id?: string; schoolId: string; name: string; hours: number; price: number; kind?: string },
 ): Promise<string> {
   if (row.id) {
@@ -558,12 +553,12 @@ export async function upsertPackageCatalog(
   return data.id;
 }
 
-export async function deactivatePackage(sb: SupabaseClient, schoolId: string, id: string): Promise<void> {
+export async function deactivatePackage(sb: AppSupabase, schoolId: string, id: string): Promise<void> {
   check(await sb.from("package_catalog").update({ active: false }).eq("id", id).eq("school_id", schoolId));
 }
 
 export async function assignStudentPackage(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   args: { schoolId: string; studentId: string; catalogId: string; hours: number },
 ): Promise<string> {
   // Prefer RPC when migration applied; fall back to table write.
@@ -595,7 +590,7 @@ export async function assignStudentPackage(
   }
 }
 
-export async function listInvoices(sb: SupabaseClient, schoolId: string): Promise<import("./types").Invoice[]> {
+export async function listInvoices(sb: AppSupabase, schoolId: string): Promise<import("./types").Invoice[]> {
   return check(
     await sb
       .from("invoices")
@@ -607,7 +602,7 @@ export async function listInvoices(sb: SupabaseClient, schoolId: string): Promis
 }
 
 export async function recordPayment(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   args: {
     schoolId: string;
     customerId: string;
@@ -655,7 +650,7 @@ export async function recordPayment(
 }
 
 export async function listBillingCustomers(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   schoolId: string,
 ): Promise<{ id: string; display_name: string; student_id: string | null }[]> {
   return check(
@@ -664,18 +659,18 @@ export async function listBillingCustomers(
 }
 
 // ---------- fleet ----------
-export async function listLots(sb: SupabaseClient, schoolId: string): Promise<import("./types").Lot[]> {
+export async function listLots(sb: AppSupabase, schoolId: string): Promise<import("./types").Lot[]> {
   return check(
     await sb.from("lots").select("id, school_id, name, lat, lng, is_default").eq("school_id", schoolId).order("name"),
   ) as import("./types").Lot[];
 }
 
-export async function addLot(sb: SupabaseClient, schoolId: string, name: string, isDefault = false): Promise<string> {
+export async function addLot(sb: AppSupabase, schoolId: string, name: string, isDefault = false): Promise<string> {
   return String(check(await sb.rpc("add_lot", { p_school_id: schoolId, p_name: name, p_is_default: isDefault })));
 }
 
 export async function addCar(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   args: { schoolId: string; name: string; plate?: string; color?: string; model?: string; assignedUserId?: string | null },
 ): Promise<string> {
   return String(
@@ -694,7 +689,7 @@ export async function addCar(
 }
 
 export async function updateCarCompliance(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   carId: string,
   schoolId: string,
   patch: Partial<{
@@ -716,7 +711,7 @@ export async function updateCarCompliance(
 }
 
 export async function updateLotCoords(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   lotId: string,
   schoolId: string,
   lat: number | null,
@@ -733,7 +728,7 @@ export async function updateLotCoords(
 export type InstructorPayRow = { instructor_id: string; hours: number; rate: number; amount: number };
 
 export async function computeInstructorPay(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   schoolId: string,
   periodStart: string,
   periodEnd: string,
@@ -777,7 +772,7 @@ export async function computeInstructorPay(
 
 // ---------- portal / family ----------
 export async function listMyFamilyLinks(
-  sb: SupabaseClient,
+  sb: AppSupabase,
 ): Promise<{ student_id: string; school_id: string; relationship: string | null }[]> {
   return check(await sb.from("family_links").select("student_id, school_id, relationship").eq("status", "active")) as {
     student_id: string;
@@ -787,7 +782,7 @@ export async function listMyFamilyLinks(
 }
 
 export async function requestSlot(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   args: {
     schoolId: string;
     studentId: string;
@@ -816,13 +811,13 @@ export async function requestSlot(
 // ---------- skills / checklist ----------
 export type ChecklistItem = { student_id: string; item_key: string; label: string; done: boolean; source: string };
 
-export async function listStudentChecklist(sb: SupabaseClient, studentId: string): Promise<ChecklistItem[]> {
+export async function listStudentChecklist(sb: AppSupabase, studentId: string): Promise<ChecklistItem[]> {
   return check(
     await sb.from("student_checklist").select("student_id, item_key, label, done, source").eq("student_id", studentId).order("item_key"),
   ) as ChecklistItem[];
 }
 
-export async function setChecklistItem(sb: SupabaseClient, studentId: string, itemKey: string, done: boolean): Promise<void> {
+export async function setChecklistItem(sb: AppSupabase, studentId: string, itemKey: string, done: boolean): Promise<void> {
   try {
     check(await sb.rpc("set_student_checklist_item", { p_student_id: studentId, p_item_key: itemKey, p_done: done }));
   } catch {
@@ -831,7 +826,7 @@ export async function setChecklistItem(sb: SupabaseClient, studentId: string, it
 }
 
 export async function upsertChecklistItem(
-  sb: SupabaseClient,
+  sb: AppSupabase,
   args: { studentId: string; itemKey: string; label: string; done?: boolean },
 ): Promise<void> {
   try {

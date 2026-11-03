@@ -71,12 +71,14 @@ export default function PayPage() {
   return (
     <>
       <PageHeader title="Pay" desc="Invoices And Payments. Package Hours Draw When Lessons Are Marked Taught.">
-        <Link className="btn" to="/packages">
-          Packages
-        </Link>
-        <Link className="btn" to="/quickbooks">
-          QuickBooks
-        </Link>
+        <div className="ph-btn-row">
+          <Link className="btn" to="/packages">
+            Packages
+          </Link>
+          <Link className="btn" to="/quickbooks">
+            QuickBooks
+          </Link>
+        </div>
       </PageHeader>
       {err && <ErrorBox error={err} onRetry={load} />}
       <Card title="Open Invoices" count={open.length}>

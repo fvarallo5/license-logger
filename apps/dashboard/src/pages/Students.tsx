@@ -44,14 +44,14 @@ export default function Students() {
           ))}
         </div>
         {p.manageStudents && (
-          <button className="btn" onClick={() => setLinking(true)}>
-            Link app student
-          </button>
-        )}
-        {p.manageStudents && (
-          <button className="btn primary" onClick={() => setAdding(true)}>
-            + Add Student
-          </button>
+          <div className="ph-btn-row">
+            <button className="btn" onClick={() => setLinking(true)}>
+              Link app student
+            </button>
+            <button className="btn primary" onClick={() => setAdding(true)}>
+              + Add Student
+            </button>
+          </div>
         )}
       </PageHeader>
       {flash && (

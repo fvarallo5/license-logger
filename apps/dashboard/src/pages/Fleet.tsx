@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, lazy, Suspense } from "react";
 import { supabase } from "../lib/supabase";
 import { addCar, addLot, friendly, listCars, listLots, membersPage, profileNames, updateCarCompliance, updateLotCoords } from "../lib/api";
 import { useSchool } from "../session";
-import { LotMap } from "../components/LotMap";
+const LotMap = lazy(() => import("../components/LotMap").then((m) => ({ default: m.LotMap })));
 import type { Car, Lot, Member } from "../lib/types";
 import { Card, Empty, ErrorBox, Loading, Modal, PageHeader } from "../components/ui";
 
@@ -116,12 +116,14 @@ export default function FleetPage() {
   return (
     <>
       <PageHeader title="Fleet" desc="Cars, Compliance Dates, And Lots. Due Dates Turn Amber Within 30 Days.">
-        <button className="btn" onClick={() => setShowLot(true)}>
-          + Lot
-        </button>
-        <button className="btn primary" onClick={() => setShowCar(true)}>
-          + Car
-        </button>
+        <div className="ph-btn-row">
+          <button className="btn" onClick={() => setShowLot(true)}>
+            + Lot
+          </button>
+          <button className="btn primary" onClick={() => setShowCar(true)}>
+            + Car
+          </button>
+        </div>
       </PageHeader>
       {err && <ErrorBox error={err} onRetry={load} />}
 
@@ -129,14 +131,16 @@ export default function FleetPage() {
         {!lots.length ? (
           <Empty>Add a lot, then search an address or click the map to pin it. OpenStreetMap — no API key.</Empty>
         ) : (
-          <LotMap
-            lots={lots}
-            schoolCity={schoolCity}
-            onPin={async (lotId, lat, lng) => {
-              await updateLotCoords(supabase, lotId, schoolId, lat, lng);
-              await load();
-            }}
-          />
+          <Suspense fallback={<div className="muted">Loading map…</div>}>
+            <LotMap
+              lots={lots}
+              schoolCity={schoolCity}
+              onPin={async (lotId, lat, lng) => {
+                await updateLotCoords(supabase, lotId, schoolId, lat, lng);
+                await load();
+              }}
+            />
+          </Suspense>
         )}
         {lots.length > 0 && (
           <ul className="fleet-lots">

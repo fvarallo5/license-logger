@@ -19,6 +19,8 @@ declare module "virtual:pwa-register/react" {
 interface ImportMetaEnv {
   readonly VITE_SUPABASE_URL?: string;
   readonly VITE_SUPABASE_ANON_KEY?: string;
+  readonly VITE_SUPABASE_PUBLISHABLE_KEY?: string;
+  readonly VITE_DEMO?: string;
   readonly VITE_ENABLE_QBO?: string;
   readonly VITE_ENABLE_WEB_PUSH?: string;
   readonly VITE_VAPID_PUBLIC_KEY?: string;

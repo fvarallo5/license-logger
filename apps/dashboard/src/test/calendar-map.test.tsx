@@ -41,7 +41,7 @@ describe("Calendar + map split", () => {
     expect(await screen.findByTestId("calendar-map-split")).toBeTruthy();
     expect(screen.getByLabelText("Calendar pane")).toBeTruthy();
     expect(screen.getByLabelText("Map pane")).toBeTruthy();
-    expect(screen.getAllByLabelText("Lessons map").length).toBeGreaterThan(0);
+    expect((await screen.findAllByLabelText("Lessons map", {}, { timeout: 8000 })).length).toBeGreaterThan(0);
   });
 
   it("loads day FullCalendar and selects a lesson block", async () => {

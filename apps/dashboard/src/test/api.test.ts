@@ -119,3 +119,37 @@ describe("role-aware permissions", () => {
     expect(p.instructorOnly).toBe(false);
   });
 });
+
+describe("payments and booking accept", () => {
+  it("record_invoice_payment sends amount, method, and optional invoice/student", async () => {
+    const { sb, rpc } = fakeRpc("pay-1");
+    const id = await api.recordPayment(sb as never, {
+      schoolId: "sch",
+      customerId: "cust",
+      invoiceId: "inv-1",
+      studentId: "stu-1",
+      amount: 250,
+      method: "card",
+      reference: "ch_123",
+      receivedOn: "2026-11-02",
+    });
+    expect(id).toBe("pay-1");
+    expect(rpc).toHaveBeenCalledWith("record_invoice_payment", {
+      p_school_id: "sch",
+      p_customer_id: "cust",
+      p_invoice_id: "inv-1",
+      p_student_id: "stu-1",
+      p_amount: 250,
+      p_method: "card",
+      p_reference: "ch_123",
+      p_received_on: "2026-11-02",
+    });
+  });
+
+  it("accept_reservation returns the new lesson id", async () => {
+    const { sb, rpc } = fakeRpc("lesson-9");
+    const lessonId = await api.acceptReservation(sb as never, "res-1");
+    expect(lessonId).toBe("lesson-9");
+    expect(rpc).toHaveBeenCalledWith("accept_reservation", { p_reservation_id: "res-1" });
+  });
+});
